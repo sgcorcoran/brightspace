@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D FCC Unit Cell</title>
     <style>
-        body { margin: 0; }
+        body { margin: 0; display: flex; flex-direction: column; align-items: center; }
         canvas { display: block; }
+        #slider-container { margin: 20px; }
     </style>
 </head>
 <body>
@@ -36,9 +37,20 @@
 
         // FCC unit cell parameters
         const cellSize = 2;
-        const radius = 0.2;
-        const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
+        let radius = cellSize / 10;
+        const minRadius = cellSize / 10;
+        const maxRadius = cellSize * Math.sqrt(2) / 4;
+        let spheres = [];
+
         const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, roughness: 0.5, metalness: 0.1 });
+
+        function createSphere(position) {
+            const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
+            const sphere = new THREE.Mesh(sphereGeometry, material);
+            sphere.position.set(...position);
+            scene.add(sphere);
+            return sphere;
+        }
 
         // Corner atom positions
         const corners = [
@@ -46,25 +58,32 @@
             [cellSize, cellSize, 0], [cellSize, 0, cellSize], [0, cellSize, cellSize], [cellSize, cellSize, cellSize]
         ];
 
-        // Add corner atoms to the scene
-        corners.forEach(pos => {
-            const sphere = new THREE.Mesh(sphereGeometry, material);
-            sphere.position.set(...pos);
-            scene.add(sphere);
-        });
-
         // Face-centered atom positions
         const faceCenters = [
             [cellSize / 2, cellSize / 2, 0], [cellSize / 2, 0, cellSize / 2], [0, cellSize / 2, cellSize / 2],
             [cellSize / 2, cellSize / 2, cellSize], [cellSize / 2, cellSize, cellSize / 2], [cellSize, cellSize / 2, cellSize / 2]
         ];
 
-        // Add face-centered atoms to the scene
-        faceCenters.forEach(pos => {
-            const sphere = new THREE.Mesh(sphereGeometry, material);
-            sphere.position.set(...pos);
-            scene.add(sphere);
-        });
+        function createAtoms() {
+            // Clear existing spheres
+            spheres.forEach(sphere => scene.remove(sphere));
+            spheres = [];
+
+            // Add corner atoms to the scene
+            corners.forEach(pos => {
+                const sphere = createSphere(pos);
+                spheres.push(sphere);
+            });
+
+            // Add face-centered atoms to the scene
+            faceCenters.forEach(pos => {
+                const sphere = createSphere(pos);
+                spheres.push(sphere);
+            });
+        }
+
+        // Initial atom creation
+        createAtoms();
 
         // Add a wireframe box to represent the unit cell, centered at the unit cell center
         const boxGeometry = new THREE.BoxGeometry(cellSize, cellSize, cellSize);
@@ -92,6 +111,17 @@
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
+
+        // Handle slider input to change atom size
+        document.getElementById('radius-slider').addEventListener('input', function() {
+            radius = parseFloat(this.value);
+            createAtoms();
+        });
     </script>
+
+    <!-- Slider to control atom radius -->
+    <div id="slider-container">
+        <input type="range" id="radius-slider" min="0.2" max="0.707" step="0.01" value="0.2" style="width: 300px;">
+    </div>
 </body>
 </html>
