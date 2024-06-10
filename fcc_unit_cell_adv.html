@@ -47,9 +47,10 @@
 
         // FCC unit cell parameters
         const cellSize = 2;
-        let radius = cellSize / 10;
+        const initialRadius = cellSize / 7;
         const minRadius = cellSize / 10;
         const maxRadius = cellSize * Math.sqrt(2) / 4;
+        let radius = initialRadius;
         let spheres = [];
 
         const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, roughness: 0.5, metalness: 0.1 });
@@ -187,7 +188,7 @@
 
     <!-- Slider to control atom radius -->
     <div id="slider-container">
-        <input type="range" id="radius-slider" min="0.2" max="0.707" step="0.01" value="0.2" style="width: 300px;">
+        <input type="range" id="radius-slider" min="0.2" max="0.707" step="0.01" value="0.2857" style="width: 300px;">
     </div>
 </body>
 </html>
