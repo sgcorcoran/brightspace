@@ -10,51 +10,57 @@
     </style>
 </head>
 <body>
+    <!-- Include Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Include OrbitControls -->
     <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
     <script>
-        // Set up the scene, camera, and renderer
+        // Initialize scene, camera, and renderer
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        // Add orbit controls to allow rotation
+        // Add OrbitControls for rotation
         const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-        // Create the FCC unit cell
+        // FCC unit cell parameters
         const cellSize = 2;
         const radius = 0.2;
         const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
         const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 
-        // Add corner atoms
+        // Corner atom positions
         const corners = [
             [0, 0, 0], [cellSize, 0, 0], [0, cellSize, 0], [0, 0, cellSize],
             [cellSize, cellSize, 0], [cellSize, 0, cellSize], [0, cellSize, cellSize], [cellSize, cellSize, cellSize]
         ];
+
+        // Add corner atoms to the scene
         corners.forEach(pos => {
             const sphere = new THREE.Mesh(sphereGeometry, material);
             sphere.position.set(...pos);
             scene.add(sphere);
         });
 
-        // Add face-centered atoms
+        // Face-centered atom positions
         const faceCenters = [
             [cellSize / 2, cellSize / 2, 0], [cellSize / 2, 0, cellSize / 2], [0, cellSize / 2, cellSize / 2],
             [cellSize / 2, cellSize / 2, cellSize], [cellSize / 2, cellSize, cellSize / 2], [cellSize, cellSize / 2, cellSize / 2]
         ];
+
+        // Add face-centered atoms to the scene
         faceCenters.forEach(pos => {
             const sphere = new THREE.Mesh(sphereGeometry, material);
             sphere.position.set(...pos);
             scene.add(sphere);
         });
 
-        // Set the camera position
+        // Set camera position
         camera.position.z = 5;
 
-        // Render the scene
+        // Animation loop
         function animate() {
             requestAnimationFrame(animate);
             controls.update();
