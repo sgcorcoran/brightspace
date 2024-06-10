@@ -10,51 +10,73 @@
     </style>
 </head>
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
-    <script>
-        // Set up the scene, camera, and renderer
+    <!-- Include Three.js and OrbitControls using module imports -->
+    <script type="module">
+        import * as THREE from 'https://cdn.skypack.dev/three@0.132.2/build/three.module.js';
+        import { OrbitControls } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/controls/OrbitControls.js';
+
+        // Initialize scene, camera, and renderer
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer();
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        // Add orbit controls to allow rotation
-        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        // Add OrbitControls for rotation
+        const controls = new OrbitControls(camera, renderer.domElement);
 
-        // Create the FCC unit cell
+        // Add a light source
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xffffff, 0.5);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        // FCC unit cell parameters
         const cellSize = 2;
         const radius = 0.2;
         const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, roughness: 0.5, metalness: 0.1 });
 
-        // Add corner atoms
+        // Corner atom positions
         const corners = [
             [0, 0, 0], [cellSize, 0, 0], [0, cellSize, 0], [0, 0, cellSize],
             [cellSize, cellSize, 0], [cellSize, 0, cellSize], [0, cellSize, cellSize], [cellSize, cellSize, cellSize]
         ];
+
+        // Add corner atoms to the scene
         corners.forEach(pos => {
             const sphere = new THREE.Mesh(sphereGeometry, material);
             sphere.position.set(...pos);
             scene.add(sphere);
         });
 
-        // Add face-centered atoms
+        // Face-centered atom positions
         const faceCenters = [
             [cellSize / 2, cellSize / 2, 0], [cellSize / 2, 0, cellSize / 2], [0, cellSize / 2, cellSize / 2],
             [cellSize / 2, cellSize / 2, cellSize], [cellSize / 2, cellSize, cellSize / 2], [cellSize, cellSize / 2, cellSize / 2]
         ];
+
+        // Add face-centered atoms to the scene
         faceCenters.forEach(pos => {
             const sphere = new THREE.Mesh(sphereGeometry, material);
             sphere.position.set(...pos);
             scene.add(sphere);
         });
 
-        // Set the camera position
-        camera.position.z = 5;
+        // Add a wireframe box to represent the unit cell
+        const boxGeometry = new THREE.BoxGeometry(cellSize, cellSize, cellSize);
+        const wireframe = new THREE.EdgesGeometry(boxGeometry);
+        const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
+        const boxLine = new THREE.LineSegments(wireframe, lineMaterial);
+        scene.add(boxLine);
 
-        // Render the scene
+        // Set initial camera position
+        camera.position.set(4, 4, 4);
+        camera.lookAt(scene.position);
+
+        // Animation loop
         function animate() {
             requestAnimationFrame(animate);
             controls.update();
