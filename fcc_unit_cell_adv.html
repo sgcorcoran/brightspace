@@ -50,13 +50,12 @@
         const initialRadius = cellSize / 7;
         const minRadius = cellSize / 10;
         const maxRadius = cellSize * Math.sqrt(2) / 4;
-        let radius = initialRadius;
         let spheres = [];
 
         const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, roughness: 0.5, metalness: 0.1 });
         const transparentMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, opacity: 0, transparent: true });
 
-        function createSphere(position) {
+        function createSphere(position, radius) {
             const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
             const sphere = new THREE.Mesh(sphereGeometry, material);
             sphere.position.set(...position);
@@ -85,7 +84,7 @@
             [cellSize / 2, cellSize / 2, cellSize], [cellSize / 2, cellSize, cellSize / 2], [cellSize, cellSize / 2, cellSize / 2]
         ];
 
-        function createAtoms() {
+        function createAtoms(radius) {
             // Clear existing spheres
             spheres.forEach(({ sphere, edge }) => {
                 scene.remove(sphere);
@@ -95,17 +94,17 @@
 
             // Add corner atoms to the scene
             corners.forEach(pos => {
-                createSphere(pos);
+                createSphere(pos, radius);
             });
 
             // Add face-centered atoms to the scene
             faceCenters.forEach(pos => {
-                createSphere(pos);
+                createSphere(pos, radius);
             });
         }
 
         // Initial atom creation
-        createAtoms();
+        createAtoms(initialRadius);
 
         // Add a wireframe box to represent the unit cell, centered at the unit cell center
         const boxGeometry = new THREE.BoxGeometry(cellSize, cellSize, cellSize);
@@ -146,24 +145,6 @@
 
         document.addEventListener('mousedown', onDocumentMouseDown, false);
 
-        // Update atom sizes without recreating them
-        function updateAtomSizes() {
-            spheres.forEach(({ sphere, edge, position, visible }) => {
-                const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
-                sphere.geometry.dispose(); // Dispose the old geometry
-                sphere.geometry = sphereGeometry;
-
-                const edgeGeometry = new THREE.SphereGeometry(radius, 32, 32);
-                edge.geometry.dispose(); // Dispose the old geometry
-                edge.geometry = edgeGeometry;
-
-                sphere.position.set(...position);
-                edge.position.set(...position);
-                sphere.visible = visible;
-                edge.visible = !visible;
-            });
-        }
-
         // Animation loop
         function animate() {
             requestAnimationFrame(animate);
@@ -181,8 +162,8 @@
 
         // Handle slider input to change atom size
         document.getElementById('radius-slider').addEventListener('input', function() {
-            radius = parseFloat(this.value);
-            updateAtomSizes();
+            const radius = parseFloat(this.value);
+            createAtoms(radius);
         });
     </script>
 
