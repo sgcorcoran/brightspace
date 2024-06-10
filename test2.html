@@ -23,8 +23,8 @@
 
     <script type="module">
         const cacheBuster = `?v=${new Date().getTime()}`;
-        import * as THREE from 'https://cdn.skypack.dev/three@0.132.2/build/three.module.js' + cacheBuster;
-        import { OrbitControls } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/controls/OrbitControls.js' + cacheBuster;
+        import * as THREE from `https://cdn.skypack.dev/three@0.132.2/build/three.module.js${cacheBuster}`;
+        import { OrbitControls } from `https://cdn.skypack.dev/three@0.132.2/examples/jsm/controls/OrbitControls.js${cacheBuster}`;
 
         // Scene setup
         const scene = new THREE.Scene();
