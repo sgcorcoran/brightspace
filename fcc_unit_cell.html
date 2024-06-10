@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D FCC Unit Cell</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        // Set up the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Add orbit controls to allow rotation
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        // Create the FCC unit cell
+        const cellSize = 2;
+        const radius = 0.2;
+        const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+
+        // Add corner atoms
+        const corners = [
+            [0, 0, 0], [cellSize, 0, 0], [0, cellSize, 0], [0, 0, cellSize],
+            [cellSize, cellSize, 0], [cellSize, 0, cellSize], [0, cellSize, cellSize], [cellSize, cellSize, cellSize]
+        ];
+        corners.forEach(pos => {
+            const sphere = new THREE.Mesh(sphereGeometry, material);
+            sphere.position.set(...pos);
+            scene.add(sphere);
+        });
+
+        // Add face-centered atoms
+        const faceCenters = [
+            [cellSize / 2, cellSize / 2, 0], [cellSize / 2, 0, cellSize / 2], [0, cellSize / 2, cellSize / 2],
+            [cellSize / 2, cellSize / 2, cellSize], [cellSize / 2, cellSize, cellSize / 2], [cellSize, cellSize / 2, cellSize / 2]
+        ];
+        faceCenters.forEach(pos => {
+            const sphere = new THREE.Mesh(sphereGeometry, material);
+            sphere.position.set(...pos);
+            scene.add(sphere);
+        });
+
+        // Set the camera position
+        camera.position.z = 5;
+
+        // Render the scene
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
