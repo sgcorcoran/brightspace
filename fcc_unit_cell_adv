@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D FCC Unit Cell</title>
+    <style>
+        body { margin: 0; display: flex; flex-direction: column; align-items: center; }
+        canvas { display: block; }
+        #slider-container { 
+            position: absolute; 
+            bottom: 20px; 
+            width: 100%; 
+            display: flex; 
+            justify-content: center; 
+            pointer-events: none; 
+        }
+        #radius-slider {
+            pointer-events: all;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Three.js and OrbitControls using module imports -->
+    <script type="module">
+        import * as THREE from 'https://cdn.skypack.dev/three@0.132.2/build/three.module.js';
+        import { OrbitControls } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/controls/OrbitControls.js';
+
+        // Initialize scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Add OrbitControls for rotation
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.target.set(1, 1, 1); // Set the target to the center of the unit cell
+
+        // Add a light source
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xffffff, 0.5);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        // FCC unit cell parameters
+        const cellSize = 2;
+        let radius = cellSize / 10;
+        const minRadius = cellSize / 10;
+        const maxRadius = cellSize * Math.sqrt(2) / 4;
+        let spheres = [];
+        let edges = [];
+        
+        const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, roughness: 0.5, metalness: 0.1 });
+        const edgeMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
+
+        function createSphere(position) {
+            const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
+            const sphere = new THREE.Mesh(sphereGeometry, material);
+            sphere.position.set(...position);
+            scene.add(sphere);
+
+            const edgeGeometry = new THREE.SphereGeometry(radius, 32, 32);
+            const edge = new THREE.Mesh(edgeGeometry, edgeMaterial);
+            edge.position.set(...position);
+            edge.visible = false; // Initially invisible
+            scene.add(edge);
+
+            spheres.push({ sphere, edge, visible: true });
+
+            return sphere;
+        }
+
+        // Corner atom positions
+        const corners = [
+            [0, 0, 0], [cellSize, 0, 0], [0, cellSize, 0], [0, 0, cellSize],
+            [cellSize, cellSize, 0], [cellSize, 0, cellSize], [0, cellSize, cellSize], [cellSize, cellSize, cellSize]
+        ];
+
+        // Face-centered atom positions
+        const faceCenters = [
+            [cellSize / 2, cellSize / 2, 0], [cellSize / 2, 0, cellSize / 2], [0, cellSize / 2, cellSize / 2],
+            [cellSize / 2, cellSize / 2, cellSize], [cellSize / 2, cellSize, cellSize / 2], [cellSize, cellSize / 2, cellSize / 2]
+        ];
+
+        function createAtoms() {
+            // Clear existing spheres
+            spheres.forEach(({ sphere, edge }) => {
+                scene.remove(sphere);
+                scene.remove(edge);
+            });
+            spheres = [];
+
+            // Add corner atoms to the scene
+            corners.forEach(pos => {
+                createSphere(pos);
+            });
+
+            // Add face-centered atoms to the scene
+            faceCenters.forEach(pos => {
+                createSphere(pos);
+            });
+        }
+
+        // Initial atom creation
+        createAtoms();
+
+        // Add a wireframe box to represent the unit cell, centered at the unit cell center
+        const boxGeometry = new THREE.BoxGeometry(cellSize, cellSize, cellSize);
+        const wireframe = new THREE.EdgesGeometry(boxGeometry);
+        const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
+        const boxLine = new THREE.LineSegments(wireframe, lineMaterial);
+        boxLine.position.set(cellSize / 2, cellSize / 2, cellSize / 2);
+        scene.add(boxLine);
+
+        // Set initial camera position
+        camera.position.set(4, 4, 4);
+        camera.lookAt(controls.target);
+
+        // Raycaster for detecting clicks
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
+
+        function onDocumentMouseDown(event) {
+            event.preventDefault();
+
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
+            raycaster.setFromCamera(mouse, camera);
+
+            const intersects = raycaster.intersectObjects(spheres.map(({ sphere }) => sphere));
+
+            if (intersects.length > 0) {
+                const intersected = intersects[0].object;
+                const sphereData = spheres.find(({ sphere }) => sphere === intersected);
+                if (sphereData) {
+                    sphereData.visible = !sphereData.visible;
+                    sphereData.sphere.visible = sphereData.visible;
+                    sphereData.edge.visible = !sphereData.visible;
+                }
+            }
+        }
+
+        document.addEventListener('mousedown', onDocumentMouseDown, false);
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Handle slider input to change atom size
+        document.getElementById('radius-slider').addEventListener('input', function() {
+            radius = parseFloat(this.value);
+            createAtoms();
+        });
+    </script>
+
+    <!-- Slider to control atom radius -->
+    <div id="slider-container">
+        <input type="range" id="radius-slider" min="0.2" max="0.707" step="0.01" value="0.2" style="width: 300px;">
+    </div>
+</body>
+</html>
