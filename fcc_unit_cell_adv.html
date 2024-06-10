@@ -67,7 +67,7 @@
             edge.visible = false; // Initially invisible
             scene.add(edge);
 
-            spheres.push({ sphere, edge, visible: true });
+            spheres.push({ sphere, edge, position, visible: true });
 
             return sphere;
         }
@@ -145,6 +145,24 @@
 
         document.addEventListener('mousedown', onDocumentMouseDown, false);
 
+        // Update atom sizes without recreating them
+        function updateAtomSizes() {
+            spheres.forEach(({ sphere, edge, position, visible }) => {
+                const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
+                sphere.geometry.dispose(); // Dispose the old geometry
+                sphere.geometry = sphereGeometry;
+
+                const edgeGeometry = new THREE.SphereGeometry(radius, 32, 32);
+                edge.geometry.dispose(); // Dispose the old geometry
+                edge.geometry = edgeGeometry;
+
+                sphere.position.set(...position);
+                edge.position.set(...position);
+                sphere.visible = visible;
+                edge.visible = !visible;
+            });
+        }
+
         // Animation loop
         function animate() {
             requestAnimationFrame(animate);
@@ -163,7 +181,7 @@
         // Handle slider input to change atom size
         document.getElementById('radius-slider').addEventListener('input', function() {
             radius = parseFloat(this.value);
-            createAtoms();
+            updateAtomSizes();
         });
     </script>
 
