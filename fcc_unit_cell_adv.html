@@ -51,10 +51,9 @@
         const minRadius = cellSize / 10;
         const maxRadius = cellSize * Math.sqrt(2) / 4;
         let spheres = [];
-        let edges = [];
-        
+
         const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, roughness: 0.5, metalness: 0.1 });
-        const edgeMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
+        const transparentMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, opacity: 0, transparent: true });
 
         function createSphere(position) {
             const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
@@ -63,7 +62,7 @@
             scene.add(sphere);
 
             const edgeGeometry = new THREE.SphereGeometry(radius, 32, 32);
-            const edge = new THREE.Mesh(edgeGeometry, edgeMaterial);
+            const edge = new THREE.Mesh(edgeGeometry, transparentMaterial);
             edge.position.set(...position);
             edge.visible = false; // Initially invisible
             scene.add(edge);
@@ -138,7 +137,7 @@
                 const sphereData = spheres.find(({ sphere }) => sphere === intersected);
                 if (sphereData) {
                     sphereData.visible = !sphereData.visible;
-                    sphereData.sphere.visible = sphereData.visible;
+                    sphereData.sphere.material = sphereData.visible ? material : transparentMaterial;
                     sphereData.edge.visible = !sphereData.visible;
                 }
             }
