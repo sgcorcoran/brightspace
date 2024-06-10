@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D FCC Unit Cell</title>
     <style>
-        body { margin: 0; display: flex; flex-direction: column; align-items: center; }
+        body { margin: 0; overflow: hidden; }
         canvas { display: block; }
-        #slider-container { 
-            position: absolute; 
-            bottom: 20px; 
-            width: 100%; 
-            display: flex; 
-            justify-content: center; 
-            pointer-events: none; 
+        #slider-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            pointer-events: none;
         }
         #radius-slider {
             pointer-events: all;
@@ -21,23 +21,25 @@
     </style>
 </head>
 <body>
-    <!-- Include Three.js and OrbitControls using module imports -->
+    <div id="slider-container">
+        <input type="range" id="radius-slider" min="0.2" max="0.707" step="0.01" value="0.2857" style="width: 300px;">
+    </div>
+
     <script type="module">
         import * as THREE from 'https://cdn.skypack.dev/three@0.132.2/build/three.module.js';
         import { OrbitControls } from 'https://cdn.skypack.dev/three@0.132.2/examples/jsm/controls/OrbitControls.js';
 
-        // Initialize scene, camera, and renderer
+        // Scene setup
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        // Add OrbitControls for rotation
         const controls = new OrbitControls(camera, renderer.domElement);
-        controls.target.set(1, 1, 1); // Set the target to the center of the unit cell
+        controls.target.set(1, 1, 1); // Center of the FCC unit cell
 
-        // Add a light source
+        // Light setup
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(ambientLight);
 
@@ -47,66 +49,40 @@
 
         // FCC unit cell parameters
         const cellSize = 2;
-        const initialRadius = cellSize / 7;
-        const minRadius = cellSize / 10;
-        const maxRadius = cellSize * Math.sqrt(2) / 4;
-        let spheres = [];
-
+        let radius = parseFloat(document.getElementById('radius-slider').value);
         const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, roughness: 0.5, metalness: 0.1 });
         const transparentMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, opacity: 0, transparent: true });
 
-        function createSphere(position, radius) {
-            const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
-            const sphere = new THREE.Mesh(sphereGeometry, material);
-            sphere.position.set(...position);
-            scene.add(sphere);
+        // Store spheres and their visibility state
+        let spheres = [];
 
-            const edgeGeometry = new THREE.SphereGeometry(radius, 32, 32);
-            const edge = new THREE.Mesh(edgeGeometry, transparentMaterial);
-            edge.position.set(...position);
-            edge.visible = false; // Initially invisible
-            scene.add(edge);
-
-            spheres.push({ sphere, edge, position, visible: true });
-
-            return sphere;
-        }
-
-        // Corner atom positions
-        const corners = [
+        // Positions of atoms in an FCC unit cell
+        const positions = [
             [0, 0, 0], [cellSize, 0, 0], [0, cellSize, 0], [0, 0, cellSize],
-            [cellSize, cellSize, 0], [cellSize, 0, cellSize], [0, cellSize, cellSize], [cellSize, cellSize, cellSize]
-        ];
-
-        // Face-centered atom positions
-        const faceCenters = [
+            [cellSize, cellSize, 0], [cellSize, 0, cellSize], [0, cellSize, cellSize], [cellSize, cellSize, cellSize],
             [cellSize / 2, cellSize / 2, 0], [cellSize / 2, 0, cellSize / 2], [0, cellSize / 2, cellSize / 2],
             [cellSize / 2, cellSize / 2, cellSize], [cellSize / 2, cellSize, cellSize / 2], [cellSize, cellSize / 2, cellSize / 2]
         ];
 
-        function createAtoms(radius) {
-            // Clear existing spheres
-            spheres.forEach(({ sphere, edge }) => {
-                scene.remove(sphere);
-                scene.remove(edge);
-            });
+        // Create atoms
+        function createAtoms() {
+            spheres.forEach(s => scene.remove(s.sphere));
             spheres = [];
 
-            // Add corner atoms to the scene
-            corners.forEach(pos => {
-                createSphere(pos, radius);
-            });
+            positions.forEach(position => {
+                const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
+                const sphere = new THREE.Mesh(sphereGeometry, material);
+                sphere.position.set(...position);
+                scene.add(sphere);
 
-            // Add face-centered atoms to the scene
-            faceCenters.forEach(pos => {
-                createSphere(pos, radius);
+                spheres.push({ sphere, position, visible: true });
             });
         }
 
-        // Initial atom creation
-        createAtoms(initialRadius);
+        // Initialize atoms
+        createAtoms();
 
-        // Add a wireframe box to represent the unit cell, centered at the unit cell center
+        // Add wireframe box to represent the unit cell
         const boxGeometry = new THREE.BoxGeometry(cellSize, cellSize, cellSize);
         const wireframe = new THREE.EdgesGeometry(boxGeometry);
         const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
@@ -114,7 +90,7 @@
         boxLine.position.set(cellSize / 2, cellSize / 2, cellSize / 2);
         scene.add(boxLine);
 
-        // Set initial camera position
+        // Set camera position
         camera.position.set(4, 4, 4);
         camera.lookAt(controls.target);
 
@@ -130,28 +106,19 @@
 
             raycaster.setFromCamera(mouse, camera);
 
-            const intersects = raycaster.intersectObjects(spheres.map(({ sphere }) => sphere));
+            const intersects = raycaster.intersectObjects(spheres.map(s => s.sphere));
 
             if (intersects.length > 0) {
                 const intersected = intersects[0].object;
-                const sphereData = spheres.find(({ sphere }) => sphere === intersected);
+                const sphereData = spheres.find(s => s.sphere === intersected);
                 if (sphereData) {
                     sphereData.visible = !sphereData.visible;
                     sphereData.sphere.material = sphereData.visible ? material : transparentMaterial;
-                    sphereData.edge.visible = !sphereData.visible;
                 }
             }
         }
 
         document.addEventListener('mousedown', onDocumentMouseDown, false);
-
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-            controls.update();
-            renderer.render(scene, camera);
-        }
-        animate();
 
         // Handle window resize
         window.addEventListener('resize', () => {
@@ -162,14 +129,17 @@
 
         // Handle slider input to change atom size
         document.getElementById('radius-slider').addEventListener('input', function() {
-            const radius = parseFloat(this.value);
-            createAtoms(radius);
+            radius = parseFloat(this.value);
+            createAtoms();
         });
-    </script>
 
-    <!-- Slider to control atom radius -->
-    <div id="slider-container">
-        <input type="range" id="radius-slider" min="0.2" max="0.707" step="0.01" value="0.2857" style="width: 300px;">
-    </div>
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
 </body>
 </html>
