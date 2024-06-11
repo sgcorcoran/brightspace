@@ -63,12 +63,8 @@
     }
 
     // Function to create a quarter disk at a given position
-    function createQuarterDisk(x, y, z, radius, color, normal1, normal2) {
-      const arcCurve = new THREE.Shape();
-      arcCurve.moveTo(0, 0);
-      arcCurve.absarc(0, 0, radius, 0, Math.PI / 2, false);
-
-      const geometry = new THREE.ShapeGeometry(arcCurve);
+    function createQuarterDisk(x, y, z, radius, color, normal) {
+      const geometry = new THREE.CircleGeometry(radius, 32, 0, Math.PI / 2);
       const material = new THREE.MeshPhongMaterial({
         color: color,
         shininess: 50,
@@ -78,17 +74,18 @@
       const disk = new THREE.Mesh(geometry, material);
       disk.position.set(x, y, z);
 
-      if (normal1.x === 1) {
+      // Rotate the disk to align with the clipping planes
+      if (normal.x === 1) {
         disk.rotation.y = Math.PI / 2;
-      } else if (normal1.x === -1) {
+      } else if (normal.x === -1) {
         disk.rotation.y = -Math.PI / 2;
-      } else if (normal1.y === 1) {
+      } else if (normal.y === 1) {
         disk.rotation.x = -Math.PI / 2;
-      } else if (normal1.y === -1) {
+      } else if (normal.y === -1) {
         disk.rotation.x = Math.PI / 2;
-      } else if (normal1.z === 1) {
+      } else if (normal.z === 1) {
         disk.rotation.x = Math.PI;
-      } else if (normal1.z === -1) {
+      } else if (normal.z === -1) {
         disk.rotation.x = 0;
       }
 
@@ -106,9 +103,14 @@
     scene.add(sphere);
 
     // Create quarter disks to simulate solid atoms at the clipped positions for the origin atom
-    const qDisk1 = createQuarterDisk(position[0], position[1] + radius, position[2] + radius, radius, 0xffff00, new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 0, 1));
-    const qDisk2 = createQuarterDisk(position[0] + radius, position[1], position[2] + radius, radius, 0xffff00, new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 1));
-    const qDisk3 = createQuarterDisk(position[0] + radius, position[1] + radius, position[2], radius, 0xffff00, new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0));
+    const qDisk1 = createQuarterDisk(position[0], position[1], position[2], radius, 0xffff00, new THREE.Vector3(0, 1, 0));
+    const qDisk2 = createQuarterDisk(position[0], position[1], position[2], radius, 0xffff00, new THREE.Vector3(1, 0, 0));
+    const qDisk3 = createQuarterDisk(position[0], position[1], position[2], radius, 0xffff00, new THREE.Vector3(0, 0, 1));
+
+    // Translate the quarter disks to their correct positions
+    qDisk1.position.set(radius, radius, 0);
+    qDisk2.position.set(radius, 0, radius);
+    qDisk3.position.set(0, radius, radius);
 
     scene.add(qDisk1);
     scene.add(qDisk2);
