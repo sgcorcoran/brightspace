@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Sphere Animation</title>
+  <style>
+    body { margin: 0; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script>
+    // Set up the scene, camera, and renderer
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Add lights for better 3D shading
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+    directionalLight.position.set(1, 1, 1).normalize();
+    scene.add(directionalLight);
+
+    // Add orbit controls
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+    // Add coordinate system
+    const axesHelper = new THREE.AxesHelper(3);
+    scene.add(axesHelper);
+
+    // Function to create a partial sphere
+    function createPartialSphere(x, y, z, radius, color, clippingPlanes) {
+      const geometry = new THREE.SphereGeometry(radius, 32, 32);
+      const material = new THREE.MeshPhongMaterial({ color: color, shininess: 50, side: THREE.DoubleSide, clippingPlanes: clippingPlanes });
+      const sphere = new THREE.Mesh(geometry, material);
+      sphere.position.set(x, y, z);
+      return sphere;
+    }
+
+    // Define clipping planes
+    const clippingPlanes = [
+      new THREE.Plane(new THREE.Vector3(1, 0, 0), 0),
+      new THREE.Plane(new THREE.Vector3(-1, 0, 0), -1),
+      new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
+      new THREE.Plane(new THREE.Vector3(0, -1, 0), -1),
+      new THREE.Plane(new THREE.Vector3(0, 0, 1), 0),
+      new THREE.Plane(new THREE.Vector3(0, 0, -1), -1)
+    ];
+
+    // Function to create the cell structure
+    function createCell() {
+      const cell = new THREE.Group();
+      const radius = Math.sqrt(3) / 4;
+      const yellowSpheres = [
+        createPartialSphere(1, 1, 1, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(1, 1, 0, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(1, 0, 0, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(0, 1, 1, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(0, 1, 0, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(0, 0, 1, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(0, 0, 0, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(0.5, 0.5, 0.5, radius, 0xffff00, clippingPlanes)
+      ];
+      yellowSpheres.forEach(sphere => cell.add(sphere));
+
+      const redSphere = createPartialSphere(1, 0, 1, radius, 0xff0000, clippingPlanes);
+      cell.add(redSphere);
+
+      return cell;
+    }
+
+    const cell = createCell();
+
+    // Add the cell to the scene
+    scene.add(cell);
+
+    // Set camera position
+    camera.position.z = 5;
+
+    // Animation loop
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    animate();
+  </script>
+</body>
+</html>
 
