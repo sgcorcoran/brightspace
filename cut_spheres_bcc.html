@@ -62,8 +62,8 @@
       return sphere;
     }
 
-    // Function to create a quarter disk at a given position
-    function createQuarterDisk(radius, color, rotation) {
+    // Function to create a quarter disk
+    function createQuarterDisk(radius, color) {
       const geometry = new THREE.CircleGeometry(radius, 32, 0, Math.PI / 2);
       const material = new THREE.MeshPhongMaterial({
         color: color,
@@ -72,34 +72,30 @@
       });
 
       const disk = new THREE.Mesh(geometry, material);
-      disk.rotation.set(rotation.x, rotation.y, rotation.z);
       return disk;
     }
 
     // Function to create the grouped object
     function createGroupedObject(radius, color) {
-      const group = new THREE.Object3D();
+      const group = new THREE.Group();
 
-      // Create sub-groups for the sphere and the disks
-      const sphereGroup = new THREE.Object3D();
-      const diskGroup = new THREE.Object3D();
-
-      // Add the sphere to the sphere group
+      // Add the sphere to the group
       const sphere = createClippedSphere(radius, color);
-      sphereGroup.add(sphere);
+      group.add(sphere);
 
-      // Create and add quarter disks to the disk group
-      const qDisk1 = createQuarterDisk(radius, color, new THREE.Euler(0, 0, 0));
-      const qDisk2 = createQuarterDisk(radius, color, new THREE.Euler(0, -Math.PI / 2, 0));
-      const qDisk3 = createQuarterDisk(radius, color, new THREE.Euler(Math.PI / 2, 0, 0));
+      // Create and add quarter disks to the group
+      const qDisk1 = createQuarterDisk(radius, color);
+      const qDisk2 = createQuarterDisk(radius, color);
+      const qDisk3 = createQuarterDisk(radius, color);
 
-      diskGroup.add(qDisk1);
-      diskGroup.add(qDisk2);
-      diskGroup.add(qDisk3);
+      // Apply local rotations to the quarter disks
+      qDisk1.position.set(0, 0, 0);
+      qDisk2.rotateY(-Math.PI / 2);
+      qDisk3.rotateX(Math.PI / 2);
 
-      // Add the sub-groups to the main group
-      group.add(sphereGroup);
-      group.add(diskGroup);
+      group.add(qDisk1);
+      group.add(qDisk2);
+      group.add(qDisk3);
 
       return group;
     }
@@ -127,7 +123,7 @@
 
     // Clone the base group, position, and rotate accordingly
     positions.forEach((pos, index) => {
-      const group = baseGroup.clone(true);  // Deep clone to include children
+      const group = baseGroup.clone();  // Clone the group
       group.position.set(pos[0], pos[1], pos[2]);
       group.rotation.set(rotations[index][0], rotations[index][1], rotations[index][2]);
       scene.add(group);
