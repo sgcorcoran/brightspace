@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solid Clipped Sphere with CSG</title>
+  <title>Clipped Sphere</title>
   <style>
     body { margin: 0; }
     canvas { display: block; }
@@ -12,7 +12,6 @@
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three-csgmesh@1.0.1/build/three-csgmesh.min.js"></script>
   <script>
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
@@ -35,26 +34,35 @@
     const axesHelper = new THREE.AxesHelper(3);
     scene.add(axesHelper);
 
-    // Function to create a CSG solid sphere
-    function createSolidSphere(radius, color) {
-      // Create the main sphere
-      const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
-      const sphereMaterial = new THREE.MeshPhongMaterial({ color: color, shininess: 50 });
-      const sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    // Define clipping planes for the positive faces at position 0
+    const clippingPlanes = [
+      new THREE.Plane(new THREE.Vector3(1, 0, 0), 0),
+      new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
+      new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
+    ];
 
-      // Convert the mesh to a CSG object
-      const sphereCSG = CSG.fromMesh(sphereMesh);
+    // Enable local clipping for the renderer
+    renderer.localClippingEnabled = true;
 
-      // Convert the CSG object back to a Three.js mesh
-      const solidMesh = CSG.toMesh(sphereCSG, sphereMesh.matrix, sphereMaterial);
-
-      return solidMesh;
+    // Function to create a sphere with clipping and shading
+    function createClippedSphere(x, y, z, radius, color) {
+      const geometry = new THREE.SphereGeometry(radius, 32, 32);
+      const material = new THREE.MeshPhongMaterial({
+        color: color,
+        shininess: 50,
+        side: THREE.DoubleSide,
+        clippingPlanes: clippingPlanes,
+        clipShadows: true
+      });
+      const sphere = new THREE.Mesh(geometry, material);
+      sphere.position.set(x, y, z);
+      return sphere;
     }
 
-    // Create and add the solid sphere
+    // Create and add a single clipped sphere
     const radius = Math.sqrt(3) / 4;
-    const solidSphere = createSolidSphere(radius, 0xffff00);
-    scene.add(solidSphere);
+    const sphere = createClippedSphere(0, 0, 0, radius, 0xffff00);
+    scene.add(sphere);
 
     // Set camera position
     camera.position.z = 5;
