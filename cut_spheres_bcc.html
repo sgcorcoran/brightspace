@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clipped Sphere</title>
+  <title>Clipped Spheres</title>
   <style>
     body { margin: 0; }
     canvas { display: block; }
@@ -59,10 +59,26 @@
       return sphere;
     }
 
-    // Create and add a single clipped sphere
+    // Define the radius of the spheres
     const radius = Math.sqrt(3) / 4;
-    const sphere = createClippedSphere(0, 0, 0, radius, 0xffff00);
-    scene.add(sphere);
+
+    // Positions of the 8 corners of the cube
+    const positions = [
+      [0, 0, 0],
+      [1, 0, 0],
+      [0, 1, 0],
+      [0, 0, 1],
+      [1, 1, 0],
+      [1, 0, 1],
+      [0, 1, 1],
+      [1, 1, 1]
+    ];
+
+    // Add spheres to the corners of the cube
+    positions.forEach(pos => {
+      const sphere = createClippedSphere(pos[0], pos[1], pos[2], radius, 0xffff00);
+      scene.add(sphere);
+    });
 
     // Set camera position
     camera.position.z = 5;
