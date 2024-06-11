@@ -42,10 +42,14 @@
     // Add orbit controls
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-    // Function to create a sphere with gradient shading
-    function createSphere(x, y, z, radius, color) {
+    // Add coordinate system
+    const axesHelper = new THREE.AxesHelper(3);
+    scene.add(axesHelper);
+
+    // Function to create a partial sphere
+    function createPartialSphere(x, y, z, radius, color, clippingPlanes) {
       const geometry = new THREE.SphereGeometry(radius, 32, 32);
-      const material = new THREE.MeshPhongMaterial({ color: color, shininess: 50 });
+      const material = new THREE.MeshPhongMaterial({ color: color, shininess: 50, side: THREE.DoubleSide, clippingPlanes: clippingPlanes });
       const sphere = new THREE.Mesh(geometry, material);
       sphere.position.set(x, y, z);
       return sphere;
@@ -55,19 +59,24 @@
     function createCell() {
       const cell = new THREE.Group();
       const radius = Math.sqrt(3) / 4;
+      const clippingPlanes = [
+        new THREE.Plane(new THREE.Vector3(1, 0, 0), 0),
+        new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
+        new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
+      ];
       const yellowSpheres = [
-        createSphere(1, 1, 1, radius, 0xffff00),
-        createSphere(1, 1, 0, radius, 0xffff00),
-        createSphere(1, 0, 0, radius, 0xffff00),
-        createSphere(0, 1, 1, radius, 0xffff00),
-        createSphere(0, 1, 0, radius, 0xffff00),
-        createSphere(0, 0, 1, radius, 0xffff00),
-        createSphere(0, 0, 0, radius, 0xffff00),
-        createSphere(0.5, 0.5, 0.5, radius, 0xffff00)
+        createPartialSphere(1, 1, 1, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(1, 1, 0, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(1, 0, 0, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(0, 1, 1, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(0, 1, 0, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(0, 0, 1, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(0, 0, 0, radius, 0xffff00, clippingPlanes),
+        createPartialSphere(0.5, 0.5, 0.5, radius, 0xffff00, clippingPlanes)
       ];
       yellowSpheres.forEach(sphere => cell.add(sphere));
 
-      const redSphere = createSphere(1, 0, 1, radius, 0xff0000);
+      const redSphere = createPartialSphere(1, 0, 1, radius, 0xff0000, clippingPlanes);
       cell.add(redSphere);
 
       return cell;
