@@ -34,11 +34,11 @@
     const axesHelper = new THREE.AxesHelper(3);
     scene.add(axesHelper);
 
-    // Define clipping planes for the positive faces at position 1
+    // Define clipping planes for the positive faces at position 0
     const clippingPlanes = [
-      new THREE.Plane(new THREE.Vector3(1, 0, 0), -1),
-      new THREE.Plane(new THREE.Vector3(0, 1, 0), -1),
-      new THREE.Plane(new THREE.Vector3(0, 0, 1), -1)
+      new THREE.Plane(new THREE.Vector3(1, 0, 0), 0),
+      new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
+      new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
     ];
 
     // Function to create a sphere with clipping and shading
