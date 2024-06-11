@@ -28,23 +28,45 @@
       return sphere;
     }
 
-    // Create the spheres
-    const yellowSpheres = [
-      createSphere(1, 1, 1, Math.sqrt(3) / 4, 0xffff00),
-      createSphere(1, 1, 0, Math.sqrt(3) / 4, 0xffff00),
-      createSphere(1, 0, 0, Math.sqrt(3) / 4, 0xffff00),
-      createSphere(0, 1, 1, Math.sqrt(3) / 4, 0xffff00),
-      createSphere(0, 1, 0, Math.sqrt(3) / 4, 0xffff00),
-      createSphere(0, 0, 1, Math.sqrt(3) / 4, 0xffff00),
-      createSphere(0, 0, 0, Math.sqrt(3) / 4, 0xffff00),
-      createSphere(0.5, 0.5, 0.5, Math.sqrt(3) / 4, 0xffff00)
-    ];
+    // Function to create the cell structure
+    function createCell(color) {
+      const cell = new THREE.Group();
+      const spheres = [
+        createSphere(1, 1, 1, Math.sqrt(3) / 4, color),
+        createSphere(1, 1, 0, Math.sqrt(3) / 4, color),
+        createSphere(1, 0, 0, Math.sqrt(3) / 4, color),
+        createSphere(0, 1, 1, Math.sqrt(3) / 4, color),
+        createSphere(0, 1, 0, Math.sqrt(3) / 4, color),
+        createSphere(0, 0, 1, Math.sqrt(3) / 4, color),
+        createSphere(0, 0, 0, Math.sqrt(3) / 4, color),
+        createSphere(0.5, 0.5, 0.5, Math.sqrt(3) / 4, color)
+      ];
+      spheres.forEach(sphere => cell.add(sphere));
+      return cell;
+    }
 
+    const yellowCell = createCell(0xffff00);
     const redSphere = createSphere(1, 0, 1, Math.sqrt(3) / 4, 0xff0000);
+    yellowCell.add(redSphere);
 
-    // Add the spheres to the scene
-    yellowSpheres.forEach(sphere => scene.add(sphere));
-    scene.add(redSphere);
+    // Create the cells
+    const cells = [];
+    for (let i = 0; i < 5; i++) {
+      cells.push(yellowCell.clone());
+    }
+
+    // Add the cells to the scene with initial positions and rotations
+    cells[0].position.set(-0.25, 0.25, 0);
+    cells[1].position.set(0.75, -0.75, 0);
+    cells[1].rotation.z = Math.PI / 2;
+    cells[2].position.set(1.75, -0.25, 0);
+    cells[2].rotation.z = Math.PI;
+    cells[3].position.set(0.75, 1.25, 0);
+    cells[3].rotation.z = 3 * Math.PI / 2;
+    cells[4].position.set(-0.25, 0.25, 1);
+    cells[4].rotation.x = Math.PI / 2;
+
+    cells.forEach(cell => scene.add(cell));
 
     // Set camera position
     camera.position.z = 5;
@@ -54,19 +76,25 @@
     function animate() {
       requestAnimationFrame(animate);
 
-      // Rotate and shift spheres
-      yellowSpheres.forEach(sphere => {
-        sphere.position.x -= shift;
-        sphere.position.y += shift;
-      });
-      redSphere.position.x -= shift;
-      redSphere.position.y += shift;
+      cells[0].position.x = -shift;
+      cells[0].position.y = shift;
 
-      // Render the scene
+      cells[1].position.x = 1 - shift;
+      cells[1].position.y = -1 - shift;
+
+      cells[2].position.x = 2 + shift;
+      cells[2].position.y = -shift;
+
+      cells[3].position.x = 1 + shift;
+      cells[3].position.y = 1 + shift;
+
+      cells[4].position.x = -shift;
+      cells[4].position.y = shift;
+      cells[4].position.z = 1 + shift;
+
       renderer.render(scene, camera);
 
-      // Update shift value
-      shift -= 0.05;
+      shift -= 0.01;
       if (shift <= 0) {
         shift = 0.25;
       }
