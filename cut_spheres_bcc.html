@@ -119,7 +119,7 @@
 
     // Clone the base group, position, and rotate accordingly
     positions.forEach((pos, index) => {
-      const group = baseGroup.clone();
+      const group = baseGroup.clone(true);
       group.position.set(pos[0], pos[1], pos[2]);
       group.rotation.set(rotations[index][0], rotations[index][1], rotations[index][2]);
       scene.add(group);
