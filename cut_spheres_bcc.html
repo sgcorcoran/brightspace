@@ -35,45 +35,26 @@
     const axesHelper = new THREE.AxesHelper(3);
     scene.add(axesHelper);
 
-    // Function to create a CSG solid sphere clipped by three planes
-    function createClippedSolidSphere(radius, color) {
+    // Function to create a CSG solid sphere
+    function createSolidSphere(radius, color) {
       // Create the main sphere
       const sphereGeometry = new THREE.SphereGeometry(radius, 32, 32);
       const sphereMaterial = new THREE.MeshPhongMaterial({ color: color, shininess: 50 });
       const sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
 
-      // Create the clipping planes as boxes
-      const planeMaterial = new THREE.MeshPhongMaterial({ color: 0x000000, shininess: 50, opacity: 0.0, transparent: true });
-      const boxSize = radius * 2;
-      
-      const boxX = new THREE.Mesh(new THREE.BoxGeometry(boxSize, boxSize, boxSize), planeMaterial);
-      boxX.position.set(radius, 0, 0);
-
-      const boxY = new THREE.Mesh(new THREE.BoxGeometry(boxSize, boxSize, boxSize), planeMaterial);
-      boxY.position.set(0, radius, 0);
-
-      const boxZ = new THREE.Mesh(new THREE.BoxGeometry(boxSize, boxSize, boxSize), planeMaterial);
-      boxZ.position.set(0, 0, radius);
-
-      // Convert meshes to CSG objects
+      // Convert the mesh to a CSG object
       const sphereCSG = CSG.fromMesh(sphereMesh);
-      const boxXCSG = CSG.fromMesh(boxX);
-      const boxYCSG = CSG.fromMesh(boxY);
-      const boxZCSG = CSG.fromMesh(boxZ);
-
-      // Perform the CSG subtraction
-      const clippedCSG = sphereCSG.subtract(boxXCSG).subtract(boxYCSG).subtract(boxZCSG);
 
       // Convert the CSG object back to a Three.js mesh
-      const clippedMesh = CSG.toMesh(clippedCSG, sphereMesh.matrix, sphereMaterial);
+      const solidMesh = CSG.toMesh(sphereCSG, sphereMesh.matrix, sphereMaterial);
 
-      return clippedMesh;
+      return solidMesh;
     }
 
-    // Create and add the clipped solid sphere
+    // Create and add the solid sphere
     const radius = Math.sqrt(3) / 4;
-    const clippedSphere = createClippedSolidSphere(radius, 0xffff00);
-    scene.add(clippedSphere);
+    const solidSphere = createSolidSphere(radius, 0xffff00);
+    scene.add(solidSphere);
 
     // Set camera position
     camera.position.z = 5;
