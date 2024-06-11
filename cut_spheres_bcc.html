@@ -99,7 +99,10 @@
     // Define the radius of the spheres
     const radius = Math.sqrt(3) / 4;
 
-    // Create and position the groups
+    // Create the base group object once
+    const baseGroup = createGroupedObject(radius, 0xffff00);
+
+    // Define positions and rotations for the four corners
     const positions = [
       [0, 0, 0],
       [1, 0, 0],
@@ -109,13 +112,14 @@
 
     const rotations = [
       [0, 0, 0],
-      [0, 0, 0],
-      [0, 0, 0],
-      [0, 0, 0]
+      [0, 0, Math.PI / 2],
+      [0, -Math.PI / 2, 0],
+      [Math.PI / 2, 0, 0]
     ];
 
+    // Clone the base group, position, and rotate accordingly
     positions.forEach((pos, index) => {
-      const group = createGroupedObject(radius, 0xffff00);
+      const group = baseGroup.clone();
       group.position.set(pos[0], pos[1], pos[2]);
       group.rotation.set(rotations[index][0], rotations[index][1], rotations[index][2]);
       scene.add(group);
