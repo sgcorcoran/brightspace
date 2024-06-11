@@ -12,7 +12,7 @@
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three-csgmesh@1.0.1/build/three-csgmesh.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three-csgmesh@1.0.1/build/three-csgmesh.min.js"></script>
   <script>
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
@@ -56,16 +56,16 @@
       boxZ.position.set(0, 0, radius);
 
       // Convert meshes to CSG objects
-      const sphereCSG = THREE.CSG.fromMesh(sphereMesh);
-      const boxXCSG = THREE.CSG.fromMesh(boxX);
-      const boxYCSG = THREE.CSG.fromMesh(boxY);
-      const boxZCSG = THREE.CSG.fromMesh(boxZ);
+      const sphereCSG = CSG.fromMesh(sphereMesh);
+      const boxXCSG = CSG.fromMesh(boxX);
+      const boxYCSG = CSG.fromMesh(boxY);
+      const boxZCSG = CSG.fromMesh(boxZ);
 
       // Perform the CSG subtraction
       const clippedCSG = sphereCSG.subtract(boxXCSG).subtract(boxYCSG).subtract(boxZCSG);
 
       // Convert the CSG object back to a Three.js mesh
-      const clippedMesh = THREE.CSG.toMesh(clippedCSG, sphereMesh.matrix, sphereMaterial);
+      const clippedMesh = CSG.toMesh(clippedCSG, sphereMesh.matrix, sphereMaterial);
 
       return clippedMesh;
     }
