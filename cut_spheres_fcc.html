@@ -29,30 +29,33 @@
     }
 
     // Function to create the cell structure
-    function createCell(color) {
+    function createCell() {
       const cell = new THREE.Group();
-      const spheres = [
-        createSphere(1, 1, 1, Math.sqrt(3) / 4, color),
-        createSphere(1, 1, 0, Math.sqrt(3) / 4, color),
-        createSphere(1, 0, 0, Math.sqrt(3) / 4, color),
-        createSphere(0, 1, 1, Math.sqrt(3) / 4, color),
-        createSphere(0, 1, 0, Math.sqrt(3) / 4, color),
-        createSphere(0, 0, 1, Math.sqrt(3) / 4, color),
-        createSphere(0, 0, 0, Math.sqrt(3) / 4, color),
-        createSphere(0.5, 0.5, 0.5, Math.sqrt(3) / 4, color)
+      const radius = Math.sqrt(3) / 4;
+      const yellowSpheres = [
+        createSphere(1, 1, 1, radius, 0xffff00),
+        createSphere(1, 1, 0, radius, 0xffff00),
+        createSphere(1, 0, 0, radius, 0xffff00),
+        createSphere(0, 1, 1, radius, 0xffff00),
+        createSphere(0, 1, 0, radius, 0xffff00),
+        createSphere(0, 0, 1, radius, 0xffff00),
+        createSphere(0, 0, 0, radius, 0xffff00),
+        createSphere(0.5, 0.5, 0.5, radius, 0xffff00)
       ];
-      spheres.forEach(sphere => cell.add(sphere));
+      yellowSpheres.forEach(sphere => cell.add(sphere));
+
+      const redSphere = createSphere(1, 0, 1, radius, 0xff0000);
+      cell.add(redSphere);
+
       return cell;
     }
 
-    const yellowCell = createCell(0xffff00);
-    const redSphere = createSphere(1, 0, 1, Math.sqrt(3) / 4, 0xff0000);
-    yellowCell.add(redSphere);
+    const cell = createCell();
 
     // Create the cells
     const cells = [];
     for (let i = 0; i < 5; i++) {
-      cells.push(yellowCell.clone());
+      cells.push(cell.clone());
     }
 
     // Add the cells to the scene with initial positions and rotations
@@ -76,6 +79,7 @@
     function animate() {
       requestAnimationFrame(animate);
 
+      // Update cell positions based on shift
       cells[0].position.x = -shift;
       cells[0].position.y = shift;
 
@@ -94,7 +98,7 @@
 
       renderer.render(scene, camera);
 
-      shift -= 0.01;
+      shift -= 0.05;
       if (shift <= 0) {
         shift = 0.25;
       }
