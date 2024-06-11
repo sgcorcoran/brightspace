@@ -63,7 +63,7 @@
     }
 
     // Function to create a quarter disk at a given position
-    function createQuarterDisk(x, y, z, radius, color, normal) {
+    function createQuarterDisk(radius, color, rotation) {
       const geometry = new THREE.CircleGeometry(radius, 32, 0, Math.PI / 2);
       const material = new THREE.MeshPhongMaterial({
         color: color,
@@ -72,23 +72,7 @@
       });
 
       const disk = new THREE.Mesh(geometry, material);
-      disk.position.set(x, y, z);
-
-      // Rotate the disk to align with the clipping planes
-      if (normal.x === 1) {
-        disk.rotation.y = Math.PI / 2;
-      } else if (normal.x === -1) {
-        disk.rotation.y = -Math.PI / 2;
-      } else if (normal.y === 1) {
-        disk.rotation.x = -Math.PI / 2;
-      } else if (normal.y === -1) {
-        disk.rotation.x = Math.PI / 2;
-      } else if (normal.z === 1) {
-        disk.rotation.x = Math.PI;
-      } else if (normal.z === -1) {
-        disk.rotation.x = 0;
-      }
-
+      disk.rotation.set(rotation.x, rotation.y, rotation.z);
       return disk;
     }
 
@@ -103,13 +87,11 @@
     scene.add(sphere);
 
     // Create quarter disks to simulate solid atoms at the clipped positions for the origin atom
-    const qDisk1 = createQuarterDisk(position[0], position[1], position[2], radius, 0xffff00, new THREE.Vector3(0, 1, 0));
-    const qDisk2 = createQuarterDisk(position[0], position[1], position[2], radius, 0xffff00, new THREE.Vector3(1, 0, 0));
-    const qDisk3 = createQuarterDisk(position[0], position[1], position[2], radius, 0xffff00, new THREE.Vector3(0, 0, 1));
-
-    // Translate the quarter disks to their correct positions
+    const qDisk1 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(0, 0, 0));
     qDisk1.position.set(radius, radius, 0);
+    const qDisk2 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(0, Math.PI / 2, 0));
     qDisk2.position.set(radius, 0, radius);
+    const qDisk3 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(Math.PI / 2, 0, 0));
     qDisk3.position.set(0, radius, radius);
 
     scene.add(qDisk1);
