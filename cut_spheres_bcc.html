@@ -80,18 +80,26 @@
     function createGroupedObject(radius, color) {
       const group = new THREE.Group();
 
-      // Add the sphere to the group
-      const sphere = createClippedSphere(radius, color);
-      group.add(sphere);
+      // Create sub-groups for the sphere and the disks
+      const sphereGroup = new THREE.Group();
+      const diskGroup = new THREE.Group();
 
-      // Create and add quarter disks to the group
+      // Add the sphere to the sphere group
+      const sphere = createClippedSphere(radius, color);
+      sphereGroup.add(sphere);
+
+      // Create and add quarter disks to the disk group
       const qDisk1 = createQuarterDisk(radius, color, new THREE.Euler(0, 0, 0));
       const qDisk2 = createQuarterDisk(radius, color, new THREE.Euler(0, -Math.PI / 2, 0));
       const qDisk3 = createQuarterDisk(radius, color, new THREE.Euler(Math.PI / 2, 0, 0));
 
-      group.add(qDisk1);
-      group.add(qDisk2);
-      group.add(qDisk3);
+      diskGroup.add(qDisk1);
+      diskGroup.add(qDisk2);
+      diskGroup.add(qDisk3);
+
+      // Add the sub-groups to the main group
+      group.add(sphereGroup);
+      group.add(diskGroup);
 
       return group;
     }
@@ -119,7 +127,7 @@
 
     // Clone the base group, position, and rotate accordingly
     positions.forEach((pos, index) => {
-      const group = baseGroup.clone(true);
+      const group = baseGroup.clone(true);  // Deep clone to include children
       group.position.set(pos[0], pos[1], pos[2]);
       group.rotation.set(rotations[index][0], rotations[index][1], rotations[index][2]);
       scene.add(group);
