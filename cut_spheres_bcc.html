@@ -49,7 +49,7 @@
     renderer.localClippingEnabled = true;
 
     // Function to create a sphere with clipping and shading
-    function createClippedSphere(x, y, z, radius, color) {
+    function createClippedSphere(radius, color) {
       const geometry = new THREE.SphereGeometry(radius, 32, 32);
       const material = new THREE.MeshPhongMaterial({
         color: color,
@@ -59,7 +59,6 @@
         clipShadows: true
       });
       const sphere = new THREE.Mesh(geometry, material);
-      sphere.position.set(x, y, z);
       return sphere;
     }
 
@@ -80,24 +79,27 @@
     // Define the radius of the spheres
     const radius = Math.sqrt(3) / 4;
 
-    // Position of the atom at the origin
-    const position = [0, 0, 0];
+    // Create a group to hold the sphere and quarter disks
+    const group = new THREE.Group();
 
-    // Add the sphere at the origin
-    const sphere = createClippedSphere(position[0], position[1], position[2], radius, 0xffff00);
-    scene.add(sphere);
+    // Add the sphere to the group
+    const sphere = createClippedSphere(radius, 0xffff00);
+    group.add(sphere);
 
-    // Create quarter disks to simulate solid atoms at the clipped positions for the origin atom
+    // Create and add quarter disks to the group
     const qDisk1 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(0, 0, 0));
-    qDisk1.position.set(0, 0, 0);
     const qDisk2 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(0, -Math.PI / 2, 0));
-    qDisk2.position.set(0, 0, 0);
     const qDisk3 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(Math.PI / 2, 0, 0));
-    qDisk3.position.set(0, 0, 0);
 
-    scene.add(qDisk1);
-    scene.add(qDisk2);
-    scene.add(qDisk3);
+    group.add(qDisk1);
+    group.add(qDisk2);
+    group.add(qDisk3);
+
+    // Position the group at the origin
+    group.position.set(0, 0, 0);
+
+    // Add the group to the scene
+    scene.add(group);
 
     // Function to create axis labels
     function createAxisLabel(text, position) {
