@@ -34,11 +34,14 @@
     const axesHelper = new THREE.AxesHelper(3);
     scene.add(axesHelper);
 
-    // Define clipping planes for the positive faces at position 0
+    // Define clipping planes for the positive faces at position 0 and 1
     const clippingPlanes = [
       new THREE.Plane(new THREE.Vector3(1, 0, 0), 0),
       new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
-      new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
+      new THREE.Plane(new THREE.Vector3(0, 0, 1), 0),
+      new THREE.Plane(new THREE.Vector3(-1, 0, 0), 1),
+      new THREE.Plane(new THREE.Vector3(0, -1, 0), 1),
+      new THREE.Plane(new THREE.Vector3(0, 0, -1), 1)
     ];
 
     // Enable local clipping for the renderer
