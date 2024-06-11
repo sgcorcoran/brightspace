@@ -60,7 +60,7 @@
     }
 
     // Function to create planes to cover clipped areas
-    function createClippingPlanes(x, y, z, size, color) {
+    function createClippingPlanes(size, color) {
       const planeMaterial = new THREE.MeshPhongMaterial({
         color: color,
         shininess: 50,
@@ -73,16 +73,16 @@
       
       const planeX = new THREE.Mesh(planeGeometry, planeMaterial);
       planeX.rotation.y = Math.PI / 2;
-      planeX.position.set(x + size / 2, y, z);
+      planeX.position.set(size / 2, 0, 0);
       planes.push(planeX);
 
       const planeY = new THREE.Mesh(planeGeometry, planeMaterial);
       planeY.rotation.x = Math.PI / 2;
-      planeY.position.set(x, y + size / 2, z);
+      planeY.position.set(0, size / 2, 0);
       planes.push(planeY);
 
       const planeZ = new THREE.Mesh(planeGeometry, planeMaterial);
-      planeZ.position.set(x, y, z + size / 2);
+      planeZ.position.set(0, 0, size / 2);
       planes.push(planeZ);
 
       return planes;
@@ -94,7 +94,7 @@
     scene.add(sphere);
 
     // Create and add planes to cover clipped areas
-    const planes = createClippingPlanes(0, 0, 0, 2 * radius, 0xffff00);
+    const planes = createClippingPlanes(2 * radius, 0xffff00);
     planes.forEach(plane => scene.add(plane));
 
     // Set camera position
