@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spheres at Cube Corners</title>
+  <title>Clipped Sphere</title>
   <style>
     body { margin: 0; }
     canvas { display: block; }
   </style>
 </head>
 <body>
-  <script type="module">
-    import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
-    import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script>
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -29,49 +28,44 @@
     scene.add(directionalLight);
 
     // Add orbit controls
-    const controls = new OrbitControls(camera, renderer.domElement);
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
     // Add coordinate system
-    const axesHelper = new THREE.AxesHelper(2);
+    const axesHelper = new THREE.AxesHelper(3);
     scene.add(axesHelper);
 
-    // Define the radius of the spheres
-    const radius = 0.05;
-
-    // Positions of the 8 corners of the cube
-    const positions = [
-      [0, 0, 0],
-      [1, 0, 0],
-      [0, 1, 0],
-      [0, 0, 1],
-      [1, 1, 0],
-      [1, 0, 1],
-      [0, 1, 1],
-      [1, 1, 1]
+    // Define clipping planes for the positive faces at position 0
+    const clippingPlanes = [
+      new THREE.Plane(new THREE.Vector3(1, 0, 0), 0),
+      new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
+      new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
     ];
 
-    // Create a material for the spheres
-    const material = new THREE.MeshPhongMaterial({ color: 0xffff00 });
+    // Enable local clipping for the renderer
+    renderer.localClippingEnabled = true;
 
-    // Function to create a sphere at a given position
-    function createSphere(x, y, z) {
+    // Function to create a sphere with clipping and shading
+    function createClippedSphere(x, y, z, radius, color) {
       const geometry = new THREE.SphereGeometry(radius, 32, 32);
+      const material = new THREE.MeshPhongMaterial({
+        color: color,
+        shininess: 50,
+        side: THREE.DoubleSide,
+        clippingPlanes: clippingPlanes,
+        clipShadows: true
+      });
       const sphere = new THREE.Mesh(geometry, material);
       sphere.position.set(x, y, z);
       return sphere;
     }
 
-    // Group the spheres together
-    const group = new THREE.Group();
-    positions.forEach(pos => {
-      const sphere = createSphere(pos[0], pos[1], pos[2]);
-      group.add(sphere);
-    });
-    scene.add(group);
+    // Create and add a single clipped sphere
+    const radius = Math.sqrt(3) / 4;
+    const sphere = createClippedSphere(0, 0, 0, radius, 0xffff00);
+    scene.add(sphere);
 
     // Set camera position
-    camera.position.set(1.5, 1.5, 1.5);
-    camera.lookAt(0.5, 0.5, 0.5);
+    camera.position.z = 5;
 
     // Animation loop
     function animate() {
