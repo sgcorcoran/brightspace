@@ -11,8 +11,9 @@
 </head>
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js"></script>
-  <script>
+  <script type="module">
+    import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
+
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -60,11 +61,13 @@
       return sphere;
     }
 
-    // Add the spheres to the scene
+    // Group the spheres together
+    const group = new THREE.Group();
     positions.forEach(pos => {
       const sphere = createSphere(pos[0], pos[1], pos[2]);
-      scene.add(sphere);
+      group.add(sphere);
     });
+    scene.add(group);
 
     // Set camera position
     camera.position.set(1.5, 1.5, 1.5);
