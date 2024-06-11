@@ -36,9 +36,9 @@
 
     // Define clipping planes for the positive faces at position 1
     const clippingPlanes = [
-      new THREE.Plane(new THREE.Vector3(-1, 0, 0), 1),
-      new THREE.Plane(new THREE.Vector3(0, -1, 0), 1),
-      new THREE.Plane(new THREE.Vector3(0, 0, -1), 1)
+      new THREE.Plane(new THREE.Vector3(1, 0, 0), -1),
+      new THREE.Plane(new THREE.Vector3(0, 1, 0), -1),
+      new THREE.Plane(new THREE.Vector3(0, 0, 1), -1)
     ];
 
     // Function to create a sphere with clipping and shading
@@ -58,7 +58,7 @@
 
     // Create and add a single clipped sphere
     const radius = Math.sqrt(3) / 4;
-    const sphere = createClippedSphere(1, 1, 1, radius, 0xffff00);
+    const sphere = createClippedSphere(0, 0, 0, radius, 0xffff00);
     scene.add(sphere);
 
     // Set camera position
