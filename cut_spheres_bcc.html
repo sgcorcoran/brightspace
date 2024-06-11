@@ -15,6 +15,25 @@
     import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
     import { Plane } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/src/math/Plane.js';
 
+    const params = {
+      animate: true,
+      planeX: {
+        constant: 0,
+        negated: false,
+        displayHelper: false
+      },
+      planeY: {
+        constant: 0,
+        negated: false,
+        displayHelper: false
+      },
+      planeZ: {
+        constant: 0,
+        negated: false,
+        displayHelper: false
+      }
+    };
+
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -38,9 +57,9 @@
 
     // Define clipping planes for the positive faces at position 0
     const clippingPlanes = [
-      new Plane(new THREE.Vector3(1, 0, 0), 0),
-      new Plane(new THREE.Vector3(0, 1, 0), 0),
-      new Plane(new THREE.Vector3(0, 0, 1), 0)
+      new Plane(new THREE.Vector3(1, 0, 0), params.planeX.constant),
+      new Plane(new THREE.Vector3(0, 1, 0), params.planeY.constant),
+      new Plane(new THREE.Vector3(0, 0, 1), params.planeZ.constant)
     ];
 
     // Enable global clipping planes for the renderer
