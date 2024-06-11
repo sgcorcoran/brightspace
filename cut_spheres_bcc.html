@@ -11,8 +11,10 @@
 </head>
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-  <script>
+  <script type="module">
+    import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
+    import { Plane } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/src/math/Plane.js';
+
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -28,7 +30,7 @@
     scene.add(directionalLight);
 
     // Add orbit controls
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    const controls = new OrbitControls(camera, renderer.domElement);
 
     // Add coordinate system
     const axesHelper = new THREE.AxesHelper(3);
@@ -36,9 +38,9 @@
 
     // Define clipping planes for the positive faces at position 0
     const clippingPlanes = [
-      new THREE.Plane(new THREE.Vector3(1, 0, 0), 0),
-      new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
-      new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
+      new Plane(new THREE.Vector3(1, 0, 0), 0),
+      new Plane(new THREE.Vector3(0, 1, 0), 0),
+      new Plane(new THREE.Vector3(0, 0, 1), 0)
     ];
 
     // Enable global clipping planes for the renderer
