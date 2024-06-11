@@ -43,11 +43,8 @@
         side: THREE.DoubleSide,
         clippingPlanes: [
           new THREE.Plane(new THREE.Vector3(1, 0, 0), 0),
-          new THREE.Plane(new THREE.Vector3(-1, 0, 0), -1),
           new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
-          new THREE.Plane(new THREE.Vector3(0, -1, 0), -1),
-          new THREE.Plane(new THREE.Vector3(0, 0, 1), 0),
-          new THREE.Plane(new THREE.Vector3(0, 0, -1), -1)
+          new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
         ]
       });
       const sphere = new THREE.Mesh(geometry, material);
