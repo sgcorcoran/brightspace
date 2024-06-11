@@ -12,7 +12,7 @@
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/helvetiker_regular.typeface.json"></script>
+  <script src="https://threejs.org/examples/fonts/helvetiker_regular.typeface.json"></script>
   <script>
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
@@ -102,7 +102,7 @@
     // Function to create axis labels
     function createAxisLabel(text, position) {
       const loader = new THREE.FontLoader();
-      loader.load('https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/helvetiker_regular.typeface.json', function (font) {
+      loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
         const geometry = new THREE.TextGeometry(text, {
           font: font,
           size: 0.2,
