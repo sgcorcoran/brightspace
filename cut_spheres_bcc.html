@@ -63,8 +63,10 @@
     }
 
     // Function to create a quarter disk at a given position
-    function createQuarterDisk(x, y, z, radius, color, normal) {
+    function createQuarterDisk(x, y, z, radius, color, normal1, normal2) {
       const geometry = new THREE.CircleGeometry(radius, 32, 32);
+      geometry.vertices = geometry.vertices.filter(v => (v.x >= 0 && v.y >= 0));
+      geometry.vertices.push(new THREE.Vector3(0, 0, 0)); // Add the center vertex for the quarter disk
       const material = new THREE.MeshPhongMaterial({
         color: color,
         shininess: 50,
@@ -73,17 +75,17 @@
       const disk = new THREE.Mesh(geometry, material);
       disk.position.set(x, y, z);
 
-      if (normal.x === 1) {
+      if (normal1.x === 1) {
         disk.rotation.y = Math.PI / 2;
-      } else if (normal.x === -1) {
+      } else if (normal1.x === -1) {
         disk.rotation.y = -Math.PI / 2;
-      } else if (normal.y === 1) {
+      } else if (normal1.y === 1) {
         disk.rotation.x = -Math.PI / 2;
-      } else if (normal.y === -1) {
+      } else if (normal1.y === -1) {
         disk.rotation.x = Math.PI / 2;
-      } else if (normal.z === 1) {
+      } else if (normal1.z === 1) {
         disk.rotation.x = Math.PI;
-      } else if (normal.z === -1) {
+      } else if (normal1.z === -1) {
         disk.rotation.x = 0;
       }
 
@@ -93,49 +95,21 @@
     // Define the radius of the spheres
     const radius = Math.sqrt(3) / 4;
 
-    // Positions of the 8 corners of the cube
-    const positions = [
-      [0, 0, 0],
-      [1, 0, 0],
-      [0, 1, 0],
-      [0, 0, 1],
-      [1, 1, 0],
-      [1, 0, 1],
-      [0, 1, 1],
-      [1, 1, 1]
-    ];
+    // Position of the atom at the origin
+    const position = [0, 0, 0];
 
-    // Add spheres to the corners of the cube
-    positions.forEach(pos => {
-      const sphere = createClippedSphere(pos[0], pos[1], pos[2], radius, 0xffff00);
-      scene.add(sphere);
+    // Add the sphere at the origin
+    const sphere = createClippedSphere(position[0], position[1], position[2], radius, 0xffff00);
+    scene.add(sphere);
 
-      // Create quarter disks to simulate solid atoms at clipped positions
-      if (pos[0] === 0) {
-        const qDisk = createQuarterDisk(pos[0] + radius, pos[1], pos[2], radius, 0xffff00, new THREE.Vector3(1, 0, 0));
-        scene.add(qDisk);
-      }
-      if (pos[1] === 0) {
-        const qDisk = createQuarterDisk(pos[0], pos[1] + radius, pos[2], radius, 0xffff00, new THREE.Vector3(0, 1, 0));
-        scene.add(qDisk);
-      }
-      if (pos[2] === 0) {
-        const qDisk = createQuarterDisk(pos[0], pos[1], pos[2] + radius, radius, 0xffff00, new THREE.Vector3(0, 0, 1));
-        scene.add(qDisk);
-      }
-      if (pos[0] === 1) {
-        const qDisk = createQuarterDisk(pos[0] - radius, pos[1], pos[2], radius, 0xffff00, new THREE.Vector3(-1, 0, 0));
-        scene.add(qDisk);
-      }
-      if (pos[1] === 1) {
-        const qDisk = createQuarterDisk(pos[0], pos[1] - radius, pos[2], radius, 0xffff00, new THREE.Vector3(0, -1, 0));
-        scene.add(qDisk);
-      }
-      if (pos[2] === 1) {
-        const qDisk = createQuarterDisk(pos[0], pos[1], pos[2] - radius, radius, 0xffff00, new THREE.Vector3(0, 0, -1));
-        scene.add(qDisk);
-      }
-    });
+    // Create quarter disks to simulate solid atoms at the clipped positions for the origin atom
+    const qDisk1 = createQuarterDisk(position[0], position[1] + radius, position[2] + radius, radius, 0xffff00, new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 0, 1));
+    const qDisk2 = createQuarterDisk(position[0] + radius, position[1], position[2] + radius, radius, 0xffff00, new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 1));
+    const qDisk3 = createQuarterDisk(position[0] + radius, position[1] + radius, position[2], radius, 0xffff00, new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0));
+
+    scene.add(qDisk1);
+    scene.add(qDisk2);
+    scene.add(qDisk3);
 
     // Set camera position
     camera.position.z = 5;
