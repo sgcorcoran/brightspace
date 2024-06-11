@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clipped Sphere</title>
+  <title>Solid Clipped Sphere</title>
   <style>
     body { margin: 0; }
     canvas { display: block; }
@@ -59,10 +59,43 @@
       return sphere;
     }
 
+    // Function to create planes to cover clipped areas
+    function createClippingPlanes(x, y, z, size, color) {
+      const planeMaterial = new THREE.MeshPhongMaterial({
+        color: color,
+        shininess: 50,
+        side: THREE.DoubleSide
+      });
+      const planes = [];
+
+      // Create planes for each clipping plane
+      const planeGeometry = new THREE.PlaneGeometry(size, size);
+      
+      const planeX = new THREE.Mesh(planeGeometry, planeMaterial);
+      planeX.rotation.y = Math.PI / 2;
+      planeX.position.set(x + size / 2, y, z);
+      planes.push(planeX);
+
+      const planeY = new THREE.Mesh(planeGeometry, planeMaterial);
+      planeY.rotation.x = Math.PI / 2;
+      planeY.position.set(x, y + size / 2, z);
+      planes.push(planeY);
+
+      const planeZ = new THREE.Mesh(planeGeometry, planeMaterial);
+      planeZ.position.set(x, y, z + size / 2);
+      planes.push(planeZ);
+
+      return planes;
+    }
+
     // Create and add a single clipped sphere
     const radius = Math.sqrt(3) / 4;
     const sphere = createClippedSphere(0, 0, 0, radius, 0xffff00);
     scene.add(sphere);
+
+    // Create and add planes to cover clipped areas
+    const planes = createClippingPlanes(0, 0, 0, 2 * radius, 0xffff00);
+    planes.forEach(plane => scene.add(plane));
 
     // Set camera position
     camera.position.z = 5;
