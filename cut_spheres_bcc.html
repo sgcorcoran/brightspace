@@ -34,19 +34,10 @@
     const axesHelper = new THREE.AxesHelper(3);
     scene.add(axesHelper);
 
-    // Function to create a partial sphere
-    function createPartialSphere(x, y, z, radius, color) {
+    // Function to create a sphere with gradient shading
+    function createSphere(x, y, z, radius, color) {
       const geometry = new THREE.SphereGeometry(radius, 32, 32);
-      const material = new THREE.MeshPhongMaterial({
-        color: color,
-        shininess: 50,
-        side: THREE.DoubleSide,
-        clippingPlanes: [
-          new THREE.Plane(new THREE.Vector3(1, 0, 0), 0),
-          new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
-          new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
-        ]
-      });
+      const material = new THREE.MeshPhongMaterial({ color: color, shininess: 50 });
       const sphere = new THREE.Mesh(geometry, material);
       sphere.position.set(x, y, z);
       return sphere;
@@ -57,24 +48,34 @@
       const cell = new THREE.Group();
       const radius = Math.sqrt(3) / 4;
       const yellowSpheres = [
-        createPartialSphere(1, 1, 1, radius, 0xffff00),
-        createPartialSphere(1, 1, 0, radius, 0xffff00),
-        createPartialSphere(1, 0, 0, radius, 0xffff00),
-        createPartialSphere(0, 1, 1, radius, 0xffff00),
-        createPartialSphere(0, 1, 0, radius, 0xffff00),
-        createPartialSphere(0, 0, 1, radius, 0xffff00),
-        createPartialSphere(0, 0, 0, radius, 0xffff00),
-        createPartialSphere(0.5, 0.5, 0.5, radius, 0xffff00)
+        createSphere(1, 1, 1, radius, 0xffff00),
+        createSphere(1, 1, 0, radius, 0xffff00),
+        createSphere(1, 0, 0, radius, 0xffff00),
+        createSphere(0, 1, 1, radius, 0xffff00),
+        createSphere(0, 1, 0, radius, 0xffff00),
+        createSphere(0, 0, 1, radius, 0xffff00),
+        createSphere(0, 0, 0, radius, 0xffff00),
+        createSphere(0.5, 0.5, 0.5, radius, 0xffff00)
       ];
       yellowSpheres.forEach(sphere => cell.add(sphere));
 
-      const redSphere = createPartialSphere(1, 0, 1, radius, 0xff0000);
+      const redSphere = createSphere(1, 0, 1, radius, 0xff0000);
       cell.add(redSphere);
 
       return cell;
     }
 
     const cell = createCell();
+
+    // Define clipping planes for the cell
+    const clippingPlanes = [
+      new THREE.Plane(new THREE.Vector3(1, 0, 0), 0),
+      new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
+      new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
+    ];
+
+    // Apply clipping planes to the renderer
+    renderer.clippingPlanes = clippingPlanes;
 
     // Add the cell to the scene
     scene.add(cell);
