@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Sphere Animation</title>
+  <style>
+    body { margin: 0; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    // Set up the scene, camera, and renderer
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Function to create a sphere
+    function createSphere(x, y, z, radius, color) {
+      const geometry = new THREE.SphereGeometry(radius, 32, 32);
+      const material = new THREE.MeshBasicMaterial({ color: color, opacity: 1, transparent: true });
+      const sphere = new THREE.Mesh(geometry, material);
+      sphere.position.set(x, y, z);
+      return sphere;
+    }
+
+    // Create the spheres
+    const yellowSpheres = [
+      createSphere(1, 1, 1, Math.sqrt(3) / 4, 0xffff00),
+      createSphere(1, 1, 0, Math.sqrt(3) / 4, 0xffff00),
+      createSphere(1, 0, 0, Math.sqrt(3) / 4, 0xffff00),
+      createSphere(0, 1, 1, Math.sqrt(3) / 4, 0xffff00),
+      createSphere(0, 1, 0, Math.sqrt(3) / 4, 0xffff00),
+      createSphere(0, 0, 1, Math.sqrt(3) / 4, 0xffff00),
+      createSphere(0, 0, 0, Math.sqrt(3) / 4, 0xffff00),
+      createSphere(0.5, 0.5, 0.5, Math.sqrt(3) / 4, 0xffff00)
+    ];
+
+    const redSphere = createSphere(1, 0, 1, Math.sqrt(3) / 4, 0xff0000);
+
+    // Add the spheres to the scene
+    yellowSpheres.forEach(sphere => scene.add(sphere));
+    scene.add(redSphere);
+
+    // Set camera position
+    camera.position.z = 5;
+
+    // Animation loop
+    let shift = 0.25;
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // Rotate and shift spheres
+      yellowSpheres.forEach(sphere => {
+        sphere.position.x -= shift;
+        sphere.position.y += shift;
+      });
+      redSphere.position.x -= shift;
+      redSphere.position.y += shift;
+
+      // Render the scene
+      renderer.render(scene, camera);
+
+      // Update shift value
+      shift -= 0.05;
+      if (shift <= 0) {
+        shift = 0.25;
+      }
+    }
+
+    animate();
+  </script>
+</body>
+</html>
