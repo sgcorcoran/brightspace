@@ -60,9 +60,9 @@
       const cell = new THREE.Group();
       const radius = Math.sqrt(3) / 4;
       const clippingPlanes = [
-        new THREE.Plane(new THREE.Vector3(1, 0, 0), 0),
-        new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
-        new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
+        new THREE.Plane(new THREE.Vector3(-1, 0, 0), 0),
+        new THREE.Plane(new THREE.Vector3(0, -1, 0), 0),
+        new THREE.Plane(new THREE.Vector3(0, 0, -1), 0)
       ];
       const yellowSpheres = [
         createPartialSphere(1, 1, 1, radius, 0xffff00, clippingPlanes),
@@ -76,7 +76,7 @@
       ];
       yellowSpheres.forEach(sphere => cell.add(sphere));
 
-      const redSphere = createPartialSphere(1, 0, 1, radius, 0xff0000, clippingPlanes);
+      const redSphere = createPartialSphere(0, 0, 1, radius, 0xff0000, clippingPlanes);
       cell.add(redSphere);
 
       return cell;
