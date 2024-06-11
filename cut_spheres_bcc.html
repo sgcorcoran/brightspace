@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clipped Sphere</title>
+  <title>Clipped Sphere with Different Colors</title>
   <style>
     body { margin: 0; }
     canvas { display: block; }
@@ -44,16 +44,42 @@
     // Enable local clipping for the renderer
     renderer.localClippingEnabled = true;
 
-    // Function to create a sphere with clipping and shading
-    function createClippedSphere(x, y, z, radius, color) {
+    // Custom ShaderMaterial to color the front and back faces differently
+    const vertexShader = `
+      varying vec3 vNormal;
+      void main() {
+        vNormal = normalize(normalMatrix * normal);
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `;
+
+    const fragmentShader = `
+      uniform vec3 colorFront;
+      uniform vec3 colorBack;
+      varying vec3 vNormal;
+      void main() {
+        if (gl_FrontFacing) {
+          gl_FragColor = vec4(colorFront, 1.0);
+        } else {
+          gl_FragColor = vec4(colorBack, 1.0);
+        }
+      }
+    `;
+
+    const material = new THREE.ShaderMaterial({
+      vertexShader: vertexShader,
+      fragmentShader: fragmentShader,
+      side: THREE.DoubleSide,
+      uniforms: {
+        colorFront: { value: new THREE.Color(0xffff00) },
+        colorBack: { value: new THREE.Color(0x00ff00) }
+      },
+      clippingPlanes: clippingPlanes
+    });
+
+    // Function to create a sphere with the custom ShaderMaterial
+    function createClippedSphere(x, y, z, radius) {
       const geometry = new THREE.SphereGeometry(radius, 32, 32);
-      const material = new THREE.MeshPhongMaterial({
-        color: color,
-        shininess: 50,
-        side: THREE.DoubleSide,
-        clippingPlanes: clippingPlanes,
-        clipShadows: true
-      });
       const sphere = new THREE.Mesh(geometry, material);
       sphere.position.set(x, y, z);
       return sphere;
@@ -61,7 +87,7 @@
 
     // Create and add a single clipped sphere
     const radius = Math.sqrt(3) / 4;
-    const sphere = createClippedSphere(0, 0, 0, radius, 0xffff00);
+    const sphere = createClippedSphere(0, 0, 0, radius);
     scene.add(sphere);
 
     // Set camera position
