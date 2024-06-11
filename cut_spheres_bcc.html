@@ -62,19 +62,32 @@
       return sphere;
     }
 
-    // Function to create a quarter-sphere at a given position
-    function createQuarterSphere(x, y, z, radius, color, clippingPlane) {
-      const geometry = new THREE.SphereGeometry(radius, 32, 32);
+    // Function to create a quarter disk at a given position
+    function createQuarterDisk(x, y, z, radius, color, normal) {
+      const geometry = new THREE.CircleGeometry(radius, 32, 32);
       const material = new THREE.MeshPhongMaterial({
         color: color,
         shininess: 50,
-        side: THREE.DoubleSide,
-        clippingPlanes: [clippingPlane],
-        clipShadows: true
+        side: THREE.DoubleSide
       });
-      const sphere = new THREE.Mesh(geometry, material);
-      sphere.position.set(x, y, z);
-      return sphere;
+      const disk = new THREE.Mesh(geometry, material);
+      disk.position.set(x, y, z);
+
+      if (normal.x === 1) {
+        disk.rotation.y = Math.PI / 2;
+      } else if (normal.x === -1) {
+        disk.rotation.y = -Math.PI / 2;
+      } else if (normal.y === 1) {
+        disk.rotation.x = -Math.PI / 2;
+      } else if (normal.y === -1) {
+        disk.rotation.x = Math.PI / 2;
+      } else if (normal.z === 1) {
+        disk.rotation.x = Math.PI;
+      } else if (normal.z === -1) {
+        disk.rotation.x = 0;
+      }
+
+      return disk;
     }
 
     // Define the radius of the spheres
@@ -97,30 +110,30 @@
       const sphere = createClippedSphere(pos[0], pos[1], pos[2], radius, 0xffff00);
       scene.add(sphere);
 
-      // Create quarter spheres to simulate solid atoms at clipped positions
+      // Create quarter disks to simulate solid atoms at clipped positions
       if (pos[0] === 0) {
-        const qSphere = createQuarterSphere(pos[0] + radius, pos[1], pos[2], radius, 0xffff00, clippingPlanes[0]);
-        scene.add(qSphere);
+        const qDisk = createQuarterDisk(pos[0] + radius, pos[1], pos[2], radius, 0xffff00, new THREE.Vector3(1, 0, 0));
+        scene.add(qDisk);
       }
       if (pos[1] === 0) {
-        const qSphere = createQuarterSphere(pos[0], pos[1] + radius, pos[2], radius, 0xffff00, clippingPlanes[1]);
-        scene.add(qSphere);
+        const qDisk = createQuarterDisk(pos[0], pos[1] + radius, pos[2], radius, 0xffff00, new THREE.Vector3(0, 1, 0));
+        scene.add(qDisk);
       }
       if (pos[2] === 0) {
-        const qSphere = createQuarterSphere(pos[0], pos[1], pos[2] + radius, radius, 0xffff00, clippingPlanes[2]);
-        scene.add(qSphere);
+        const qDisk = createQuarterDisk(pos[0], pos[1], pos[2] + radius, radius, 0xffff00, new THREE.Vector3(0, 0, 1));
+        scene.add(qDisk);
       }
       if (pos[0] === 1) {
-        const qSphere = createQuarterSphere(pos[0] - radius, pos[1], pos[2], radius, 0xffff00, clippingPlanes[3]);
-        scene.add(qSphere);
+        const qDisk = createQuarterDisk(pos[0] - radius, pos[1], pos[2], radius, 0xffff00, new THREE.Vector3(-1, 0, 0));
+        scene.add(qDisk);
       }
       if (pos[1] === 1) {
-        const qSphere = createQuarterSphere(pos[0], pos[1] - radius, pos[2], radius, 0xffff00, clippingPlanes[4]);
-        scene.add(qSphere);
+        const qDisk = createQuarterDisk(pos[0], pos[1] - radius, pos[2], radius, 0xffff00, new THREE.Vector3(0, -1, 0));
+        scene.add(qDisk);
       }
       if (pos[2] === 1) {
-        const qSphere = createQuarterSphere(pos[0], pos[1], pos[2] - radius, radius, 0xffff00, clippingPlanes[5]);
-        scene.add(qSphere);
+        const qDisk = createQuarterDisk(pos[0], pos[1], pos[2] - radius, radius, 0xffff00, new THREE.Vector3(0, 0, -1));
+        scene.add(qDisk);
       }
     });
 
