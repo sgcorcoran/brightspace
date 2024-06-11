@@ -23,6 +23,7 @@
     <input type="range" id="shiftSlider" min="0" max="0.25" step="0.01" value="0.25">
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
   <script>
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
@@ -37,6 +38,9 @@
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
     directionalLight.position.set(1, 1, 1).normalize();
     scene.add(directionalLight);
+
+    // Add orbit controls
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
     // Function to create a sphere with gradient shading
     function createSphere(x, y, z, radius, color) {
@@ -114,6 +118,7 @@
 
       cells[4].position.set(-shift, shift, 1 + shift);
 
+      controls.update();
       renderer.render(scene, camera);
     }
 
