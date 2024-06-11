@@ -64,14 +64,17 @@
 
     // Function to create a quarter disk at a given position
     function createQuarterDisk(x, y, z, radius, color, normal1, normal2) {
-      const geometry = new THREE.CircleGeometry(radius, 32, 32);
-      geometry.vertices = geometry.vertices.filter(v => (v.x >= 0 && v.y >= 0));
-      geometry.vertices.push(new THREE.Vector3(0, 0, 0)); // Add the center vertex for the quarter disk
+      const arcCurve = new THREE.Shape();
+      arcCurve.moveTo(0, 0);
+      arcCurve.absarc(0, 0, radius, 0, Math.PI / 2, false);
+
+      const geometry = new THREE.ShapeGeometry(arcCurve);
       const material = new THREE.MeshPhongMaterial({
         color: color,
         shininess: 50,
         side: THREE.DoubleSide
       });
+
       const disk = new THREE.Mesh(geometry, material);
       disk.position.set(x, y, z);
 
