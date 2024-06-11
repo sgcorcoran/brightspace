@@ -12,6 +12,7 @@
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/helvetiker_regular.typeface.json"></script>
   <script>
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
@@ -89,7 +90,7 @@
     // Create quarter disks to simulate solid atoms at the clipped positions for the origin atom
     const qDisk1 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(0, 0, 0));
     qDisk1.position.set(0, 0, 0);
-    const qDisk2 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(0, -Math.PI / 2, 0));
+    const qDisk2 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(0, Math.PI / 2, 0));
     qDisk2.position.set(0, 0, 0);
     const qDisk3 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(Math.PI / 2, 0, 0));
     qDisk3.position.set(0, 0, 0);
@@ -97,6 +98,28 @@
     scene.add(qDisk1);
     scene.add(qDisk2);
     scene.add(qDisk3);
+
+    // Function to create axis labels
+    function createAxisLabel(text, position) {
+      const loader = new THREE.FontLoader();
+      loader.load('https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/helvetiker_regular.typeface.json', function (font) {
+        const geometry = new THREE.TextGeometry(text, {
+          font: font,
+          size: 0.2,
+          height: 0.02,
+          curveSegments: 12
+        });
+        const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.position.copy(position);
+        scene.add(mesh);
+      });
+    }
+
+    // Add axis labels
+    createAxisLabel('X', new THREE.Vector3(3, 0, 0));
+    createAxisLabel('Y', new THREE.Vector3(0, 3, 0));
+    createAxisLabel('Z', new THREE.Vector3(0, 0, 3));
 
     // Set camera position
     camera.position.z = 5;
