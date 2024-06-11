@@ -78,11 +78,11 @@
 
     // Function to create the grouped object
     function createGroupedObject(radius, color) {
-      const group = new THREE.Group();
+      const group = new THREE.Object3D();
 
       // Create sub-groups for the sphere and the disks
-      const sphereGroup = new THREE.Group();
-      const diskGroup = new THREE.Group();
+      const sphereGroup = new THREE.Object3D();
+      const diskGroup = new THREE.Object3D();
 
       // Add the sphere to the sphere group
       const sphere = createClippedSphere(radius, color);
