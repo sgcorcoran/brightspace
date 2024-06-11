@@ -41,7 +41,8 @@
       new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
     ];
 
-    // Enable local clipping for the renderer
+    // Enable global clipping planes for the renderer
+    renderer.clippingPlanes = clippingPlanes;
     renderer.localClippingEnabled = true;
 
     // Custom ShaderMaterial to color the front and back faces differently
@@ -73,8 +74,7 @@
       uniforms: {
         colorFront: { value: new THREE.Color(0xffff00) },
         colorBack: { value: new THREE.Color(0x00ff00) }
-      },
-      clippingPlanes: clippingPlanes
+      }
     });
 
     // Function to create a sphere with the custom ShaderMaterial
