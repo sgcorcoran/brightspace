@@ -7,9 +7,21 @@
   <style>
     body { margin: 0; }
     canvas { display: block; }
+    #sliderContainer {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 100;
+    }
+    #shiftSlider {
+      width: 200px;
+    }
   </style>
 </head>
 <body>
+  <div id="sliderContainer">
+    <input type="range" id="shiftSlider" min="0" max="0.25" step="0.01" value="0.25">
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
     // Set up the scene, camera, and renderer
@@ -19,10 +31,17 @@
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
-    // Function to create a sphere
+    // Add lights for better 3D shading
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+    directionalLight.position.set(1, 1, 1).normalize();
+    scene.add(directionalLight);
+
+    // Function to create a sphere with gradient shading
     function createSphere(x, y, z, radius, color) {
       const geometry = new THREE.SphereGeometry(radius, 32, 32);
-      const material = new THREE.MeshBasicMaterial({ color: color, opacity: 1, transparent: true });
+      const material = new THREE.MeshPhongMaterial({ color: color, shininess: 50 });
       const sphere = new THREE.Mesh(geometry, material);
       sphere.position.set(x, y, z);
       return sphere;
@@ -59,14 +78,14 @@
     }
 
     // Add the cells to the scene with initial positions and rotations
-    cells[0].position.set(-0.25, 0.25, 0);
-    cells[1].position.set(0.75, -0.75, 0);
+    cells[0].position.set(0, 0, 0);
+    cells[1].position.set(1, -1, 0);
     cells[1].rotation.z = Math.PI / 2;
-    cells[2].position.set(1.75, -0.25, 0);
+    cells[2].position.set(2, 0, 0);
     cells[2].rotation.z = Math.PI;
-    cells[3].position.set(0.75, 1.25, 0);
+    cells[3].position.set(1, 1, 0);
     cells[3].rotation.z = 3 * Math.PI / 2;
-    cells[4].position.set(-0.25, 0.25, 1);
+    cells[4].position.set(0, 0, 1);
     cells[4].rotation.x = Math.PI / 2;
 
     cells.forEach(cell => scene.add(cell));
@@ -76,32 +95,26 @@
 
     // Animation loop
     let shift = 0.25;
+    const shiftSlider = document.getElementById('shiftSlider');
+    shiftSlider.addEventListener('input', (event) => {
+      shift = parseFloat(event.target.value);
+    });
+
     function animate() {
       requestAnimationFrame(animate);
 
       // Update cell positions based on shift
-      cells[0].position.x = -shift;
-      cells[0].position.y = shift;
+      cells[0].position.set(-shift, shift, 0);
 
-      cells[1].position.x = 1 - shift;
-      cells[1].position.y = -1 - shift;
+      cells[1].position.set(1 - shift, -1 - shift, 0);
 
-      cells[2].position.x = 2 + shift;
-      cells[2].position.y = -shift;
+      cells[2].position.set(2 + shift, -shift, 0);
 
-      cells[3].position.x = 1 + shift;
-      cells[3].position.y = 1 + shift;
+      cells[3].position.set(1 + shift, 1 + shift, 0);
 
-      cells[4].position.x = -shift;
-      cells[4].position.y = shift;
-      cells[4].position.z = 1 + shift;
+      cells[4].position.set(-shift, shift, 1 + shift);
 
       renderer.render(scene, camera);
-
-      shift -= 0.05;
-      if (shift <= 0) {
-        shift = 0.25;
-      }
     }
 
     animate();
