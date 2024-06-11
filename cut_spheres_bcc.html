@@ -102,7 +102,7 @@
     // Function to create axis labels
     function createAxisLabel(text, position) {
       const loader = new THREE.FontLoader();
-      loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
+      loader.load('fonts/helvetiker_bold.typeface.json', function (font) {
         const geometry = new THREE.TextGeometry(text, {
           font: font,
           size: 0.2,
