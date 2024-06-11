@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clipped Sphere with Different Colors</title>
+  <title>Spheres at Cube Corners</title>
   <style>
     body { margin: 0; }
     canvas { display: block; }
@@ -11,136 +11,73 @@
 </head>
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script type="module">
-    import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
-    import { GUI } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/libs/dat.gui.module.js';
-    import { PlaneHelper } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/helpers/PlaneHelper.js';
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js"></script>
+  <script>
+    // Set up the scene, camera, and renderer
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
 
-    const params = {
-      animate: true,
-      planeX: {
-        constant: 0,
-        negated: false,
-        displayHelper: false
-      },
-      planeY: {
-        constant: 0,
-        negated: false,
-        displayHelper: false
-      },
-      planeZ: {
-        constant: 0,
-        negated: false,
-        displayHelper: false
-      }
-    };
+    // Add lights for better 3D shading
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+    directionalLight.position.set(1, 1, 1).normalize();
+    scene.add(directionalLight);
 
-    let camera, scene, renderer, object, controls;
-    const planeHelpers = [];
+    // Add orbit controls
+    const controls = new OrbitControls(camera, renderer.domElement);
 
-    init();
-    animate();
+    // Add coordinate system
+    const axesHelper = new THREE.AxesHelper(2);
+    scene.add(axesHelper);
 
-    function init() {
-      // Set up the scene, camera, and renderer
-      scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.z = 5;
+    // Define the radius of the spheres
+    const radius = 0.05;
 
-      renderer = new THREE.WebGLRenderer({ antialias: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.localClippingEnabled = true;
-      document.body.appendChild(renderer.domElement);
+    // Positions of the 8 corners of the cube
+    const positions = [
+      [0, 0, 0],
+      [1, 0, 0],
+      [0, 1, 0],
+      [0, 0, 1],
+      [1, 1, 0],
+      [1, 0, 1],
+      [0, 1, 1],
+      [1, 1, 1]
+    ];
 
-      // Add lights for better 3D shading
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-      scene.add(ambientLight);
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
-      directionalLight.position.set(1, 1, 1).normalize();
-      scene.add(directionalLight);
+    // Create a material for the spheres
+    const material = new THREE.MeshPhongMaterial({ color: 0xffff00 });
 
-      // Add orbit controls
-      controls = new OrbitControls(camera, renderer.domElement);
-
-      // Define clipping planes for the positive faces at position 0
-      const clippingPlanes = [
-        new THREE.Plane(new THREE.Vector3(1, 0, 0), 0),
-        new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
-        new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
-      ];
-      renderer.clippingPlanes = clippingPlanes;
-
-      // Custom ShaderMaterial to color the front and back faces differently
-      const vertexShader = `
-        varying vec3 vNormal;
-        void main() {
-          vNormal = normalize(normalMatrix * normal);
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-        }
-      `;
-
-      const fragmentShader = `
-        uniform vec3 colorFront;
-        uniform vec3 colorBack;
-        varying vec3 vNormal;
-        void main() {
-          if (gl_FrontFacing) {
-            gl_FragColor = vec4(colorFront, 1.0);
-          } else {
-            gl_FragColor = vec4(colorBack, 1.0);
-          }
-        }
-      `;
-
-      const material = new THREE.ShaderMaterial({
-        vertexShader: vertexShader,
-        fragmentShader: fragmentShader,
-        side: THREE.DoubleSide,
-        uniforms: {
-          colorFront: { value: new THREE.Color(0xffff00) },
-          colorBack: { value: new THREE.Color(0x00ff00) }
-        }
-      });
-
-      // Create the sphere and add it to the scene
-      const geometry = new THREE.SphereGeometry(1, 32, 32);
-      object = new THREE.Group();
+    // Function to create a sphere at a given position
+    function createSphere(x, y, z) {
+      const geometry = new THREE.SphereGeometry(radius, 32, 32);
       const sphere = new THREE.Mesh(geometry, material);
-      object.add(sphere);
-      scene.add(object);
-
-      // Add plane helpers if needed
-      clippingPlanes.forEach((plane, i) => {
-        const helper = new PlaneHelper(plane, 5, 0xff0000);
-        helper.visible = params[`plane${['X', 'Y', 'Z'][i]}`].displayHelper;
-        planeHelpers.push(helper);
-        scene.add(helper);
-      });
-
-      // Add GUI for interactive control
-      const gui = new GUI();
-      gui.add(params, 'animate');
-      const planeFolder = gui.addFolder('Clipping Planes');
-      ['X', 'Y', 'Z'].forEach((axis, i) => {
-        const folder = planeFolder.addFolder(`Plane ${axis}`);
-        folder.add(params[`plane${axis}`], 'constant').onChange((v) => clippingPlanes[i].constant = v);
-        folder.add(params[`plane${axis}`], 'negated').onChange((v) => clippingPlanes[i].negate());
-        folder.add(params[`plane${axis}`], 'displayHelper').onChange((v) => planeHelpers[i].visible = v);
-      });
-      planeFolder.open();
+      sphere.position.set(x, y, z);
+      return sphere;
     }
 
+    // Add the spheres to the scene
+    positions.forEach(pos => {
+      const sphere = createSphere(pos[0], pos[1], pos[2]);
+      scene.add(sphere);
+    });
+
+    // Set camera position
+    camera.position.set(1.5, 1.5, 1.5);
+    camera.lookAt(0.5, 0.5, 0.5);
+
+    // Animation loop
     function animate() {
       requestAnimationFrame(animate);
-
-      if (params.animate) {
-        object.rotation.x += 0.005;
-        object.rotation.y += 0.01;
-      }
-
       controls.update();
       renderer.render(scene, camera);
     }
+
+    animate();
   </script>
 </body>
 </html>
