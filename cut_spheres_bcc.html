@@ -89,7 +89,7 @@
     // Create quarter disks to simulate solid atoms at the clipped positions for the origin atom
     const qDisk1 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(0, 0, 0));
     qDisk1.position.set(0, 0, 0);
-    const qDisk2 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(0, Math.PI / 2, 0));
+    const qDisk2 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(0, -Math.PI / 2, 0));
     qDisk2.position.set(0, 0, 0);
     const qDisk3 = createQuarterDisk(radius, 0xffff00, new THREE.Euler(Math.PI / 2, 0, 0));
     qDisk3.position.set(0, 0, 0);
