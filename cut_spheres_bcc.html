@@ -3,16 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clipped Spheres</title>
+  <title>Three.js Unit Cell with Corner and Whole Atoms</title>
   <style>
     body { margin: 0; }
     canvas { display: block; }
+    .slider-container {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
+  <div class="slider-container">
+    <label for="distanceSlider">Distance: </label>
+    <input type="range" id="distanceSlider" min="1" max="5" step="0.1" value="2">
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-  <script src="https://threejs.org/examples/fonts/helvetiker_regular.typeface.json"></script>
   <script>
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
@@ -21,7 +33,7 @@
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
-    // Add lights for better 3D shading
+    // Add lights
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
     scene.add(ambientLight);
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
@@ -31,127 +43,170 @@
     // Add orbit controls
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-    // Add coordinate system
-    const axesHelper = new THREE.AxesHelper(3);
-    scene.add(axesHelper);
+    // Add global axes helper
+    const globalAxesHelper = new THREE.AxesHelper(2);
+    scene.add(globalAxesHelper);
 
-    // Define clipping planes for the positive faces at position 0 and 1
-    const clippingPlanes = [
-      new THREE.Plane(new THREE.Vector3(1, 0, 0), 0),
-      new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
-      new THREE.Plane(new THREE.Vector3(0, 0, 1), 0),
-      new THREE.Plane(new THREE.Vector3(-1, 0, 0), 1),
-      new THREE.Plane(new THREE.Vector3(0, -1, 0), 1),
-      new THREE.Plane(new THREE.Vector3(0, 0, -1), 1)
-    ];
-
-    // Enable local clipping for the renderer
-    renderer.localClippingEnabled = true;
-
-    // Function to create a sphere with clipping and shading
-    function createClippedSphere(radius, color) {
+    // Function to create a whole sphere
+    function createWholeSphere(radius, color) {
       const geometry = new THREE.SphereGeometry(radius, 32, 32);
-      const material = new THREE.MeshPhongMaterial({
-        color: color,
-        shininess: 50,
-        side: THREE.DoubleSide,
-        clippingPlanes: clippingPlanes,
-        clipShadows: true
-      });
-      const sphere = new THREE.Mesh(geometry, material);
-      return sphere;
+      const material = new THREE.MeshPhongMaterial({ color: color, shininess: 50, side: THREE.DoubleSide });
+      return new THREE.Mesh(geometry, material);
     }
 
-    // Function to create a quarter disk
-    function createQuarterDisk(radius, color) {
-      const geometry = new THREE.CircleGeometry(radius, 32, 0, Math.PI / 2);
-      const material = new THREE.MeshPhongMaterial({
-        color: color,
-        shininess: 50,
-        side: THREE.DoubleSide
-      });
+    // Function to create a corner sphere (1/8 sphere)
+    function createCornerSphere(radius, color) {
+      const geometry = new THREE.SphereGeometry(radius, 32, 16, Math.PI / 2, Math.PI / 2, 0, Math.PI / 2);
+      const material = new THREE.MeshPhongMaterial({ color: color, shininess: 50, side: THREE.DoubleSide });
+      return new THREE.Mesh(geometry, material);
+    }
 
+    // Function to create a corner disk
+    function createCornerDisk(radius, color, rotation) {
+      const geometry = new THREE.CircleGeometry(radius, 32, 0, Math.PI / 2);
+      const material = new THREE.MeshPhongMaterial({ color: color, shininess: 50, side: THREE.DoubleSide });
       const disk = new THREE.Mesh(geometry, material);
+      const quaternion = new THREE.Quaternion().setFromEuler(rotation);
+      disk.applyQuaternion(quaternion);
       return disk;
     }
 
-    // Function to create the grouped object
-    function createGroupedObject(radius, color) {
+    // Function to create the corner sphere group
+    function createCornerSphereGroup(radius, color) {
       const group = new THREE.Group();
-
-      // Add the sphere to the group
-      const sphere = createClippedSphere(radius, color);
+      const sphere = createCornerSphere(radius, color);
       group.add(sphere);
 
-      // Create and add quarter disks to the group
-      const qDisk1 = createQuarterDisk(radius, color);
-      const qDisk2 = createQuarterDisk(radius, color);
-      const qDisk3 = createQuarterDisk(radius, color);
+      const cDisk1 = createCornerDisk(radius, color, new THREE.Euler(0, 0, 0));
+      const cDisk2 = createCornerDisk(radius, color, new THREE.Euler(0, -Math.PI / 2, 0));
+      const cDisk3 = createCornerDisk(radius, color, new THREE.Euler(Math.PI / 2, 0, 0));
 
-      // Apply local rotations to the quarter disks
-      qDisk1.position.set(0, 0, 0);
-      qDisk2.rotateY(-Math.PI / 2);
-      qDisk3.rotateX(Math.PI / 2);
-
-      group.add(qDisk1);
-      group.add(qDisk2);
-      group.add(qDisk3);
+      group.add(cDisk1);
+      group.add(cDisk2);
+      group.add(cDisk3);
 
       return group;
     }
 
+    // Function to create the edges for a cube with vertices from (0,0,0) to (1,1,1)
+    function createCubeEdges() {
+      const vertices = [
+        [0, 0, 0], [1, 0, 0],
+        [1, 0, 0], [1, 1, 0],
+        [1, 1, 0], [0, 1, 0],
+        [0, 1, 0], [0, 0, 0],
+        [0, 0, 1], [1, 0, 1],
+        [1, 0, 1], [1, 1, 1],
+        [1, 1, 1], [0, 1, 1],
+        [0, 1, 1], [0, 0, 1],
+        [0, 0, 0], [0, 0, 1],
+        [1, 0, 0], [1, 0, 1],
+        [1, 1, 0], [1, 1, 1],
+        [0, 1, 0], [0, 1, 1],
+      ];
+
+      const geometry = new THREE.BufferGeometry();
+      const positionAttribute = new THREE.Float32BufferAttribute(vertices.flat(), 3);
+      geometry.setAttribute('position', positionAttribute);
+
+      const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 1 });
+      return new THREE.LineSegments(geometry, lineMaterial);
+    }
+
+    // Create the unit cell group
+    const unitCellGroup = new THREE.Group();
+
     // Define the radius of the spheres
     const radius = Math.sqrt(3) / 4;
 
-    // Create the base group object once
-    const baseGroup = createGroupedObject(radius, 0xffff00);
-
-    // Define positions and rotations for the four corners
+    // Define positions and rotations for the eight corners of the unit cell
     const positions = [
       [0, 0, 0],
       [1, 0, 0],
       [0, 1, 0],
-      [0, 0, 1]
+      [0, 0, 1],
+      [1, 1, 0],
+      [1, 0, 1],
+      [0, 1, 1],
+      [1, 1, 1]
     ];
 
     const rotations = [
-      [0, 0, 0],
-      [0, 0, Math.PI / 2],
-      [0, -Math.PI / 2, 0],
-      [Math.PI / 2, 0, 0]
+      new THREE.Quaternion().setFromEuler(new THREE.Euler(0, 0, 0)),
+      new THREE.Quaternion().setFromEuler(new THREE.Euler(0, -Math.PI / 2, 0)),
+      new THREE.Quaternion().setFromEuler(new THREE.Euler(Math.PI / 2, 0, 0)),
+      new THREE.Quaternion().setFromEuler(new THREE.Euler(0, Math.PI / 2, 0)),
+      new THREE.Quaternion().setFromEuler(new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0)),
+      new THREE.Quaternion().setFromEuler(new THREE.Euler(-Math.PI / 2, -Math.PI / 2, 0)),
+      new THREE.Quaternion().setFromEuler(new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI)),
+      new THREE.Quaternion().setFromEuler(new THREE.Euler(Math.PI / 2, 0, Math.PI))
     ];
 
-    // Clone the base group, position, and rotate accordingly
+    // Create and position the corner spheres in the unit cell
     positions.forEach((pos, index) => {
-      const group = baseGroup.clone();  // Clone the group
-      group.position.set(pos[0], pos[1], pos[2]);
-      group.rotation.set(rotations[index][0], rotations[index][1], rotations[index][2]);
-      scene.add(group);
+      const color = (index === 7) ? 0xff0000 : 0xffff00; // Red color for the atom at (1,1,1)
+      const cornerSphereGroup = createCornerSphereGroup(radius, color);
+      cornerSphereGroup.quaternion.copy(rotations[index]);
+      cornerSphereGroup.position.set(pos[0], pos[1], pos[2]);
+      unitCellGroup.add(cornerSphereGroup);
+
+      //const cubeEdges = createCubeEdges();
+      //cubeEdges.position.set(pos[0], pos[1], pos[2]);
+      //unitCellGroup.add(cubeEdges);
     });
 
-    // Function to create axis labels
-    function createAxisLabel(text, position) {
-      const loader = new THREE.FontLoader();
-      loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
-        const geometry = new THREE.TextGeometry(text, {
-          font: font,
-          size: 0.2,
-          height: 0.02,
-          curveSegments: 12
-        });
-        const material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-        const mesh = new THREE.Mesh(geometry, material);
-        mesh.position.copy(position);
-        scene.add(mesh);
+    const cubeEdges = createCubeEdges();
+    unitCellGroup.add(cubeEdges);
+
+    // Add a whole sphere in the center of the unit cell
+    const centerSphere = createWholeSphere(radius, 0xffff00); // Yellow color for the center sphere
+    centerSphere.position.set(0.5, 0.5, 0.5);
+    unitCellGroup.add(centerSphere);
+
+    // Add the unit cell group to the scene
+    scene.add(unitCellGroup);
+
+    // Clone and translate copies of the unit cell group
+    const clonedGroups = [];
+    const initialTranslations = [
+      [2, 0, 0],
+      [0, 0, 2],
+      [2, 0, 2],
+      [0, 2, 0]
+    ];
+
+    const rotationAngles = [
+      new THREE.Euler(0, -Math.PI / 2, 0),
+      new THREE.Euler(0, Math.PI / 2, 0),
+      new THREE.Euler(0, Math.PI, 0),
+      new THREE.Euler(0, 0, -Math.PI / 2)
+    ];
+
+    initialTranslations.forEach((trans, index) => {
+      const clonedGroup = unitCellGroup.clone();
+      clonedGroup.position.set(trans[0], trans[1], trans[2]);
+      const quaternion = new THREE.Quaternion().setFromEuler(rotationAngles[index]);
+      clonedGroup.applyQuaternion(quaternion);
+      scene.add(clonedGroup);
+      clonedGroups.push(clonedGroup);
+    });
+
+    // Function to update the distances between unit cell groups
+    function updateDistances(distance) {
+      initialTranslations.forEach((trans, index) => {
+        const clonedGroup = clonedGroups[index];
+        clonedGroup.position.set(trans[0] * distance, trans[1] * distance, trans[2] * distance);
       });
     }
 
-    // Add axis labels
-    createAxisLabel('X', new THREE.Vector3(3, 0, 0));
-    createAxisLabel('Y', new THREE.Vector3(0, 3, 0));
-    createAxisLabel('Z', new THREE.Vector3(0, 0, 3));
+    // Event listener for the distance slider
+    const distanceSlider = document.getElementById('distanceSlider');
+    distanceSlider.addEventListener('input', (event) => {
+      const distance = event.target.value;
+      updateDistances(distance);
+    });
 
-    // Set camera position
+    // Set the camera position
     camera.position.z = 5;
 
     // Animation loop
