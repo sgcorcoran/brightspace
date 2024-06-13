@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Three.js Unit Cell with Corner and Whole Atoms</title>
+  <title>Building BCC Structure with Unit Cells</title>
   <style>
     body { margin: 0; }
     canvas { display: block; }
@@ -15,17 +15,47 @@
       background: rgba(255, 255, 255, 0.8);
       padding: 10px;
       border-radius: 5px;
+      text-align: center;
     }
+    .controls-container label {
+      display: block;
+    }
+    .controls-container input[type="checkbox"] {
+      margin-bottom: 10px;
+    }
+    .controls-container button {
+      margin-top: 10px;
+    }
+    .diamond {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas:
+        ". top ."
+        "left . right"
+        ". front .";
+    }
+    .diamond label {
+      margin: 0;
+    }
+    .top { grid-area: top; }
+    .left { grid-area: left; }
+    .right { grid-area: right; }
+    .front { grid-area: front; }
   </style>
 </head>
 <body>
   <div class="controls-container">
-    <label for="distanceSlider">Distance: </label>
-    <input type="range" id="distanceSlider" min="1" max="5" step="0.1" value="2"><br>
-    <label><input type="checkbox" id="cell1" checked> Unit Cell 1</label><br>
-    <label><input type="checkbox" id="cell2" checked> Unit Cell 2</label><br>
-    <label><input type="checkbox" id="cell3" checked> Unit Cell 3</label><br>
-    <label><input type="checkbox" id="cell4" checked> Unit Cell 4</label><br>
+    <label for="distanceSlider">Distance between unit cells: </label>
+    <input type="range" id="distanceSlider" min="1" max="1.5" step="0.01" value="1.25"><br>
+    <p>Show Unit Cell</p>
+    <div class="diamond">
+      <label class="top"><input type="checkbox" id="cell4" checked> Top</label>
+      <label class="left"><input type="checkbox" id="cell2" checked> Left</label>
+      <label class="right"><input type="checkbox" id="cell1" checked> Right</label>
+      <label class="front"><input type="checkbox" id="cell3" checked> Front</label>
+    </div>
+    <button id="resetViewButton">Reset View</button>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
@@ -38,37 +68,57 @@
     document.body.appendChild(renderer.domElement);
 
     // Add lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    const pointLight1 = new THREE.PointLight(0xefffef, 1, 50);
+    pointLight1.position.set(-10, -10, 10);
+    scene.add(pointLight1);
+
+    const pointLight2 = new THREE.PointLight(0xffefef, 1, 50);
+    pointLight2.position.set(-10, 10, 10);
+    scene.add(pointLight2);
+
+    const pointLight3 = new THREE.PointLight(0xefefff, 1, 50);
+    pointLight3.position.set(10, -10, 10);
+    scene.add(pointLight3);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
-    directionalLight.position.set(1, 1, 1).normalize();
-    scene.add(directionalLight);
 
     // Add orbit controls
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-    // Add global axes helper
-    const globalAxesHelper = new THREE.AxesHelper(2);
-    scene.add(globalAxesHelper);
-
-    // Function to create a whole sphere
+    // Function to create a whole sphere with realistic material
     function createWholeSphere(radius, color) {
       const geometry = new THREE.SphereGeometry(radius, 32, 32);
-      const material = new THREE.MeshPhongMaterial({ color: color, shininess: 50, side: THREE.DoubleSide });
+      const material = new THREE.MeshStandardMaterial({
+        color: color,
+        roughness: 0.6,
+        metalness: 0.1,
+        side: THREE.DoubleSide
+      });
       return new THREE.Mesh(geometry, material);
     }
 
-    // Function to create a corner sphere (1/8 sphere)
+    // Function to create a corner sphere (1/8 sphere) with realistic material
     function createCornerSphere(radius, color) {
       const geometry = new THREE.SphereGeometry(radius, 32, 16, Math.PI / 2, Math.PI / 2, 0, Math.PI / 2);
-      const material = new THREE.MeshPhongMaterial({ color: color, shininess: 50, side: THREE.DoubleSide });
+      const material = new THREE.MeshStandardMaterial({
+        color: color,
+        roughness: 0.6,
+        metalness: 0.1,
+        side: THREE.DoubleSide
+      });
       return new THREE.Mesh(geometry, material);
     }
 
-    // Function to create a corner disk
+    // Function to create a corner disk to cap corner sphere cut surfaces with realistic material
     function createCornerDisk(radius, color, rotation) {
       const geometry = new THREE.CircleGeometry(radius, 32, 0, Math.PI / 2);
-      const material = new THREE.MeshPhongMaterial({ color: color, shininess: 50, side: THREE.DoubleSide });
+      const material = new THREE.MeshStandardMaterial({
+        color: color,
+        roughness: 0.6,
+        metalness: 0.1,
+        side: THREE.DoubleSide
+      });
       const disk = new THREE.Mesh(geometry, material);
       const quaternion = new THREE.Quaternion().setFromEuler(rotation);
       disk.applyQuaternion(quaternion);
@@ -113,7 +163,7 @@
       const positionAttribute = new THREE.Float32BufferAttribute(vertices.flat(), 3);
       geometry.setAttribute('position', positionAttribute);
 
-      const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 1 });
+      const lineMaterial = new THREE.LineBasicMaterial({ color: 'gray', linewidth: 1 });
       return new THREE.LineSegments(geometry, lineMaterial);
     }
 
@@ -148,35 +198,49 @@
 
     // Create and position the corner spheres in the unit cell
     positions.forEach((pos, index) => {
-      const color = (index === 7) ? 0xff0000 : 0xffff00; // Red color for the atom at (1,1,1)
+      const color = (index === 7) ? 0xff0000 : 0xFFCC00; // Red color for the atom at (1,1,1)
       const cornerSphereGroup = createCornerSphereGroup(radius, color);
       cornerSphereGroup.quaternion.copy(rotations[index]);
       cornerSphereGroup.position.set(pos[0], pos[1], pos[2]);
       unitCellGroup.add(cornerSphereGroup);
-
-      //const cubeEdges = createCubeEdges();
-      //cubeEdges.position.set(pos[0], pos[1], pos[2]);
-      //unitCellGroup.add(cubeEdges);
     });
 
+    // Add cube edges to the unit cell group
     const cubeEdges = createCubeEdges();
     unitCellGroup.add(cubeEdges);
 
     // Add a whole sphere in the center of the unit cell
-    const centerSphere = createWholeSphere(radius, 0xffff00); // Yellow color for the center sphere
+    const centerSphere = createWholeSphere(radius, 0xFFCC00); // Yellow color for the center sphere
     centerSphere.position.set(0.5, 0.5, 0.5);
     unitCellGroup.add(centerSphere);
 
     // Add the unit cell group to the scene
     scene.add(unitCellGroup);
 
+    // Function to update the distances between unit cell groups
+    function updateDistances(distance) {
+      const translations = [
+        [2 * distance, 0, 0],
+        [0, 0, 2 * distance],
+        [2 * distance, 0, 2 * distance],
+        [0, 2 * distance, 0]
+      ];
+      translations.forEach((trans, index) => {
+        const clonedGroup = clonedGroups[index];
+        clonedGroup.position.set(trans[0], trans[1], trans[2]);
+      });
+    }
+
     // Clone and translate copies of the unit cell group
     const clonedGroups = [];
+    const distanceSlider = document.getElementById('distanceSlider');
+    const initialDistance = distanceSlider.value;
+
     const initialTranslations = [
-      [2, 0, 0],
-      [0, 0, 2],
-      [2, 0, 2],
-      [0, 2, 0]
+      [2 * initialDistance, 0, 0],
+      [0, 0, 2 * initialDistance],
+      [2 * initialDistance, 0, 2 * initialDistance],
+      [0, 2 * initialDistance, 0]
     ];
 
     const rotationAngles = [
@@ -195,16 +259,7 @@
       clonedGroups.push(clonedGroup);
     });
 
-    // Function to update the distances between unit cell groups
-    function updateDistances(distance) {
-      initialTranslations.forEach((trans, index) => {
-        const clonedGroup = clonedGroups[index];
-        clonedGroup.position.set(trans[0] * distance, trans[1] * distance, trans[2] * distance);
-      });
-    }
-
     // Event listener for the distance slider
-    const distanceSlider = document.getElementById('distanceSlider');
     distanceSlider.addEventListener('input', (event) => {
       const distance = event.target.value;
       updateDistances(distance);
@@ -225,7 +280,25 @@
     });
 
     // Set the camera position
-    camera.position.z = 5;
+    const mag = 5;
+    const initialCameraPosition = new THREE.Vector3(mag * 0.75, mag * 0.75, mag);
+    camera.position.copy(initialCameraPosition);
+
+    // Function to reset the camera position and show all cells
+    function resetCameraPosition() {
+      camera.position.copy(initialCameraPosition);
+      controls.update();
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = true;
+      });
+      updateVisibility();
+      distanceSlider.value = initialDistance;
+      updateDistances(initialDistance);
+    }
+
+    // Add event listener for the reset view button
+    const resetViewButton = document.getElementById('resetViewButton');
+    resetViewButton.addEventListener('click', resetCameraPosition);
 
     // Animation loop
     function animate() {
@@ -233,6 +306,9 @@
       controls.update();
       renderer.render(scene, camera);
     }
+
+    // Update distances initially
+    updateDistances(initialDistance);
 
     animate();
   </script>
