@@ -1,41 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen - FCC Unit Cell - updated</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-  body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-canvas {
-  display: block;
-}
-#slider-container {
-  position: absolute;
-  bottom: 0px;
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  pointer-events: none;
-}
-#radius-slider {
-  pointer-events: all;
-}
-  </style>
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!-- Slider to control atom radius -->
-<div id="slider-container">
-  <input type="range" id="radius-slider" min="0.2" max="0.707" step="0.01" value="0.2" style="width: 100%;">
-</div>
-<!-- partial -->
-  <script>
-  import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.167.1/build/three.module.js/+esm";
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.167.1/build/three.module.js/+esm";
 import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.167.1/examples/jsm/controls/OrbitControls.js/+esm";
 // Initialize scene, camera, and renderer
 const scene = new THREE.Scene();
@@ -163,7 +126,3 @@ document.getElementById("radius-slider").addEventListener("input", function () {
   radius = parseFloat(this.value);
   createAtoms();
 });
-  </script>
-
-</body>
-</html>
