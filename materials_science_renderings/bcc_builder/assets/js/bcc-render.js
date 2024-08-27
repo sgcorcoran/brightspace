@@ -1,4 +1,4 @@
-import { setupScene, setupResizeHandler, addLights, createOrbitControls, createWholeSphere, createCubeEdges, createAndPositionCornerSpheres } from './render-utils.js';
+import { setupScene, setupResizeHandler, addLights, createOrbitControls, createWholeSphere, createCubeEdges, createAndPositionCornerSpheres, updateDistances, createAndCloneUnitCellGroups, updateVisibility, resetCameraPosition } from './render-utils.js';
 
 export function initBCCRender(containerId) {
   const { scene, camera, renderer } = setupScene(containerId);
@@ -27,7 +27,7 @@ export function initBCCRender(containerId) {
 
   // Add the unit cell group to the scene
   scene.add(unitCellGroup);
-  
+
   // Clone and translate copies of the unit cell group
   const distanceSlider = document.getElementById('distanceSlider');
   const initialDistance = distanceSlider.value;
@@ -72,6 +72,4 @@ export function initBCCRender(containerId) {
   animate();
 
   setupResizeHandler(camera, renderer, containerId);
-}  
-  
-
+}

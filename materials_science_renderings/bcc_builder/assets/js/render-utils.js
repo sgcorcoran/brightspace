@@ -1,4 +1,4 @@
-// import * as THREE from 'three';
+
 
 export function setupScene(containerId) {
   const container = document.getElementById(containerId);
