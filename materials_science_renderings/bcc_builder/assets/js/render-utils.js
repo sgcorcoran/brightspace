@@ -166,3 +166,55 @@ export function createAndPositionCornerSpheres(unitCellGroup, radius) {
     unitCellGroup.add(cornerSphereGroup);
   });
 }
+
+export function updateDistances(clonedGroups, distance) {
+  const translations = [
+    [2 * distance, 0, 0],
+    [0, 0, 2 * distance],
+    [2 * distance, 0, 2 * distance],
+    [0, 2 * distance, 0]
+  ];
+  translations.forEach((trans, index) => {
+    const clonedGroup = clonedGroups[index];
+    clonedGroup.position.set(trans[0], trans[1], trans[2]);
+  });
+}
+
+export function createAndCloneUnitCellGroups(scene, unitCellGroup, initialDistance, rotationAngles) {
+  const clonedGroups = [];
+  const initialTranslations = [
+    [2 * initialDistance, 0, 0],
+    [0, 0, 2 * initialDistance],
+    [2 * initialDistance, 0, 2 * initialDistance],
+    [0, 2 * initialDistance, 0]
+  ];
+
+  initialTranslations.forEach((trans, index) => {
+    const clonedGroup = unitCellGroup.clone();
+    clonedGroup.position.set(trans[0], trans[1], trans[2]);
+    const quaternion = new THREE.Quaternion().setFromEuler(rotationAngles[index]);
+    clonedGroup.applyQuaternion(quaternion);
+    scene.add(clonedGroup);
+    clonedGroups.push(clonedGroup);
+  });
+
+  return clonedGroups;
+}
+
+export function updateVisibility(clonedGroups) {
+  clonedGroups.forEach((group, index) => {
+    const checkbox = document.getElementById(`cell${index + 1}`);
+    group.visible = checkbox.checked;
+  });
+}
+
+export function resetCameraPosition(camera, controls, initialCameraPosition, checkboxes, distanceSlider, initialDistance, clonedGroups) {
+  camera.position.copy(initialCameraPosition);
+  controls.update();
+  checkboxes.forEach(checkbox => {
+    checkbox.checked = true;
+  });
+  updateVisibility(clonedGroups);
+  distanceSlider.value = initialDistance;
+  updateDistances(clonedGroups, initialDistance);
+}

@@ -27,11 +27,41 @@ export function initBCCRender(containerId) {
 
   // Add the unit cell group to the scene
   scene.add(unitCellGroup);
+  
+  // Clone and translate copies of the unit cell group
+  const distanceSlider = document.getElementById('distanceSlider');
+  const initialDistance = distanceSlider.value;
+  const rotationAngles = [
+    new THREE.Euler(0, -Math.PI / 2, 0),
+    new THREE.Euler(0, Math.PI / 2, 0),
+    new THREE.Euler(0, Math.PI, 0),
+    new THREE.Euler(0, 0, -Math.PI / 2)
+  ];
+  const clonedGroups = createAndCloneUnitCellGroups(scene, unitCellGroup, initialDistance, rotationAngles);
 
   // Set the camera position
   const mag = 5;
   const initialCameraPosition = new THREE.Vector3(mag * 0.75, mag * 0.75, mag);
   camera.position.copy(initialCameraPosition);
+
+  // Event listener for the distance slider
+  distanceSlider.addEventListener('input', (event) => {
+    const distance = event.target.value;
+    updateDistances(clonedGroups, distance);
+  });
+
+  // Event listener for checkboxes
+  const checkboxes = document.querySelectorAll('.controls-container input[type="checkbox"]');
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', () => updateVisibility(clonedGroups));
+  });
+
+  // Event listener for the reset view button
+  const resetViewButton = document.getElementById('resetViewButton');
+  resetViewButton.addEventListener('click', () => resetCameraPosition(camera, controls, initialCameraPosition, checkboxes, distanceSlider, initialDistance, clonedGroups));
+
+  // Initial updates
+  updateDistances(clonedGroups, initialDistance);
 
   // Animation loop
   function animate() {
@@ -42,4 +72,6 @@ export function initBCCRender(containerId) {
   animate();
 
   setupResizeHandler(camera, renderer, containerId);
-}
+}  
+  
+
