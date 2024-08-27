@@ -1,5 +1,5 @@
 
-import { initBCCRender } from './bcc-render.js';
+//import { initBCCRender } from './bcc-render.js';
 
 // Initialize the BCC render
 document.addEventListener('DOMContentLoaded', async () => {
