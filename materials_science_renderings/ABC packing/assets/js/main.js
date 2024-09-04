@@ -1,9 +1,7 @@
+// main.js
 
-import { initBCCRender } from './bcc-render.js';
-
-// Initialize the BCC render
+// Initialize the ABC render
 document.addEventListener('DOMContentLoaded', async () => {
-  const { initBCCRender } = await import('./bcc-render.js');
-  initBCCRender('bcc-render-output');
-
+  const { initABCScene } = await import('./ABC.js');
+  initABCScene('ABC');
 });
