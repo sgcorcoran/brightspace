@@ -137,57 +137,11 @@ function updatePlanes(system, plane100Index, plane110Index, plane111Index) {
     const planeColor2 = new THREE.Color(0xFD81B60); // Magenta color for (110) planes
     const planeColor3 = new THREE.Color(0x004D40); // Dark green color for (111) planes
 
-    // Restore the original lattice if the removeAtomsCheckbox is unchecked
-    if (!removeAtomsCheckbox.checked) {
-        lattice = [...originalLattice]; // Restore original lattice
-        clearScene(); // Clear the scene
-        lattice.forEach(position => {
-            const atom = new THREE.Mesh(
-                new THREE.SphereGeometry(sphereRadius, 8, 8),
-                new THREE.MeshPhongMaterial({ color: 0xffaa00 })
-            );
-            atom.position.copy(position);
-            scene.add(atom);
-        });
-    }
+    // Restore the original lattice
+    lattice = [...originalLattice];
+    clearScene(); // Clear the entire scene
 
-    // (100) Plane
-    if (plane1Checkbox.checked) {
-        lattice.forEach(position => {
-            if (position.x === plane100Index) {
-                const planeSphere = new THREE.Mesh(planeGeometry, new THREE.MeshPhongMaterial({ color: planeColor1 }));
-                planeSphere.position.copy(position);
-                planes.push(planeSphere);
-                scene.add(planeSphere);
-            }
-        });
-    }
-
-    // (110) Plane
-    if (plane2Checkbox.checked) {
-        lattice.forEach(position => {
-            if (position.x + position.y === (2 * numCells) - plane110Index) {
-                const planeSphere = new THREE.Mesh(planeGeometry, new THREE.MeshPhongMaterial({ color: planeColor2 }));
-                planeSphere.position.copy(position);
-                planes.push(planeSphere);
-                scene.add(planeSphere);
-            }
-        });
-    }
-
-    // (111) Plane
-    if (plane3Checkbox.checked) {
-        lattice.forEach(position => {
-            if (Math.round(position.x + position.y + position.z) === (3 * numCells) - plane111Index) {
-                const planeSphere = new THREE.Mesh(planeGeometry, new THREE.MeshPhongMaterial({ color: planeColor3 }));
-                planeSphere.position.copy(position);
-                planes.push(planeSphere);
-                scene.add(planeSphere);
-            }
-        });
-    }
-
-    // Remove atoms beyond the selected planes if the checkbox is checked
+    // Filter and remove atoms if the checkbox is checked
     if (removeAtomsCheckbox.checked) {
         lattice = lattice.filter(position => {
             return (
@@ -196,16 +150,53 @@ function updatePlanes(system, plane100Index, plane110Index, plane111Index) {
                 (!plane3Checkbox.checked || position.x + position.y + position.z <= (3 * numCells) - plane111Index)
             );
         });
+    }
 
-        // Remove only the atoms that are clipped, without clearing the entire scene
-        scene.children = scene.children.filter(obj => {
-            if (obj.type === "Mesh" && obj.geometry instanceof THREE.SphereGeometry) {
-                return lattice.some(pos => pos.equals(obj.position));
+    // Redraw only the filtered atoms in their default color
+    lattice.forEach(position => {
+        const atom = new THREE.Mesh(
+            new THREE.SphereGeometry(sphereRadius, 8, 8),
+            new THREE.MeshPhongMaterial({ color: 0xffaa00 }) // Default atom color
+        );
+        atom.position.copy(position);
+        scene.add(atom); // Add atoms
+    });
+
+    // Now, color the atoms in the selected planes
+    if (plane1Checkbox.checked) {
+        lattice.forEach(position => {
+            if (position.x === plane100Index) {
+                const planeSphere = new THREE.Mesh(planeGeometry, new THREE.MeshPhongMaterial({ color: planeColor1 }));
+                planeSphere.position.copy(position);
+                scene.add(planeSphere); // Color and add atoms for (100) plane
             }
-            return true;
+        });
+    }
+
+    if (plane2Checkbox.checked) {
+        lattice.forEach(position => {
+            if (position.x + position.y === (2 * numCells) - plane110Index) {
+                const planeSphere = new THREE.Mesh(planeGeometry, new THREE.MeshPhongMaterial({ color: planeColor2 }));
+                planeSphere.position.copy(position);
+                scene.add(planeSphere); // Color and add atoms for (110) plane
+            }
+        });
+    }
+
+    if (plane3Checkbox.checked) {
+        lattice.forEach(position => {
+            if ((position.x + position.y + position.z) === (3 * numCells) - plane111Index) {
+                const planeSphere = new THREE.Mesh(planeGeometry, new THREE.MeshPhongMaterial({ color: planeColor3 }));
+                planeSphere.position.copy(position);
+                scene.add(planeSphere); // Color and add atoms for (111) plane
+            }
         });
     }
 }
+
+
+
+
 
 function clearScene() {
     for (let i = scene.children.length - 1; i >= 0; i--) {
