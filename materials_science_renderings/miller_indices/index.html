@@ -47,8 +47,8 @@
     </div>
 
     <script type="module">
-      import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.module.js';
-      import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.134.0/examples/jsm/controls/OrbitControls.js';
+      import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.167.1/build/three.module.js/+esm';
+      import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.167.1/examples/jsm/controls/OrbitControls.js/+esm';
 
       let scene, camera, renderer, cube, plane, axesHelper;
 
@@ -71,20 +71,20 @@
         renderer.setSize(container.offsetWidth, container.offsetHeight);
         container.appendChild(renderer.domElement);
 
-        // Create a wireframe cube
+        // Create a wireframe cube with white edges, offset by (-0.5, -0.5, -0.5)
         const geometry = new THREE.BoxGeometry(1, 1, 1);
         const edges = new THREE.EdgesGeometry(geometry);
-        const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000 });
+        const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff }); // White edges
         cube = new THREE.LineSegments(edges, lineMaterial);
+        cube.position.set(0.5, 0.5, 0.5); // Shift cube to place bottom-back corner at (0, 0, 0)
         scene.add(cube);
 
-        // Create axes from the bottom-back corner of the cube
-        axesHelper = new THREE.AxesHelper(1.5);
-        axesHelper.position.set(-0.5, -0.5, -0.5);
+        // Create axes from the bottom-back corner of the cube and extend by 50%
+        axesHelper = new THREE.AxesHelper(2.25); // Increased from 1.5 to 2.25
         scene.add(axesHelper);
 
         // Add controls to rotate the cube
-        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        const controls = new OrbitControls(camera, renderer.domElement);
 
         animate();
       }
@@ -102,18 +102,26 @@
           scene.remove(plane);
         }
 
-        const planeGeometry = new THREE.PlaneGeometry(1.2, 1.2);
+        // Set the plane constant D = 1
+        const D = 1 / (h ** 2 + k ** 2 + l ** 2);
+
+        // Define the normal vector of the plane based on Miller indices
+        const normal = new THREE.Vector3(h, k, l);
+
+        // Create a finite plane geometry for rendering without extra x-lines
+        const planeGeometry = new THREE.PlaneGeometry(3, 3); // Size the plane large enough for visualization
         const planeMaterial = new THREE.MeshBasicMaterial({
-          color: 0xffa500,
+          color: 0xffa500, // Orange
           side: THREE.DoubleSide,
           transparent: true,
           opacity: 0.5,
         });
+
         plane = new THREE.Mesh(planeGeometry, planeMaterial);
 
-        // Set plane's normal direction based on Miller indices
-        const normal = new THREE.Vector3(h, k, l).normalize();
-        plane.lookAt(normal);
+        // Position the plane at (0,0,0) and orient it based on the normal
+        plane.position.copy(normal.multiplyScalar(D));
+        plane.lookAt(normal.add(plane.position));
 
         scene.add(plane);
       }
