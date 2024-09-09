@@ -71,7 +71,6 @@
         renderer.setSize(container.offsetWidth, container.offsetHeight);
         container.appendChild(renderer.domElement);
 
-        // Create a wireframe cube with white edges, offset by (-0.5, -0.5, -0.5)
         const geometry = new THREE.BoxGeometry(1, 1, 1);
         const edges = new THREE.EdgesGeometry(geometry);
         const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff }); // White edges
@@ -102,6 +101,19 @@
           scene.remove(plane);
         }
 
+        // Enable local clipping
+        renderer.localClippingEnabled = true;
+
+        // Define local clipping planes around the box
+        const planes = [
+          new THREE.Plane(new THREE.Vector3(-1, 0, 0), 1.01),
+          new THREE.Plane(new THREE.Vector3(0, -1, 0), 1.01),
+          new THREE.Plane(new THREE.Vector3(0, 0, -1), 1.01),
+          new THREE.Plane(new THREE.Vector3(1, 0, 0), 0.01),
+          new THREE.Plane(new THREE.Vector3(0, 1, 0), 0.01),
+          new THREE.Plane(new THREE.Vector3(0, 0, 1), 0.01),
+        ];
+
         // Set the plane constant D = 1
         const D = 1 / (h ** 2 + k ** 2 + l ** 2);
 
@@ -115,12 +127,14 @@
           side: THREE.DoubleSide,
           transparent: true,
           opacity: 0.5,
+          clippingPlanes: planes,
         });
 
         plane = new THREE.Mesh(planeGeometry, planeMaterial);
 
         // Position the plane at (0,0,0) and orient it based on the normal
         plane.position.copy(normal.multiplyScalar(D));
+        //plane.position.copy(new THREE.Vector3());
         plane.lookAt(normal.add(plane.position));
 
         scene.add(plane);
@@ -132,9 +146,9 @@
         .addEventListener('submit', function (event) {
           event.preventDefault();
 
-          const h = parseFloat(document.getElementById('h').value);
-          const k = parseFloat(document.getElementById('k').value);
-          const l = parseFloat(document.getElementById('l').value);
+          const h = parseFloat(document.getElementById('k').value);
+          const k = parseFloat(document.getElementById('l').value);
+          const l = parseFloat(document.getElementById('h').value);
 
           createPlane(h, k, l);
         });
