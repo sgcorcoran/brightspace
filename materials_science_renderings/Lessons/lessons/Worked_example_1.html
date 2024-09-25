@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Image Samples</title>
+    <script type="module" src="../assets/js/global.min.js"></script>
+    <script
+      id="MathJax-script"
+      async=""
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Worked Example: APF</h1>
+      <p>
+        Show that the atomic packing factor for the body-centered cubic crystal
+        structure is 0.68.
+      </p>
+    </header>
+    <main>
+      <article>
+        <h2>Objectives:</h2>
+        <ol>
+          <li>
+            Identify the direction that atoms are touching in the BCC structure.
+          </li>
+          <li>
+            Determine the number of whole atom volumes in the BCC structure.
+          </li>
+          <li>Determine the BCC edge length in terms of the atom radius.</li>
+          <li>Calculate the atomic packing factor for the BCC structure.</li>
+        </ol>
+      </article>
+
+      <h2>Atomic Packing Factor (APF)</h2>
+
+      <aside>
+        <h4>Terminology: APF</h4>
+        <p>
+          The atomic packing factor (APF) is a measure of the packing efficiency
+          of a given crystal structure. It is defined as the total volume of
+          atoms in the unit cell divided by the overall volume of the unit cell.
+        </p>
+      </aside>
+
+      <h3>Body-Centered Cubic (BCC)</h3>
+      <figure>
+        <img
+          src="../assets/images/lesson1/bcc_unit_cell_corner_label.png"
+          width=" 237"
+          =""
+          =""
+          height="230"
+        />
+        <figcaption>
+          Cut-sphere model of the BCC unit cell. Each corner atom has only 1/8
+          of its volume within the unit cell.
+        </figcaption>
+      </figure>
+
+      <h5>Number of atoms in the BCC unit cell:</h5>
+      \[8 \text{ corners} \times \frac{1}{8}
+      \left(\frac{\text{atom}}{\text{corner}}\right) + 1 \text{
+      body&nbsp;center&nbsp;atom} = 2 \frac{\text{atoms}}{
+      \text{unit&nbsp;cell}}\]
+
+      <h5>Total volume of atoms in the unit cell:</h5>
+      \[ 2\text{ atoms}\times \left(\frac{4}{3} \pi R^3\right) = \frac{8}{3}\pi
+      R^3\] where \(R\) is the radius of the atoms and \(\frac{4}{3} \pi R^3\)
+      is the volume of a sphere.
+
+      <h5>Length of the body diagonal:</h5>
+      <aside>
+        <figure>
+          <div style="width: max-content">
+            <img
+              width="180px"
+              src="../assets/images/lesson1/bcc_diagonal_touching.png"
+            /><img width="180px" src="../assets/images/lesson1/bcc_2D_4R.png" />
+          </div>
+          <figcaption>
+            (a) The cut-sphere model showing the details of the atoms touching
+            along the body diagonal. (b) Details of the triangle shown in (a)
+          </figcaption>
+        </figure>
+      </aside>
+
+      For the BCC structure, atoms touch along the body diagonal as shown in
+      figure (a) to the right. Six of the corner atoms have been removed from
+      the BCC unit cell in this figure to make it easier to see the touching
+      atoms. The triangle shown in bold has been redrawn in the second figure.
+      The height of the triangle is equal to the unit cell edge length, \(a\),
+      and the bottom leg is a face diagonal and therefore equal to \( a\sqrt{2}
+      \). The diagonal of the cube is then given by the Pythagorean theorem as
+      \[\text{Body diagonal} =\sqrt{(a\sqrt{2})^2 + (a)^2} = a\ \sqrt{3} \]
+
+      <h5>Finding the edge length, \(\boldsymbol{a}\):</h5>
+      From the figure (b) above, we can also see that the body diagonal is equal
+      to \(4 R\). This can be observed by counting the number of line segments
+      of length \(R\) shown along the hypotenuse of the figure. The important
+      condition here is that the atoms are touching along this direction.
+      Therefore we have, \[ 4 R = a\ \sqrt{3}\quad \text{ or }\quad
+      a=\frac{4R}{\sqrt{3}}\]
+
+      <h5>Finally:</h5>
+      From the definition of the atomic packing factor, \[ APF =
+      \frac{\text{total&nbsp;volume&nbsp;of&nbsp;atoms&nbsp;in&nbsp;the&nbsp;unit&nbsp;cell}}{\text{unit&nbsp;cell&nbsp;volume}}
+      = \frac{\frac{8}{3}\pi R^3}{a^3}\] \[=\frac{\frac{8}{3} \pi\
+      R^3}{(\frac{4\ R}{\sqrt{3}})^3} = \frac{\pi\ \sqrt{3}}{8} \approx 0.68\]
+      Therefore, 68% of the BCC unit cell is composed of atoms and the remaining
+      32% is empty space.
+
+      <div class="notice" style="text-align: center">
+        <h4>How would this derivation change for the FCC structure?</h4>
+        <cite>(Perhaps a good exam question.) </cite>
+      </div>
+    </main>
+    <footer>
+      Copyright © 2024 Sean Corcoran
+      <!-- To add static year, add data-year attribute with the year in quotes. Ex. data-year="2023" -->
+      <!-- By default, will dynamically append current year -->
+      <!-- <p class="courseware-helper-client-copyright mceEditable">© [Client] </p> -->
+    </footer>
+  </body>
+</html>

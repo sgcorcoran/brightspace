@@ -1,0 +1,16 @@
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+  font-size: 100% !important;
+}
+
+aside:has(figure) {
+  /*use <aside style="float: left"> for left floating image*/
+  background-color: inherit;
+  border: 0px;
+  margin-bottom: 1rem;
+  float: right;
+  width: min-content; /* wrap the img element(s) with <div style="width: max-content"> for this to work */
+  margin-inline-start: 15px;
+  padding: 0 15px;
+  font-size: 1rem;
+}
