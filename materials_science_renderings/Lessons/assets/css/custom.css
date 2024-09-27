@@ -2,9 +2,22 @@ body > header {
   color: var(--vt-white);
 }
 
+hr {
+  background: var(--vt-impactOrange);
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
 mjx-container[jax='CHTML'] {
   line-height: 0;
-  font-size: 100% !important;
+  font-size: 1.2rem !important;
 }
 
 figcaption {
@@ -101,7 +114,7 @@ aside:has(figure)::after {
 }
 
 :root {
-  --accent-bg: var(--vt-maroon);
+  --accent-bg: var(--vt-maroon) !important;
   --border: var(--vt-hokieStone);
   --vt-maroon: #861f41;
   --vt-burntOrange: #e5751f;
