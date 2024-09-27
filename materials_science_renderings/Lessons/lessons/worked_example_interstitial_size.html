@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="icon"
+      href="../../assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>VT MSE 2034</title>
+    <script type="module" src="../assets/js/global.min.js"></script>
+    <script
+      id="MathJax-script"
+      async=""
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Worked Example: size of the FCC tetrahedral site</h1>
+      <p>
+        Find the size of the largest interstital atom that will just fit into
+        the tetrahedral site for the face-centered cubic structure.
+      </p>
+    </header>
+    <main>
+      <article>
+        <h2>Objectives:</h2>
+        <ol>
+          <li>
+            Identify the tetrahedral interstitial site in the FCC crystal
+            structure.
+          </li>
+          <li>
+            Calculate the distance between the the center of the interstitial
+            site to that of the nearest neighbor site.
+          </li>
+          <li>
+            Use the calculated distance and the appropriate edge length for the
+            FCC structure, to determine the size of the interstitial site
+            relative to the host atom radius.
+          </li>
+        </ol>
+      </article>
+      <h2>Interstitial Lattice Sites</h2>
+      <h3>The tetrahedral site in the FCC structure</h3>
+
+      <aside>
+        <h4>Terminology: Tetrahedral Site</h4>
+        <img
+          src="../assets/img/fcc_tetrahedral_trans.png"
+          style="width: 75%; display: block; margin: auto"
+        />
+        <p>
+          The small space located at the center of 4 neighboring atoms resulting
+          in the formation of a tetrahedron as shown by the highlighted atoms.
+          For the FCC structure, there are 8 such sites with each site located
+          behind one of the corner atoms.
+        </p>
+      </aside>
+      <figure>
+        <div style="width: max-content">
+          <img
+            src="../assets/img/fcc_unit_with_tetrahedral.png"
+            style="max-width: 180px"
+          />
+          <img
+            src="../assets/img/fcc_unit_with_tetrahedral_colored.png"
+            style="max-width: 180px"
+          />
+        </div>
+        <figcaption>Caption:...</figcaption>
+      </figure>
+
+      <h5>Location of tetrahedral site:</h5>
+
+      The tetrahedral site is located in general \((0.25, 0.25, 0.25)\) away
+      from any given corner atom. If we are considering the corner atom at
+      \((0,0,0)\), the tetrahedral site is located at \(
+      (0,0,0)+(0.25,0.25,0.25)=(0.25,0.25,0.25)\).&nbsp; If we are considering
+      the corner atom at \((1,1,1)\) however, the tetrahedral site is located
+      at&nbsp;\( (1,1,1)-(0.25,0.25,0.25) = (0.75,0.75,0.75)\).&nbsp; If we
+      consider the origin to be located at the bottom-back-left corner, then the
+      corner atom shown in grey would have a position of (1,1,1) and the
+      tetrahedral site (small red atom) would be located at (0.75, 0.75,
+      0.75).&nbsp; &nbsp;These two atoms touch when we perfectly fill the
+      tetrahedral space.&nbsp; The line connecting the corner and the
+      tetrahedral center is equal to \(r+R\) as shown in the figure.&nbsp;
+
+      <aside style="float: left">
+        <figure>
+          <div style="width: max-content">
+            <img width="180px" src="../assets/img/fcc_tetrahedral_dist.png" />
+          </div>
+          <figcaption>Caption ...</figcaption>
+        </figure>
+      </aside>
+
+      The length of this line is also given by the \(|\vec{v}|\) where
+      \(\vec{v}=a\ (1,1,1)-a\ (0.75,0.75,0.75) = a\ (0.25,0.25,0.25)\) and
+      \(|\vec{v}| = \sqrt{(0.25a)^2+(0.25a)^2+(0.25a)^2}=0.25\ a\ \sqrt{3}\).
+      Therefore, we have \[r+R=0.25\ a \ \sqrt{3}\]. Recall that for the FCC
+      structure, \(a=\frac{4R}{\sqrt{2}}\). Now we
+      have,&nbsp;\[r+R=0.25\&nbsp;\frac{4R}{\sqrt{2}}&nbsp;\ \sqrt{3}\]. Solving
+      for \(r\),&nbsp;\[r=(0.25\&nbsp;\frac{4R}{\sqrt{2}}&nbsp;\ \sqrt{3})-R
+      \approx 0.225 R\]
+      <div
+        class="container"
+        style="background-color: antiquewhite; padding: 20px"
+      >
+        <div class="row">
+          <div class="col">
+            <h3 class="text-center" style="padding-top: 30px">
+              Calculating the body diagonal (math refresher)
+            </h3>
+            <div>
+              <ul
+                class="nav nav-tabs"
+                role="tablist"
+                style="border: none; padding-bottom: 10px"
+              >
+                <li
+                  class="nav-item"
+                  role="presentation"
+                  style="margin-right: 5px"
+                >
+                  <a
+                    class="nav-link active"
+                    role="tab"
+                    data-bs-toggle="tab"
+                    href="#tab-1"
+                  >
+                    Method 1: Geometric
+                  </a>
+                </li>
+                <li
+                  class="nav-item"
+                  role="presentation"
+                  style="margin-right: 5px"
+                >
+                  <a
+                    class="nav-link"
+                    role="tab"
+                    data-bs-toggle="tab"
+                    href="#tab-2"
+                  >
+                    Method 2: Dot Products
+                  </a>
+                </li>
+              </ul>
+              <div
+                class="tab-content"
+                style="
+                  border: 2px solid #8b4513;
+                  padding: 15px;
+                  background-color: #fff8dc;
+                  border-radius: 10px;
+                  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+                "
+              >
+                <div class="tab-pane active" role="tabpanel" id="tab-1">
+                  <img src="assets/img/body_diag_main.png" height="200px" />
+                  <img src="assets/img/body_diag_tri1.png" height="200px" />
+                  <img src="assets/img/body_diag_tri2.png" height="200px" />
+                  <p style="padding-top: 10px">
+                    From triangle (1) and the Pythagorean theorem, we get the
+                    face diagonal \(d_f=\sqrt{a^2+a^2}=a\ \sqrt{2} \) and then
+                    from triangle 2 we can get the body diagonal:&nbsp;
+                    \(d_b=\sqrt{a^2+(a\ \sqrt{2})^2}=a\ \sqrt{3}\)&nbsp;
+                  </p>
+                </div>
+                <div class="tab-pane" role="tabpanel" id="tab-2">
+                  <p>
+                    <img
+                      class="float-start"
+                      src="assets/img/body_diag_dot.png"
+                      height="200px"
+                      style="margin-right: 15px"
+                    />
+                    We can find the magnitude of a vector starting with the
+                    definition of the dot product between two vectors,
+                    \(\vec{v_1}\) and \(\vec{v_2}\),&nbsp;
+                    <br />
+                    \[\vec{v_1}\cdot\vec{v_2}=|\vec{v_1}|\ |\vec{v_2}|\
+                    \cos{\theta} \]&nbsp;where \(\theta\) is the angle between
+                    the vectors.&nbsp; The dot product of a vector with itself
+                    \((\theta=0^\circ)\) is therefore \(
+                    \vec{v_1}\cdot\vec{v_1}=|\vec{v_1}|\ |\vec{v_1}| \) or
+                    \(|\vec{v_1}| = \sqrt{\vec{v_1}\cdot\vec{v_1}}\).&nbsp; If
+                    \(\vec{v_1}\) is the body diagonal with general indices
+                    \((a,b,c)\), we have our final equation for the length of
+                    the body diagonal: \( |\vec{v_1}|=\sqrt{a^2+b^2+c^2} \) or
+                    for a cube we get:&nbsp;
+                    \[\text{body&nbsp;diagonal}=\sqrt{a^2+a^2+a^2}=a\ \sqrt{3}
+                    \].
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>Copyright&nbsp;© 2024 Sean Corcoran</footer>
+  </body>
+</html>

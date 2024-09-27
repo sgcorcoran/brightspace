@@ -1,16 +1,121 @@
-mjx-container[jax="CHTML"] {
+body > header {
+  color: var(--vt-white);
+}
+
+mjx-container[jax='CHTML'] {
   line-height: 0;
   font-size: 100% !important;
 }
 
-aside:has(figure) {
+figcaption {
   /*use <aside style="float: left"> for left floating image*/
   background-color: inherit;
-  border: 0px;
+  color: var(--vt-hokieStone);
+}
+
+aside {
+  background-color: inherit;
+  border-width: 0px;
+  position: relative; /* Position the pseudo-elements relative to the aside */
+  padding: 5px; /* Add some padding for spacing */
+}
+
+aside::before,
+aside::after {
+  content: ''; /* Create the pseudo-elements */
+  position: absolute; /* Position them absolutely relative to the aside */
+  width: 20%; /* Set the size of the angle */
+  height: 20%; /* Set the size of the angle */
+  border: 5px solid var(--vt-sunset); /* Define the border color and thickness */
+}
+
+aside::before {
+  top: 5%; /* Position at the top left corner */
+  left: -5%; /* Align with the left edge */
+  border-right: none; /* Create a 90-degree angle by hiding the right border */
+  border-bottom: none; /* Hide the bottom border to create the angle */
+}
+
+aside::after {
+  bottom: 5%; /* Position at the bottom right corner */
+  right: -5%; /* Align with the right edge */
+  border-left: none; /* Create a 90-degree angle by hiding the left border */
+  border-top: none; /* Hide the top border to create the angle */
+}
+
+aside > h4 {
+  position: relative; /* To position the ::after element */
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+aside > h4::after {
+  content: ''; /* Creates the pseudo-element */
+  position: absolute; /* Absolute positioning relative to h4 */
+  bottom: -20%; /* Align it with the bottom of h4 */
+  left: 50%; /* Start from the center */
+  transform: translateX(-50%); /* Center it horizontally */
+  width: 33%; /* Set the width to 50% */
+  border-bottom: 1px solid var(--vt-sunset); /* Create the line */
+}
+
+aside:has(figure) {
+  /*use <aside style="float: left"> for left floating image*/
+  border: 0px solid var(--vt-smoke);
+  border-radius: 5%;
   margin-bottom: 1rem;
   float: right;
   width: min-content; /* wrap the img element(s) with <div style="width: max-content"> for this to work */
   margin-inline-start: 15px;
-  padding: 0 15px;
+  padding-top: 15px;
   font-size: 1rem;
+}
+
+aside:has(figure)::before,
+aside:has(figure)::after {
+  border-color: var(--vt-maroon);
+}
+aside:has(figure)::before {
+  top: 0%; /* Position at the top left corner */
+  left: -2%; /* Align with the left edge */
+  border-right: none; /* Create a 90-degree angle by hiding the right border */
+  border-bottom: none; /* Hide the bottom border to create the angle */
+}
+
+aside:has(figure)::after {
+  bottom: 0%; /* Position at the bottom right corner */
+  right: -2%; /* Align with the right edge */
+  border-left: none; /* Create a 90-degree angle by hiding the left border */
+  border-top: none; /* Hide the top border to create the angle */
+}
+
+.notice {
+  background: var(--vt-teal);
+  border: 0;
+  color: var(--vt-white);
+  border-radius: 0;
+}
+
+.notice > cite {
+  color: var(--vt-white);
+}
+
+:root {
+  --accent-bg: var(--vt-maroon);
+  --border: var(--vt-hokieStone);
+  --vt-maroon: #861f41;
+  --vt-burntOrange: #e5751f;
+  --vt-hokieStone: #75787b;
+  --vt-white: #ffffff;
+  --vt-purple: #642667;
+  --vt-pink: #ce0058;
+  --vt-sunset: #ed8b00;
+  --vt-yellow: #f7ea48;
+  --vt-teal: #508590;
+  --vt-turquoise: #2cd5c4;
+  --vt-grey: #d7d2cb;
+  --vt-smoke: #e5e1e6;
+  --vt-blue: #003c71;
+  --vt-burntOrangeWeb: #c64600;
+  --vt-impactOrange: #ca4f00;
 }
