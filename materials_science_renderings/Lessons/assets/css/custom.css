@@ -43,15 +43,15 @@ aside::after {
 }
 
 aside::before {
-  top: 5%; /* Position at the top left corner */
-  left: -5%; /* Align with the left edge */
+  top: 1rem; /* Position at the top left corner */
+  left: -0.2rem; /* Align with the left edge */
   border-right: none; /* Create a 90-degree angle by hiding the right border */
   border-bottom: none; /* Hide the bottom border to create the angle */
 }
 
 aside::after {
-  bottom: 5%; /* Position at the bottom right corner */
-  right: -5%; /* Align with the right edge */
+  bottom: 1rem; /* Position at the bottom right corner */
+  right: -0.2rem; /* Align with the right edge */
   border-left: none; /* Create a 90-degree angle by hiding the left border */
   border-top: none; /* Hide the top border to create the angle */
 }
