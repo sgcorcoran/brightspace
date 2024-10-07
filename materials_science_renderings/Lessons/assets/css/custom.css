@@ -3,7 +3,7 @@ body > header {
 }
 
 hr {
-  background: var(--vt-impactOrange);
+  background: var(--vt-sunset);
 }
 
 figure {
@@ -13,6 +13,24 @@ figure {
   align-items: center;
   text-align: center;
   margin: 0 auto;
+}
+
+.fig-left {
+  float: left;
+  width: 40%;
+  margin-right: 1rem;
+}
+.fig-right {
+  float: right;
+  width: 30%;
+  margin-left: 1rem;
+}
+@media only screen and (width<=720px) {
+  .fig-left,
+  .fig-right {
+    float: inherit;
+    width: inherit;
+  }
 }
 
 mjx-container[jax='CHTML'] {
@@ -112,9 +130,16 @@ aside:has(figure)::after {
 .notice > cite {
   color: var(--vt-white);
 }
-
+th {
+  background-color: var(--accent-table);
+  font-weight: 700;
+}
+tr:nth-child(2n) {
+  background-color: var(--accent-table);
+}
 :root {
   --accent-bg: var(--vt-maroon) !important;
+  --accent-table: var(--vt-smoke);
   --border: var(--vt-hokieStone);
   --vt-maroon: #861f41;
   --vt-burntOrange: #e5751f;
