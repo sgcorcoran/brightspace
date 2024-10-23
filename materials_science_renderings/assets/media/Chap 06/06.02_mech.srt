@@ -1,0 +1,456 @@
+1
+00:00:00,719 --> 00:00:06,640
+we're going to be looking at
+
+2
+00:00:03,439 --> 00:00:09,200
+linear elastic deformation
+
+3
+00:00:06,640 --> 00:00:11,120
+and so first what we mean by elastic is
+
+4
+00:00:09,200 --> 00:00:13,040
+just that when we load a sample up so
+
+5
+00:00:11,120 --> 00:00:15,759
+this is my stress strain
+
+6
+00:00:13,040 --> 00:00:16,320
+data say take it on that pencil machine
+
+7
+00:00:15,759 --> 00:00:18,000
+i could
+
+8
+00:00:16,320 --> 00:00:20,880
+instead of running this to failure like
+
+9
+00:00:18,000 --> 00:00:23,680
+you saw we could stop after some load
+
+10
+00:00:20,880 --> 00:00:25,519
+some stress value and unload and we
+
+11
+00:00:23,680 --> 00:00:28,480
+would end up back
+
+12
+00:00:25,519 --> 00:00:30,080
+at zero and that's the definition of
+
+13
+00:00:28,480 --> 00:00:32,559
+elastic we would return
+
+14
+00:00:30,080 --> 00:00:33,600
+to our original shape there's no
+
+15
+00:00:32,559 --> 00:00:35,600
+permanent
+
+16
+00:00:33,600 --> 00:00:37,840
+deformation in this case we're only
+
+17
+00:00:35,600 --> 00:00:41,600
+stretching bonds
+
+18
+00:00:37,840 --> 00:00:44,399
+and in many material systems this
+
+19
+00:00:41,600 --> 00:00:45,600
+early region this initial region of the
+
+20
+00:00:44,399 --> 00:00:49,039
+stress string curve
+
+21
+00:00:45,600 --> 00:00:50,879
+is also linear so under those conditions
+
+22
+00:00:49,039 --> 00:00:52,719
+then we can simply take the slope of
+
+23
+00:00:50,879 --> 00:00:56,399
+this linear region
+
+24
+00:00:52,719 --> 00:01:00,079
+and define that as our elastic modulus
+
+25
+00:00:56,399 --> 00:01:01,920
+or young's modulus is also another way
+
+26
+00:01:00,079 --> 00:01:05,680
+of referring
+
+27
+00:01:01,920 --> 00:01:08,720
+to this value okay that typically has
+
+28
+00:01:05,680 --> 00:01:11,680
+some units of like gigapascals
+
+29
+00:01:08,720 --> 00:01:13,280
+for metals maybe megapascals for
+
+30
+00:01:11,680 --> 00:01:14,799
+polymers
+
+31
+00:01:13,280 --> 00:01:17,040
+and so if we just rearrange this
+
+32
+00:01:14,799 --> 00:01:17,360
+equation and we have stress is equal to
+
+33
+00:01:17,040 --> 00:01:20,479
+this
+
+34
+00:01:17,360 --> 00:01:23,280
+elastic modulus times strain and we have
+
+35
+00:01:20,479 --> 00:01:25,920
+what's called hooke's law
+
+36
+00:01:23,280 --> 00:01:27,439
+this elastic modulus is a material
+
+37
+00:01:25,920 --> 00:01:29,600
+property
+
+38
+00:01:27,439 --> 00:01:31,520
+right so notice how our definition of
+
+39
+00:01:29,600 --> 00:01:32,880
+stress and strain allowed us to take the
+
+40
+00:01:31,520 --> 00:01:35,600
+dimensions
+
+41
+00:01:32,880 --> 00:01:38,000
+out of the sample and so that we had a
+
+42
+00:01:35,600 --> 00:01:41,840
+material property that's independent
+
+43
+00:01:38,000 --> 00:01:44,880
+of sample dimensions if we left it as a
+
+44
+00:01:41,840 --> 00:01:47,600
+force uh equal to k
+
+45
+00:01:44,880 --> 00:01:48,720
+times instead of strain now just a
+
+46
+00:01:47,600 --> 00:01:52,000
+position
+
+47
+00:01:48,720 --> 00:01:53,920
+a displacement of our sample
+
+48
+00:01:52,000 --> 00:01:55,840
+we would have what we're used to from
+
+49
+00:01:53,920 --> 00:01:58,079
+physics for a spring where k would be
+
+50
+00:01:55,840 --> 00:02:01,280
+the spring stiffness
+
+51
+00:01:58,079 --> 00:02:04,159
+but now if i was to increase the
+
+52
+00:02:01,280 --> 00:02:05,439
+area of my sample then in order to get
+
+53
+00:02:04,159 --> 00:02:08,399
+the same displacement
+
+54
+00:02:05,439 --> 00:02:10,560
+x i would need to pick up the force
+
+55
+00:02:08,399 --> 00:02:13,040
+otherwise the stiffness would go up
+
+56
+00:02:10,560 --> 00:02:14,879
+this is dependent upon geometry so this
+
+57
+00:02:13,040 --> 00:02:17,599
+is why we don't use
+
+58
+00:02:14,879 --> 00:02:19,280
+this form but we put it into stress and
+
+59
+00:02:17,599 --> 00:02:22,319
+strain
+
+60
+00:02:19,280 --> 00:02:24,000
+and use hooke's law for shear we have
+
+61
+00:02:22,319 --> 00:02:26,959
+the shear modulus
+
+62
+00:02:24,000 --> 00:02:28,400
+shear stress and shear strain which we
+
+63
+00:02:26,959 --> 00:02:30,879
+just saw recently
+
+64
+00:02:28,400 --> 00:02:30,879
+defined
+
+65
+00:02:31,760 --> 00:02:39,440
+all right for some materials the
+
+66
+00:02:35,920 --> 00:02:42,480
+initial region is no longer linear
+
+67
+00:02:39,440 --> 00:02:45,120
+that's the example of a cast iron so
+
+68
+00:02:42,480 --> 00:02:47,200
+cast iron if you were to unload at some
+
+69
+00:02:45,120 --> 00:02:49,360
+point
+
+70
+00:02:47,200 --> 00:02:51,200
+it will return it may have some
+
+71
+00:02:49,360 --> 00:02:53,040
+hysteresis
+
+72
+00:02:51,200 --> 00:02:54,640
+but it will generally follow this curve
+
+73
+00:02:53,040 --> 00:02:57,920
+and it will return
+
+74
+00:02:54,640 --> 00:02:58,319
+to zero strain so we will recover all of
+
+75
+00:02:57,920 --> 00:03:00,080
+the
+
+76
+00:02:58,319 --> 00:03:02,239
+strains put into the sample and hence
+
+77
+00:03:00,080 --> 00:03:04,080
+it's elastic but you can clearly see
+
+78
+00:03:02,239 --> 00:03:07,120
+that it's not linear
+
+79
+00:03:04,080 --> 00:03:08,800
+so we can't define
+
+80
+00:03:07,120 --> 00:03:10,080
+the elastic modulus like we did
+
+81
+00:03:08,800 --> 00:03:11,440
+previously because we don't have a
+
+82
+00:03:10,080 --> 00:03:13,760
+linear region
+
+83
+00:03:11,440 --> 00:03:15,519
+so what we could do is is either define
+
+84
+00:03:13,760 --> 00:03:19,599
+something like a secant modulus
+
+85
+00:03:15,519 --> 00:03:22,319
+so we just draw a straight line from
+
+86
+00:03:19,599 --> 00:03:24,239
+the origin here up to some value and we
+
+87
+00:03:22,319 --> 00:03:25,599
+pull off the slope of that
+
+88
+00:03:24,239 --> 00:03:27,440
+and that would be referred to as a
+
+89
+00:03:25,599 --> 00:03:30,480
+secant modulus
+
+90
+00:03:27,440 --> 00:03:32,319
+at sigma one or we could pick some some
+
+91
+00:03:30,480 --> 00:03:33,599
+value here sigma 2
+
+92
+00:03:32,319 --> 00:03:35,440
+and then we could just define the
+
+93
+00:03:33,599 --> 00:03:37,040
+tangent at that point
+
+94
+00:03:35,440 --> 00:03:38,879
+and that would also and of course be a
+
+95
+00:03:37,040 --> 00:03:40,799
+stress over strain so this is referred
+
+96
+00:03:38,879 --> 00:03:43,760
+to as a tangent modulus
+
+97
+00:03:40,799 --> 00:03:45,440
+with these we do have to define these
+
+98
+00:03:43,760 --> 00:03:46,000
+sigma values of where the measurement
+
+99
+00:03:45,440 --> 00:03:49,680
+was taken
+
+100
+00:03:46,000 --> 00:03:50,879
+from all right so that's our example of
+
+101
+00:03:49,680 --> 00:03:53,040
+cast iron and we'll
+
+102
+00:03:50,879 --> 00:03:54,319
+take a look at some real data in a
+
+103
+00:03:53,040 --> 00:03:59,519
+couple of videos from now
+
+104
+00:03:54,319 --> 00:04:01,280
+showing you the actual form of cast iron
+
+105
+00:03:59,519 --> 00:04:03,280
+but this is referred to again as
+
+106
+00:04:01,280 --> 00:04:06,000
+non-linear
+
+107
+00:04:03,280 --> 00:04:06,000
+elastic
+
+108
+00:04:06,319 --> 00:04:09,120
+deformation
+
+109
+00:04:10,879 --> 00:04:15,519
+all right so next time we're going to go
+
+110
+00:04:13,200 --> 00:04:18,639
+ahead and take a look at
+
+111
+00:04:15,519 --> 00:04:19,440
+the bonding again that we did in chapter
+
+112
+00:04:18,639 --> 00:04:21,919
+2
+
+113
+00:04:19,440 --> 00:04:25,520
+and we'll see how this is related to the
+
+114
+00:04:21,919 --> 00:04:25,520
+elastic modulus
+
