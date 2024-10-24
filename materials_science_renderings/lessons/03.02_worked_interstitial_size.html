@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="icon"
+      href="../../../archive/assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>VT MSE 2034</title>
+
+    <script src="../assets/js/load-mathjax.js" async></script>
+
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Worked Example: size of the FCC tetrahedral site</h1>
+      <p>
+        Find the size of the largest interstital atom that will just fit into
+        the tetrahedral site for the face-centered cubic structure.
+      </p>
+    </header>
+    <main>
+      <article>
+        <h2>Objectives:</h2>
+        <ol>
+          <li>
+            Identify the tetrahedral interstitial site in the FCC crystal
+            structure.
+          </li>
+          <li>
+            Calculate the distance between the the center of the interstitial
+            site to that of the nearest neighbor site.
+          </li>
+          <li>
+            Use the calculated distance and the appropriate edge length for the
+            FCC structure, to determine the size of the interstitial site
+            relative to the host atom radius.
+          </li>
+        </ol>
+      </article>
+      <h2>Interstitial Lattice Sites</h2>
+      <h3>The tetrahedral site in the FCC structure</h3>
+
+      <aside>
+        <h4>Terminology: Tetrahedral Site</h4>
+        <img
+          src="../assets/img/fcc_tetrahedral_trans.png"
+          style="width: 75%; display: block; margin: auto"
+        />
+        <p>
+          The small space located at the center of 4 neighboring atoms resulting
+          in the formation of a tetrahedron as shown by the highlighted atoms.
+          For the FCC structure, there are 8 such sites with each site located
+          behind one of the corner atoms.
+        </p>
+      </aside>
+      <figure>
+        <div style="width: max-content">
+          <img
+            src="../assets/img/fcc_unit_with_tetrahedral.png"
+            style="max-width: 180px"
+          />
+          <img
+            src="../assets/img/fcc_unit_with_tetrahedral_colored.png"
+            style="max-width: 180px"
+          />
+        </div>
+        <figcaption>
+          Space filling model of the FCC structure with a small interstitial
+          atom shown in red at position
+          \((\frac{3}{4},\frac{3}{4},\frac{3}{4})\). The interstial atom sits in
+          the center of a tetrahedron formed by its 4 neighbors (shaded grey).
+        </figcaption>
+      </figure>
+
+      <h5>Location of tetrahedral sites in FCC structure:</h5>
+
+      Using fractional coordinates, the tetrahedral site is located \((\pm 0.25,
+      \pm0.25, \pm0.25)\) away from a corner atom. For example, if we are
+      considering the corner atom at \((0,0,0)\), the tetrahedral site is
+      located at \[(0,0,0)+(0.25,0.25,0.25)=(0.25,0.25,0.25)\] If we are
+      considering the corner atom at \((1,0,0)\), however, the tetrahedral site
+      is located at \[ (1,0,0)+(-0.25,0.25,0.25) = (0.75,0.25,0.25)\]
+      <hr />
+      <h5>Consider the interstitial atom and its corner neighbor:</h5>
+      If we take the origin to be located at the bottom-back-left corner, then
+      the corner atom shown shaded grey would have a position of (1,1,1) or in
+      absolute coordinates \(a (1,1,1)\) and the tetrahedral site (small red
+      atom) would be located at (0.75, 0.75, 0.75) or again in absolute units as
+      \(a(0.75,0.75,0.75)\). These two atoms touch when the tetrahedral site is
+      completely filled.
+      <p>
+        The line connecting the corner and the tetrahedral center is equal to
+        \(r+R\) as shown in the figure.
+      </p>
+
+      <figure>
+        <div style="width: max-content">
+          <img
+            width="250px"
+            src="../assets/img/tetrahedral_corner_labeled.png"
+          />
+        </div>
+        <figcaption>
+          The corner atom \(a (1,1,1)\) with radius, \(R\), and the interstitial
+          atom \(a(0.75,0.75,0.75)\) with radius, \(r\), are separated by the
+          distance \(r+R\).
+        </figcaption>
+      </figure>
+
+      The length of this line can also be calculated by using the distance
+      formula, \(d=\sqrt{(p_x-q_x)^2+(p_y-q_y)^2+(p_z-q_z)^2}\) where \(p\) and
+      \(q\) are any two points or in our case where we know so far that
+      \(d=r+R\): \[r+R=\sqrt{(1a-0.75a)^2+(1a-0.75a)^2+(1a-0.75a)^2}\] which
+      simplifies to \(a\ \sqrt{\frac{3}{16}}\) or \(0.25\ a \ \sqrt{3}\).
+      Therefore, we have \[r+R=0.25\ a \ \sqrt{3}\] Recall that for the
+      <u>FCC</u>
+      structure, \(a=\frac{4R}{\sqrt{2}}\). Substituting we have,
+      \[r+R=0.25\&nbsp;\frac{4R}{\sqrt{2}}&nbsp;\ \sqrt{3}\] Solving for
+      \(r\),&nbsp;\[r=(0.25\&nbsp;\frac{4R}{\sqrt{2}}&nbsp;\ \sqrt{3})-R \approx
+      0.225 R\]
+
+      <div class="notice" style="text-align: center">
+        <h4>
+          How would you find the size of the tetrahedral site in the
+          <u>BCC</u>
+          structure given the coordinates of the interstial atom, \(a
+          (1,1/2,1/4)\), and its neighbor, \(a (1/2,1/2,1/2)\)?
+        </h4>
+        <cite>(Perhaps a good exam question.)</cite>
+      </div>
+    </main>
+    <footer>Copyright&nbsp;© 2024 Sean Corcoran</footer>
+  </body>
+</html>
