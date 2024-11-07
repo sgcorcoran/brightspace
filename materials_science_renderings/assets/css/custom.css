@@ -6,10 +6,13 @@ hr {
   background: var(--vt-sunset);
 }
 
+section{clear:both;}
+
 .courseware-layouts-content-wrapper{
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem; /* Optional: adds space between content and aside */
+  gap: 1rem;
+  justify-content: center;
 }
 
 .courseware-panels .aside-panel {
@@ -17,7 +20,6 @@ hr {
   background-color: var(--courseware-panel-background, #f9fbff);
   padding: 1rem;
 }
-
 
 .courseware-card.aside-card {
   float:right;
@@ -96,8 +98,9 @@ hr {
 .courseware-card.aside-card .courseware-card-body a {
   font-weight: 500;
   text-decoration-style: solid;
-  font-size:0.75rem;
-  text-align:center;
+  font-size:1rem;
+  text-align:left;
+  padding-left:5%;
 }
 
 .courseware-helper-text-center {
@@ -110,32 +113,106 @@ hr {
 }
 
 
-
 figure {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display:block;
   text-align: center;
-  margin: 0 auto;
+  margin: 0;
 }
 
-.fig-left {
-  float: left;
-  width: 40%;
-  margin-right: 1rem;
+.courseware-layouts-content-wrapper figure{
+text-align: center;
+/*border:2px solid black;*/
 }
-.fig-right {
-  float: right;
-  width: 30%;
-  margin-left: 1rem;
+
+.courseware-layouts-content-wrapper figcaption{
+  text-align: center;
+  }
+
+.courseware-layouts-content-wrapper figure figcaption{
+  padding:0;
+  margin:0;
+  line-height: 2rem;
+  color: var(--vt-hokieStone);
+  }
+
+  .courseware-layouts-content-wrapper img {
+    height: 200px; /* or a specific percentage if you want a smaller image */
+    object-fit: contain; /* Optional: fills the entire area without stretching */
+    transition: transform 0.3s ease;
+  }
+  .courseware-layouts-content-wrapper img:hover {
+    transform: scale(1.7);
+  }
+  @media (max-width: 600px) {
+    .courseware-layouts-content-wrapper img {
+      height: auto; 
+      width:100%;
+    }
+    .courseware-layouts-content-wrapper img:hover {
+      transform: none;
+    }
+  }
+  
+
+figcaption {
+  /*use <aside style="float: left"> for left floating image*/
+  background-color: inherit;
+  color: var(--vt-hokieStone);
 }
-@media only screen and (width<=720px) {
-  .fig-left,
-  .fig-right {
+
+.courseware-layouts-content-wrapper:has(figure.left){
+  justify-content: flex-start;
+  float:left;
+  width:40%;
+  margin: 1rem;
+  background-color: white;
+  padding: 1rem;
+  padding-bottom:0;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease; /* Smooth transition */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.courseware-layouts-content-wrapper figure.left figcaption{
+ text-align:left;
+}
+
+.courseware-layouts-content-wrapper:has(figure.right){
+  justify-content: flex-end;
+  width:40%;
+  float:right;
+  margin: 1rem;
+  background-color: white;
+  padding: 1rem;
+  padding-bottom:0;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease; /* Smooth transition */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.courseware-layouts-content-wrapper figure.right figcaption{
+  text-align:left;
+ }
+
+@media only screen and (max-width:600px) {
+  .courseware-layouts-content-wrapper:has(figure.left),
+  .courseware-layouts-content-wrapper:has(figure.right) {
     float: inherit;
     width: inherit;
+    border:none;
   }
+}
+
+.shadow-box {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease; /* Smooth transition */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
 }
 
 mjx-container[jax='CHTML'] {
@@ -143,11 +220,7 @@ mjx-container[jax='CHTML'] {
   font-size: 1.2rem !important;
 }
 
-figcaption {
-  /*use <aside style="float: left"> for left floating image*/
-  background-color: inherit;
-  color: var(--vt-hokieStone);
-}
+
 
 aside {
   background-color: inherit;
@@ -246,50 +319,58 @@ tr:nth-child(2n) {
   background-color: var(--accent-table);
 }
 
-.video-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  /* border: 1px solid black; */
+/*If more than one video, wrap with courseware-layouts-content-wrapper */
+
+.courseware-video-embed-responsive {
+  margin: 0rem;
 }
 
-/* for including thumbnails of videos that expand when clicked */
-/* uses javascript in js file */
-/* these three elements are defined in global.minv5.css */
-.courseware-video-wrapper-small {
+.courseware-video-wrapper {
   width:33%;
   position: relative;
   height: auto;
-  transition: width 0.5s ease, height 0.5s ease;
+  /*transition: width 0.5s ease, height 0.5s ease;*/
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  margin:0;
+  padding:0;
 }
-
-.courseware-video-wrapper-small video {
-  height: auto;
-  width: 100%;
+@media only screen and (max-width: 600px) {
+  .courseware-video-wrapper {
+    width:75%;
+  }
 }
 
 /* Expand the video wrapper to full width when it has the 'expanded' class */
-.courseware-video-wrapper-small.expanded {
+.courseware-video-wrapper.expanded {
+  height: auto; 
   width: 100%;
   z-index: 10; /* Ensure it sits above other elements when expanded */
 }
 
-/* Responsive behavior: Stack videos vertically on smaller screens */
-@media screen and (max-width: 768px) {
-  .courseware-video-wrapper-small {
-    width: 100%; /* Full width on smaller screens */
-  }
+
+
+
+.courseware-video-wrapper .courseware-video-embed-responsive {
+  padding: 0;
+}
+.courseware-video-wrapper .courseware-video-embed-responsive:before {
+  padding-top: 0%;
 }
 
-/* Fullscreen effect (class added by JavaScript) */
-.fullscreen {
-  width: 100%;
-  /* Expand to 100% width */
+.courseware-video-wrapper .courseware-video-text {
+  margin-left: 1rem;
+  color: var(--vt-hokieStone);
+}
+.courseware-video-wrapper .courseware-video-text p {
+  font-size: 0.842rem;
+  line-height: 1rem;
+}
+
+video {
   height: auto;
-  /* Expand to 100% height */
+  width: 100%;
 }
-
 
 :root {
   --accent-bg: var(--vt-maroon) !important;

@@ -23,7 +23,7 @@
     <div class="courseware-headers-image">
       <p><img src="../assets/img/banner-placeholder.jpg" alt="" /></p>
     </div>
-    <div class="courseware-layouts-content-wrapper">
+    <section>
       <h1>Structures of Materials</h1>
       <p>
         Properties of materials are determined by their structure. Structure
@@ -40,31 +40,36 @@
         <li>Unit cell properties of FCC and BCC.</li>
       </ol>
 
-      <div class="video-container">
-        <div class="courseware-video-wrapper-small" id="video1">
+      <div class="courseware-layouts-content-wrapper">
+        <div class="courseware-video-wrapper" id="video1">
           <div class="courseware-video-text">
             <p>Video Lesson 1</p>
           </div>
-          <video title="Video Lesson" onclick="expandVideo('video1')">
-            <source src="../assets/media/03.01_structures.mp4" type="video/mp4" />
-            <track src="../assets/media/03.01_structures.vtt" kind="subtitles" srclang="en" label="English"
-              type="text/vtt" />
-          </video>
+          <div class="courseware-video-embed-responsive">
+            <video title="Video Lesson" onclick="expandVideo('video1')">
+              <source src="../assets/media/03.01_structures.mp4" type="video/mp4" />
+              <track src="../assets/media/03.01_structures.vtt" kind="subtitles" srclang="en" label="English"
+                type="text/vtt" />
+            </video>
+          </div>
         </div>
 
-        <div class="courseware-video-wrapper-small" id="video2">
+        <div class="courseware-video-wrapper" id="video2">
           <div class="courseware-video-text">
             <p>Video Lesson 2</p>
           </div>
-          <video title="Video Lesson" onclick="expandVideo('video2')">
-            <source src="../assets/media/03.01_structures.mp4" type="video/mp4" />
-            <track src="../assets/media/03.01_structures.vtt" kind="subtitles" srclang="en" label="English"
-              type="text/vtt" />
-          </video>
+          <div class="courseware-video-embed-responsive">
+            <video title="Video Lesson" onclick="expandVideo('video2')">
+              <source src="../assets/media/03.01_structures.mp4" type="video/mp4" />
+              <track src="../assets/media/03.01_structures.vtt" kind="subtitles" srclang="en" label="English"
+                type="text/vtt" />
+            </video>
+          </div>
         </div>
       </div>
-    </div>
-
+    </section>
+    <section>
+      <p></p>
       <h2>Atomic Arrangement in Crystalline Solids</h2>
       <div class="courseware-card aside-card">
         <div class="courseware-card-header">
@@ -86,233 +91,264 @@
         </div>
       </div>
       <p>
-        Atoms in crystalline solids are arranged in an ordered periodic
-        structure. Take a look at the Alum crystals shown in the figure.
+        <strong>Atoms in crystalline solids are arranged in an ordered periodic
+          structure.</strong> Take a look at the Alum crystals shown in the figure.
         Notice the nice large crystal near the bottom with the large flat
         region (facet). The edges of this facet may change in length but they
         always meet at specific angles dependent on the type of crystal. This
-        implies that there must be some underlying order in materials (crystal
-        structure).
+        implies that there must be some underlying order in crystalline materials.
       </p>
-    
 
+      <p>
+        <strong>Not all materials are crystalline.</strong> Non-crystalline materials are
+        referred to as amorphous. Materials can also have both crystalline and
+        amorphous regions and are referred to as semi-crystalline.
+      </p>
+      <p>
+        <strong>There are a limited number of ways atoms can be arranged periodically
+          to fill space.</strong> This can be demonstrated in 2D if you try to fill space
+        with pentagons as compared to hexagons. The hexagons (as well as parallelograms, squares,
+        rectangles, and triangles) can be arranged to completely fill space without gaps, but the pentagons as shown
+        below leave gaps.
+      </p>
+      <div class="courseware-layouts-content-wrapper">
+        <figure>
+          <figcaption>Hexagons fill space</figcaption>
+          <img src="../assets/img/hexagons2D.png" />
+        </figure>
+        <figure>
+          <figcaption>Pentagons leave gaps</figcaption>
+          <img src="../assets/img/pentagons2D.png" />
+        </figure>
+      </div>
+      <p>
+        If we extend this concept to 3D, we surprisingly find that <strong> only 7 unique geometries fill space in 3
+          dimensions</strong>. These are referred to as <em>crystal systems</em>. Some
+        systems can have further subclassifications resulting in the 14 Bravais
+        lattices. All crystalline materials belong to one of these 14 lattices.
+      </p>
+    </section>
+    <section>
+      <h2>7 Crystal Systems &amp; 14 Bravais Lattices</h2>
+      <p>
+        In this course, we will focus on the cubic crystal system and briefly
+        introduce the hexagonal crystal system but for completeness we present
+        all 14 lattices and 7 systems below.
+      </p>
+      <div class="courseware-layouts-content-wrapper">
+        <figure>
+          <img src="../assets/img/triclinic.png" />
+        </figure>
+        <figure>
+          <img src="../assets/img/monoclinic.png" />
+        </figure>
+        <figure>
+          <img src="../assets/img/orthorhombic.png" />
+        </figure>
+        <figure>
+          <img src="../assets/img/tetragonal.png" />
+        </figure>
+        <figure>
+          <img src="../assets/img/hexagonal.png" />
+        </figure>
+        <figure><img src="../assets/img/rhombohedral.png" />
+        </figure>
+        <figure>
+          <img src="../assets/img/cubic.png" />
+        </figure>
+        <figcaption>
+          <p>The 14 Bravais Lattices and 7 Crystal Systems (hover over images to enlarge)</p>
+        </figcaption>
+      </div>
+    </section>
+    <section>
+      <h2>Lattice Parameters</h2>
+      <div class="courseware-layouts-content-wrapper">
+        <figure class="left">
+          <img src="../assets/img/triclinic_clean.png" />
+          <figcaption>
+            <p>
+              The triclinic crystal system has unequal edge lengths and unequal
+              angles and no angle equal to 90°.</p>
+          </figcaption>
+        </figure>
+      </div>
+      <p>
+        A set of lattice parameters are used to quantify the crystal structure
+        of a given material.&nbsp; These lattice parameters, three edge
+        lengths: \( a, b, c \) and 3 angles: \( \alpha, \beta, \gamma \), are
+        shown in the figure for the most general case of the triclinic system
+        where \( a \ne b \ne c \) and \( \alpha \ne \beta \ne \gamma \ne
+        90^\circ \).&nbsp;
+      </p>
+      <p>
+        For the cubic system, the edge lengths are all equal (\( a=b=c \)). Also, the
+        angles are all 90 degrees (\( \alpha = \beta = \gamma = 90^\circ \)). We would write this as \((a, a, a, 90, 90,
+        90)\).
+      </p>
 
+      <div class="courseware-layouts-content-wrapper">
+        <figure>
+          <img src="../assets/img/cubic_primitive.png" />
+          <figcaption>
+            <p>The simple cubic Bravais lattice where all edges are equal and all
+              angles equal 90°.&nbsp;</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section>
+      <div class="courseware-layouts-content-wrapper">
+        <figure class="left">
+          <img src="../assets/img/hexagonal_clean.png" />
+          <figcaption>
+            The hexagonal Bravais lattice. The unit cell is shown by the bold and dashed lines.
+          </figcaption>
+        </figure>
+      </div>
+      <p>For the hexagonal system, we would have (a, a, c, 90, 90, 120) where edge lengths a and b are equal
+        but not equal to c and the angles are given as shown in the figure 90°,90°, and
+        120°. Two additional neighboring unit cells are also shown so that the
+        hexagonal symmetry is evident.</p>
+    </section>
 
-
- 
-    <p>
-      Not all materials are crystalline. Non-crystalline materials are
-      referred to as amorphous. Materials can also have both crystalline and
-      amorphous regions and are referred to as semi-crystalline.
-    </p>
-    <p>
-      There are a limited number of ways atoms can be arranged periodically
-      to fill space.&nbsp;This can be demonstrated in 2D if you try to
-      completely fill space with regular pentagons versus regular
-      hexagons.&nbsp;The hexagons (as well as parallelograms, squares,
-      rectangles, and triangles) can be arranged to fill a plane without
-      gaps, but the pentagons cannot as shown below.&nbsp;
-    </p>
-    <img class="float-start" src="../assets/img/hexagons2D.png" style="max-width: 162px" />
-    <img class="float-end" src="../assets/img/pentagons2D.png" />
-    <p>
-      If we extend this concept to 3D, we find that only 7 crystal systems
-      can be uniquely identified which fill space in 3 dimensions.&nbsp;Some
-      systems can have further subclassifications, giving us the 14 Bravais
-      lattices.&nbsp;
-    </p>
-    <h2>7 Crystal Systems &amp; 14 Bravais Lattices</h2>
-    <p>
-      In this course, we will focus on the cubic crystal system and briefly
-      introduce the hexagonal crystal system but for completeness we present
-      the systems and lattices in the figures below.
-    </p>
-    <img class="img-fluid" src="../assets/img/triclinic.png" style="width: 50%; display: block; margin: auto" />
-    <img class="img-fluid" src="../assets/img/monoclinic.png" style="width: 80%; display: block; margin: auto" />
-    <img class="img-fluid" src="../assets/img/orthorhombic.png" style="width: 100%; display: block; margin: auto" />
-    <img class="img-fluid" src="../assets/img/tetragonal.png" style="max-width: 60%; display: block; margin: auto" />
-    <div style="max-width: 95%; display: block; margin: auto">
-      <img class="img-fluid" src="../assets/img/hexagonal.png" style="max-width: 51.4%" />
-      <img class="img-fluid" src="../assets/img/rhombohedral.png" style="max-width: 46%" />
-    </div>
-    <img class="img-fluid" src="../assets/img/cubic.png" style="max-width: 95%; display: block; margin: auto" />
-    <h2>Lattice Parameters</h2>
-    <figure class="fig-left">
-      <img src="../assets/img/triclinic_clean.png" />
-      <figcaption>
-        The triclinic crystal system has unequal edge lengths and unequal
-        angles and no angle equal to 90°.
-      </figcaption>
-    </figure>
-    <p>
-      A set of lattice parameters are used to quantify the crystal structure
-      of a given material.&nbsp; These lattice parameters, three edge
-      lengths: \( a, b, c \) and 3 angles: \( \alpha, \beta, \gamma \), are
-      shown in the figure for the most general case of the triclinic system
-      where \( a \ne b \ne c \) and \( \alpha \ne \beta \ne \gamma \ne
-      90^\circ \).&nbsp;
-    </p>
-  
-    <figure class="fig-right">
-      <img src="../assets/img/cubic_primitive.png" />
-      <figcaption>
-        The simple cubic Bravais lattice where all edges are equal and all
-        angles equal 90°.&nbsp;
-      </figcaption>
-    </figure>
-    <p>
-      For a cubic system, the edge lengths are all equal a=b=c and the
-      angles are all 90 degrees. We would write this as (a, a, a, 90, 90,
-      90).
-    </p>
-    
-    <figure>
-      <img width="60%" src="../assets/img/hexagonal_clean.png" />
-      <figcaption>
-        The hexagonal Bravais lattice where edge lengths a and b are equal
-        but not equal to c and the angles are given as shown 90°,90°, and
-        120°. The unit cell is shown by the bold and dashed lines. Two
-        additional neighboring unit cells are also shown so that the
-        hexagonal symmetry is evident.
-      </figcaption>
-    </figure>
-    For the hexagonal system, we would have (a, a, c, 90, 90, 120).
- 
-    <h3>
-      Table of lattice parameters for some common crystalline materials
-    </h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Material</th>
-          <th>Crystal System / Bravais Lattice</th>
-          <th>a, b, c</th>
-          <th>\(\alpha\), \(\beta\), \(\gamma\)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>NaCl</td>
-          <td>Cubic / FCC</td>
-          <td>0.564, 0.564, 0.564</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>CsCl</td>
-          <td>Cubic / SC</td>
-          <td>0.412, 0.412, 0.412</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>\(MgSO_4\) (epsom salt)</td>
-          <td>Monoclinic /</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Gold (Au)</td>
-          <td>Cubic / FCC</td>
-          <td>Cell 3</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>Copper (Cu)</td>
-          <td>Cubic / FCC</td>
-          <td>Cell 3</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>Iron ( \(\boldsymbol{\alpha}\) -Fe)</td>
-          <td>Cubic / BCC</td>
-          <td>Cell 3</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>Iron ( \(\boldsymbol{\gamma}\) -Fe)</td>
-          <td>Cubic / FCC</td>
-          <td>Cell 3</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>Aluminum (Al)</td>
-          <td>Cubic / FCC</td>
-          <td>Cell 3</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>Zinc (Zn)</td>
-          <td>Hexagonal / (HCP) <sup>*</sup></td>
-          <td>Cell 3</td>
-          <td>90,90,120</td>
-        </tr>
-        <tr>
-          <td>Titanium (Ti)</td>
-          <td>Hexagonal / (HCP) <sup>*</sup></td>
-          <td>Cell 3</td>
-          <td>90,90,120</td>
-        </tr>
-        <tr>
-          <td>Tungsten (W)</td>
-          <td>Cubic / BCC</td>
-          <td>Cell 3</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>SiC</td>
-          <td>Hexagonal</td>
-          <td>Cell 3</td>
-          <td>90,90,120</td>
-        </tr>
-        <tr>
-          <td>TiC</td>
-          <td>Cubic / FCC</td>
-          <td>Cell 3</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>TiO <sub>2</sub></td>
-          <td>Tetragonal / Simple</td>
-          <td>Cell 3</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>Fe <sub>3</sub> C</td>
-          <td>Orthorhombic / Simple</td>
-          <td>Cell 3</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>WC</td>
-          <td>Hexagonal</td>
-          <td>Cell 3</td>
-          <td>90,90,120</td>
-        </tr>
-        <tr>
-          <td>Si</td>
-          <td>Cubic / (diamond cubic) <sup>**</sup></td>
-          <td>Cell 3</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>Ge</td>
-          <td>Cubic / (diamond cubic) <sup>**</sup></td>
-          <td>Cell 3</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>Diamond (C)</td>
-          <td>Cubic / (diamond cubic) <sup>**</sup></td>
-          <td>Cell 3</td>
-          <td>90,90,90</td>
-        </tr>
-        <tr>
-          <td>Graphite (C)</td>
-          <td>Hexagonal</td>
-          <td>Cell 3</td>
-          <td>90,90,120</td>
-        </tr>
-      </tbody>
-    </table>
+    <section>
+      <h3>
+        Table of lattice parameters for some common crystalline materials
+      </h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Material</th>
+            <th>Crystal System / Bravais Lattice</th>
+            <th>a, b, c</th>
+            <th>\(\alpha\), \(\beta\), \(\gamma\)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NaCl</td>
+            <td>Cubic / FCC</td>
+            <td>0.564, 0.564, 0.564</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>CsCl</td>
+            <td>Cubic / SC</td>
+            <td>0.412, 0.412, 0.412</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>\(MgSO_4\) (epsom salt)</td>
+            <td>Monoclinic /</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Gold (Au)</td>
+            <td>Cubic / FCC</td>
+            <td>Cell 3</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>Copper (Cu)</td>
+            <td>Cubic / FCC</td>
+            <td>Cell 3</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>Iron ( \(\boldsymbol{\alpha}\) -Fe)</td>
+            <td>Cubic / BCC</td>
+            <td>Cell 3</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>Iron ( \(\boldsymbol{\gamma}\) -Fe)</td>
+            <td>Cubic / FCC</td>
+            <td>Cell 3</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>Aluminum (Al)</td>
+            <td>Cubic / FCC</td>
+            <td>Cell 3</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>Zinc (Zn)</td>
+            <td>Hexagonal / (HCP) <sup>*</sup></td>
+            <td>Cell 3</td>
+            <td>90,90,120</td>
+          </tr>
+          <tr>
+            <td>Titanium (Ti)</td>
+            <td>Hexagonal / (HCP) <sup>*</sup></td>
+            <td>Cell 3</td>
+            <td>90,90,120</td>
+          </tr>
+          <tr>
+            <td>Tungsten (W)</td>
+            <td>Cubic / BCC</td>
+            <td>Cell 3</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>SiC</td>
+            <td>Hexagonal</td>
+            <td>Cell 3</td>
+            <td>90,90,120</td>
+          </tr>
+          <tr>
+            <td>TiC</td>
+            <td>Cubic / FCC</td>
+            <td>Cell 3</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>TiO <sub>2</sub></td>
+            <td>Tetragonal / Simple</td>
+            <td>Cell 3</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>Fe <sub>3</sub> C</td>
+            <td>Orthorhombic / Simple</td>
+            <td>Cell 3</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>WC</td>
+            <td>Hexagonal</td>
+            <td>Cell 3</td>
+            <td>90,90,120</td>
+          </tr>
+          <tr>
+            <td>Si</td>
+            <td>Cubic / (diamond cubic) <sup>**</sup></td>
+            <td>Cell 3</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>Ge</td>
+            <td>Cubic / (diamond cubic) <sup>**</sup></td>
+            <td>Cell 3</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>Diamond (C)</td>
+            <td>Cubic / (diamond cubic) <sup>**</sup></td>
+            <td>Cell 3</td>
+            <td>90,90,90</td>
+          </tr>
+          <tr>
+            <td>Graphite (C)</td>
+            <td>Hexagonal</td>
+            <td>Cell 3</td>
+            <td>90,90,120</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
     <p>
       <sup>*</sup> Hexagonal Close-Packed (HCP) is not a Bravais
       Lattice.&nbsp; The Bravais lattice is simple hexagonal but there is an
@@ -323,6 +359,7 @@
       lattice for diamond cubic is FCC but again extra atoms are introduced
       in the FCC lattice.&nbsp;&nbsp;
     </p>
+
     <h2>Cubic Crystal System</h2>
     <figure>
       <img src="../assets/img/cubic_space_fill_lattices.png" />
