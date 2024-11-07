@@ -6,6 +6,111 @@ hr {
   background: var(--vt-sunset);
 }
 
+.courseware-layouts-content-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Optional: adds space between content and aside */
+}
+
+.courseware-panels .aside-panel {
+  flex: 0 0 33%; /* 33% width on large screens */
+  background-color: var(--courseware-panel-background, #f9fbff);
+  padding: 1rem;
+}
+
+
+.courseware-card.aside-card {
+  float:right;
+  width:33%;
+  margin:1rem;
+  position:relative;
+  border:none;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 600px) {
+  .courseware-card.aside-card {
+    float: right; /* Removes the float, so it becomes a block element */
+    width: 50%; /* Full width on smaller screens */
+    margin: 0; /* Optional: remove margin for a seamless full-width look */
+  }
+}
+
+@media (max-width: 480px) {
+  .courseware-card.aside-card {
+    float: none; /* Removes the float, so it becomes a block element */
+    width: 100%; /* Full width on smaller screens */
+    margin: 0; /* Optional: remove margin for a seamless full-width look */
+  }
+}
+
+.courseware-card.aside-card::before,
+.courseware-card.aside-card::after {
+  content: ''; /* Create the pseudo-elements */
+  position: absolute; /* Position them absolutely relative to the aside */
+  width: 20%; /* Set the size of the angle */
+  height: 20%; /* Set the size of the angle */
+  border: 5px solid var(--vt-sunset); /* Define the border color and thickness */
+}
+
+.courseware-card.aside-card::before {
+  top: 0rem; /* Position at the top left corner */
+  left: -0.2rem; /* Align with the left edge */
+  border-right: none; /* Create a 90-degree angle by hiding the right border */
+  border-bottom: none; /* Hide the bottom border to create the angle */
+}
+
+.courseware-card.aside-card::after {
+  bottom: -0.5rem; /* Position at the bottom right corner */
+  right: -0.2rem; /* Align with the right edge */
+  border-left: none; /* Create a 90-degree angle by hiding the left border */
+  border-top: none; /* Hide the top border to create the angle */
+}
+
+.courseware-card.aside-card .courseware-card-header {
+  background:none;
+  border:none;
+  }
+
+.courseware-card.aside-card .courseware-card-header > h4 {
+  position: relative; /* To position the ::after element */
+  padding: none;
+  text-align: center;
+}
+
+/*  puts line under header */
+.courseware-card.aside-card .courseware-card-header > h4::after {
+  content: ''; /* Creates the pseudo-element */
+  position: absolute; /* Absolute positioning relative to h4 */
+  bottom: -10%; /* Align it with the bottom of h4 */
+  left: 50%; /* Start from the center */
+  transform: translateX(-50%); /* Center it horizontally */
+  width: 50%; /* Set the width to 50% */
+  border-bottom: 2px solid var(--vt-sunset); /* Create the line */
+}
+
+.courseware-card.aside-card .courseware-card-body {
+  min-height: 1px;
+  padding: 0.5rem;
+}
+.courseware-card.aside-card .courseware-card-body a {
+  font-weight: 500;
+  text-decoration-style: solid;
+  font-size:0.75rem;
+  text-align:center;
+}
+
+.courseware-helper-text-center {
+  text-align: center;
+  width:100%;
+}
+
+.courseware-callout {
+  flex: 0 0 33%; /* Takes up 33% of the width */
+}
+
+
+
 figure {
   display: flex;
   flex-direction: column;
@@ -49,6 +154,7 @@ aside {
   border-width: 0px;
   position: relative; /* Position the pseudo-elements relative to the aside */
   padding: 5px; /* Add some padding for spacing */
+  flex: 0 0 50%;
 }
 
 aside::before,
@@ -61,14 +167,14 @@ aside::after {
 }
 
 aside::before {
-  top: 1rem; /* Position at the top left corner */
+  top: 0rem; /* Position at the top left corner */
   left: -0.2rem; /* Align with the left edge */
   border-right: none; /* Create a 90-degree angle by hiding the right border */
   border-bottom: none; /* Hide the bottom border to create the angle */
 }
 
 aside::after {
-  bottom: 1rem; /* Position at the bottom right corner */
+  bottom: 0rem; /* Position at the bottom right corner */
   right: -0.2rem; /* Align with the right edge */
   border-left: none; /* Create a 90-degree angle by hiding the left border */
   border-top: none; /* Hide the top border to create the angle */
@@ -83,11 +189,11 @@ aside > h4 {
 aside > h4::after {
   content: ''; /* Creates the pseudo-element */
   position: absolute; /* Absolute positioning relative to h4 */
-  bottom: -20%; /* Align it with the bottom of h4 */
+  bottom: 0%; /* Align it with the bottom of h4 */
   left: 50%; /* Start from the center */
   transform: translateX(-50%); /* Center it horizontally */
   width: 33%; /* Set the width to 50% */
-  border-bottom: 1px solid var(--vt-sunset); /* Create the line */
+  border-bottom: 2px solid var(--vt-sunset); /* Create the line */
 }
 
 aside:has(figure) {
@@ -124,7 +230,9 @@ aside:has(figure)::after {
   background: var(--vt-teal);
   border: 0;
   color: var(--vt-white);
+  overflow: auto;
   border-radius: 0;
+  clear: both; 
 }
 
 .notice > cite {
@@ -136,6 +244,72 @@ th {
 }
 tr:nth-child(2n) {
   background-color: var(--accent-table);
+}
+
+.video-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* border: 1px solid black; */
+}
+
+/* for including thumbnails of videos that expand when clicked */
+/* uses javascript in js file */
+/* these three elements are defined in global.minv5.css */
+.courseware-video-wrapper-small {
+  width:33%;
+  position: relative;
+  height: auto;
+  transition: width 0.5s ease, height 0.5s ease;
+  cursor: pointer;
+}
+
+.courseware-video-wrapper-small video {
+  height: auto;
+  width: 100%;
+}
+
+/* Expand the video wrapper to full width when it has the 'expanded' class */
+.courseware-video-wrapper-small.expanded {
+  width: 100%;
+  z-index: 10; /* Ensure it sits above other elements when expanded */
+}
+
+/* Responsive behavior: Stack videos vertically on smaller screens */
+@media screen and (max-width: 768px) {
+  .courseware-video-wrapper-small {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
+
+/* Fullscreen effect (class added by JavaScript) */
+.fullscreen {
+  width: 100%;
+  /* Expand to 100% width */
+  height: auto;
+  /* Expand to 100% height */
+}
+
+
+:root {
+  --accent-bg: var(--vt-maroon) !important;
+  --accent-table: var(--vt-smoke);
+  --border: var(--vt-hokieStone);
+  --vt-maroon: #861f41;
+  --vt-burntOrange: #e5751f;
+  --vt-hokieStone: #75787b;
+  --vt-white: #ffffff;
+  --vt-purple: #642667;
+  --vt-pink: #ce0058;
+  --vt-sunset: #ed8b00;
+  --vt-yellow: #f7ea48;
+  --vt-teal: #508590;
+  --vt-turquoise: #2cd5c4;
+  --vt-grey: #d7d2cb;
+  --vt-smoke: #e5e1e6;
+  --vt-blue: #003c71;
+  --vt-burntOrangeWeb: #c64600;
+  --vt-impactOrange: #ca4f00;
 }
 
 .card-container {
@@ -187,49 +361,4 @@ tr:nth-child(2n) {
 
 .card-flip.flipped {
   transform: rotateY(180deg);
-}
-
-/* for including thumbnails of videos that expand when clicked */
-/* uses javascript in js file */
-
-.video-container {
-  position: relative;
-  width: 33%; /* 1/3 of the window width */
-  height: auto; /* Auto to maintain aspect ratio */
-  transition: width 0.5s ease, height 0.5s ease; /* Smooth transition */
-  overflow: hidden;
-  cursor: pointer;
-}
-
-/* Video element itself */
-.video-container video {
-  width: 100%;
-  height: auto;
-}
-
-/* Fullscreen effect (class added by JavaScript) */
-.fullscreen {
-  width: 100%; /* Expand to 100% width */
-  height: auto; /* Expand to 100% height */
-}
-
-:root {
-  --accent-bg: var(--vt-maroon) !important;
-  --accent-table: var(--vt-smoke);
-  --border: var(--vt-hokieStone);
-  --vt-maroon: #861f41;
-  --vt-burntOrange: #e5751f;
-  --vt-hokieStone: #75787b;
-  --vt-white: #ffffff;
-  --vt-purple: #642667;
-  --vt-pink: #ce0058;
-  --vt-sunset: #ed8b00;
-  --vt-yellow: #f7ea48;
-  --vt-teal: #508590;
-  --vt-turquoise: #2cd5c4;
-  --vt-grey: #d7d2cb;
-  --vt-smoke: #e5e1e6;
-  --vt-blue: #003c71;
-  --vt-burntOrangeWeb: #c64600;
-  --vt-impactOrange: #ca4f00;
 }

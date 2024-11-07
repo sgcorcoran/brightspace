@@ -1,21 +1,15 @@
 // videoExpand.js
 
-const videoContainer = document.getElementById('videoContainer');
-const video = document.getElementById('myVideo');
-// Start without controls in thumbnail mode
-video.controls = false;
-// Function to toggle fullscreen mode
-function toggleFullscreen() {
-  if (videoContainer.classList.contains('fullscreen')) {
-    // If already fullscreen, shrink back to original size
-    videoContainer.classList.remove('fullscreen');
-    video.controls = false; // Turn off controls when shrinking
-  } else {
-    // Expand to fullscreen
-    videoContainer.classList.add('fullscreen');
-    video.controls = true; // Turn on controls when in fullscreen
-  }
-}
+function expandVideo(videoId) {
+  // Find all video wrappers and remove the 'expanded' class
+  const allVideos = document.querySelectorAll(".courseware-video-wrapper-small");
+  allVideos.forEach((video) => {
+    if (video.id !== videoId) {
+      video.classList.remove("expanded");
+    }
+  });
 
-// Add event listener for click/tap
-videoContainer.addEventListener('click', toggleFullscreen);
+  // Toggle the 'expanded' class on the clicked video wrapper
+  const videoWrapper = document.getElementById(videoId);
+  videoWrapper.classList.toggle("expanded");
+}
