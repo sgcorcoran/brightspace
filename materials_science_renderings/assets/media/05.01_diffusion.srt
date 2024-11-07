@@ -1,0 +1,892 @@
+1
+00:00:01,199 --> 00:00:06,879
+all right welcome to uh chapter five
+
+2
+00:00:03,600 --> 00:00:09,040
+diffusion in solids and today we
+
+3
+00:00:06,879 --> 00:00:10,400
+would like to address how diffusion
+
+4
+00:00:09,040 --> 00:00:13,599
+occurs
+
+5
+00:00:10,400 --> 00:00:15,040
+why it's important part of processing
+
+6
+00:00:13,599 --> 00:00:17,840
+how the rate of diffusion can be
+
+7
+00:00:15,040 --> 00:00:20,400
+predicted for some simple cases
+
+8
+00:00:17,840 --> 00:00:23,119
+and how the fusion depends on structure
+
+9
+00:00:20,400 --> 00:00:23,119
+and temperature
+
+10
+00:00:27,279 --> 00:00:30,720
+all right so first we want to make some
+
+11
+00:00:29,039 --> 00:00:32,880
+observations
+
+12
+00:00:30,720 --> 00:00:34,000
+so one of the things that we find is
+
+13
+00:00:32,880 --> 00:00:37,040
+that if we were to take
+
+14
+00:00:34,000 --> 00:00:37,760
+two different materials and bind them
+
+15
+00:00:37,040 --> 00:00:40,879
+together
+
+16
+00:00:37,760 --> 00:00:44,160
+so maybe this is a film
+
+17
+00:00:40,879 --> 00:00:47,280
+and deposit a different type of material
+
+18
+00:00:44,160 --> 00:00:48,559
+film on top and then we allow some time
+
+19
+00:00:47,280 --> 00:00:50,480
+to pass
+
+20
+00:00:48,559 --> 00:00:52,239
+and we were to heat this up especially
+
+21
+00:00:50,480 --> 00:00:54,160
+that will help the process
+
+22
+00:00:52,239 --> 00:00:55,840
+what we would find is that there is
+
+23
+00:00:54,160 --> 00:00:59,120
+inter diffusion
+
+24
+00:00:55,840 --> 00:01:01,520
+there is a movement of mass where the
+
+25
+00:00:59,120 --> 00:01:03,600
+gray atoms would move into the orange
+
+26
+00:01:01,520 --> 00:01:05,439
+and the orange would move into the gray
+
+27
+00:01:03,600 --> 00:01:06,880
+so we'd start to see that the interface
+
+28
+00:01:05,439 --> 00:01:10,080
+between them
+
+29
+00:01:06,880 --> 00:01:11,280
+becomes diffuse and this would continue
+
+30
+00:01:10,080 --> 00:01:15,040
+until we get
+
+31
+00:01:11,280 --> 00:01:17,439
+complete mixing so we we see that
+
+32
+00:01:15,040 --> 00:01:18,880
+that mass wants to move from high
+
+33
+00:01:17,439 --> 00:01:22,159
+concentration
+
+34
+00:01:18,880 --> 00:01:22,159
+to low concentration
+
+35
+00:01:22,960 --> 00:01:26,960
+now the other thing that we'll see is
+
+36
+00:01:24,640 --> 00:01:30,720
+that even if we were to use
+
+37
+00:01:26,960 --> 00:01:33,920
+one material and we were to go ahead and
+
+38
+00:01:30,720 --> 00:01:35,520
+radio tag some of the atoms in that
+
+39
+00:01:33,920 --> 00:01:39,360
+material
+
+40
+00:01:35,520 --> 00:01:41,600
+then and we were to wait some time and
+
+41
+00:01:39,360 --> 00:01:43,040
+measure the sample again what we would
+
+42
+00:01:41,600 --> 00:01:45,600
+find is that those atoms
+
+43
+00:01:43,040 --> 00:01:47,040
+have actually moved around in the sample
+
+44
+00:01:45,600 --> 00:01:48,640
+so what we're seeing here is what's
+
+45
+00:01:47,040 --> 00:01:50,640
+called self-diffusion
+
+46
+00:01:48,640 --> 00:01:52,000
+the main idea is that things are
+
+47
+00:01:50,640 --> 00:01:53,680
+constantly moving and
+
+48
+00:01:52,000 --> 00:01:55,840
+it doesn't depend on the fact that they
+
+49
+00:01:53,680 --> 00:01:59,200
+are different materials
+
+50
+00:01:55,840 --> 00:02:01,360
+so that concentration uh this difference
+
+51
+00:01:59,200 --> 00:02:02,719
+isn't what matters like things move
+
+52
+00:02:01,360 --> 00:02:06,079
+around even
+
+53
+00:02:02,719 --> 00:02:08,160
+when it's a single pure element
+
+54
+00:02:06,079 --> 00:02:10,959
+so our mechanism is going to need to
+
+55
+00:02:08,160 --> 00:02:10,959
+account for this
+
+56
+00:02:12,160 --> 00:02:16,239
+all right so what's missing in those
+
+57
+00:02:14,400 --> 00:02:18,959
+figures
+
+58
+00:02:16,239 --> 00:02:21,280
+well what's missing are point defects
+
+59
+00:02:18,959 --> 00:02:23,599
+vacancies in particular
+
+60
+00:02:21,280 --> 00:02:25,360
+so if i want to move mass around i need
+
+61
+00:02:23,599 --> 00:02:25,920
+somewhere for the atoms to be able to
+
+62
+00:02:25,360 --> 00:02:28,959
+move it
+
+63
+00:02:25,920 --> 00:02:30,640
+move into and we've seen that vacancies
+
+64
+00:02:28,959 --> 00:02:32,560
+are defects that are temperature
+
+65
+00:02:30,640 --> 00:02:35,599
+dependent
+
+66
+00:02:32,560 --> 00:02:38,640
+and so if i am to have a vacant
+
+67
+00:02:35,599 --> 00:02:40,720
+hole here in my lattice then any of the
+
+68
+00:02:38,640 --> 00:02:42,400
+neighboring atoms can simply move into
+
+69
+00:02:40,720 --> 00:02:45,280
+this space
+
+70
+00:02:42,400 --> 00:02:46,400
+okay and then that'll look as if the
+
+71
+00:02:45,280 --> 00:02:48,560
+vacancy has
+
+72
+00:02:46,400 --> 00:02:50,080
+shifted position any of those
+
+73
+00:02:48,560 --> 00:02:51,280
+neighboring atoms can then move into
+
+74
+00:02:50,080 --> 00:02:52,959
+that space
+
+75
+00:02:51,280 --> 00:02:55,200
+and then the vacancy looks like it's
+
+76
+00:02:52,959 --> 00:02:56,480
+shift position again and so this process
+
+77
+00:02:55,200 --> 00:02:59,440
+just keeps occurring
+
+78
+00:02:56,480 --> 00:03:00,080
+it's completely random and that random
+
+79
+00:02:59,440 --> 00:03:02,640
+process
+
+80
+00:03:00,080 --> 00:03:04,560
+results in a mixing and i'll show this
+
+81
+00:03:02,640 --> 00:03:08,319
+to you in a simple
+
+82
+00:03:04,560 --> 00:03:10,080
+kind of demonstration uh let's say a few
+
+83
+00:03:08,319 --> 00:03:13,280
+other things you want to say about this
+
+84
+00:03:10,080 --> 00:03:15,760
+this particular sketch makes it appear
+
+85
+00:03:13,280 --> 00:03:16,560
+as if any of these atoms would just fall
+
+86
+00:03:15,760 --> 00:03:19,680
+into the hole
+
+87
+00:03:16,560 --> 00:03:21,519
+there's no reason why this atom um
+
+88
+00:03:19,680 --> 00:03:23,280
+would stay here if it can move over into
+
+89
+00:03:21,519 --> 00:03:25,920
+this one in reality
+
+90
+00:03:23,280 --> 00:03:27,360
+this lattice is tighter and when there's
+
+91
+00:03:25,920 --> 00:03:29,440
+a vacancy here
+
+92
+00:03:27,360 --> 00:03:30,640
+this whole region will relax inward a
+
+93
+00:03:29,440 --> 00:03:32,959
+little bit
+
+94
+00:03:30,640 --> 00:03:34,879
+and so in order to move one of these
+
+95
+00:03:32,959 --> 00:03:36,560
+atoms into the hole
+
+96
+00:03:34,879 --> 00:03:38,400
+it will actually first have to kind of
+
+97
+00:03:36,560 --> 00:03:40,400
+push atoms out of the way
+
+98
+00:03:38,400 --> 00:03:41,680
+and so this means that there is an
+
+99
+00:03:40,400 --> 00:03:44,879
+energy barrier
+
+100
+00:03:41,680 --> 00:03:46,640
+for this process of diffusion okay
+
+101
+00:03:44,879 --> 00:03:48,640
+so we're going to get another arrhenius
+
+102
+00:03:46,640 --> 00:03:51,920
+equation like we saw
+
+103
+00:03:48,640 --> 00:03:54,799
+for the number of vacancies in this case
+
+104
+00:03:51,920 --> 00:03:57,519
+the radius equation is going to describe
+
+105
+00:03:54,799 --> 00:04:01,840
+the rate at which we get diffusion how
+
+106
+00:03:57,519 --> 00:04:01,840
+fast this process occurs
+
+107
+00:04:03,200 --> 00:04:08,480
+so let me go ahead and just show you
+
+108
+00:04:05,840 --> 00:04:08,480
+through a simple
+
+109
+00:04:08,560 --> 00:04:12,879
+model here that a random process will
+
+110
+00:04:12,239 --> 00:04:15,760
+result
+
+111
+00:04:12,879 --> 00:04:17,199
+in the movement of mass from one
+
+112
+00:04:15,760 --> 00:04:20,079
+material to another
+
+113
+00:04:17,199 --> 00:04:22,240
+so what we've got here is some material
+
+114
+00:04:20,079 --> 00:04:25,280
+in red and some material in blue
+
+115
+00:04:22,240 --> 00:04:27,440
+we've got some vacancies in the lattice
+
+116
+00:04:25,280 --> 00:04:29,360
+and what the computer simulation does is
+
+117
+00:04:27,440 --> 00:04:32,560
+it takes each vacancy
+
+118
+00:04:29,360 --> 00:04:33,919
+and it randomly decides that it moves up
+
+119
+00:04:32,560 --> 00:04:36,000
+down left to right and that's a
+
+120
+00:04:33,919 --> 00:04:37,759
+completely random process
+
+121
+00:04:36,000 --> 00:04:39,040
+and so you'll see that these vacancies
+
+122
+00:04:37,759 --> 00:04:40,800
+don't go very far
+
+123
+00:04:39,040 --> 00:04:43,600
+because it's not biased and so there's a
+
+124
+00:04:40,800 --> 00:04:46,400
+lot of repeating
+
+125
+00:04:43,600 --> 00:04:47,919
+so they're just hopping around randomly
+
+126
+00:04:46,400 --> 00:04:50,000
+and hopefully what you can start to see
+
+127
+00:04:47,919 --> 00:04:51,840
+is that there is some exchange here at
+
+128
+00:04:50,000 --> 00:04:53,919
+the interface we're starting to get some
+
+129
+00:04:51,840 --> 00:04:55,840
+blue moving to the red side
+
+130
+00:04:53,919 --> 00:04:57,199
+a little red moving over here to the
+
+131
+00:04:55,840 --> 00:04:58,800
+blue side
+
+132
+00:04:57,199 --> 00:05:01,440
+you can also see that this is a fairly
+
+133
+00:04:58,800 --> 00:05:02,479
+inefficient process so it takes a lot of
+
+134
+00:05:01,440 --> 00:05:05,039
+movement
+
+135
+00:05:02,479 --> 00:05:06,720
+ultimately a lot of vacancies to really
+
+136
+00:05:05,039 --> 00:05:08,400
+move things around
+
+137
+00:05:06,720 --> 00:05:10,639
+so if we run this simulation a little
+
+138
+00:05:08,400 --> 00:05:14,800
+longer and this one is the same
+
+139
+00:05:10,639 --> 00:05:16,960
+type of simulation we have more atoms
+
+140
+00:05:14,800 --> 00:05:19,440
+and in this one we're going to go ahead
+
+141
+00:05:16,960 --> 00:05:21,680
+and take slices of like every i think
+
+142
+00:05:19,440 --> 00:05:24,479
+hundred time steps or so
+
+143
+00:05:21,680 --> 00:05:26,160
+and so this will let us see longer times
+
+144
+00:05:24,479 --> 00:05:27,680
+and you can see now
+
+145
+00:05:26,160 --> 00:05:29,199
+the movement of the green and the red
+
+146
+00:05:27,680 --> 00:05:31,840
+into each other
+
+147
+00:05:29,199 --> 00:05:33,280
+and this is a concentration profile
+
+148
+00:05:31,840 --> 00:05:35,840
+across that sample
+
+149
+00:05:33,280 --> 00:05:36,960
+so you can see that interface spreading
+
+150
+00:05:35,840 --> 00:05:39,440
+out and becoming
+
+151
+00:05:36,960 --> 00:05:42,400
+more and more diffuse again completely
+
+152
+00:05:39,440 --> 00:05:42,400
+random process
+
+153
+00:05:44,479 --> 00:05:48,160
+and so that kind of explains our what
+
+154
+00:05:46,800 --> 00:05:49,919
+appears to be
+
+155
+00:05:48,160 --> 00:05:51,280
+the movement of mass from high
+
+156
+00:05:49,919 --> 00:05:54,960
+concentration
+
+157
+00:05:51,280 --> 00:05:56,479
+to low in terms of the red atoms
+
+158
+00:05:54,960 --> 00:06:00,720
+they would be at high concentration
+
+159
+00:05:56,479 --> 00:06:00,720
+moving to low into the green
+
+160
+00:06:00,880 --> 00:06:07,360
+all right so this process of vacancy
+
+161
+00:06:04,840 --> 00:06:09,039
+diffusion depends on the number of
+
+162
+00:06:07,360 --> 00:06:12,000
+vacancies that we have
+
+163
+00:06:09,039 --> 00:06:13,840
+so that's going to depend on temperature
+
+164
+00:06:12,000 --> 00:06:17,759
+and it depends on
+
+165
+00:06:13,840 --> 00:06:20,720
+the frequency of which atoms
+
+166
+00:06:17,759 --> 00:06:22,319
+actually hop into this space and that's
+
+167
+00:06:20,720 --> 00:06:25,360
+going to depend upon
+
+168
+00:06:22,319 --> 00:06:29,360
+the activation energy the barrier
+
+169
+00:06:25,360 --> 00:06:29,360
+for the diffusion process
+
+170
+00:06:31,199 --> 00:06:35,840
+now another mechanism of diffusion is
+
+171
+00:06:33,440 --> 00:06:39,840
+referred to as interstitial diffusion
+
+172
+00:06:35,840 --> 00:06:42,880
+here we're moving small atoms in a host
+
+173
+00:06:39,840 --> 00:06:44,800
+of larger atoms and we're moving the
+
+174
+00:06:42,880 --> 00:06:46,880
+atoms that exist in these interstitial
+
+175
+00:06:44,800 --> 00:06:50,080
+sites this might be carbon say
+
+176
+00:06:46,880 --> 00:06:51,840
+in iron and then this atom can now move
+
+177
+00:06:50,080 --> 00:06:53,360
+to any of the neighboring interstitial
+
+178
+00:06:51,840 --> 00:06:55,440
+sites
+
+179
+00:06:53,360 --> 00:06:57,360
+now at low concentrations which is
+
+180
+00:06:55,440 --> 00:06:59,039
+usually what we're talking about
+
+181
+00:06:57,360 --> 00:07:01,120
+all of the interstitial sites around
+
+182
+00:06:59,039 --> 00:07:03,599
+this one are open available
+
+183
+00:07:01,120 --> 00:07:05,759
+okay so this is one reason why
+
+184
+00:07:03,599 --> 00:07:07,680
+interstitial diffusion is faster than
+
+185
+00:07:05,759 --> 00:07:09,680
+vacancy diffusion
+
+186
+00:07:07,680 --> 00:07:10,880
+because this one already has its sites
+
+187
+00:07:09,680 --> 00:07:12,960
+available
+
+188
+00:07:10,880 --> 00:07:15,840
+where the vacancy diffusion mechanism
+
+189
+00:07:12,960 --> 00:07:18,960
+depends on the availability of a vacancy
+
+190
+00:07:15,840 --> 00:07:20,479
+the number that we have
+
+191
+00:07:18,960 --> 00:07:22,319
+all right now in this picture also it
+
+192
+00:07:20,479 --> 00:07:24,800
+looks as if this atom can just kind of
+
+193
+00:07:22,319 --> 00:07:26,479
+zip through here and in reality this
+
+194
+00:07:24,800 --> 00:07:29,039
+space is much smaller
+
+195
+00:07:26,479 --> 00:07:30,479
+these atoms are much closer and so these
+
+196
+00:07:29,039 --> 00:07:32,800
+guys have to actually move out of the
+
+197
+00:07:30,479 --> 00:07:35,039
+way before this one would be able to hop
+
+198
+00:07:32,800 --> 00:07:36,000
+into this site so there's an activation
+
+199
+00:07:35,039 --> 00:07:38,400
+barrier again
+
+200
+00:07:36,000 --> 00:07:40,639
+for this movement although it's smaller
+
+201
+00:07:38,400 --> 00:07:42,560
+than in the vacancy case
+
+202
+00:07:40,639 --> 00:07:43,759
+so the second reason that interstitial
+
+203
+00:07:42,560 --> 00:07:46,160
+diffusion
+
+204
+00:07:43,759 --> 00:07:48,720
+is faster than vacancy diffusion is
+
+205
+00:07:46,160 --> 00:07:52,400
+because typically small atoms
+
+206
+00:07:48,720 --> 00:07:56,160
+vibrate faster and move quicker
+
+207
+00:07:52,400 --> 00:07:58,720
+than larger atoms every time this atom
+
+208
+00:07:56,160 --> 00:08:00,639
+vibrates it's considered an attempt
+
+209
+00:07:58,720 --> 00:08:01,919
+at moving into one of its neighboring
+
+210
+00:08:00,639 --> 00:08:04,080
+sites
+
+211
+00:08:01,919 --> 00:08:05,840
+so if it's vibrating faster it's
+
+212
+00:08:04,080 --> 00:08:08,639
+attempting more often
+
+213
+00:08:05,840 --> 00:08:09,919
+and inevitably it'll get the right
+
+214
+00:08:08,639 --> 00:08:14,639
+conditions and then we'll hop
+
+215
+00:08:09,919 --> 00:08:14,639
+in to the next interstitial site
+
+216
+00:08:16,160 --> 00:08:21,520
+okay so that is the mechanisms
+
+217
+00:08:19,199 --> 00:08:23,039
+vacancy mechanism and interstitial
+
+218
+00:08:21,520 --> 00:08:25,840
+mechanism
+
+219
+00:08:23,039 --> 00:08:28,479
+and in the next video we're going to go
+
+220
+00:08:25,840 --> 00:08:31,039
+ahead and we're going to address
+
+221
+00:08:28,479 --> 00:08:32,080
+why we're even studying diffusion why is
+
+222
+00:08:31,039 --> 00:08:34,719
+this important
+
+223
+00:08:32,080 --> 00:08:34,719
+at all
+

@@ -1,0 +1,1186 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.439
+recall that we talked about linear
+
+2
+00:00:01.439 --> 00:00:05.520
+elastic behavior before and we've talked
+
+3
+00:00:03.439 --> 00:00:09.440
+about hooke's law
+
+4
+00:00:05.520 --> 00:00:13.200
+the elastic modulus or young's modulus
+
+5
+00:00:09.440 --> 00:00:15.599
+and our definitions of stress and strain
+
+6
+00:00:13.200 --> 00:00:17.119
+so what we want to do today is to keep
+
+7
+00:00:15.599 --> 00:00:19.840
+going beyond this
+
+8
+00:00:17.119 --> 00:00:20.560
+region here which we get elastic
+
+9
+00:00:19.840 --> 00:00:22.400
+behavior
+
+10
+00:00:20.560 --> 00:00:24.080
+let's keep moving along and see what
+
+11
+00:00:22.400 --> 00:00:26.800
+happens as we get to higher and higher
+
+12
+00:00:24.080 --> 00:00:26.800
+stress values
+
+13
+00:00:27.039 --> 00:00:30.880
+all right so as we keep going at some
+
+14
+00:00:29.519 --> 00:00:33.280
+point we're going to get to what's
+
+15
+00:00:30.880 --> 00:00:35.600
+called the proportional limit
+
+16
+00:00:33.280 --> 00:00:36.719
+and this is the limit at which we no
+
+17
+00:00:35.600 --> 00:00:39.920
+longer have this
+
+18
+00:00:36.719 --> 00:00:41.760
+linear region where we define again as
+
+19
+00:00:39.920 --> 00:00:44.879
+the elastic modulus
+
+20
+00:00:41.760 --> 00:00:48.320
+but in fact we start to form
+
+21
+00:00:44.879 --> 00:00:50.239
+permanent or plastic deformation
+
+22
+00:00:48.320 --> 00:00:51.520
+so to the left of this point it's all
+
+23
+00:00:50.239 --> 00:00:54.800
+elastic
+
+24
+00:00:51.520 --> 00:00:58.879
+to the right of this point it's elastic
+
+25
+00:00:54.800 --> 00:01:00.000
+plus plastic plastic was elastic so
+
+26
+00:00:58.879 --> 00:01:02.239
+we're adding in
+
+27
+00:01:00.000 --> 00:01:04.080
+a plastic component but if we were to
+
+28
+00:01:02.239 --> 00:01:06.640
+unload in this region we would get back
+
+29
+00:01:04.080 --> 00:01:07.439
+the elastic piece for example to stop
+
+30
+00:01:06.640 --> 00:01:10.960
+here
+
+31
+00:01:07.439 --> 00:01:15.040
+and we were to unload this unloading
+
+32
+00:01:10.960 --> 00:01:16.240
+would follow the slope of the elastic
+
+33
+00:01:15.040 --> 00:01:19.439
+modulus
+
+34
+00:01:16.240 --> 00:01:21.920
+but notice we no longer return back to
+
+35
+00:01:19.439 --> 00:01:23.520
+zero but in fact we have an offset in
+
+36
+00:01:21.920 --> 00:01:25.759
+the string that's our permanent
+
+37
+00:01:23.520 --> 00:01:26.799
+deformation our permanent increase in
+
+38
+00:01:25.759 --> 00:01:29.840
+length
+
+39
+00:01:26.799 --> 00:01:34.240
+of our sample so
+
+40
+00:01:29.840 --> 00:01:37.360
+we also have this definition of the
+
+41
+00:01:34.240 --> 00:01:39.680
+healed strength so most of the time
+
+42
+00:01:37.360 --> 00:01:41.439
+what's given in problems and is
+
+43
+00:01:39.680 --> 00:01:45.040
+tabulated is the yield strength
+
+44
+00:01:41.439 --> 00:01:47.759
+not the proportional limit okay
+
+45
+00:01:45.040 --> 00:01:49.520
+so the yield strength is defined by
+
+46
+00:01:47.759 --> 00:01:51.920
+what's called a 0.2 percent
+
+47
+00:01:49.520 --> 00:01:53.520
+offset pool so the yield strength when
+
+48
+00:01:51.920 --> 00:01:56.479
+people say that they mean
+
+49
+00:01:53.520 --> 00:01:59.360
+0.2 offset yield strength okay but no
+
+50
+00:01:56.479 --> 00:02:01.439
+one says all of that
+
+51
+00:01:59.360 --> 00:02:03.040
+all right so this yield strength is
+
+52
+00:02:01.439 --> 00:02:07.040
+defined by
+
+53
+00:02:03.040 --> 00:02:09.759
+on the strain axis moving over to .002
+
+54
+00:02:07.040 --> 00:02:11.680
+and strain right point two percent
+
+55
+00:02:09.759 --> 00:02:12.150
+and at that point we go ahead and we
+
+56
+00:02:11.680 --> 00:02:13.760
+draw
+
+57
+00:02:12.150 --> 00:02:16.879
+[Music]
+
+58
+00:02:13.760 --> 00:02:18.560
+a line with the slope of the elastic
+
+59
+00:02:16.879 --> 00:02:20.480
+modulus
+
+60
+00:02:18.560 --> 00:02:22.319
+and then where that line hits our stress
+
+61
+00:02:20.480 --> 00:02:25.040
+strain curve that
+
+62
+00:02:22.319 --> 00:02:26.720
+is our yield strength value so that's
+
+63
+00:02:25.040 --> 00:02:27.680
+the method that we would use to find
+
+64
+00:02:26.720 --> 00:02:29.440
+that
+
+65
+00:02:27.680 --> 00:02:30.959
+so why do we use that and not the
+
+66
+00:02:29.440 --> 00:02:32.480
+proportional limit
+
+67
+00:02:30.959 --> 00:02:34.160
+well the problem with the proportional
+
+68
+00:02:32.480 --> 00:02:35.680
+limit is that it's difficult to really
+
+69
+00:02:34.160 --> 00:02:38.400
+define where that is
+
+70
+00:02:35.680 --> 00:02:40.239
+so this is very idealized data so it's
+
+71
+00:02:38.400 --> 00:02:42.239
+fairly easy to see
+
+72
+00:02:40.239 --> 00:02:44.400
+if we were to put a nice straight line
+
+73
+00:02:42.239 --> 00:02:46.080
+on the initial part we could see
+
+74
+00:02:44.400 --> 00:02:47.599
+where it starts to deviate and we could
+
+75
+00:02:46.080 --> 00:02:51.440
+define this point
+
+76
+00:02:47.599 --> 00:02:53.200
+but many times for real data
+
+77
+00:02:51.440 --> 00:02:55.440
+it's very difficult to define exactly
+
+78
+00:02:53.200 --> 00:02:58.159
+where this proportional limit is
+
+79
+00:02:55.440 --> 00:02:59.120
+okay so the point two percent works very
+
+80
+00:02:58.159 --> 00:03:01.519
+well
+
+81
+00:02:59.120 --> 00:03:04.560
+um in particular this is this is really
+
+82
+00:03:01.519 --> 00:03:06.560
+true for the the metals and alloys
+
+83
+00:03:04.560 --> 00:03:08.319
+we'll talk about the polymers when we
+
+84
+00:03:06.560 --> 00:03:10.640
+get to that chapter
+
+85
+00:03:08.319 --> 00:03:12.560
+and the ceramics will see that they
+
+86
+00:03:10.640 --> 00:03:14.800
+don't have
+
+87
+00:03:12.560 --> 00:03:16.000
+yield points they just fracture before
+
+88
+00:03:14.800 --> 00:03:17.360
+they
+
+89
+00:03:16.000 --> 00:03:19.840
+would actually ever get the plastic
+
+90
+00:03:17.360 --> 00:03:21.680
+deformation
+
+91
+00:03:19.840 --> 00:03:23.360
+okay so we use this method this point
+
+92
+00:03:21.680 --> 00:03:24.959
+two percent and although it makes it
+
+93
+00:03:23.360 --> 00:03:25.760
+look like there's quite a difference
+
+94
+00:03:24.959 --> 00:03:28.480
+between the
+
+95
+00:03:25.760 --> 00:03:29.120
+the proportional limit and the yield
+
+96
+00:03:28.480 --> 00:03:31.120
+strength
+
+97
+00:03:29.120 --> 00:03:33.440
+in reality there is not a big difference
+
+98
+00:03:31.120 --> 00:03:35.200
+between these two points
+
+99
+00:03:33.440 --> 00:03:37.360
+this curve is just really exaggerated
+
+100
+00:03:35.200 --> 00:03:39.519
+for the sake of defining
+
+101
+00:03:37.360 --> 00:03:41.680
+these two values so again this is the
+
+102
+00:03:39.519 --> 00:03:45.599
+one that we are going to stick with
+
+103
+00:03:41.680 --> 00:03:48.640
+the yield strings in some text this is
+
+104
+00:03:45.599 --> 00:03:53.200
+given sigma 0 sub 0
+
+105
+00:03:48.640 --> 00:03:56.560
+as the symbol instead of sigma sub y
+
+106
+00:03:53.200 --> 00:03:57.920
+our text it uses sigma sub y
+
+107
+00:03:56.560 --> 00:04:01.280
+but if you're looking at a mechanical
+
+108
+00:03:57.920 --> 00:04:05.120
+text you may see sigma zero
+
+109
+00:04:01.280 --> 00:04:08.000
+written instead okay all right
+
+110
+00:04:05.120 --> 00:04:09.680
+there are some uh stress strain curves
+
+111
+00:04:08.000 --> 00:04:11.519
+uh particularly in
+
+112
+00:04:09.680 --> 00:04:13.200
+or the plain carbon steels i should say
+
+113
+00:04:11.519 --> 00:04:16.239
+mainly just higher than carbon and
+
+114
+00:04:13.200 --> 00:04:18.400
+no additional elements
+
+115
+00:04:16.239 --> 00:04:20.400
+where the curve may actually continue on
+
+116
+00:04:18.400 --> 00:04:20.720
+up to some particular point so this is
+
+117
+00:04:20.400 --> 00:04:24.240
+all
+
+118
+00:04:20.720 --> 00:04:26.880
+elastic and then when the curve
+
+119
+00:04:24.240 --> 00:04:28.639
+deviates from this the stress actually
+
+120
+00:04:26.880 --> 00:04:30.479
+drops
+
+121
+00:04:28.639 --> 00:04:32.240
+and then we get this what's called
+
+122
+00:04:30.479 --> 00:04:35.120
+serrated yielding
+
+123
+00:04:32.240 --> 00:04:37.120
+and then the curve would then start
+
+124
+00:04:35.120 --> 00:04:40.400
+continuing on
+
+125
+00:04:37.120 --> 00:04:41.759
+um and behaving like like the rest of
+
+126
+00:04:40.400 --> 00:04:44.160
+most samples we'll take a look at that
+
+127
+00:04:41.759 --> 00:04:46.400
+apart in a minute
+
+128
+00:04:44.160 --> 00:04:48.639
+and if we do this point two percent
+
+129
+00:04:46.400 --> 00:04:50.160
+offset yield strength we'll see the draw
+
+130
+00:04:48.639 --> 00:04:53.919
+put us
+
+131
+00:04:50.160 --> 00:04:57.040
+in this lower yield point region
+
+132
+00:04:53.919 --> 00:05:00.400
+so this upper yield point is similar to
+
+133
+00:04:57.040 --> 00:05:03.360
+uh stick slip type friction cases
+
+134
+00:05:00.400 --> 00:05:04.000
+so the upper is kind of the stick and
+
+135
+00:05:03.360 --> 00:05:07.120
+then once
+
+136
+00:05:04.000 --> 00:05:10.400
+you finally surpass that your
+
+137
+00:05:07.120 --> 00:05:14.240
+sample will continue on your to move
+
+138
+00:05:10.400 --> 00:05:15.759
+say in the dynamic friction case
+
+139
+00:05:14.240 --> 00:05:17.360
+or in this case we're starting to move
+
+140
+00:05:15.759 --> 00:05:20.560
+dislocations
+
+141
+00:05:17.360 --> 00:05:23.520
+and once we get them moving
+
+142
+00:05:20.560 --> 00:05:24.080
+they move at a lower stress value so the
+
+143
+00:05:23.520 --> 00:05:26.000
+lower yield
+
+144
+00:05:24.080 --> 00:05:28.240
+point is the is the design point here
+
+145
+00:05:26.000 --> 00:05:30.000
+not the upper
+
+146
+00:05:28.240 --> 00:05:32.080
+all right so let's keep going beyond
+
+147
+00:05:30.000 --> 00:05:33.280
+that region so again here's the elastic
+
+148
+00:05:32.080 --> 00:05:36.840
+region
+
+149
+00:05:33.280 --> 00:05:38.880
+so somewhere and here's a proportional
+
+150
+00:05:36.840 --> 00:05:42.240
+limit um
+
+151
+00:05:38.880 --> 00:05:44.479
+if we do our offset yield strength
+
+152
+00:05:42.240 --> 00:05:45.680
+we will probably end up pretty much the
+
+153
+00:05:44.479 --> 00:05:47.440
+same place
+
+154
+00:05:45.680 --> 00:05:49.360
+on this scale of the curve for the yield
+
+155
+00:05:47.440 --> 00:05:51.520
+strength itself
+
+156
+00:05:49.360 --> 00:05:53.360
+we can keep going eventually we're going
+
+157
+00:05:51.520 --> 00:05:54.320
+to get to a maximum value this is
+
+158
+00:05:53.360 --> 00:05:56.080
+referred to as the
+
+159
+00:05:54.320 --> 00:05:57.759
+tensile strength or the ultimate
+
+160
+00:05:56.080 --> 00:06:00.080
+strength
+
+161
+00:05:57.759 --> 00:06:02.479
+sigma ultimate that's typically in
+
+162
+00:06:00.080 --> 00:06:04.400
+mechanics books
+
+163
+00:06:02.479 --> 00:06:06.240
+tensile strength is usually used in
+
+164
+00:06:04.400 --> 00:06:07.919
+materials books
+
+165
+00:06:06.240 --> 00:06:10.800
+and at that point the curve will start
+
+166
+00:06:07.919 --> 00:06:14.639
+to fall off and then eventually
+
+167
+00:06:10.800 --> 00:06:16.560
+we get fracture all right so
+
+168
+00:06:14.639 --> 00:06:19.440
+what's happening at the maximum here is
+
+169
+00:06:16.560 --> 00:06:22.240
+that this is the point at which the
+
+170
+00:06:19.440 --> 00:06:24.960
+diameter of the sample undergoes an
+
+171
+00:06:22.240 --> 00:06:27.919
+instability and starts to neck
+
+172
+00:06:24.960 --> 00:06:29.120
+and once it starts to neck and shrink in
+
+173
+00:06:27.919 --> 00:06:31.680
+this one location
+
+174
+00:06:29.120 --> 00:06:33.759
+then all of the strain the plastic
+
+175
+00:06:31.680 --> 00:06:34.800
+deformation gets confined in that region
+
+176
+00:06:33.759 --> 00:06:38.880
+and then
+
+177
+00:06:34.800 --> 00:06:42.319
+we eventually have a failure
+
+178
+00:06:38.880 --> 00:06:42.319
+i'll post this video in
+
+179
+00:06:43.440 --> 00:06:48.400
+in canvas for you and we can see this
+
+180
+00:06:46.000 --> 00:06:50.479
+copper rod being pulled
+
+181
+00:06:48.400 --> 00:06:54.160
+and then as it's going you'll see that
+
+182
+00:06:50.479 --> 00:06:55.680
+it next down and then eventually fails
+
+183
+00:06:54.160 --> 00:06:57.120
+hopefully you also saw that when you
+
+184
+00:06:55.680 --> 00:06:58.720
+watch the tensile video for the
+
+185
+00:06:57.120 --> 00:07:00.400
+stainless steel sample you saw that
+
+186
+00:06:58.720 --> 00:07:04.639
+necking behavior
+
+187
+00:07:00.400 --> 00:07:04.639
+and then eventually the failure
+
+188
+00:07:07.680 --> 00:07:11.840
+if we take a look at samples that have
+
+189
+00:07:09.520 --> 00:07:14.800
+failed in a tension test
+
+190
+00:07:11.840 --> 00:07:15.680
+you can see two main kinds of behaviors
+
+191
+00:07:14.800 --> 00:07:19.919
+here
+
+192
+00:07:15.680 --> 00:07:23.120
+one is where the cross-sectional area
+
+193
+00:07:19.919 --> 00:07:26.639
+the diameter here you can clearly see
+
+194
+00:07:23.120 --> 00:07:28.479
+has decreased right
+
+195
+00:07:26.639 --> 00:07:30.960
+and another case where it looks like
+
+196
+00:07:28.479 --> 00:07:33.199
+there's no change and we just have
+
+197
+00:07:30.960 --> 00:07:35.759
+a flat fracture this one that's
+
+198
+00:07:33.199 --> 00:07:38.479
+decreased also seems to have this
+
+199
+00:07:35.759 --> 00:07:39.039
+shear lip on it this kind of looks like
+
+200
+00:07:38.479 --> 00:07:40.560
+a cup
+
+201
+00:07:39.039 --> 00:07:42.080
+there's kind of the bottom of the cup in
+
+202
+00:07:40.560 --> 00:07:45.520
+the sheer lip and
+
+203
+00:07:42.080 --> 00:07:47.120
+this one is more like a cone it's a cup
+
+204
+00:07:45.520 --> 00:07:49.599
+and cone fracture
+
+205
+00:07:47.120 --> 00:07:52.479
+okay this is a shear fracture this is a
+
+206
+00:07:49.599 --> 00:07:52.479
+brittle fracture
+
+207
+00:07:52.720 --> 00:07:58.000
+shear fracture and a brittle fracture
+
+208
+00:07:55.919 --> 00:07:58.960
+so the ductal sample will have a lot of
+
+209
+00:07:58.000 --> 00:08:02.240
+change
+
+210
+00:07:58.960 --> 00:08:02.960
+in this cross-sectional area um go ahead
+
+211
+00:08:02.240 --> 00:08:05.360
+and take a look
+
+212
+00:08:02.960 --> 00:08:06.080
+at the full curve again and we'll just
+
+213
+00:08:05.360 --> 00:08:08.000
+point out
+
+214
+00:08:06.080 --> 00:08:09.440
+a couple of properties that we can get
+
+215
+00:08:08.000 --> 00:08:12.720
+off of this
+
+216
+00:08:09.440 --> 00:08:14.080
+so again this initial region we have the
+
+217
+00:08:12.720 --> 00:08:16.240
+full set of data we're going to have to
+
+218
+00:08:14.080 --> 00:08:17.840
+do is re-plot it
+
+219
+00:08:16.240 --> 00:08:19.360
+and we're going to need to replot that
+
+220
+00:08:17.840 --> 00:08:22.000
+so that we can actually measure
+
+221
+00:08:19.360 --> 00:08:24.240
+the slope here in this initial region
+
+222
+00:08:22.000 --> 00:08:26.160
+okay to get the elastic modulus that's
+
+223
+00:08:24.240 --> 00:08:27.840
+shown here
+
+224
+00:08:26.160 --> 00:08:30.800
+we're going to need to be able to see
+
+225
+00:08:27.840 --> 00:08:33.200
+this .002
+
+226
+00:08:30.800 --> 00:08:34.880
+to do our offset remember this is the
+
+227
+00:08:33.200 --> 00:08:37.599
+same slope
+
+228
+00:08:34.880 --> 00:08:40.800
+and then where it hits our curve that is
+
+229
+00:08:37.599 --> 00:08:43.200
+our yield strength
+
+230
+00:08:40.800 --> 00:08:45.120
+then we use the full curve to define the
+
+231
+00:08:43.200 --> 00:08:46.800
+tensile strength or ultimate strength of
+
+232
+00:08:45.120 --> 00:08:50.160
+the sample
+
+233
+00:08:46.800 --> 00:08:53.519
+and ultimately the strain
+
+234
+00:08:50.160 --> 00:08:55.440
+at fracture so this could be related to
+
+235
+00:08:53.519 --> 00:08:56.880
+the ductility the sample the percent
+
+236
+00:08:55.440 --> 00:09:02.080
+elongation
+
+237
+00:08:56.880 --> 00:09:02.080
+at fracture in this case being 37
+
+238
+00:09:02.240 --> 00:09:05.760
+all right this is says referred to here
+
+239
+00:09:04.720 --> 00:09:08.800
+as fake data this
+
+240
+00:09:05.760 --> 00:09:09.680
+means idealized schematic data i'm going
+
+241
+00:09:08.800 --> 00:09:14.240
+to show you a real
+
+242
+00:09:09.680 --> 00:09:14.240
+data in a next video
+
+243
+00:09:16.800 --> 00:09:20.959
+so again summary we can get the elastic
+
+244
+00:09:20.160 --> 00:09:24.800
+modulus
+
+245
+00:09:20.959 --> 00:09:27.200
+from that linear region we can get
+
+246
+00:09:24.800 --> 00:09:29.519
+the strength and there's two types
+
+247
+00:09:27.200 --> 00:09:31.360
+there's the yield strength
+
+248
+00:09:29.519 --> 00:09:33.839
+and then there's the ultimate strength
+
+249
+00:09:31.360 --> 00:09:35.600
+or tensile strength
+
+250
+00:09:33.839 --> 00:09:37.440
+okay so when one says the strength of
+
+251
+00:09:35.600 --> 00:09:38.800
+the sample you can already see
+
+252
+00:09:37.440 --> 00:09:40.399
+that you have to be careful because
+
+253
+00:09:38.800 --> 00:09:41.760
+there's two different types right the
+
+254
+00:09:40.399 --> 00:09:44.160
+yield strength here
+
+255
+00:09:41.760 --> 00:09:45.519
+defining when we go plastic and then
+
+256
+00:09:44.160 --> 00:09:49.440
+tensile strength
+
+257
+00:09:45.519 --> 00:09:51.760
+being that ultimate load the sample can
+
+258
+00:09:49.440 --> 00:09:53.360
+withstand before it starts necking and
+
+259
+00:09:51.760 --> 00:09:55.680
+final failure
+
+260
+00:09:53.360 --> 00:09:57.360
+the ductility can be defined in terms of
+
+261
+00:09:55.680 --> 00:10:00.480
+that percent elongation
+
+262
+00:09:57.360 --> 00:10:01.920
+at failure so we just saw a case for 37
+
+263
+00:10:00.480 --> 00:10:03.839
+percent
+
+264
+00:10:01.920 --> 00:10:05.440
+the ductility could also be measured in
+
+265
+00:10:03.839 --> 00:10:08.399
+terms of a percent
+
+266
+00:10:05.440 --> 00:10:09.519
+reduction in area okay so how much did
+
+267
+00:10:08.399 --> 00:10:13.200
+the sample change
+
+268
+00:10:09.519 --> 00:10:15.200
+in cross-sectional area
+
+269
+00:10:13.200 --> 00:10:16.560
+so that's a measure of ductility so we
+
+270
+00:10:15.200 --> 00:10:18.240
+can actually put some numbers to
+
+271
+00:10:16.560 --> 00:10:19.920
+ductility now
+
+272
+00:10:18.240 --> 00:10:23.120
+instead of just referring to a sample as
+
+273
+00:10:19.920 --> 00:10:25.360
+being a ductal or not
+
+274
+00:10:23.120 --> 00:10:27.440
+if we take a look at the material
+
+275
+00:10:25.360 --> 00:10:31.040
+properties
+
+276
+00:10:27.440 --> 00:10:32.560
+so we have here structure insensitive
+
+277
+00:10:31.040 --> 00:10:35.120
+properties
+
+278
+00:10:32.560 --> 00:10:36.880
+this is the elastic modulus the density
+
+279
+00:10:35.120 --> 00:10:39.760
+of the sample
+
+280
+00:10:36.880 --> 00:10:41.360
+melting point so these things are are
+
+281
+00:10:39.760 --> 00:10:43.680
+all material properties and they're
+
+282
+00:10:41.360 --> 00:10:45.360
+relatively insensitive to any kind of
+
+283
+00:10:43.680 --> 00:10:46.480
+structural changes
+
+284
+00:10:45.360 --> 00:10:48.880
+so it doesn't matter how many
+
+285
+00:10:46.480 --> 00:10:52.480
+dislocations i have in my sample
+
+286
+00:10:48.880 --> 00:10:55.600
+for for example my elastic
+
+287
+00:10:52.480 --> 00:10:59.680
+properties will not change
+
+288
+00:10:55.600 --> 00:11:03.360
+so the yield strength
+
+289
+00:10:59.680 --> 00:11:04.720
+the tensile strength and things like
+
+290
+00:11:03.360 --> 00:11:07.600
+ductility these will
+
+291
+00:11:04.720 --> 00:11:10.000
+all change with the number of
+
+292
+00:11:07.600 --> 00:11:14.560
+dislocations in my sample
+
+293
+00:11:10.000 --> 00:11:16.880
+maybe the size of grains in my sample so
+
+294
+00:11:14.560 --> 00:11:18.880
+those would be structure sensitive
+
+295
+00:11:16.880 --> 00:11:24.160
+properties
+
+296
+00:11:18.880 --> 00:11:24.160
+there's still material properties
+

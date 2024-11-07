@@ -1,0 +1,490 @@
+WEBVTT
+
+1
+00:00:00.240 --> 00:00:04.240
+uh so last time we defined stress and
+
+2
+00:00:02.960 --> 00:00:07.200
+strain
+
+3
+00:00:04.240 --> 00:00:09.280
+we defined hooke's law linear elastic
+
+4
+00:00:07.200 --> 00:00:12.559
+non-linear elastic
+
+5
+00:00:09.280 --> 00:00:14.400
+and we defined the elastic modulus or
+
+6
+00:00:12.559 --> 00:00:15.679
+young's modulus
+
+7
+00:00:14.400 --> 00:00:17.600
+so this time what i'm going to do is
+
+8
+00:00:15.679 --> 00:00:21.119
+just kind of
+
+9
+00:00:17.600 --> 00:00:24.080
+go ahead and basically relate where this
+
+10
+00:00:21.119 --> 00:00:25.439
+elastic modulus comes from so in this
+
+11
+00:00:24.080 --> 00:00:28.080
+elastic region
+
+12
+00:00:25.439 --> 00:00:30.400
+it's important to note that we are we
+
+13
+00:00:28.080 --> 00:00:32.800
+are not displacing
+
+14
+00:00:30.400 --> 00:00:35.680
+uh rows of atoms or planes of atoms
+
+15
+00:00:32.800 --> 00:00:38.000
+relative to another plane
+
+16
+00:00:35.680 --> 00:00:39.920
+like we would in plastic deformation
+
+17
+00:00:38.000 --> 00:00:43.680
+we're simply stretching
+
+18
+00:00:39.920 --> 00:00:46.879
+bonds so you recall this
+
+19
+00:00:43.680 --> 00:00:46.879
+hopefully this energy
+
+20
+00:00:47.360 --> 00:00:51.039
+plot here as we have two atoms
+
+21
+00:00:49.680 --> 00:00:53.600
+approaching each other
+
+22
+00:00:51.039 --> 00:00:55.199
+and we said that the atoms will sit down
+
+23
+00:00:53.600 --> 00:00:58.399
+here in this well
+
+24
+00:00:55.199 --> 00:01:01.120
+at an equilibrium separation
+
+25
+00:00:58.399 --> 00:01:01.120
+r0
+
+26
+00:01:02.079 --> 00:01:07.119
+and the bond energy e0 so when we start
+
+27
+00:01:05.519 --> 00:01:08.880
+elastically stretching
+
+28
+00:01:07.119 --> 00:01:11.119
+we're going to be let's say if we're in
+
+29
+00:01:08.880 --> 00:01:14.159
+tension we're going to be increasing
+
+30
+00:01:11.119 --> 00:01:15.600
+this equilibrium position
+
+31
+00:01:14.159 --> 00:01:17.600
+or we're going to be displacing the
+
+32
+00:01:15.600 --> 00:01:19.759
+atoms out of their equilibrium positions
+
+33
+00:01:17.600 --> 00:01:22.159
+what i should say
+
+34
+00:01:19.759 --> 00:01:23.040
+and then again if we and so that would
+
+35
+00:01:22.159 --> 00:01:26.000
+be us
+
+36
+00:01:23.040 --> 00:01:27.920
+walking say along this curve i'm really
+
+37
+00:01:26.000 --> 00:01:29.520
+exaggerating
+
+38
+00:01:27.920 --> 00:01:31.439
+the amount that we would walk along that
+
+39
+00:01:29.520 --> 00:01:32.400
+curve here but we'll be walking along
+
+40
+00:01:31.439 --> 00:01:35.759
+this curve here
+
+41
+00:01:32.400 --> 00:01:35.759
+as we stretch the sample
+
+42
+00:01:37.360 --> 00:01:40.880
+and then if we let go we would come back
+
+43
+00:01:38.960 --> 00:01:43.040
+to this equilibrium position
+
+44
+00:01:40.880 --> 00:01:45.280
+so another way to kind of see that is to
+
+45
+00:01:43.040 --> 00:01:48.640
+go ahead and take the
+
+46
+00:01:45.280 --> 00:01:52.880
+derivative of this energy
+
+47
+00:01:48.640 --> 00:01:56.399
+with respect to the separation
+
+48
+00:01:52.880 --> 00:02:00.079
+atomic separation r okay
+
+49
+00:01:56.399 --> 00:02:02.320
+and this is proportional to a force
+
+50
+00:02:00.079 --> 00:02:05.200
+and so that's what we have up here on
+
+51
+00:02:02.320 --> 00:02:07.920
+this top curve we have the force
+
+52
+00:02:05.200 --> 00:02:10.319
+okay and so if we take a look at the
+
+53
+00:02:07.920 --> 00:02:10.319
+slope
+
+54
+00:02:10.959 --> 00:02:15.200
+down here at our equilibrium position
+
+55
+00:02:13.040 --> 00:02:17.200
+you can see the slope is zero
+
+56
+00:02:15.200 --> 00:02:19.680
+so on our force curve you can see if we
+
+57
+00:02:17.200 --> 00:02:21.920
+end up with a with zero here
+
+58
+00:02:19.680 --> 00:02:22.800
+so this equilibrium value we had in the
+
+59
+00:02:21.920 --> 00:02:24.879
+energy curve
+
+60
+00:02:22.800 --> 00:02:26.560
+the other way to think about it is that
+
+61
+00:02:24.879 --> 00:02:27.599
+that's the location where the sum of the
+
+62
+00:02:26.560 --> 00:02:31.120
+forces
+
+63
+00:02:27.599 --> 00:02:32.959
+is equal to zero all right so if that's
+
+64
+00:02:31.120 --> 00:02:34.879
+the case
+
+65
+00:02:32.959 --> 00:02:36.720
+then if we were to take a look at the
+
+66
+00:02:34.879 --> 00:02:39.680
+slope
+
+67
+00:02:36.720 --> 00:02:42.400
+in here at this equilibrium position
+
+68
+00:02:39.680 --> 00:02:46.160
+where the sum of the forces is zero
+
+69
+00:02:42.400 --> 00:02:49.760
+then we now have a slope that looks like
+
+70
+00:02:46.160 --> 00:02:52.080
+a force versus separation in other words
+
+71
+00:02:49.760 --> 00:02:55.200
+this slope here should be
+
+72
+00:02:52.080 --> 00:02:58.400
+proportional to
+
+73
+00:02:55.200 --> 00:03:00.879
+the elastic modulus i'm just going to
+
+74
+00:02:58.400 --> 00:03:03.200
+spell that out so you don't think that e
+
+75
+00:03:00.879 --> 00:03:05.360
+means energy here so the slope nail is
+
+76
+00:03:03.200 --> 00:03:09.840
+proportional to the elastomodulus
+
+77
+00:03:05.360 --> 00:03:11.519
+it looks like our stress strain curve
+
+78
+00:03:09.840 --> 00:03:12.879
+we'd have to go through some conversions
+
+79
+00:03:11.519 --> 00:03:14.800
+to actually
+
+80
+00:03:12.879 --> 00:03:16.239
+get the elastic value because we are in
+
+81
+00:03:14.800 --> 00:03:18.480
+units of force
+
+82
+00:03:16.239 --> 00:03:19.440
+and atomic separation so we would need
+
+83
+00:03:18.480 --> 00:03:22.400
+to
+
+84
+00:03:19.440 --> 00:03:24.000
+figure out how to come up with an area
+
+85
+00:03:22.400 --> 00:03:25.440
+to make that a stress
+
+86
+00:03:24.000 --> 00:03:29.120
+and in what way and how we would come
+
+87
+00:03:25.440 --> 00:03:29.120
+about making this a strain value
+
+88
+00:03:30.159 --> 00:03:35.760
+but what we can do is at least in a
+
+89
+00:03:32.959 --> 00:03:37.680
+relative sense we can understand how
+
+90
+00:03:35.760 --> 00:03:39.360
+when we have one material that's very
+
+91
+00:03:37.680 --> 00:03:42.720
+strongly bound
+
+92
+00:03:39.360 --> 00:03:44.400
+so in the energy this would be the case
+
+93
+00:03:42.720 --> 00:03:47.200
+for the
+
+94
+00:03:44.400 --> 00:03:48.159
+high gonna try and avoid e here too many
+
+95
+00:03:47.200 --> 00:03:51.519
+e's
+
+96
+00:03:48.159 --> 00:03:53.920
+i'll just write bond energy all right we
+
+97
+00:03:51.519 --> 00:03:55.840
+talked about bond energy
+
+98
+00:03:53.920 --> 00:03:57.360
+so the strongly bound case would be
+
+99
+00:03:55.840 --> 00:04:01.120
+where the bond energy is
+
+100
+00:03:57.360 --> 00:04:04.080
+high this one is is the case for the
+
+101
+00:04:01.120 --> 00:04:06.959
+bond energy being
+
+102
+00:04:04.080 --> 00:04:07.840
+low or at least lower than the red curve
+
+103
+00:04:06.959 --> 00:04:10.560
+here
+
+104
+00:04:07.840 --> 00:04:11.840
+so more shallower well from the energy
+
+105
+00:04:10.560 --> 00:04:14.720
+plot
+
+106
+00:04:11.840 --> 00:04:17.120
+and so if you take a look at those what
+
+107
+00:04:14.720 --> 00:04:20.000
+you will find is that these slopes
+
+108
+00:04:17.120 --> 00:04:20.959
+at the equilibrium positions is much
+
+109
+00:04:20.000 --> 00:04:23.840
+steeper for the
+
+110
+00:04:20.959 --> 00:04:25.600
+strongly bound sample as compared to the
+
+111
+00:04:23.840 --> 00:04:27.440
+weekly bound sample
+
+112
+00:04:25.600 --> 00:04:29.280
+and so we would expect the strongly
+
+113
+00:04:27.440 --> 00:04:32.880
+bound sample
+
+114
+00:04:29.280 --> 00:04:35.680
+to have the higher elastic modulus
+
+115
+00:04:32.880 --> 00:04:38.160
+right or young's modulus so that'll be a
+
+116
+00:04:35.680 --> 00:04:40.880
+high elastic modulus
+
+117
+00:04:38.160 --> 00:04:41.360
+this other one here then would have the
+
+118
+00:04:40.880 --> 00:04:45.040
+lower
+
+119
+00:04:41.360 --> 00:04:49.360
+elastic modulus so the modulus
+
+120
+00:04:45.040 --> 00:04:52.479
+is proportional to again the derivative
+
+121
+00:04:49.360 --> 00:04:56.560
+of the force with respect to r evaluated
+
+122
+00:04:52.479 --> 00:04:56.560
+at that equilibrium position
+

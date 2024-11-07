@@ -1,0 +1,8 @@
+\.\./assets/media/[^/]+/  
+
+Here's a breakdown of the pattern:
+\.\./ matches the literal ../
+assets/media/ matches the literal assets/media/
+[^/]+ matches any sequence of characters that are not / (to allow for Chap%2003 or any other string).
+The final / matches the closing slash after the dynamic part.
+This will match paths like ../assets/media/Chap%2003/, ../assets/media/any_string/, etc.

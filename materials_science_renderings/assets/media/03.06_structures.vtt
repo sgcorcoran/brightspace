@@ -1,0 +1,418 @@
+WEBVTT
+
+1
+00:00:01.280 --> 00:00:06.080
+i just want to say a word about the
+
+2
+00:00:03.360 --> 00:00:08.480
+theoretical density so where does this
+
+3
+00:00:06.080 --> 00:00:10.960
+theoretical density equation come from
+
+4
+00:00:08.480 --> 00:00:13.280
+and how does that compare to
+
+5
+00:00:10.960 --> 00:00:16.160
+experimental densities
+
+6
+00:00:13.280 --> 00:00:16.800
+so in your text you'll find an equation
+
+7
+00:00:16.160 --> 00:00:19.920
+for the
+
+8
+00:00:16.800 --> 00:00:21.920
+theoretical density okay where does this
+
+9
+00:00:19.920 --> 00:00:23.279
+come from this is really just a unit
+
+10
+00:00:21.920 --> 00:00:26.400
+conversion
+
+11
+00:00:23.279 --> 00:00:28.800
+so if you think about density which is
+
+12
+00:00:26.400 --> 00:00:32.000
+going to be some kind of a quantity
+
+13
+00:00:28.800 --> 00:00:33.520
+over a volume okay
+
+14
+00:00:32.000 --> 00:00:35.840
+unless we're talking about linear
+
+15
+00:00:33.520 --> 00:00:39.200
+densities or planar densities which are
+
+16
+00:00:35.840 --> 00:00:41.760
+quantity per length or quantity per area
+
+17
+00:00:39.200 --> 00:00:43.600
+here we've got a quantity per volume and
+
+18
+00:00:41.760 --> 00:00:45.760
+we normally think of
+
+19
+00:00:43.600 --> 00:00:47.039
+something like grams per centimeter
+
+20
+00:00:45.760 --> 00:00:48.879
+cubed
+
+21
+00:00:47.039 --> 00:00:50.160
+as our density that we could look up in
+
+22
+00:00:48.879 --> 00:00:51.920
+the textbook
+
+23
+00:00:50.160 --> 00:00:55.120
+but we could also have a density just
+
+24
+00:00:51.920 --> 00:00:57.280
+simply the number of atoms
+
+25
+00:00:55.120 --> 00:00:59.199
+say per volume that's the density
+
+26
+00:00:57.280 --> 00:01:00.399
+quantity right we got a total number of
+
+27
+00:00:59.199 --> 00:01:02.320
+atoms per
+
+28
+00:01:00.399 --> 00:01:03.680
+per volume so that's really kind of
+
+29
+00:01:02.320 --> 00:01:06.320
+where we start
+
+30
+00:01:03.680 --> 00:01:07.600
+and so in this equation here n is just
+
+31
+00:01:06.320 --> 00:01:10.320
+the number of atoms
+
+32
+00:01:07.600 --> 00:01:10.960
+in the unit cell and that takes into
+
+33
+00:01:10.320 --> 00:01:14.640
+account 1
+
+34
+00:01:10.960 --> 00:01:16.240
+8 for the corners one half for the faces
+
+35
+00:01:14.640 --> 00:01:19.600
+and then anything inside of the cell
+
+36
+00:01:16.240 --> 00:01:21.680
+would be counted as one
+
+37
+00:01:19.600 --> 00:01:23.680
+and so you'll you'll recall hopefully
+
+38
+00:01:21.680 --> 00:01:27.280
+that the body centered cubic
+
+39
+00:01:23.680 --> 00:01:29.040
+n is equal to two and for the face
+
+40
+00:01:27.280 --> 00:01:31.119
+centered cubic if we count those we'll
+
+41
+00:01:29.040 --> 00:01:32.479
+get n is equal to four
+
+42
+00:01:31.119 --> 00:01:34.320
+okay so that's the number of atoms per
+
+43
+00:01:32.479 --> 00:01:37.040
+unit cell and then all we need
+
+44
+00:01:34.320 --> 00:01:37.600
+is the volume of the unit cell which we
+
+45
+00:01:37.040 --> 00:01:40.159
+know
+
+46
+00:01:37.600 --> 00:01:42.720
+in the cubic system then is just that
+
+47
+00:01:40.159 --> 00:01:45.520
+edge length lattice parameter a
+
+48
+00:01:42.720 --> 00:01:46.799
+cubed so that will give us atoms per
+
+49
+00:01:45.520 --> 00:01:48.880
+volume
+
+50
+00:01:46.799 --> 00:01:50.159
+now if we want to convert that into a
+
+51
+00:01:48.880 --> 00:01:52.880
+grams per
+
+52
+00:01:50.159 --> 00:01:53.360
+centimeter cubed term then what we need
+
+53
+00:01:52.880 --> 00:01:56.320
+to do
+
+54
+00:01:53.360 --> 00:01:58.880
+is take the atomic weight which is
+
+55
+00:01:56.320 --> 00:02:01.840
+written in grams per mole
+
+56
+00:01:58.880 --> 00:02:03.759
+okay but we know atoms so let's rewrite
+
+57
+00:02:01.840 --> 00:02:06.320
+grams per mole
+
+58
+00:02:03.759 --> 00:02:08.479
+in terms of grams per atom and then we
+
+59
+00:02:06.320 --> 00:02:09.920
+can just multiply so we'll use
+
+60
+00:02:08.479 --> 00:02:12.640
+avogadro's
+
+61
+00:02:09.920 --> 00:02:15.280
+number of atoms in a mole that converts
+
+62
+00:02:12.640 --> 00:02:16.800
+to grams per atom
+
+63
+00:02:15.280 --> 00:02:19.680
+so now i know the number of atoms per
+
+64
+00:02:16.800 --> 00:02:22.560
+volume i know how many grams per atom
+
+65
+00:02:19.680 --> 00:02:24.720
+so if i just go ahead and multiply those
+
+66
+00:02:22.560 --> 00:02:26.239
+i'll get my grams per volume
+
+67
+00:02:24.720 --> 00:02:28.239
+which is the density that i'm used to
+
+68
+00:02:26.239 --> 00:02:31.360
+looking up and so that's that's all
+
+69
+00:02:28.239 --> 00:02:34.319
+the theoretical density is so
+
+70
+00:02:31.360 --> 00:02:36.640
+the theoretical density does assume that
+
+71
+00:02:34.319 --> 00:02:39.040
+these the crystal structures
+
+72
+00:02:36.640 --> 00:02:40.000
+that we're using right i'd assume that
+
+73
+00:02:39.040 --> 00:02:44.239
+we're dealing with
+
+74
+00:02:40.000 --> 00:02:46.400
+atoms as spheres uh hard spheres
+
+75
+00:02:44.239 --> 00:02:48.080
+and that actually works very well in
+
+76
+00:02:46.400 --> 00:02:50.560
+most cases
+
+77
+00:02:48.080 --> 00:02:53.599
+but there are times when the atoms don't
+
+78
+00:02:50.560 --> 00:02:56.319
+behave exactly like hard spheres
+
+79
+00:02:53.599 --> 00:02:57.840
+and in the hcp system the hexagonal
+
+80
+00:02:56.319 --> 00:03:02.319
+close pack system
+
+81
+00:02:57.840 --> 00:03:04.720
+we often will see that that the
+
+82
+00:03:02.319 --> 00:03:05.760
+the stretch in the c direction many
+
+83
+00:03:04.720 --> 00:03:07.920
+times is not
+
+84
+00:03:05.760 --> 00:03:09.200
+as large as it should be well
+
+85
+00:03:07.920 --> 00:03:12.000
+theoretically
+
+86
+00:03:09.200 --> 00:03:12.959
+experimentally it's smaller and that's
+
+87
+00:03:12.000 --> 00:03:15.040
+because in that c
+
+88
+00:03:12.959 --> 00:03:16.239
+direction instead of the atoms acting as
+
+89
+00:03:15.040 --> 00:03:18.400
+spheres
+
+90
+00:03:16.239 --> 00:03:19.840
+they get squashed so they're more like
+
+91
+00:03:18.400 --> 00:03:22.480
+ellipsoids
+
+92
+00:03:19.840 --> 00:03:23.519
+and so that c dimension is a little bit
+
+93
+00:03:22.480 --> 00:03:26.159
+smaller
+
+94
+00:03:23.519 --> 00:03:27.519
+than what is expected theoretically and
+
+95
+00:03:26.159 --> 00:03:30.480
+so the densities then
+
+96
+00:03:27.519 --> 00:03:32.080
+therefore be greater experimentally in
+
+97
+00:03:30.480 --> 00:03:33.760
+some of those cases it's not hugely
+
+98
+00:03:32.080 --> 00:03:36.400
+greater just a small
+
+99
+00:03:33.760 --> 00:03:38.159
+a small change but you will see that and
+
+100
+00:03:36.400 --> 00:03:40.959
+i think you have a
+
+101
+00:03:38.159 --> 00:03:41.440
+question perhaps in your homework on
+
+102
+00:03:40.959 --> 00:03:44.599
+that
+
+103
+00:03:41.440 --> 00:03:47.599
+but i know that it's in your reading
+
+104
+00:03:44.599 --> 00:03:47.599
+okay
+

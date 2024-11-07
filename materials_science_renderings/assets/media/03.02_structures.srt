@@ -1,0 +1,1244 @@
+1
+00:00:00,960 --> 00:00:06,240
+so let's take a look at
+
+2
+00:00:03,439 --> 00:00:07,600
+the packing in a face-centered cubic
+
+3
+00:00:06,240 --> 00:00:08,960
+structure
+
+4
+00:00:07,600 --> 00:00:11,120
+so i've got here just kind of a little
+
+5
+00:00:08,960 --> 00:00:13,759
+demo that i wrote um
+
+6
+00:00:11,120 --> 00:00:14,320
+showing the face centered structure
+
+7
+00:00:13,759 --> 00:00:17,359
+here's
+
+8
+00:00:14,320 --> 00:00:20,560
+for a single unit cell for example so
+
+9
+00:00:17,359 --> 00:00:23,359
+you can see the cubic structure
+
+10
+00:00:20,560 --> 00:00:23,920
+and you can see that in the face of this
+
+11
+00:00:23,359 --> 00:00:25,920
+cube
+
+12
+00:00:23,920 --> 00:00:27,760
+you've got an atom okay so a face
+
+13
+00:00:25,920 --> 00:00:29,920
+centered cubic structure
+
+14
+00:00:27,760 --> 00:00:31,840
+so we're going to add on a bunch more
+
+15
+00:00:29,920 --> 00:00:33,440
+unit cells so we can kind of build up
+
+16
+00:00:31,840 --> 00:00:34,719
+our crystal
+
+17
+00:00:33,440 --> 00:00:37,600
+and one of the things i want you to
+
+18
+00:00:34,719 --> 00:00:39,360
+notice is that depending upon
+
+19
+00:00:37,600 --> 00:00:40,320
+which direction we look at this crystal
+
+20
+00:00:39,360 --> 00:00:41,120
+we're going to have a different
+
+21
+00:00:40,320 --> 00:00:45,520
+placement
+
+22
+00:00:41,120 --> 00:00:48,800
+of atoms so for example
+
+23
+00:00:45,520 --> 00:00:51,600
+i just want to highlight the faces
+
+24
+00:00:48,800 --> 00:00:52,480
+so you can see the faces have this
+
+25
+00:00:51,600 --> 00:00:56,559
+square
+
+26
+00:00:52,480 --> 00:00:59,039
+geometry it looks like the 5 on the die
+
+27
+00:00:56,559 --> 00:00:59,920
+but if i was to look say along one of
+
+28
+00:00:59,039 --> 00:01:02,480
+the
+
+29
+00:00:59,920 --> 00:01:05,119
+diagonals of this structure i'm going to
+
+30
+00:01:02,480 --> 00:01:07,600
+slice it in a different direction
+
+31
+00:01:05,119 --> 00:01:10,240
+you can see now i've got again a nice
+
+32
+00:01:07,600 --> 00:01:13,200
+plane of atoms
+
+33
+00:01:10,240 --> 00:01:14,880
+but now they've got a triangular or if
+
+34
+00:01:13,200 --> 00:01:16,479
+you want to look in here you'll see that
+
+35
+00:01:14,880 --> 00:01:19,600
+there's a hexagonal
+
+36
+00:01:16,479 --> 00:01:21,920
+pattern to the structure okay
+
+37
+00:01:19,600 --> 00:01:23,759
+so each direction that we were to slice
+
+38
+00:01:21,920 --> 00:01:26,080
+this material let me slice it yet again
+
+39
+00:01:23,759 --> 00:01:28,080
+one more direction
+
+40
+00:01:26,080 --> 00:01:29,119
+this is now cutting off an edge you can
+
+41
+00:01:28,080 --> 00:01:31,119
+see that
+
+42
+00:01:29,119 --> 00:01:32,479
+edge now also forms a plane when i cut
+
+43
+00:01:31,119 --> 00:01:36,159
+that edge off
+
+44
+00:01:32,479 --> 00:01:38,320
+and my atoms have again another
+
+45
+00:01:36,159 --> 00:01:40,159
+symmetry that you don't see in the
+
+46
+00:01:38,320 --> 00:01:42,720
+others and different packing
+
+47
+00:01:40,159 --> 00:01:46,560
+this is a very low density packing in
+
+48
+00:01:42,720 --> 00:01:46,560
+fact let me go ahead and remove
+
+49
+00:01:46,960 --> 00:01:50,399
+the atoms so i can just look at the
+
+50
+00:01:49,119 --> 00:01:52,560
+planes
+
+51
+00:01:50,399 --> 00:01:53,840
+you can see this is a pretty low density
+
+52
+00:01:52,560 --> 00:01:55,119
+of atoms
+
+53
+00:01:53,840 --> 00:01:58,560
+they're not even touching in this
+
+54
+00:01:55,119 --> 00:02:01,439
+direction it's just like rows
+
+55
+00:01:58,560 --> 00:02:02,000
+then if i look at the face this is a
+
+56
+00:02:01,439 --> 00:02:04,880
+higher
+
+57
+00:02:02,000 --> 00:02:06,079
+packing density than than this one and
+
+58
+00:02:04,880 --> 00:02:09,200
+blue
+
+59
+00:02:06,079 --> 00:02:12,879
+that's our five here on our die
+
+60
+00:02:09,200 --> 00:02:13,840
+that's our face and then if we go ahead
+
+61
+00:02:12,879 --> 00:02:16,160
+and look at that
+
+62
+00:02:13,840 --> 00:02:17,840
+slice through the body through the
+
+63
+00:02:16,160 --> 00:02:20,879
+diagonal
+
+64
+00:02:17,840 --> 00:02:21,520
+cutting off the diagonal corner we now
+
+65
+00:02:20,879 --> 00:02:24,640
+have the
+
+66
+00:02:21,520 --> 00:02:28,239
+closest packed plane with that
+
+67
+00:02:24,640 --> 00:02:31,120
+nice hexagonal symmetry or
+
+68
+00:02:28,239 --> 00:02:32,239
+triangular symmetry depending on how you
+
+69
+00:02:31,120 --> 00:02:34,239
+describe this
+
+70
+00:02:32,239 --> 00:02:36,080
+this looks a lot like the packing of
+
+71
+00:02:34,239 --> 00:02:39,280
+billiard balls
+
+72
+00:02:36,080 --> 00:02:41,599
+right so if you take a look here
+
+73
+00:02:39,280 --> 00:02:43,120
+these atoms this would be your billiard
+
+74
+00:02:41,599 --> 00:02:45,920
+ball rack
+
+75
+00:02:43,120 --> 00:02:48,000
+so this is the most efficient packing in
+
+76
+00:02:45,920 --> 00:02:50,400
+two dimensions
+
+77
+00:02:48,000 --> 00:02:51,040
+all right so what we're going to learn
+
+78
+00:02:50,400 --> 00:02:53,280
+in the
+
+79
+00:02:51,040 --> 00:02:54,400
+next time in the next video is how to
+
+80
+00:02:53,280 --> 00:02:56,959
+describe
+
+81
+00:02:54,400 --> 00:02:59,040
+each of these different planes we want
+
+82
+00:02:56,959 --> 00:03:01,920
+some way of describing them
+
+83
+00:02:59,040 --> 00:03:02,400
+we're going to use these special indices
+
+84
+00:03:01,920 --> 00:03:04,959
+and so
+
+85
+00:03:02,400 --> 00:03:06,080
+we mentioned the one zero zero this is a
+
+86
+00:03:04,959 --> 00:03:08,720
+face
+
+87
+00:03:06,080 --> 00:03:09,760
+the one one zero is cutting off this
+
+88
+00:03:08,720 --> 00:03:11,680
+edge
+
+89
+00:03:09,760 --> 00:03:14,159
+and what's called a one one one is
+
+90
+00:03:11,680 --> 00:03:18,640
+cutting off a corner
+
+91
+00:03:14,159 --> 00:03:20,560
+but we'll get to that okay
+
+92
+00:03:18,640 --> 00:03:22,800
+and this demo also allows us to take a
+
+93
+00:03:20,560 --> 00:03:25,200
+look at the body centered cubic
+
+94
+00:03:22,800 --> 00:03:27,599
+you can see that the packing on those
+
+95
+00:03:25,200 --> 00:03:29,519
+planes are completely different
+
+96
+00:03:27,599 --> 00:03:32,239
+than what we had on the face centered
+
+97
+00:03:29,519 --> 00:03:36,879
+everything is much more open
+
+98
+00:03:32,239 --> 00:03:40,159
+and now this blue one this one one zero
+
+99
+00:03:36,879 --> 00:03:41,920
+now looks like the best packing in 2d in
+
+100
+00:03:40,159 --> 00:03:44,239
+fact this is the highest packing in the
+
+101
+00:03:41,920 --> 00:03:46,080
+body centered system
+
+102
+00:03:44,239 --> 00:03:47,840
+right in the face centered it was the
+
+103
+00:03:46,080 --> 00:03:50,799
+red plane
+
+104
+00:03:47,840 --> 00:03:52,480
+one one one that had the highest packing
+
+105
+00:03:50,799 --> 00:03:53,760
+so we'll come back to this a few times
+
+106
+00:03:52,480 --> 00:03:57,760
+as we go through
+
+107
+00:03:53,760 --> 00:04:01,840
+the course so let's go ahead and go back
+
+108
+00:03:57,760 --> 00:04:01,840
+to our slideshow
+
+109
+00:04:02,159 --> 00:04:05,439
+this slide here is just showing what i
+
+110
+00:04:03,920 --> 00:04:06,799
+just showed you in the mathematica demo
+
+111
+00:04:05,439 --> 00:04:08,159
+so i'm going to go ahead and skip this
+
+112
+00:04:06,799 --> 00:04:11,200
+one
+
+113
+00:04:08,159 --> 00:04:12,319
+and talk about this question of what is
+
+114
+00:04:11,200 --> 00:04:15,360
+an a b
+
+115
+00:04:12,319 --> 00:04:19,199
+a b packing versus an abc abc
+
+116
+00:04:15,360 --> 00:04:23,040
+packing so this is where we explain that
+
+117
+00:04:19,199 --> 00:04:26,000
+so this is a slice across the corner
+
+118
+00:04:23,040 --> 00:04:30,160
+okay you can see again that triangular
+
+119
+00:04:26,000 --> 00:04:30,160
+or hexagonal symmetry that's in here
+
+120
+00:04:30,720 --> 00:04:34,639
+and so this is for the face centered
+
+121
+00:04:32,800 --> 00:04:37,759
+cubic system
+
+122
+00:04:34,639 --> 00:04:39,440
+here so let me go ahead and label that
+
+123
+00:04:37,759 --> 00:04:42,960
+and the one over here is going to be for
+
+124
+00:04:39,440 --> 00:04:44,560
+the hexagonal close pack system
+
+125
+00:04:42,960 --> 00:04:46,320
+all right let's just go ahead and call
+
+126
+00:04:44,560 --> 00:04:49,360
+this plane a
+
+127
+00:04:46,320 --> 00:04:50,639
+okay and this one over here is just a
+
+128
+00:04:49,360 --> 00:04:52,800
+then we're going to go ahead and build
+
+129
+00:04:50,639 --> 00:04:54,960
+another set
+
+130
+00:04:52,800 --> 00:04:56,800
+take another set of billiard balls put
+
+131
+00:04:54,960 --> 00:04:58,080
+them in your rack put them on top of the
+
+132
+00:04:56,800 --> 00:05:01,199
+previous one and they'll
+
+133
+00:04:58,080 --> 00:05:03,280
+will naturally fall into the
+
+134
+00:05:01,199 --> 00:05:04,400
+hollow site in between three atoms below
+
+135
+00:05:03,280 --> 00:05:06,320
+it okay
+
+136
+00:05:04,400 --> 00:05:08,160
+forming a little tetrahedron here these
+
+137
+00:05:06,320 --> 00:05:10,880
+three red ones below and this green one
+
+138
+00:05:08,160 --> 00:05:12,560
+sitting on top okay so that's my next
+
+139
+00:05:10,880 --> 00:05:15,759
+set of planes and i can do that over
+
+140
+00:05:12,560 --> 00:05:18,400
+here as well so everything is identical
+
+141
+00:05:15,759 --> 00:05:21,280
+then what i've got is my next set i
+
+142
+00:05:18,400 --> 00:05:23,360
+actually have a choice
+
+143
+00:05:21,280 --> 00:05:24,479
+i can go ahead and place my next set of
+
+144
+00:05:23,360 --> 00:05:27,680
+atoms
+
+145
+00:05:24,479 --> 00:05:31,919
+say in this hollow site
+
+146
+00:05:27,680 --> 00:05:32,720
+here or i could place it say in this
+
+147
+00:05:31,919 --> 00:05:36,479
+hollow site
+
+148
+00:05:32,720 --> 00:05:38,560
+here okay i can't use both
+
+149
+00:05:36,479 --> 00:05:40,639
+because the atoms won't fit i have a
+
+150
+00:05:38,560 --> 00:05:44,479
+choice of which ones i use
+
+151
+00:05:40,639 --> 00:05:46,960
+so this one here would repeat
+
+152
+00:05:44,479 --> 00:05:49,759
+the red layer underneath okay now
+
+153
+00:05:46,960 --> 00:05:49,759
+sitting on top
+
+154
+00:05:50,400 --> 00:05:53,520
+this site here is unique it doesn't
+
+155
+00:05:52,880 --> 00:05:55,600
+repeat
+
+156
+00:05:53,520 --> 00:05:57,840
+the red layer below it or the green
+
+157
+00:05:55,600 --> 00:06:01,360
+layer and so this is a third
+
+158
+00:05:57,840 --> 00:06:03,759
+choice refer to this then as layer c
+
+159
+00:06:01,360 --> 00:06:05,039
+okay that's what the face centered cubic
+
+160
+00:06:03,759 --> 00:06:08,080
+structure does
+
+161
+00:06:05,039 --> 00:06:10,080
+so this is just saying a plane b plane c
+
+162
+00:06:08,080 --> 00:06:11,919
+plane and it's arbitrary what we're
+
+163
+00:06:10,080 --> 00:06:13,360
+calling abc would just mean that there
+
+164
+00:06:11,919 --> 00:06:16,479
+are three unique
+
+165
+00:06:13,360 --> 00:06:18,080
+orientations and then when i continue on
+
+166
+00:06:16,479 --> 00:06:18,800
+the next plane that would go on top of
+
+167
+00:06:18,080 --> 00:06:22,560
+here would then be
+
+168
+00:06:18,800 --> 00:06:26,240
+a again and it repeats this abc
+
+169
+00:06:22,560 --> 00:06:28,400
+so if you build up your planes this way
+
+170
+00:06:26,240 --> 00:06:30,000
+then you could rotate it around in space
+
+171
+00:06:28,400 --> 00:06:33,199
+and you would see that it would create
+
+172
+00:06:30,000 --> 00:06:35,440
+the face-centered cubic structure
+
+173
+00:06:33,199 --> 00:06:37,120
+all right over here the hexagonal close
+
+174
+00:06:35,440 --> 00:06:37,759
+pack what we're going to do is not use
+
+175
+00:06:37,120 --> 00:06:40,000
+this
+
+176
+00:06:37,759 --> 00:06:41,520
+third layer c but we're going to go
+
+177
+00:06:40,000 --> 00:06:44,800
+ahead and repeat
+
+178
+00:06:41,520 --> 00:06:45,840
+the first layer the a layer okay the red
+
+179
+00:06:44,800 --> 00:06:47,840
+ones again
+
+180
+00:06:45,840 --> 00:06:48,960
+and so this is referred to then as this
+
+181
+00:06:47,840 --> 00:06:51,680
+a b a b
+
+182
+00:06:48,960 --> 00:06:53,360
+packing that just continues when i do
+
+183
+00:06:51,680 --> 00:06:55,199
+that if i was to look in the crystal i
+
+184
+00:06:53,360 --> 00:06:57,440
+will no longer see this face centered
+
+185
+00:06:55,199 --> 00:07:00,240
+structure at all
+
+186
+00:06:57,440 --> 00:07:01,199
+but instead i will have this hexagonal
+
+187
+00:07:00,240 --> 00:07:03,120
+packing
+
+188
+00:07:01,199 --> 00:07:05,520
+okay both these structures have the same
+
+189
+00:07:03,120 --> 00:07:08,960
+packing density that's 74
+
+190
+00:07:05,520 --> 00:07:10,479
+the atomic packing factor 0.74
+
+191
+00:07:08,960 --> 00:07:13,120
+because they're they're made the same
+
+192
+00:07:10,479 --> 00:07:14,400
+way okay but they have very different
+
+193
+00:07:13,120 --> 00:07:16,800
+symmetry
+
+194
+00:07:14,400 --> 00:07:18,960
+so i want to show you is that this
+
+195
+00:07:16,800 --> 00:07:21,199
+change in symmetry
+
+196
+00:07:18,960 --> 00:07:22,080
+okay but again no change in packing
+
+197
+00:07:21,199 --> 00:07:24,160
+density
+
+198
+00:07:22,080 --> 00:07:27,360
+results in a very large change in the
+
+199
+00:07:24,160 --> 00:07:27,360
+mechanical behavior
+
+200
+00:07:28,080 --> 00:07:31,599
+okay so i'm going to show you the idea
+
+201
+00:07:29,759 --> 00:07:34,479
+here again that
+
+202
+00:07:31,599 --> 00:07:35,039
+structure is going to affect in this
+
+203
+00:07:34,479 --> 00:07:38,800
+case
+
+204
+00:07:35,039 --> 00:07:38,800
+property or mechanical property
+
+205
+00:07:39,280 --> 00:07:45,199
+so here i've got a material that has the
+
+206
+00:07:42,479 --> 00:07:46,160
+abc abc packing this is face centered
+
+207
+00:07:45,199 --> 00:07:49,919
+cubic
+
+208
+00:07:46,160 --> 00:07:54,000
+this is aluminum and over here i've got
+
+209
+00:07:49,919 --> 00:07:57,199
+zinc which is hcp
+
+210
+00:07:54,000 --> 00:07:59,280
+following the abab packing
+
+211
+00:07:57,199 --> 00:08:01,120
+both of these pulled in tension you can
+
+212
+00:07:59,280 --> 00:08:02,240
+see that the aluminum behaves in a very
+
+213
+00:08:01,120 --> 00:08:04,160
+ductile way
+
+214
+00:08:02,240 --> 00:08:07,280
+you can see a lot of change in the
+
+215
+00:08:04,160 --> 00:08:10,319
+diameter across the sample as it failed
+
+216
+00:08:07,280 --> 00:08:11,520
+you can see a lot of distortion and what
+
+217
+00:08:10,319 --> 00:08:15,520
+looks like a cup
+
+218
+00:08:11,520 --> 00:08:17,120
+and a cone okay a lot of duck failure
+
+219
+00:08:15,520 --> 00:08:19,199
+when you pull on the zinc this is just
+
+220
+00:08:17,120 --> 00:08:20,639
+showing the bottom half nail of it
+
+221
+00:08:19,199 --> 00:08:22,879
+you can see what get you get is a
+
+222
+00:08:20,639 --> 00:08:25,919
+brittle fracture you get a nice
+
+223
+00:08:22,879 --> 00:08:26,800
+flat cleavage plane across here a little
+
+224
+00:08:25,919 --> 00:08:29,599
+bit of ductile
+
+225
+00:08:26,800 --> 00:08:31,360
+tearing at the very end but this is what
+
+226
+00:08:29,599 --> 00:08:34,240
+is indicative of a brittle fracture
+
+227
+00:08:31,360 --> 00:08:35,919
+no change in the cross section so again
+
+228
+00:08:34,240 --> 00:08:38,320
+this is just due to the packing
+
+229
+00:08:35,919 --> 00:08:38,320
+difference
+
+230
+00:08:38,479 --> 00:08:42,080
+now if you're thinking ahead a little
+
+231
+00:08:39,760 --> 00:08:44,000
+bit you might say well i changed the
+
+232
+00:08:42,080 --> 00:08:45,839
+structure too
+
+233
+00:08:44,000 --> 00:08:47,120
+i'm sorry i changed the material right
+
+234
+00:08:45,839 --> 00:08:48,399
+so how do i know this is due to
+
+235
+00:08:47,120 --> 00:08:50,800
+structure
+
+236
+00:08:48,399 --> 00:08:52,640
+this difference between face centered
+
+237
+00:08:50,800 --> 00:08:54,320
+and hexagonal
+
+238
+00:08:52,640 --> 00:08:56,080
+when in fact i actually went and changed
+
+239
+00:08:54,320 --> 00:08:56,959
+the material so that's two variables
+
+240
+00:08:56,080 --> 00:08:59,120
+right
+
+241
+00:08:56,959 --> 00:09:00,640
+so i'm going to take a look at the case
+
+242
+00:08:59,120 --> 00:09:03,680
+of tin
+
+243
+00:09:00,640 --> 00:09:06,000
+on the next slide here tin
+
+244
+00:09:03,680 --> 00:09:07,279
+has two forms or which are referred to
+
+245
+00:09:06,000 --> 00:09:08,880
+as allotropes
+
+246
+00:09:07,279 --> 00:09:12,160
+just meaning it can have two different
+
+247
+00:09:08,880 --> 00:09:14,160
+structures okay so now in this case
+
+248
+00:09:12,160 --> 00:09:16,800
+i have the same material but two
+
+249
+00:09:14,160 --> 00:09:19,360
+different structures
+
+250
+00:09:16,800 --> 00:09:21,440
+so we have another structure called
+
+251
+00:09:19,360 --> 00:09:24,640
+tetragonal
+
+252
+00:09:21,440 --> 00:09:25,760
+which has this stretching of one of the
+
+253
+00:09:24,640 --> 00:09:27,600
+edge lengths
+
+254
+00:09:25,760 --> 00:09:29,440
+this is supposed to be a square here it
+
+255
+00:09:27,600 --> 00:09:31,120
+looks i know rectangular
+
+256
+00:09:29,440 --> 00:09:34,000
+but it just stretches the one edge
+
+257
+00:09:31,120 --> 00:09:35,920
+length still 90 degrees
+
+258
+00:09:34,000 --> 00:09:37,519
+on all the angles this is referred to as
+
+259
+00:09:35,920 --> 00:09:39,279
+a tetragonal structure you can read
+
+260
+00:09:37,519 --> 00:09:42,640
+about that in your text
+
+261
+00:09:39,279 --> 00:09:44,560
+for the other other systems
+
+262
+00:09:42,640 --> 00:09:46,320
+and it has a atom in the center so it's
+
+263
+00:09:44,560 --> 00:09:48,399
+called body center it's a body centered
+
+264
+00:09:46,320 --> 00:09:50,080
+tetragonal this is what's referred to as
+
+265
+00:09:48,399 --> 00:09:52,240
+white tin
+
+266
+00:09:50,080 --> 00:09:54,320
+you can see a tensile sample that's been
+
+267
+00:09:52,240 --> 00:09:57,519
+machined out of white tin
+
+268
+00:09:54,320 --> 00:09:59,279
+down here we also have
+
+269
+00:09:57,519 --> 00:10:00,640
+what is called the diamond cubic
+
+270
+00:09:59,279 --> 00:10:03,839
+structure
+
+271
+00:10:00,640 --> 00:10:05,360
+so this is a cubic structure so here's a
+
+272
+00:10:03,839 --> 00:10:08,959
+cube
+
+273
+00:10:05,360 --> 00:10:10,399
+and it also has atoms in the center of
+
+274
+00:10:08,959 --> 00:10:13,279
+faces
+
+275
+00:10:10,399 --> 00:10:15,120
+so it's like a face centered cubic
+
+276
+00:10:13,279 --> 00:10:17,920
+except then it also contains
+
+277
+00:10:15,120 --> 00:10:19,040
+an extra set of four atoms two on the
+
+278
+00:10:17,920 --> 00:10:22,240
+bottom
+
+279
+00:10:19,040 --> 00:10:23,680
+and there'll be two up top so again it
+
+280
+00:10:22,240 --> 00:10:24,720
+looks like face centered with an
+
+281
+00:10:23,680 --> 00:10:28,160
+additional four
+
+282
+00:10:24,720 --> 00:10:30,800
+atoms so this would have for example
+
+283
+00:10:28,160 --> 00:10:32,399
+eight atoms in this unit cell rather
+
+284
+00:10:30,800 --> 00:10:33,760
+than four
+
+285
+00:10:32,399 --> 00:10:35,680
+and i know this picture is pretty tough
+
+286
+00:10:33,760 --> 00:10:38,880
+to see we'll take a look at this
+
+287
+00:10:35,680 --> 00:10:40,800
+in other ways later and and try and
+
+288
+00:10:38,880 --> 00:10:42,480
+try and be able to see this in 3d
+
+289
+00:10:40,800 --> 00:10:45,680
+because this is a really
+
+290
+00:10:42,480 --> 00:10:48,560
+terrible picture confusing
+
+291
+00:10:45,680 --> 00:10:49,839
+so if you have trouble seeing this in 3d
+
+292
+00:10:48,560 --> 00:10:51,279
+don't worry about it yet
+
+293
+00:10:49,839 --> 00:10:53,200
+hey but this is called diamond cubic
+
+294
+00:10:51,279 --> 00:10:54,480
+structure right they have different
+
+295
+00:10:53,200 --> 00:10:57,760
+densities
+
+296
+00:10:54,480 --> 00:10:59,519
+because of the different packing and you
+
+297
+00:10:57,760 --> 00:11:03,120
+try to make a tensile sample out of that
+
+298
+00:10:59,519 --> 00:11:06,240
+and it just crumbles so this structure
+
+299
+00:11:03,120 --> 00:11:07,440
+is very very brittle this structure is
+
+300
+00:11:06,240 --> 00:11:09,920
+ductal
+
+301
+00:11:07,440 --> 00:11:10,560
+so okay so that's just showing you again
+
+302
+00:11:09,920 --> 00:11:14,160
+the
+
+303
+00:11:10,560 --> 00:11:14,959
+effect of structure on this case
+
+304
+00:11:14,160 --> 00:11:17,279
+mechanical
+
+305
+00:11:14,959 --> 00:11:18,240
+properties so it's pretty interesting
+
+306
+00:11:17,279 --> 00:11:20,160
+stuff
+
+307
+00:11:18,240 --> 00:11:21,680
+and as we go on we're going to go ahead
+
+308
+00:11:20,160 --> 00:11:24,160
+and explain
+
+309
+00:11:21,680 --> 00:11:25,279
+why this is the case and why does
+
+310
+00:11:24,160 --> 00:11:29,600
+structure affect
+
+311
+00:11:25,279 --> 00:11:29,600
+these properties so much
+
