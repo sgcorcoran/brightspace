@@ -1,630 +1,390 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no">
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
   <title>VT MSE 2034 - Structures</title>
 
-  <script src="../assets/js/load-mathjax.js" async=""></script>
+
 
   <script type="module" src="../assets/js/global.min.js"></script>
-  <script defer src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
-  <link rel="stylesheet" href="../assets/css/global.minv5.css" />
-  <link rel="stylesheet" href="../assets/css/custom.css" />
-  <link rel="stylesheet" href="../assets/css/customv5.css" />
+  <script defer="" src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+  <!--<script src="../assets/js/load-mathjax.js" defer></script>-->
+
+  <script src="../assets/js/videoExpand.js"></script>
+  <link rel="stylesheet" href="../assets/css/global.minv5.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+  <link rel="stylesheet" href="../assets/css/customv5.css">
 
   <!--<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"> -->
-</head>
-
-<body>
-  <div class="courseware-container-fluid courseware-themes">
-    <div class="courseware-headers-image">
-      <p><img src="../assets/img/banner-placeholder.jpg" alt="" /></p>
-    </div>
-    <section>
-      <h1>Structures of Materials</h1>
-      <p>
-        Properties of materials are determined by their structure. Structure
-        can be tailored in predictable ways through processing.
-      </p>
-      <h2 class="courseware-helper-text-center">Learning Objectives</h2>
-      <ol class="courseware-list-large-number">
-        <li>
-          Explain the difference between atomic structure, atomic arrangement,
-          microstructure, and macrostructure.
-        </li>
-        <li>Identify the 14 Bravais lattices and 7 crystal systems.</li>
-        <li>Perform crystal structure calculations.</li>
-        <li>Unit cell properties of FCC and BCC.</li>
-      </ol>
-
-      <div class="courseware-layouts-content-wrapper">
-        <div class="courseware-video-wrapper" id="video1">
-          <div class="courseware-video-text">
-            <p>Video Lesson 1</p>
-          </div>
-          <div class="courseware-video-embed-responsive">
-            <video title="Video Lesson" onclick="expandVideo('video1')">
-              <source src="../assets/media/03.01_structures.mp4" type="video/mp4" />
-              <track src="../assets/media/03.01_structures.vtt" kind="subtitles" srclang="en" label="English"
-                type="text/vtt" />
-            </video>
-          </div>
-        </div>
-
-        <div class="courseware-video-wrapper" id="video2">
-          <div class="courseware-video-text">
-            <p>Video Lesson 2</p>
-          </div>
-          <div class="courseware-video-embed-responsive">
-            <video title="Video Lesson" onclick="expandVideo('video2')">
-              <source src="../assets/media/03.01_structures.mp4" type="video/mp4" />
-              <track src="../assets/media/03.01_structures.vtt" kind="subtitles" srclang="en" label="English"
-                type="text/vtt" />
-            </video>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <p></p>
-      <h2>Atomic Arrangement in Crystalline Solids</h2>
-      <div class="courseware-card aside-card">
-        <div class="courseware-card-header">
-          <h4>Grow Your Own Alum Crystal</h4>
-        </div>
-        <div class="courseware-card-body">
-          <img src="../assets/img/alum_crystal.png" style="width: 60%; display: block; margin: auto" />
-          <p>
-            You can find Alum in the spice aisle.
-            <img src="../assets/img/alum_spice.png" style="width: 50%; display: block; margin: auto" />
-          </p>
-          <ul>
-            <li>1/2 cup hot tap water</li>
-            <li>2-1/2 tbl Alum</li>
-          </ul>
-          <a href="https://www.thoughtco.com/growing-a-big-alum-crystal-602197" target="_blank" rel="noopener">
-            How to Grow a Big Alum Crystal
-          </a>
-        </div>
-      </div>
-      <p>
-        <strong>Atoms in crystalline solids are arranged in an ordered periodic
-          structure.</strong> Take a look at the Alum crystals shown in the figure.
-        Notice the nice large crystal near the bottom with the large flat
-        region (facet). The edges of this facet may change in length but they
-        always meet at specific angles dependent on the type of crystal. This
-        implies that there must be some underlying order in crystalline materials.
-      </p>
-
-      <p>
-        <strong>Not all materials are crystalline.</strong> Non-crystalline materials are
-        referred to as amorphous. Materials can also have both crystalline and
-        amorphous regions and are referred to as semi-crystalline.
-      </p>
-      <p>
-        <strong>There are a limited number of ways atoms can be arranged periodically
-          to fill space.</strong> This can be demonstrated in 2D if you try to fill space
-        with pentagons as compared to hexagons. The hexagons (as well as parallelograms, squares,
-        rectangles, and triangles) can be arranged to completely fill space without gaps, but the pentagons as shown
-        below leave gaps.
-      </p>
-      <div class="courseware-layouts-content-wrapper">
-        <figure>
-          <figcaption>Hexagons fill space</figcaption>
-          <img src="../assets/img/hexagons2D.png" />
-        </figure>
-        <figure>
-          <figcaption>Pentagons leave gaps</figcaption>
-          <img src="../assets/img/pentagons2D.png" />
-        </figure>
-      </div>
-      <p>
-        If we extend this concept to 3D, we surprisingly find that <strong> only 7 unique geometries fill space in 3
-          dimensions</strong>. These are referred to as <em>crystal systems</em>. Some
-        systems can have further subclassifications resulting in the 14 Bravais
-        lattices. All crystalline materials belong to one of these 14 lattices.
-      </p>
-    </section>
-    <section>
-      <h2>7 Crystal Systems &amp; 14 Bravais Lattices</h2>
-      <p>
-        In this course, we will focus on the cubic crystal system and briefly
-        introduce the hexagonal crystal system but for completeness we present
-        all 14 lattices and 7 systems below.
-      </p>
-      <div class="courseware-layouts-content-wrapper">
-        <figure>
-          <img src="../assets/img/triclinic.png" />
-        </figure>
-        <figure>
-          <img src="../assets/img/monoclinic.png" />
-        </figure>
-        <figure>
-          <img src="../assets/img/orthorhombic.png" />
-        </figure>
-        <figure>
-          <img src="../assets/img/tetragonal.png" />
-        </figure>
-        <figure>
-          <img src="../assets/img/hexagonal.png" />
-        </figure>
-        <figure><img src="../assets/img/rhombohedral.png" />
-        </figure>
-        <figure>
-          <img src="../assets/img/cubic.png" />
-        </figure>
-        <figcaption>
-          <p>The 14 Bravais Lattices and 7 Crystal Systems (hover over images to enlarge)</p>
-        </figcaption>
-      </div>
-    </section>
-    <section>
-      <h2>Lattice Parameters</h2>
-      <div class="courseware-layouts-content-wrapper">
-        <figure class="left">
-          <img src="../assets/img/triclinic_clean.png" />
-          <figcaption>
-            <p>
-              The triclinic crystal system has unequal edge lengths and unequal
-              angles and no angle equal to 90°.</p>
-          </figcaption>
-        </figure>
-      </div>
-      <p>
-        A set of lattice parameters are used to quantify the crystal structure
-        of a given material.&nbsp; These lattice parameters, three edge
-        lengths: \( a, b, c \) and 3 angles: \( \alpha, \beta, \gamma \), are
-        shown in the figure for the most general case of the triclinic system
-        where \( a \ne b \ne c \) and \( \alpha \ne \beta \ne \gamma \ne
-        90^\circ \).&nbsp;
-      </p>
-      <p>
-        For the cubic system, the edge lengths are all equal (\( a=b=c \)). Also, the
-        angles are all 90 degrees (\( \alpha = \beta = \gamma = 90^\circ \)). We would write this as \((a, a, a, 90, 90,
-        90)\).
-      </p>
-
-      <div class="courseware-layouts-content-wrapper">
-        <figure>
-          <img src="../assets/img/cubic_primitive.png" />
-          <figcaption>
-            <p>The simple cubic Bravais lattice where all edges are equal and all
-              angles equal 90°.&nbsp;</p>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-    <section>
-      <div class="courseware-layouts-content-wrapper">
-        <figure class="left">
-          <img src="../assets/img/hexagonal_clean.png" />
-          <figcaption>
-            The hexagonal Bravais lattice. The unit cell is shown by the bold and dashed lines.
-          </figcaption>
-        </figure>
-      </div>
-      <p>For the hexagonal system, we would have (a, a, c, 90, 90, 120) where edge lengths a and b are equal
-        but not equal to c and the angles are given as shown in the figure 90°,90°, and
-        120°. Two additional neighboring unit cells are also shown so that the
-        hexagonal symmetry is evident.</p>
-    </section>
-
-    <section>
-      <h3>
-        Table of lattice parameters for some common crystalline materials
-      </h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Material</th>
-            <th>Crystal System / Bravais Lattice</th>
-            <th>a, b, c</th>
-            <th>\(\alpha\), \(\beta\), \(\gamma\)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>NaCl</td>
-            <td>Cubic / FCC</td>
-            <td>0.564, 0.564, 0.564</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>CsCl</td>
-            <td>Cubic / SC</td>
-            <td>0.412, 0.412, 0.412</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>\(MgSO_4\) (epsom salt)</td>
-            <td>Monoclinic /</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Gold (Au)</td>
-            <td>Cubic / FCC</td>
-            <td>Cell 3</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>Copper (Cu)</td>
-            <td>Cubic / FCC</td>
-            <td>Cell 3</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>Iron ( \(\boldsymbol{\alpha}\) -Fe)</td>
-            <td>Cubic / BCC</td>
-            <td>Cell 3</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>Iron ( \(\boldsymbol{\gamma}\) -Fe)</td>
-            <td>Cubic / FCC</td>
-            <td>Cell 3</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>Aluminum (Al)</td>
-            <td>Cubic / FCC</td>
-            <td>Cell 3</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>Zinc (Zn)</td>
-            <td>Hexagonal / (HCP) <sup>*</sup></td>
-            <td>Cell 3</td>
-            <td>90,90,120</td>
-          </tr>
-          <tr>
-            <td>Titanium (Ti)</td>
-            <td>Hexagonal / (HCP) <sup>*</sup></td>
-            <td>Cell 3</td>
-            <td>90,90,120</td>
-          </tr>
-          <tr>
-            <td>Tungsten (W)</td>
-            <td>Cubic / BCC</td>
-            <td>Cell 3</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>SiC</td>
-            <td>Hexagonal</td>
-            <td>Cell 3</td>
-            <td>90,90,120</td>
-          </tr>
-          <tr>
-            <td>TiC</td>
-            <td>Cubic / FCC</td>
-            <td>Cell 3</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>TiO <sub>2</sub></td>
-            <td>Tetragonal / Simple</td>
-            <td>Cell 3</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>Fe <sub>3</sub> C</td>
-            <td>Orthorhombic / Simple</td>
-            <td>Cell 3</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>WC</td>
-            <td>Hexagonal</td>
-            <td>Cell 3</td>
-            <td>90,90,120</td>
-          </tr>
-          <tr>
-            <td>Si</td>
-            <td>Cubic / (diamond cubic) <sup>**</sup></td>
-            <td>Cell 3</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>Ge</td>
-            <td>Cubic / (diamond cubic) <sup>**</sup></td>
-            <td>Cell 3</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>Diamond (C)</td>
-            <td>Cubic / (diamond cubic) <sup>**</sup></td>
-            <td>Cell 3</td>
-            <td>90,90,90</td>
-          </tr>
-          <tr>
-            <td>Graphite (C)</td>
-            <td>Hexagonal</td>
-            <td>Cell 3</td>
-            <td>90,90,120</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    <p>
-      <sup>*</sup> Hexagonal Close-Packed (HCP) is not a Bravais
-      Lattice.&nbsp; The Bravais lattice is simple hexagonal but there is an
-      extra atom located in the cell which results in a closely packed
-      structure to be discussed further in this lesson.&nbsp;
-      <sup>**</sup> Diamond cubic is also not a Bravais lattice but provides
-      a more useful description for these structures.&nbsp; The Bravais
-      lattice for diamond cubic is FCC but again extra atoms are introduced
-      in the FCC lattice.&nbsp;&nbsp;
-    </p>
-
-    <h2>Cubic Crystal System</h2>
-    <figure>
-      <img src="../assets/img/cubic_space_fill_lattices.png" />
-      <figcaption>
-        Cut-sphere models of the simple cubic, body-centered cubic, and
-        face-centered cubic unit cells.&nbsp; The atom radii are the same in
-        each model so you can see the relative size difference between the
-        three.&nbsp;&nbsp;
-      </figcaption>
-    </figure>
-    <p>
-      Notice that the cubic system has 3 Bravais lattices.&nbsp;By
-      associating 1 atom (hard sphere) with each lattice point, we can
-      generate 3 distinct cubic structures as shown.&nbsp;Notice the
-      directions in which the atoms touch in each lattice (along edges, body
-      diagonal, or faces).&nbsp;The total volume of atoms in each unit cell
-      increases as we move from the simple cubic (1 atom), to the
-      body-centered (2 atoms) and finally to the face-centered cell (4
-      atoms).&nbsp;The size of the unit cells also increase as might be
-      expected but not as much as we might expect.&nbsp; The SC cell
-      contains 1 atom while the FCC contains 4 atoms but the cell volume
-      increases by less than 4x.&nbsp; This implies that the packing
-      efficiency must be greater for the FCC lattice compared to the SC
-      lattice.&nbsp; We can quantify this by calculating the volume of each
-      unit cell taken up by atoms.&nbsp; The atoms in the simple cubic
-      lattice take up only 50% of the volume, while the BCC lattice 68% atom
-      and the FCC is 74% atom (this is the best we can do packing hard
-      spheres). This is usually expressed in fractional form as the atomic
-      packing factor or APF. As an example, we would say that the
-      face-centered cubic structure has an APF of 0.74.&nbsp;
-    </p>
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Simple cubic</th>
-          <th>Body-centered cubic</th>
-          <th>Face-centered cubic</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>APF</td>
-          <td>0.5</td>
-          <td>0.68</td>
-          <td>0.74</td>
-        </tr>
-        <tr>
-          <td>atoms per cell</td>
-          <td>1</td>
-          <td>2</td>
-          <td>4</td>
-        </tr>
-        <tr>
-          <td>edge length, \(a\)</td>
-          <td>\( 2\ R \)</td>
-          <td>\( \frac{4\ R}{\sqrt{3}} \)</td>
-          <td>\( \frac{4\ R}{\sqrt{2}} \)</td>
-        </tr>
-        <tr>
-          <td>atoms touch along</td>
-          <td>edges</td>
-          <td>body diagonals</td>
-          <td>face diagonals</td>
-        </tr>
-        <tr>
-          <td>cell volume</td>
-          <td>\( (2\ R)^3 \)</td>
-          <td>\((\frac{4\ R}{\sqrt{3}})^3\)</td>
-          <td>\((\frac{4\ R}{\sqrt{2}})^3\)</td>
-        </tr>
-        <tr>
-          <td>\( \frac{\text{cell volume}} {\text{atoms per cell}} \)</td>
-          <td>\( 8\ R^3 \)</td>
-          <td>\(6.16\ R^3 \)</td>
-          <td>\( 5.66\ R^3 \)</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>
-      Concept check: We have 3 samples labeled A, B, and C.&nbsp;All contain
-      the same 1 million atoms but sample A has the simple cubic crystal
-      structure; sample B is body-centered cubic; and sample C is
-      face-centered cubic.&nbsp;If all three samples had the same shape,
-      which sample would be the largest?&nbsp;Smallest? Which sample would
-      weigh the most?&nbsp;
-    </p>
-    <div style="clear: both"></div>
-    <div class="card-container-3">
-      <div class="card-flip" onclick="this.classList.toggle('flipped')">
-        <div class="card-front">
-          Which sample A, B, or C would be the largest?
-        </div>
-        <div class="card-back">Sample A: Simple Cubic</div>
-      </div>
-    </div>
-    <div class="card-container-3">
-      <div class="card-flip" onclick="this.classList.toggle('flipped')">
-        <div class="card-front">
-          Which sample A, B, or C would be the smallest?
-        </div>
-        <div class="card-back">Sample C: FCC</div>
-      </div>
-    </div>
-    <div class="card-container-3">
-      <div class="card-flip" onclick="this.classList.toggle('flipped')">
-        <div class="card-front">Which sample would weigh the most?</div>
-        <div class="card-back">They all weigh the same.</div>
-      </div>
-    </div>
-    <div style="clear: both"></div>
-    <div class="notice">
-      <h4>Terminology: Unit Cell</h4>
-      <p>
-        The unit cell is the smallest unit that when repeated side-by-side
-        in 3 dimensions forms the overall crystalline structure. The most
-        basic unit cell is composed of a Bravais lattice with one atom
-        located at each lattice point. The cut-sphere model is the best
-        representation of a unit cell although the space filling model is
-        more commonly used.
-      </p>
-    </div>
-    <h3>The face-centered cubic (FCC) structure.</h3>
-    <figure>
-      <img src="../assets/img/fcc_3_views.png" style="max-width: 90%" />
-      <figcaption>
-        &nbsp;The face-centered cubic (FCC) lattice represented by the (a)
-        <strong>space-filled model</strong> , (b)
-        <strong>cut-sphere model</strong> , and (c)
-        <strong>exploded-view model</strong> .&nbsp;The coloring is used to
-        make it easier to distinguish the face positions (red) from the cell
-        corners (yellow).&nbsp;
-      </figcaption>
-    </figure>
-    <figure>
-      <div style="
-              position: relative;
-              background-color: rgb(255, 255, 255);
-              width: 100%;
-              padding-bottom: 56.25%;
-              overflow: hidden;
-            ">
-        <iframe src="fcc_unit_cell_v0.html" title="fcc_unit_cell demonstration" style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: 0;
-              " scrolling="no" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-      </div>
-      <figcaption style="
-              text-align: center;
-              color: var(--vt-hokiestone);
-              padding-top: 0.5 rem;
-            ">
-        Live Demo: Face centered cubic lattice showing one atom at each
-        lattice site. Click and hold to rotate the image. Use the slider to
-        change the size of the atoms.
-      </figcaption>
-    </figure>
-    <p>
-      The face centered cubic structure is shown in the live demo above. Try
-      clicking and holding on the structure to rotate image. Use the slider,
-      to change the radius of the atoms.&nbsp; At maximum radius size, we
-      have what is called the "space-filled model" i.e., how the atoms pack
-      in the real material.&nbsp; At smaller atom sizes, we have the
-      "exploded-view model" which is used to more easily see the geometry
-      and location of the atoms.
-      <b>Use the slider to determine the directions in which the atoms
-        touch.</b>
-    </p>
-    <h5>
-      Click on the image below that best represents the
-      <span style="text-decoration: underline">unit cell</span> of the
-      face-centered cubic (FCC) structure?
-    </h5>
-    <div class="card-container">
-      <div class="card-flip" onclick="this.classList.toggle('flipped')">
-        <div class="card-front">
-          <figure>
-            <img src="../assets/img/fcc_atoms.png" style="max-height: 175px; width: auto" />
-            <figcaption>Space-filling model</figcaption>
-          </figure>
-        </div>
-        <div class="card-back">
-          This is most often used to represent the unit cell but it is
-          important to remember that the unit cell corners are located at
-          the centers of each corner atom. A better representation is shown
-          in the cut-sphere model.
-        </div>
-      </div>
-    </div>
-    <div class="card-container">
-      <div class="card-flip" onclick="this.classList.toggle('flipped')">
-        <div class="card-front">
-          <figure>
-            <img src="../assets/img/fcc_unit_cell.png" style="max-height: 175px; width: auto" />
-            <figcaption>Cut-sphere model</figcaption>
-          </figure>
-        </div>
-        <div class="card-back">
-          Yes! Correct. The unit cell (or repeat unit) is from the center of
-          each atom. This is the best representation of the unit cell for
-          the FCC structure.
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h3>Body-centered cubic (BCC) structure&nbsp;&nbsp;</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <figure class="figure">
-            <img class="img-fluid figure-img" src="../assets/img/bcc_3_views.png" style="max-width: 90%" />
-            <figcaption class="figure-caption">
-              &nbsp;The body-centered cubic (BCC) lattice represented by the
-              (a) <strong>space-filled model</strong> , (b)
-              <strong>cut-sphere model</strong> , and (c)
-              <strong>exploded-view model</strong> .&nbsp;In which
-              directions do the atoms in this structure touch?&nbsp; Compare
-              this to the FCC structure.&nbsp;&nbsp;
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-      <figure>
-        <div style="
-                position: relative;
-                background-color: rgb(255, 255, 255);
-                width: 100%;
-                padding-bottom: 56.25%;
-                overflow: hidden;
-              ">
-          <iframe src="https://sgcorcoran.github.io/brightspace/cut_spheres_bcc.html" title="bcc builder demonstration"
-            style="
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  width: 100%;
-                  height: 100%;
-                  border: 0;
-                " scrolling="no" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-        </div>
-        <figcaption>
-          Body-centered cubic (BCC) unit cell using the cut-sphere
-          model.&nbsp; Click on the check boxes to add additional unit cells
-          and the slider to bring the unit cells together.&nbsp; Notice how
-          it would take 8 unit cells to form a complete atom i.e., the
-          corners contain only 1/8 of an atom.
-        </figcaption>
-      </figure>
-      <div class="notice" style="text-align: center">
-        <h4>Concluding Comment Here</h4>
-        <cite>(Secondary text here...)</cite>
-      </div>
-    </div>
-  </div>
-  <footer>Copyright&nbsp;© 2024 Sean Corcoran</footer>
-  <script src="../assets/js/videoExpand.js"></script>
-  </div>
-
-</body>
-
-</html>
+</head><body><div class="courseware-container-fluid courseware-themes">
+<div class="courseware-headers-image">
+<p><img src="../20210505_081531_20241109185652045.jpg" alt="" title="" data-d2l-editor-default-img-style="true" style="max-width: 100%;" width="2710" height="770"></p>
+</div>
+<section>
+<h1>Structures of Materials</h1>
+<p>Properties of materials are determined by their structure. Structure can be tailored in predictable ways through processing.</p>
+<h2 class="courseware-helper-text-center">Learning Objectives</h2>
+<ol class="courseware-list-large-number">
+<li>Explain the difference between atomic structure, atomic arrangement, microstructure, and macrostructure.</li>
+<li>Identify the 14 Bravais lattices and 7 crystal systems.</li>
+<li>Perform crystal structure calculations.</li>
+<li>Unit cell properties of FCC and BCC.</li>
+</ol>
+<div class="courseware-layouts-content-wrapper">
+<div class="courseware-video-wrapper" id="video1">
+<div class="courseware-video-text">
+<p>Video Lesson 1</p>
+</div>
+<div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video1')">
+              <source src="../assets/media/03.01_structures.mp4" type="video/mp4">
+              <track src="../assets/media/03.01_structures.vtt" kind="subtitles" srclang="en" label="English" type="text/vtt">
+            </video></div>
+</div>
+<div class="courseware-video-wrapper" id="video2">
+<div class="courseware-video-text">
+<p>Video Lesson 2</p>
+</div>
+<div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video2')">
+              <source src="../assets/media/03.01_structures.mp4" type="video/mp4">
+              <track src="../assets/media/03.01_structures.vtt" kind="subtitles" srclang="en" label="English" type="text/vtt">
+            </video></div>
+</div>
+</div>
+</section>
+<section>
+<p></p>
+<h2>Atomic Arrangement in Crystalline Solids</h2>
+<div class="courseware-card aside-card">
+<div class="courseware-card-header">
+<h4>Grow Your Own Alum Crystal</h4>
+</div>
+<div class="courseware-card-body"><img src="../assets/img/alum_crystal.png" style="width: 60%; display: block; margin: auto;">
+<p>You can find Alum in the spice aisle. <img src="../assets/img/alum_spice.png" style="width: 50%; display: block; margin: auto;"></p>
+<ul>
+<li>1/2 cup hot tap water</li>
+<li>2-1/2 tbl Alum</li>
+</ul>
+<a href="https://www.thoughtco.com/growing-a-big-alum-crystal-602197" target="_blank" rel="noopener"> How to Grow a Big Alum Crystal </a></div>
+</div>
+<p><strong>Atoms in crystalline solids are arranged in an ordered periodic structure.</strong> Take a look at the Alum crystals shown in the figure. Notice the nice large crystal near the bottom with the large flat region (facet). The edges of this facet may change in length but they always meet at specific angles dependent on the type of crystal. This implies that there must be some underlying order in crystalline materials.</p>
+<p><strong>Not all materials are crystalline.</strong> Non-crystalline materials are referred to as amorphous. Materials can also have both crystalline and amorphous regions and are referred to as semi-crystalline.</p>
+<p><strong>There are a limited number of ways atoms can be arranged periodically to fill space.</strong> This can be demonstrated in 2D if you try to fill space with pentagons as compared to hexagons. The hexagons (as well as parallelograms, squares, rectangles, and triangles) can be arranged to completely fill space without gaps, but the pentagons as shown below leave gaps.</p>
+<div class="courseware-layouts-content-wrapper">
+<figure>
+<figcaption>Hexagons fill space</figcaption>
+<img src="../assets/img/hexagons2D.png"></figure>
+<figure>
+<figcaption>Pentagons leave gaps</figcaption>
+<img src="../assets/img/pentagons2D.png"></figure>
+</div>
+<p>If we extend this concept to 3D, we surprisingly find that <strong> only 7 unique geometries fill space in 3 dimensions</strong>. These are referred to as <em>crystal systems</em>. Some systems can have further subclassifications resulting in the 14 Bravais lattices. All crystalline materials belong to one of these 14 lattices.</p>
+</section>
+<section>
+<h2>7 Crystal Systems &amp; 14 Bravais Lattices</h2>
+<p>In this course, we will focus on the cubic crystal system and briefly introduce the hexagonal crystal system but for completeness we present all 14 lattices and 7 systems below.</p>
+<div class="courseware-layouts-content-wrapper">
+<figure><img src="../assets/img/triclinic.png"></figure>
+<figure><img src="../assets/img/monoclinic.png"></figure>
+<figure><img src="../assets/img/orthorhombic.png"></figure>
+<figure><img src="../assets/img/tetragonal.png"></figure>
+<figure><img src="../assets/img/hexagonal.png"></figure>
+<figure><img src="../assets/img/rhombohedral.png"></figure>
+<figure><img src="../assets/img/cubic.png"></figure>
+<p>The 14 Bravais Lattices and 7 Crystal Systems (hover over images to enlarge)</p>
+</div>
+</section>
+<section>
+<h2>Lattice Parameters</h2>
+<div class="courseware-layouts-content-wrapper">
+<figure class="left"><img src="../assets/img/triclinic_clean.png">
+<figcaption>
+<p>The triclinic crystal system has unequal edge lengths and unequal angles and no angle equal to 90°.</p>
+</figcaption>
+</figure>
+</div>
+<p>A set of lattice parameters are used to quantify the crystal structure of a given material.&nbsp; These lattice parameters, three edge lengths: \( a, b, c \) and 3 angles: \( \alpha, \beta, \gamma \), are shown in the figure for the most general case of the triclinic system where \( a \ne b \ne c \) and \( \alpha \ne \beta \ne \gamma \ne 90^\circ \).&nbsp;</p>
+<p>For the cubic system, the edge lengths are all equal (\( a=b=c \)). Also, the angles are all 90 degrees (\( \alpha = \beta = \gamma = 90^\circ \)). We would write this as \((a, a, a, 90, 90, 90)\).</p>
+<div class="courseware-layouts-content-wrapper">
+<figure><img src="../assets/img/cubic_primitive.png">
+<figcaption>
+<p>The simple cubic Bravais lattice where all edges are equal and all angles equal 90°.&nbsp;</p>
+</figcaption>
+</figure>
+</div>
+</section>
+<section>
+<div class="courseware-layouts-content-wrapper">
+<figure class="left"><img src="../assets/img/hexagonal_clean.png">
+<figcaption>The hexagonal Bravais lattice. The unit cell is shown by the bold and dashed lines.</figcaption>
+</figure>
+</div>
+<p>For the hexagonal system, we would have (a, a, c, 90, 90, 120) where edge lengths a and b are equal but not equal to c and the angles are given as shown in the figure 90°,90°, and 120°. Two additional neighboring unit cells are also shown so that the hexagonal symmetry is evident.</p>
+</section>
+<section>
+<h3>Table of lattice parameters for some common crystalline materials</h3>
+<cite>The Crystallography Open Database (COD) number is given below each material. The reference data can be found by replacing the 1000041 with the COD for the material of interest https://www.crystallography.net/cod/1000041.html</cite>
+<table>
+<thead>
+<tr>
+<th>Material<br>(COD)</th>
+<th>Crystal System / Bravais Lattice</th>
+<th>a, b, c <br>(Å)</th>
+<th>α, β, γ <br>(°)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NaCl<br>(1000041)</td>
+<td>Cubic / FCC</td>
+<td>5.64, 5.64, 5.64</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>CsCl<br>(9008789)</td>
+<td>Cubic / SC</td>
+<td>4.12, 4.12, 4.12</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>MgSO<sub>4</sub> <em>Epsom salt</em><br>(1100100)</td>
+<td>Monoclinic / Primitive</td>
+<td>10.11, 7.21, 24.41</td>
+<td>90, 98.3, 90</td>
+</tr>
+<tr>
+<td>Au <em>Gold</em><br>(9012430)</td>
+<td>Cubic / FCC</td>
+<td>4.07, 4.07, 4.07</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>Cu <em>Copper</em><br>(5000216)</td>
+<td>Cubic / FCC</td>
+<td>3.62, 3.62, 3.62</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>α-Fe <em>Iron</em><br>(9008536)</td>
+<td>Cubic / BCC</td>
+<td>2.87, 2.87, 2.87</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>γ-Fe <em>Iron</em><br>(9012706)</td>
+<td>Cubic / FCC</td>
+<td>3.64, 3.64, 3.64</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>Al <em>Aluminum</em><br>(9012002)</td>
+<td>Cubic / FCC</td>
+<td>4.05, 4.05, 4.05</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>Zn <em>Zinc</em><br>(9012435)</td>
+<td>Hexagonal / HCP</td>
+<td>2.66, 2.66, 4.94</td>
+<td>90, 90, 120</td>
+</tr>
+<tr>
+<td>Ti <em>Titanium</em><br>(9008517)</td>
+<td>Hexagonal / HCP</td>
+<td>2.95, 2.95, 4.69</td>
+<td>90, 90, 120</td>
+</tr>
+<tr>
+<td>W <em>Tungsten</em><br>(9006486)</td>
+<td>Cubic / BCC</td>
+<td>3.16, 3.16, 3.16</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>SiC <em>Silicon Carbide</em><br>(9008875)</td>
+<td>Hexagonal</td>
+<td>3.08, 3.08, 5.05</td>
+<td>90, 90, 120</td>
+</tr>
+<tr>
+<td>TiC <em>Titanium Carbide</em><br>(9008747)</td>
+<td>Cubic / FCC</td>
+<td>4.32, 4.32, 4.32</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>TiO<sub>2</sub> <em>Rutile</em><br>(9015662)</td>
+<td>Tetragonal / Primitive</td>
+<td>4.59, 4.59, 2.96</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>Fe<sub>3</sub>C <em>Cementite</em><br>(1010936)</td>
+<td>Orthorhombic / Primitive</td>
+<td>4.52, 5.07, 6.74</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>WC <em>Tungsten Carbide</em><br>(1501516)</td>
+<td>Hexagonal</td>
+<td>2.91, 2.91, 2.84</td>
+<td>90, 90, 120</td>
+</tr>
+<tr>
+<td>Si <em>Silicon</em><br>(9008565)</td>
+<td>Cubic / Diamond cubic</td>
+<td>5.43, 5.43, 5.43</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>Ge <em>Germanium</em><br>(9008567)</td>
+<td>Cubic / Diamond cubic</td>
+<td>5.66, 5.66, 5.66</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>C <em>Diamond</em><br>(9008564)</td>
+<td>Cubic / Diamond cubic</td>
+<td>3.57, 3.57, 3.57</td>
+<td>90, 90, 90</td>
+</tr>
+<tr>
+<td>C <em>Graphite</em><br>(9008569)</td>
+<td>Hexagonal</td>
+<td>2.46, 2.46, 6.70</td>
+<td>90, 90, 120</td>
+</tr>
+</tbody>
+<caption><sup>*</sup> Hexagonal Close-Packed (HCP) is not a Bravais Lattice.&nbsp; The Bravais lattice is simple hexagonal but there is an extra atom located in the cell which results in a closely packed structure to be discussed further in this lesson.&nbsp;<br><sup>**</sup> Diamond cubic is also not a Bravais lattice but provides a more useful description for these structures.&nbsp; The Bravais lattice for diamond cubic is FCC but again extra atoms are introduced in the FCC lattice.&nbsp;&nbsp;</caption></table>
+</section>
+<h2>Cubic Crystal System</h2>
+<figure><img src="../assets/img/cubic_space_fill_lattices.png">
+<figcaption>Cut-sphere models of the simple cubic, body-centered cubic, and face-centered cubic unit cells.&nbsp; The atom radii are the same in each model so you can see the relative size difference between the three.&nbsp;&nbsp;</figcaption>
+</figure>
+<p>Notice that the cubic system has 3 Bravais lattices.&nbsp;By associating 1 atom (hard sphere) with each lattice point, we can generate 3 distinct cubic structures as shown.&nbsp;Notice the directions in which the atoms touch in each lattice (along edges, body diagonal, or faces).&nbsp;The total volume of atoms in each unit cell increases as we move from the simple cubic (1 atom), to the body-centered (2 atoms) and finally to the face-centered cell (4 atoms).&nbsp;The size of the unit cells also increase as might be expected but not as much as we might expect.&nbsp; The SC cell contains 1 atom while the FCC contains 4 atoms but the cell volume increases by less than 4x.&nbsp; This implies that the packing efficiency must be greater for the FCC lattice compared to the SC lattice.&nbsp; We can quantify this by calculating the volume of each unit cell taken up by atoms.&nbsp; The atoms in the simple cubic lattice take up only 50% of the volume, while the BCC lattice 68% atom and the FCC is 74% atom (this is the best we can do packing hard spheres). This is usually expressed in fractional form as the atomic packing factor or APF. As an example, we would say that the face-centered cubic structure has an APF of 0.74.&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Simple cubic</th>
+<th>Body-centered cubic</th>
+<th>Face-centered cubic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>APF</td>
+<td>0.5</td>
+<td>0.68</td>
+<td>0.74</td>
+</tr>
+<tr>
+<td>atoms per cell</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>edge length, \(a\)</td>
+<td>\( 2\ R \)</td>
+<td>\( \frac{4\ R}{\sqrt{3}} \)</td>
+<td>\( \frac{4\ R}{\sqrt{2}} \)</td>
+</tr>
+<tr>
+<td>atoms touch along</td>
+<td>edges</td>
+<td>body diagonals</td>
+<td>face diagonals</td>
+</tr>
+<tr>
+<td>cell volume</td>
+<td>\( (2\ R)^{\ 3} \)</td>
+<td>\(\left(\frac{4\ R}{\sqrt{3}}\right)^{\ 3}\)</td>
+<td>\((\frac{4\ R}{\sqrt{2}})^{\ 3}\)</td>
+</tr>
+<tr>
+<td>\( \frac{\text{cell volume}} {\text{atoms per cell}} \)</td>
+<td>\( 8\ R^{\ 3} \)</td>
+<td>\(6.16\ R^{\ 3} \)</td>
+<td>\( 5.66\ R^{\ 3} \)</td>
+</tr>
+</tbody>
+</table>
+<p>Concept check: We have 3 samples labeled A, B, and C.&nbsp;All contain the same 1 million atoms but sample A has the simple cubic crystal structure; sample B is body-centered cubic; and sample C is face-centered cubic.&nbsp;If all three samples had the same shape, which sample would be the largest?&nbsp;Smallest? Which sample would weigh the most?&nbsp;</p>
+<div style="clear: both;"></div>
+<div class="card-container-3">
+<div class="card-flip" onclick="this.classList.toggle('flipped')">
+<div class="card-front">Which sample A, B, or C would be the largest?</div>
+<div class="card-back">Sample A: Simple Cubic</div>
+</div>
+</div>
+<div class="card-container-3">
+<div class="card-flip" onclick="this.classList.toggle('flipped')">
+<div class="card-front">Which sample A, B, or C would be the smallest?</div>
+<div class="card-back">Sample C: FCC</div>
+</div>
+</div>
+<div class="card-container-3">
+<div class="card-flip" onclick="this.classList.toggle('flipped')">
+<div class="card-front">Which sample would weigh the most?</div>
+<div class="card-back">They all weigh the same.</div>
+</div>
+</div>
+<div style="clear: both;"></div>
+<div class="notice">
+<h4>Terminology: Unit Cell</h4>
+<p>The unit cell is the smallest unit that when repeated side-by-side in 3 dimensions forms the overall crystalline structure. The most basic unit cell is composed of a Bravais lattice with one atom located at each lattice point. The cut-sphere model is the best representation of a unit cell although the space filling model is more commonly used.</p>
+</div>
+<h3>The face-centered cubic (FCC) structure.</h3>
+<figure><img src="../assets/img/fcc_3_views.png" style="max-width: 90%;">
+<figcaption>&nbsp;The face-centered cubic (FCC) lattice represented by the (a) <strong>space-filled model</strong> , (b) <strong>cut-sphere model</strong> , and (c) <strong>exploded-view model</strong> .&nbsp;The coloring is used to make it easier to distinguish the face positions (red) from the cell corners (yellow).&nbsp;</figcaption>
+</figure>
+<figure>
+<div style="position: relative; background-color: rgb(255, 255, 255); width: 100%; padding-bottom: 56.25%; overflow: hidden;"><iframe src="fcc_unit_cell_v0.html" title="fcc_unit_cell demonstration" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" scrolling="no" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
+<figcaption style="text-align: center; color: var(--vt-hokiestone); padding-top: 0.5 rem;">Live Demo: Face centered cubic lattice showing one atom at each lattice site. Click and hold to rotate the image. Use the slider to change the size of the atoms.</figcaption>
+</figure>
+<p>The face centered cubic structure is shown in the live demo above. Try clicking and holding on the structure to rotate image. Use the slider, to change the radius of the atoms.&nbsp; At maximum radius size, we have what is called the "space-filled model" i.e., how the atoms pack in the real material.&nbsp; At smaller atom sizes, we have the "exploded-view model" which is used to more easily see the geometry and location of the atoms. <b>Use the slider to determine the directions in which the atoms touch.</b></p>
+<h5>Click on the image below that best represents the <span style="text-decoration: underline;">unit cell</span> of the face-centered cubic (FCC) structure?</h5>
+<div class="card-container">
+<div class="card-flip" onclick="this.classList.toggle('flipped')">
+<div class="card-front">
+<figure><img src="../assets/img/fcc_atoms.png" style="max-height: 175px; width: auto;">
+<figcaption>Space-filling model</figcaption>
+</figure>
+</div>
+<div class="card-back">This is most often used to represent the unit cell but it is important to remember that the unit cell corners are located at the centers of each corner atom. A better representation is shown in the cut-sphere model.</div>
+</div>
+</div>
+<div class="card-container">
+<div class="card-flip" onclick="this.classList.toggle('flipped')">
+<div class="card-front">
+<figure><img src="../assets/img/fcc_unit_cell.png" style="max-height: 175px; width: auto;">
+<figcaption>Cut-sphere model</figcaption>
+</figure>
+</div>
+<div class="card-back">Yes! Correct. The unit cell (or repeat unit) is from the center of each atom. This is the best representation of the unit cell for the FCC structure.</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
+<h3>Body-centered cubic (BCC) structure&nbsp;&nbsp;</h3>
+</div>
+</div>
+<div class="row">
+<div class="col">
+<figure class="figure"><img class="img-fluid figure-img" src="../assets/img/bcc_3_views.png" style="max-width: 90%;">
+<figcaption class="figure-caption">&nbsp;The body-centered cubic (BCC) lattice represented by the (a) <strong>space-filled model</strong> , (b) <strong>cut-sphere model</strong> , and (c) <strong>exploded-view model</strong> .&nbsp;In which directions do the atoms in this structure touch?&nbsp; Compare this to the FCC structure.&nbsp;&nbsp;</figcaption>
+</figure>
+</div>
+</div>
+<figure>
+<div style="position: relative; background-color: rgb(255, 255, 255); width: 100%; padding-bottom: 56.25%; overflow: hidden;"><iframe src="https://sgcorcoran.github.io/brightspace/cut_spheres_bcc.html" title="bcc builder demonstration" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" scrolling="no" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
+<figcaption>Body-centered cubic (BCC) unit cell using the cut-sphere model.&nbsp; Click on the check boxes to add additional unit cells and the slider to bring the unit cells together.&nbsp; Notice how it would take 8 unit cells to form a complete atom i.e., the corners contain only 1/8 of an atom.</figcaption>
+</figure>
+<div class="notice" style="text-align: center;">
+<h4>Concluding Comment Here</h4>
+<cite>(Secondary text here...)</cite></div>
+</div>
+</div>
+<footer>Copyright&nbsp;© 2024 Sean Corcoran</footer></body></html>

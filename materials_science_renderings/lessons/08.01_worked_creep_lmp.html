@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <title>VT MSE 2034</title>
+
+    <script src="../assets/js/load-mathjax.js" async=""></script>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+</head><body><header>
+<h1>Worked Example: Creep Analysis Using the Larson-Miller Parameter</h1>
+<p>Determine the rupture time of A286 alloy at an elevated temperature using the Larson-Miller parameter (LMP).</p>
+</header><main>
+<article>
+<h2>Objectives:</h2>
+<ol>
+<li>Understand the concept of the Larson-Miller parameter.</li>
+<li>Apply given polynomial fit constants for the LMP equation for A286 alloy.</li>
+<li>Calculate the rupture time at a specified temperature and stress.</li>
+</ol>
+</article>
+<h2>Introduction to the Larson-Miller Parameter (LMP)</h2>
+<aside>
+<h4>Terminology: Larson-Miller Parameter</h4>
+<p>The Larson-Miller parameter is used to predict the rupture time of materials undergoing creep at high temperatures. It is defined as: \[ P = T (C + \log_{10} t_r) \] where \(P\) is the Larson-Miller parameter, \(T\) is the temperature in Kelvin, \(C\) is a material-specific constant, and \(t_r\) is the rupture time in hours.</p>
+</aside>
+<h3>Given Problem Statement</h3>
+<p>You are given the following cubic polynomial fit for the Larson-Miller parameter as a function of \( \log_{10}(\sigma) \) (where \( \sigma \) is the applied stress in MPa):</p>
+\[ P(\sigma) = a_0 + a_1 \log_{10}(\sigma) + a_2 (\log_{10}(\sigma))^2 + a_3 (\log_{10}(\sigma))^3 \]
+<p>The coefficients for A286 alloy are:</p>
+<ul>
+<li>\( a_0 = 116400 \)</li>
+<li>\( a_1 = -120500 \)</li>
+<li>\( a_2 = 53460 \)</li>
+<li>\( a_3 = -8188 \)</li>
+</ul>
+<p>Determine the rupture time \(t_r\) at a temperature of \(T = 800 \, ^{\circ} \text{C} \) (or \(1073\, \text{K} \)), given an applied stress of \( \sigma = 140 \, \text{MPa} \). Assume the material constant \( C = 20 \).</p>
+<h3>Solution</h3>
+<h5>Step 1: Calculate the Larson-Miller Parameter</h5>
+<p>Calculate \( \log_{10}(\sigma) \) for the applied stress \( \sigma = 140 \, \text{MPa} \):</p>
+\[ \log_{10}(\sigma) = \log_{10}(140) \approx 2.146 \]
+<p>Substitute into the polynomial equation:</p>
+\[ P = 116400 + (-120500)(2.146) + 53460(2.146)^2 + (-8188)(2.146)^3 \]
+<p>After simplifying, we get:</p>
+\[ P \approx 23084.59 \]
+<p></p>
+<h5>Step 2: Use the Larson-Miller Parameter Equation</h5>
+<p>The Larson-Miller parameter equation is: \[ P = T (C + \log_{10} t_r) \] Rearranging for \( \log_{10} t_r \): \[ \log_{10} t_r = \frac{P}{T} - C \] Substitute \( P = 23084.59 \), \( T = 1073 \, \text{K} \), and \( C = 20 \): \[ \log_{10} t_r = \frac{23084.59}{1073} - 20 \approx 1.514 \]</p>
+<h5>Step 3: Find the Rupture Time</h5>
+<p>Using the value of \( \log_{10} t_r \): \[ t_r = 10^{1.514} \approx 32.66 \, \text{hours} \]</p>
+<div class="notice" style="text-align: center;">
+<h4>How would the rupture time change if the temperature were lower?</h4>
+<cite>(Consider how changes in temperature affect the Larson-Miller parameter and the resulting rupture time.)</cite></div>
+</main><footer>Copyright © 2024 Sean Corcoran</footer></body></html>
