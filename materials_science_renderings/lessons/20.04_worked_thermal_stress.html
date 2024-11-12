@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+
+<title>Thermal Stresses in Composite Materials - Worked Example</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+<header>
+<h1>Worked Example: Thermal Stresses in Composite Materials</h1>
+<p>Analyze the thermal stresses developed in a composite material consisting of a metallic matrix and a polymeric reinforcement.</p>
+</header>
+<main>
+<article>
+<h2>Objectives:</h2>
+<ol>
+<li>Understand the development of thermal stresses in composite materials due to differential thermal expansion.</li>
+<li>Calculate the thermal stress in both the matrix and the reinforcement phases.</li>
+</ol>
+</article>
+
+<aside>
+<h4>Key Concept: Thermal Stresses in Composites</h4>
+<p>Thermal stresses arise in composite materials when there is a mismatch in thermal expansion coefficients between the matrix and reinforcement phases. The thermal stress (\( \sigma_{\text{thermal}} \)) can be calculated using:</p>
+\[
+\sigma_{\text{thermal}} = E \alpha \Delta T
+\]
+<p>Where \( E \) is the elastic modulus, \( \alpha \) is the coefficient of thermal expansion, and \( \Delta T \) is the change in temperature.</p>
+</aside>
+
+<h3>Expanded Problem Statement</h3>
+<p>Consider a composite material consisting of an aluminum matrix (\( E_{\text{Al}} = 70 \, \text{GPa} \), \( \alpha_{\text{Al}} = 23 \times 10^{-6} \, \text{K}^{-1} \)) and a glass fiber reinforcement (\( E_{\text{GF}} = 90 \, \text{GPa} \), \( \alpha_{\text{GF}} = 5 \times 10^{-6} \, \text{K}^{-1} \)). The composite is cooled from \( 200 \, ^\circ\text{C} \) to room temperature (\( 25 \, ^\circ\text{C} \)). Determine the thermal stresses in both the matrix and the reinforcement phases.</p>
+
+<h3>Solution</h3>
+<h4>Step 1: Calculate the Change in Temperature</h4>
+\[
+\Delta T = 25 \, ^\circ\text{C} - 200 \, ^\circ\text{C} = -175 \, \text{K}
+\]
+
+<h4>Step 2: Calculate Thermal Stress in the Aluminum Matrix</h4>
+\[
+\sigma_{\text{Al}} = E_{\text{Al}} \alpha_{\text{Al}} \Delta T = (70 \times 10^9 \, \text{Pa})(23 \times 10^{-6} \, \text{K}^{-1})(-175 \, \text{K})
+\]
+\[
+\sigma_{\text{Al}} = -281.75 \, \text{MPa}
+\]
+
+<h4>Step 3: Calculate Thermal Stress in the Glass Fiber Reinforcement</h4>
+\[
+\sigma_{\text{GF}} = E_{\text{GF}} \alpha_{\text{GF}} \Delta T = (90 \times 10^9 \, \text{Pa})(5 \times 10^{-6} \, \text{K}^{-1})(-175 \, \text{K})
+\]
+\[
+\sigma_{\text{GF}} = -78.75 \, \text{MPa}
+\]
+
+<h4>Step 4: Interpretation of Results</h4>
+<p>The aluminum matrix experiences a higher thermal stress due to its larger coefficient of thermal expansion. The mismatch in expansion between the matrix and reinforcement leads to internal stresses that could affect the composite’s integrity.</p>
+
+<div class="notice">
+<h4>How could the thermal stresses be minimized in a composite material?</h4>
+<cite>Consider the selection of materials with similar thermal expansion coefficients to reduce stress mismatch.</cite>
+</div>
+</main>
+<footer>Copyright © 2024 Sean Corcoran</footer>
+</body>
+</html>

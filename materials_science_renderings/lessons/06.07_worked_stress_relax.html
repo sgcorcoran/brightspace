@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+
+<title>Stress Relaxation in Polymers - Worked Example</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+<header>
+<h1>Worked Example: Stress Relaxation in Polymers</h1>
+<p>Analyze the stress relaxation behavior of a polymeric material using the Maxwell model for viscoelasticity.</p>
+</header>
+<main>
+<article>
+<h2>Objectives:</h2>
+<ol>
+<li>Understand the concept of stress relaxation in polymers.</li>
+<li>Apply the Maxwell model to calculate the decrease in stress over time.</li>
+</ol>
+</article>
+
+<aside>
+<h4>Key Concept: Viscoelastic Behavior and Stress Relaxation</h4>
+<p>Stress relaxation in polymers occurs when a material under constant strain experiences a decrease in stress over time. The Maxwell model describes this behavior using a combination of a spring (elastic element) and a dashpot (viscous element). The stress relaxation equation is:</p>
+\[
+\sigma(t) = \sigma_0 \exp\left(-\frac{t}{\tau}\right)
+\]
+<p>Where \( \sigma(t) \) is the stress at time \( t \), \( \sigma_0 \) is the initial stress, and \( \tau \) is the relaxation time, defined as \( \tau = \frac{\eta}{E} \), with \( \eta \) being the viscosity and \( E \) the elastic modulus.</p>
+</aside>
+
+<h3>Expanded Problem Statement</h3>
+<p>A sample of Polyvinyl Chloride (PVC) is subjected to a constant strain at \( t = 0 \), resulting in an initial stress of \( \sigma_0 = 5 \, \text{MPa} \). Given that the elastic modulus \( E = 1.5 \, \text{GPa} \) and the viscosity \( \eta = 5 \times 10^8 \, \text{Pa} \cdot \text{s} \), determine the stress in the sample after \( 10 \, \text{min} \) and \( 1 \, \text{h} \).</p>
+
+<h3>Solution</h3>
+<h4>Step 1: Calculate the Relaxation Time</h4>
+<p>The relaxation time \( \tau \) is given by:</p>
+\[
+\tau = \frac{\eta}{E} = \frac{5 \times 10^8 \, \text{Pa} \cdot \text{s}}{1.5 \times 10^9 \, \text{Pa}} = 333.3 \, \text{s}
+\]
+
+<h4>Step 2: Calculate Stress at \( t = 10 \, \text{min} \)</h4>
+<p>Convert time to seconds: \( t = 10 \times 60 = 600 \, \text{s} \).</p>
+<p>Substitute into the stress relaxation equation:</p>
+\[
+\sigma(600) = 5 \, \text{MPa} \times \exp\left(-\frac{600}{333.3}\right)
+\]
+\[
+\sigma(600) \approx 1.84 \, \text{MPa}
+\]
+
+<h4>Step 3: Calculate Stress at \( t = 1 \, \text{h} \)</h4>
+<p>Convert time to seconds: \( t = 3600 \, \text{s} \).</p>
+<p>Substitute into the stress relaxation equation:</p>
+\[
+\sigma(3600) = 5 \, \text{MPa} \times \exp\left(-\frac{3600}{333.3}\right)
+\]
+\[
+\sigma(3600) \approx 0.024 \, \text{MPa}
+\]
+
+<h4>Step 4: Interpret the Results</h4>
+<p>The significant decrease in stress over time indicates the viscoelastic nature of PVC, which allows the material to relax stress under constant strain.</p>
+
+<div class="notice">
+<h4>Discuss the implications of a shorter relaxation time (\( \tau \)).</h4>
+<cite>How would decreasing the viscosity of the material affect the stress relaxation behavior?</cite>
+</div>
+</main>
+<footer>Copyright © 2024 Sean Corcoran</footer>
+</body>
+</html>

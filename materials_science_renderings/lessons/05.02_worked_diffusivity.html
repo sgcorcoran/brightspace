@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+<title>Fick's 1st Law - Arrhenius Dependence</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+<header>
+<h1>Worked Example: Fick’s 1st Law (Arrhenius Dependence)</h1>
+<p>Calculate the diffusion coefficient using the Arrhenius equation for a metallic alloy (Nickel) and a polymer (Polypropylene).</p>
+</header>
+<main>
+<article>
+<h2>Objectives:</h2>
+<ol>
+<li>Determine diffusivity using the Arrhenius equation.</li>
+<li>Apply Fick’s 1st Law with calculated diffusivity.</li>
+</ol>
+</article>
+<h3>Given Problem Statement</h3>
+<p>Calculate the diffusion flux for:</p>
+<ul>
+<li>Nickel at \( T = 1000 \, \text{K} \), with \( D_0 = 2 \times 10^{-5} \, \text{m}^2/\text{s} \) and \( Q = 250 \, \text{kJ/mol} \).</li>
+<li>Polypropylene at \( T = 400 \, \text{K} \), with \( D_0 = 1 \times 10^{-7} \, \text{m}^2/\text{s} \) and \( Q = 80 \, \text{kJ/mol} \).</li>
+</ul>
+
+<h3>Solution</h3>
+<h4>Metallic Alloy: Nickel</h4>
+<p>The Arrhenius equation is: \[ D = D_0 \exp\left(-\frac{Q}{RT}\right) \]</p>
+<p>Where \( R = 8.314 \, \text{J/(mol K)} \). Substitute \( D_0 = 2 \times 10^{-5} \), \( Q = 250 \times 10^3 \, \text{J/mol} \), and \( T = 1000 \, \text{K} \):</p>
+\[ D = (2 \times 10^{-5}) \exp\left(-\frac{250 \times 10^3}{8.314 \times 1000}\right) \approx 3.9 \times 10^{-11} \, \text{m}^2/\text{s} \]
+
+<h4>Polymeric Material: Polypropylene</h4>
+<p>Using \( D_0 = 1 \times 10^{-7} \, \text{m}^2/\text{s} \), \( Q = 80 \times 10^3 \, \text{J/mol} \), and \( T = 400 \, \text{K} \):</p>
+\[ D = (1 \times 10^{-7}) \exp\left(-\frac{80 \times 10^3}{8.314 \times 400}\right) \approx 2.8 \times 10^{-13} \, \text{m}^2/\text{s} \]
+
+<div class="notice">
+<h4>What impact does a lower activation energy have on diffusivity?</h4>
+<cite>Explain why the polymer has a lower diffusivity despite a lower activation energy.</cite>
+</div>
+
+</main>
+<footer>Copyright © 2024 Sean Corcoran</footer>
+</body>
+</html>

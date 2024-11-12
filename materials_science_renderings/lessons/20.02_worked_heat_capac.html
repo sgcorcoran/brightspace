@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+
+<title>Heat Capacity and Thermal Conductivity - Worked Example</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+<header>
+<h1>Worked Example: Heat Capacity and Thermal Conductivity Analysis</h1>
+<p>Calculate the heat capacity and thermal conductivity for a metallic alloy and a polymer.</p>
+</header>
+<main>
+<article>
+<h2>Objectives:</h2>
+<ol>
+<li>Determine the heat capacity of a material using specific heat values.</li>
+<li>Analyze thermal conductivity for both metallic and polymeric materials.</li>
+</ol>
+</article>
+
+<aside>
+<h4>Key Concept: Heat Capacity and Thermal Conductivity</h4>
+<p>Heat capacity is a measure of the amount of heat required to raise the temperature of a material by one degree. It can be expressed as:</p>
+\[
+C = m c_p
+\]
+<p>Where \( C \) is the heat capacity, \( m \) is the mass, and \( c_p \) is the specific heat at constant pressure.</p>
+<p>Thermal conductivity (\( k \)) describes a material's ability to conduct heat. The rate of heat transfer (\( q \)) through a material can be expressed by Fourier’s law:</p>
+\[
+q = -k A \frac{\Delta T}{\Delta x}
+\]
+<p>Where \( q \) is the heat flux, \( k \) is the thermal conductivity, \( A \) is the cross-sectional area, and \( \frac{\Delta T}{\Delta x} \) is the temperature gradient.</p>
+</aside>
+
+<h3>Expanded Problem Statement</h3>
+<p>Determine the heat capacity and thermal conductivity for:</p>
+<ul>
+<li>An aluminum rod (\( m = 0.5 \, \text{kg} \), \( c_p = 900 \, \text{J/(kg K)} \)), and calculate the heat flux for a temperature difference of \( 100 \, ^\circ\text{C} \) across a length of \( 0.1 \, \text{m} \), with \( k = 237 \, \text{W/(m K)} \).</li>
+<li>A PVC sample (\( m = 0.2 \, \text{kg} \), \( c_p = 1000 \, \text{J/(kg K)} \)), and calculate the heat flux for a temperature difference of \( 50 \, ^\circ\text{C} \) across a length of \( 0.05 \, \text{m} \), with \( k = 0.2 \, \text{W/(m K)} \).</li>
+</ul>
+
+<h3>Solution</h3>
+<h4>Step 1: Calculate Heat Capacity</h4>
+<h4>Metallic Material: Aluminum</h4>
+<p>Calculate the heat capacity:</p>
+\[
+C = m c_p = (0.5 \, \text{kg})(900 \, \text{J/(kg K)}) = 450 \, \text{J/K}
+\]
+
+<h4>Polymeric Material: PVC</h4>
+<p>Calculate the heat capacity:</p>
+\[
+C = m c_p = (0.2 \, \text{kg})(1000 \, \text{J/(kg K)}) = 200 \, \text{J/K}
+\]
+
+<h4>Step 2: Calculate Heat Flux Using Fourier’s Law</h4>
+<h4>Aluminum</h4>
+<p>Substitute \( k = 237 \, \text{W/(m K)} \), \( \Delta T = 100 \, ^\circ\text{C} \), \( \Delta x = 0.1 \, \text{m} \), and assume cross-sectional area \( A = 0.01 \, \text{m}^2 \):</p>
+\[
+q = -k A \frac{\Delta T}{\Delta x} = -(237)(0.01)\left(\frac{100}{0.1}\right) = -2370 \, \text{W}
+\]
+
+<h4>PVC</h4>
+<p>Substitute \( k = 0.2 \, \text{W/(m K)} \), \( \Delta T = 50 \, ^\circ\text{C} \), \( \Delta x = 0.05 \, \text{m} \), and \( A = 0.01 \, \text{m}^2 \):</p>
+\[
+q = -k A \frac{\Delta T}{\Delta x} = -(0.2)(0.01)\left(\frac{50}{0.05}\right) = -2 \, \text{W}
+\]
+
+<div class="notice">
+<h4>Why is the heat flux significantly lower in PVC compared to Aluminum?</h4>
+<cite>Discuss the difference in thermal conductivity values and their impact on heat transfer.</cite>
+</div>
+</main>
+<footer>Copyright © 2024 Sean Corcoran</footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+<title>Semi-Infinite Diffusion - Worked Example</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+<header>
+<h1>Worked Example: Semi-Infinite Diffusion</h1>
+<p>Analyze diffusion behavior in a metallic alloy (Carbon in Iron) and a polymer (Gas in Polyethylene).</p>
+</header>
+<main>
+<article>
+<h2>Objectives:</h2>
+<ol>
+<li>Apply the error function solution for semi-infinite diffusion problems.</li>
+<li>Understand the different diffusion mechanisms in metals and polymers.</li>
+</ol>
+</article>
+<h3>Given Problem Statement</h3>
+<p>Determine the concentration at \( x = 1 \, \text{mm} \) after \( t = 10 \, \text{h} \) for:</p>
+<ul>
+<li>Carbon diffusing in Iron at \( D = 1 \times 10^{-10} \, \text{m}^2/\text{s} \).</li>
+<li>Oxygen diffusing in Polyethylene at \( D = 5 \times 10^{-12} \, \text{m}^2/\text{s} \).</li>
+</ul>
+
+<h3>Solution</h3>
+<p>Use the error function solution: \[ C(x,t) = C_s \text{erfc}\left(\frac{x}{2\sqrt{Dt}}\right) \]</p>
+
+<h4>Metallic Alloy: Carbon in Iron</h4>
+\[ C(1\,\text{mm}, 10\,\text{h}) \approx C_s \text{erfc}(0.447) \]
+
+<h4>Polymeric Material: Oxygen in Polyethylene</h4>
+\[ C(1\,\text{mm}, 10\,\text{h}) \approx C_s \text{erfc}(0.632) \]
+
+<div class="notice">
+<h4>What changes if the diffusion coefficient is doubled?</h4>
+<cite>Analyze the effect of increasing the diffusivity.</cite>
+</div>
+
+</main>
+<footer>Copyright © 2024 Sean Corcoran</footer>
+</body>
+</html>

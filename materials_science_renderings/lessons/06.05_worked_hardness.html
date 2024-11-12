@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+
+<title>Hardness and Tensile Strength Correlation - Worked Example</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+<header>
+<h1>Worked Example: Hardness and Tensile Strength Correlation</h1>
+<p>Estimate the tensile strength of a material using hardness measurements for both a metallic alloy and a polymer.</p>
+</header>
+<main>
+<article>
+<h2>Objectives:</h2>
+<ol>
+<li>Understand the empirical relationship between hardness and tensile strength.</li>
+<li>Estimate tensile strength based on hardness values for different materials.</li>
+</ol>
+</article>
+
+<aside>
+<h4>Key Concept: Hardness-Tensile Strength Correlation</h4>
+<p>Hardness is a measure of a material's resistance to localized deformation. There is an empirical correlation between hardness (e.g., Brinell or Vickers hardness) and tensile strength (\( \sigma_t \)). For many metals, the relationship is approximated by:</p>
+\[
+\sigma_t \approx k \times \text{Hardness}
+\]
+<p>Where \( k \) is a material-specific constant. For polymers, this relationship is less direct and can be influenced by viscoelastic effects.</p>
+</aside>
+
+<h3>Expanded Problem Statement</h3>
+<p>Determine the tensile strength for:</p>
+<ul>
+<li>An aluminum alloy with a Vickers hardness of \( 150 \, \text{HV} \), using \( k = 3.3 \).</li>
+<li>A nylon sample with a Shore D hardness of \( 70 \), using an approximate correlation \( \sigma_t \approx 0.1 \times \text{Hardness} \) (MPa for Shore D scale).</li>
+</ul>
+
+<h3>Solution</h3>
+<h4>Metallic Alloy: Aluminum</h4>
+<p>Use the empirical relationship for metals:</p>
+\[
+\sigma_t = k \times \text{Hardness} = 3.3 \times 150 = 495 \, \text{MPa}
+\]
+
+<h4>Polymeric Material: Nylon</h4>
+<p>Use the approximate correlation for Shore D hardness:</p>
+\[
+\sigma_t = 0.1 \times 70 = 7 \, \text{MPa}
+\]
+
+<div class="notice">
+<h4>How reliable is the hardness-tensile strength correlation?</h4>
+<cite>Discuss factors that might affect the accuracy of this empirical relationship, particularly for polymers.</cite>
+</div>
+</main>
+<footer>Copyright © 2024 Sean Corcoran</footer>
+</body>
+</html>
