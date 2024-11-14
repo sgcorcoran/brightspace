@@ -1,58 +1,87 @@
-directory path,video file name,vtt file name
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Intro,00.01.welcome_intro.mp4,00.01.welcome_intro.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 01_02,01.01_intro.mp4,01.01_intro.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 01_02,02.01_bonding.mp4,02.01_bonding.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 01_02,02.02_bonding.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 03,03.01_structures.mp4,03.01_structures.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 03,03.02_structures.mp4,03.02_structures.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 03,03.03_structures.mp4,03.03_structures.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 03,03.04_structures.mp4,03.04_structures.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 03,03.05_structures.mp4,03.05_structures.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 03,03.06_structures.mp4,03.06_structures.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 03,03.07_structures.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 04,04.01_defects.mp4,04.01_defects.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 04,04.02_defects.mp4,04.02_defects.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 04,04.03_defects.mp4,04.03_defects.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 05,05.01_diffusion.mp4,05.01_diffusion.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 05,05.02_diffusion.mp4,05.02_diffusion.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 05,05.03_diffusion.mp4,05.03_diffusion.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 05,05.04.diffusion.mp4,05.04.diffusion.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 05,05.05_diffusion.mp4,05.05_diffusion.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 06,06.01_mech.mp4,06.01_mech.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 06,06.02_mech.mp4,06.02_mech.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 06,06.03_mech.mp4,06.03_mech.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 06,06.04_mech.mp4,06.04_mech.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 06,06.05_mech.mp4,06.05_mech.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 06,06.06_mech.mp4,06.06_mech.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 06,06.07_mech.mp4,06.07_mech.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 06,06.08_mech.mp4,06.08_mech.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 07,07.01_strengthening.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 07,07.02_strengthening.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 07,07.03_strengthening.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 07,07.04_strengthening.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 07,07.05_stengthening.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 08,08.01_failure.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 08,08.02_failure.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 08,08.03_failure.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 08,08.04_failure.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 08,08.05_failure.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 08,08.06_failure.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 08,08.07_failure.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 09,09.01_phase.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 09,09.02_phase.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 09,09.03_phase.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 09,09.04_phase.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 09,09.05_phase.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 09,09.06_phase.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 10,10.01_transf.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 10,10.02_transf.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 10,10.03_transf.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 10,10.04_transf.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 12_13,11.01_ceramics.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 12_13,11.02_ceramics.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 14_15,12.01_polymer.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 14_15,12.02_polymer.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Chap 14_15,12.03_polymer.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Supplemental,00.01_supp.mp4,
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Supplemental,00.02_supp.mp4,00.02_supp.srt
-C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media\Supplemental,00.03_supp.mp4,00.03_supp.srt
+﻿count,order,directory path,video file name,srt file name,name,srt,vtt,title
+1,0.1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,00.01.welcome_intro.mp4,intro course.srt,00.01.welcome_intro,00.01.welcome_intro.srt,00.01.welcome_intro.vtt,Course Introduction
+2,1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,01.01_intro.mp4,1 intro.srt,01.01_intro,01.01_intro.srt,01.01_intro.vtt,Introduction to MSE
+3,2.1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,02.01_bonding.mp4,2 bonding.srt,02.01_bonding,02.01_bonding.srt,02.01_bonding.vtt,Chapter 02 Part 01
+4,2.2,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,02.02_bonding.mp4,,02.02_bonding,,02.02_bonding.vtt,Chapter 02 Part 02
+5,3.1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,03.01_structures.mp4,3 1.srt,03.01_structures,03.01_structures.srt,03.01_structures.vtt,Chapter 03 Part 01
+6,3.2,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,03.02_structures.mp4,3 2.srt,03.02_structures,03.02_structures.srt,03.02_structures.vtt,Chapter 03 Part 02 
+7,3.3,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,03.03_structures.mp4,3 3.srt,03.03_structures,03.03_structures.srt,03.03_structures.vtt,Chapter 03 Part 03 
+8,3.4,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,03.04_structures.mp4,3 4.srt,03.04_structures,03.04_structures.srt,03.04_structures.vtt,Chapter 03 Part 04 
+9,3.5,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,03.05_structures.mp4,3 5.srt,03.05_structures,03.05_structures.srt,03.05_structures.vtt,Chapter 03 Part 05 
+10,3.6,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,03.06_structures.mp4,3 theor dens.srt,03.06_structures,03.06_structures.srt,03.06_structures.vtt,Chapter 03 Part 06 
+11,3.7,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,03.07_structures.mp4,,03.07_structures,,03.07_structures.vtt,Chapter 03 Part 07 
+12,4.1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,04.01_defects.mp4,4 point.srt,04.01_defects,04.01_defects.srt,04.01_defects.vtt,Chapter 04 Part 01 
+13,4.2,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,04.02_defects.mp4,4 line.srt,04.02_defects,04.02_defects.srt,04.02_defects.vtt,Chapter 04 Part 02 
+14,4.3,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,04.03_defects.mp4,4 interfacial.srt,04.03_defects,04.03_defects.srt,04.03_defects.vtt,Chapter 04 Part 03 
+15,5.1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,05.01_diffusion.mp4,Chapter 5 part 1.srt,05.01_diffusion,05.01_diffusion.srt,05.01_diffusion.vtt,Chapter 05 Part 01 
+16,5.2,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,05.02_diffusion.mp4,Chapter 5 part 2.srt,05.02_diffusion,05.02_diffusion.srt,05.02_diffusion.vtt,Chapter 05 Part 02 
+17,5.3,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,05.03_diffusion.mp4,Chapter 5 part 3.srt,05.03_diffusion,05.03_diffusion.srt,05.03_diffusion.vtt,Chapter 05 Part 03 
+18,5.4,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,05.04.diffusion.mp4,Chap 5 part 4.srt,05.04.diffusion,05.04.diffusion.srt,05.04.diffusion.vtt,Chapter 05 Part 04 
+19,5.5,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,05.05_diffusion.mp4,Chaper 5 part 5.srt,05.05_diffusion,05.05_diffusion.srt,05.05_diffusion.vtt,Chapter 05 Part 05 
+20,6.1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,06.01_mech.mp4,Chap 6 part 1.srt,06.01_mech,06.01_mech.srt,06.01_mech.vtt,Chapter 06 Part 01 
+21,6.2,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,06.02_mech.mp4,Chap 6 part 2.srt,06.02_mech,06.02_mech.srt,06.02_mech.vtt,Chapter 06 Part 02 
+22,6.3,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,06.03_mech.mp4,Chapt 6 part 3.srt,06.03_mech,06.03_mech.srt,06.03_mech.vtt,Chapter 06 Part 03 
+23,6.4,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,06.04_mech.mp4,Chap 6 part 4.srt,06.04_mech,06.04_mech.srt,06.04_mech.vtt,Chapter 06 Part 04 
+24,6.5,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,06.05_mech.mp4,Chap 6 part 5.srt,06.05_mech,06.05_mech.srt,06.05_mech.vtt,Chapter 06 Part 05 
+25,6.6,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,06.06_mech.mp4,Chap 6 part 6.srt,06.06_mech,06.06_mech.srt,06.06_mech.vtt,Chapter 06 Part 06 
+26,6.7,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,06.07_mech.mp4,Chap 6 part 7.srt,06.07_mech,06.07_mech.srt,06.07_mech.vtt,Chapter 06 Part 07 
+27,6.8,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,06.08_mech.mp4,Chap 6 part 8.srt,06.08_mech,06.08_mech.srt,06.08_mech.vtt,Chapter 06 Part 08 
+28,7.1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,07.01_strengthening.mp4,,07.01_strengthening,,07.01_strengthening.vtt,Chapter 07 Part 01 
+29,7.2,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,07.02_strengthening.mp4,,07.02_strengthening,,07.02_strengthening.vtt,Chapter 07 Part 02 
+30,7.3,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,07.03_strengthening.mp4,,07.03_strengthening,,07.03_strengthening.vtt,Chapter 07 Part 03 
+31,7.4,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,07.04_strengthening.mp4,,07.04_strengthening,,07.04_strengthening.vtt,Chapter 07 Part 04 
+32,7.5,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,07.05_stengthening.mp4,,07.05_stengthening,,07.05_stengthening.vtt,Chapter 07 Part 05 
+33,8.1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,08.01_failure.mp4,,08.01_failure,,08.01_failure.vtt,Chapter 08 Part 01 
+34,8.2,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,08.02_failure.mp4,,08.02_failure,,08.02_failure.vtt,Chapter 08 Part 02 
+35,8.3,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,08.03_failure.mp4,,08.03_failure,,08.03_failure.vtt,Chapter 08 Part 03 
+36,8.4,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,08.04_failure.mp4,,08.04_failure,,08.04_failure.vtt,Chapter 08 Part 04 
+37,8.5,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,08.05_failure.mp4,,08.05_failure,,08.05_failure.vtt,Chapter 08 Part 05 
+38,8.6,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,08.06_failure.mp4,,08.06_failure,,08.06_failure.vtt,Chapter 08 Part 06 
+39,8.7,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,08.07_failure.mp4,,08.07_failure,,08.07_failure.vtt,Chapter 08 Part 07 
+40,9.1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,09.01_phase.mp4,,09.01_phase,,09.01_phase.vtt,Chapter 09 Part 01 
+41,9.2,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,09.02_phase.mp4,,09.02_phase,,09.02_phase.vtt,Chapter 09 Part 02 
+42,9.3,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,09.03_phase.mp4,,09.03_phase,,09.03_phase.vtt,Chapter 09 Part 03 
+43,9.4,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,09.04_phase.mp4,,09.04_phase,,09.04_phase.vtt,Chapter 09 Part 04 
+44,9.5,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,09.05_phase.mp4,,09.05_phase,,09.05_phase.vtt,Chapter 09 Part 05 
+45,9.6,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,09.06_phase.mp4,,09.06_phase,,09.06_phase.vtt,Chapter 09 Part 06 
+46,10.1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,10.01_transf.mp4,,10.01_transf,,10.01_transf.vtt,Chapter 10 Part 01 
+47,10.2,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,10.02_transf.mp4,,10.02_transf,,10.02_transf.vtt,Chapter 10 Part 02 
+48,10.3,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,10.03_transf.mp4,,10.03_transf,,10.03_transf.vtt,Chapter 10 Part 03 
+49,10.4,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,10.04_transf.mp4,,10.04_transf,,10.04_transf.vtt,Chapter 10 Part 04 
+50,11.1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,11.01_ceramics.mp4,,11.01_ceramics,,11.01_ceramics.vtt,Chapter 11 Part 01 
+51,11.2,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,11.02_ceramics.mp4,,11.02_ceramics,,11.02_ceramics.vtt,Chapter 11 Part 02 
+52,12.1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,12.01_polymer.mp4,,12.01_polymer,,12.01_polymer.vtt,Chapter 12 Part 01 
+53,12.2,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,12.02_polymer.mp4,,12.02_polymer,,12.02_polymer.vtt,Chapter 12 Part 02 
+54,12.3,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,12.03_polymer.mp4,,12.03_polymer,,12.03_polymer.vtt,Chapter 12 Part 03 
+55,supp.1,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,00.01_supp.mp4,,00.01_supp,,00.01_supp.vtt,Chapter 00 Part 01 
+56,supp.2,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,00.02_supp.mp4,ces advanced plotting.srt,00.02_supp,00.02_supp.srt,00.02_supp.vtt,Chapter 00 Part 02 
+57,supp.3,C:\Users\Sean\OneDrive - Virginia Tech\Documents\SGC_Teaching_MSE_2034_D2L\vscode_brightspace_development\brightspace\materials_science_renderings\assets\media,00.03_supp.mp4,excel scatter.srt,00.03_supp,00.03_supp.srt,00.03_supp.vtt,Chapter 00 Part 03 
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
