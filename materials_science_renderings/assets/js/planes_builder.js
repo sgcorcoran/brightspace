@@ -20,12 +20,12 @@ function init() {
 
   // Create a camera
   camera = new THREE.PerspectiveCamera(
-    75,
+    50,
     window.innerWidth / window.innerHeight,
     0.1,
     1000
   );
-  camera.position.set(10, 10, 10);
+  camera.position.set(6, 6, 6);
   camera.lookAt(0, 0, 0);
 
   // Create a WebGL renderer
@@ -163,7 +163,7 @@ function generateLattice(numCells, system) {
 
   lattice.forEach((position) => {
     const atom = new THREE.Mesh(
-      new THREE.SphereGeometry(sphereRadius, 8, 8), // Set a reasonable radius for visibility
+      new THREE.SphereGeometry(sphereRadius, 16, 16), // Set a reasonable radius for visibility
       new THREE.MeshPhongMaterial({ color: 0xffaa00 })
     );
     atom.position.copy(position);
@@ -195,7 +195,7 @@ function updatePlanes(system, plane100Index, plane110Index, plane111Index) {
 
   const numCells = parseInt(document.getElementById('numCells').value);
   const sphereRadius = system === 'fcc' ? Math.sqrt(2) / 4 : Math.sqrt(3) / 4;
-  const planeGeometry = new THREE.SphereGeometry(sphereRadius, 8, 8);
+  const planeGeometry = new THREE.SphereGeometry(sphereRadius, 16, 16);
 
   const planeColor1 = new THREE.Color(0x1e88e5); // Blue color for (100) planes
   const planeColor2 = new THREE.Color(0xfd81b60); // Magenta color for (110) planes
@@ -221,7 +221,7 @@ function updatePlanes(system, plane100Index, plane110Index, plane111Index) {
   // Redraw only the filtered atoms in their default color
   lattice.forEach((position) => {
     const atom = new THREE.Mesh(
-      new THREE.SphereGeometry(sphereRadius, 8, 8),
+      new THREE.SphereGeometry(sphereRadius, 16, 16),
       new THREE.MeshPhongMaterial({ color: 0xffaa00 }) // Default atom color
     );
     atom.position.copy(position);
