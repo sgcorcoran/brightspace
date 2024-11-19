@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FCC Unit Cell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      canvas {
+        display: block;
+      }
+      #slider-container {
+        position: absolute;
+        bottom: 2rem;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        pointer-events: none;
+      }
+      #radius-slider {
+        pointer-events: all;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Slider to control atom radius -->
+    <div id="slider-container">
+      <input
+        type="range"
+        id="radius-slider"
+        min="0.2"
+        max="0.707"
+        step="0.01"
+        value="0.4"
+        style="width: 100%"
+      />
+    </div>
+
+    <!-- External script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="../assets/js/fcc_unit_cell_v2.0.js"></script>
+  </body>
+</html>
