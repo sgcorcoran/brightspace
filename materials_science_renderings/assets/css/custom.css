@@ -94,7 +94,7 @@ mjx-math {
 .courseware-card.aside-card .courseware-card-header > h4::after {
   content: ''; /* Creates the pseudo-element */
   position: absolute; /* Absolute positioning relative to h4 */
-  bottom: -10%; /* Align it with the bottom of h4 */
+  bottom: -0.5rem; /* Align it with the bottom of h4 */
   left: 50%; /* Start from the center */
   transform: translateX(-50%); /* Center it horizontally */
   width: 50%; /* Set the width to 50% */
@@ -103,7 +103,7 @@ mjx-math {
 
 .courseware-card.aside-card .courseware-card-body {
   min-height: 1px;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 .courseware-card.aside-card .courseware-card-body a {
   font-weight: 500;
