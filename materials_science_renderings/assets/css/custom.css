@@ -2,6 +2,41 @@ body > header {
   color: var(--vt-white);
 }
 
+/* Custom header styling */
+.custom-header {
+  background-color: var(--vt-maroon); /* Maroon */
+  color: white; /* Text color */
+  padding: 20px; /* Spacing */
+  text-align: center; /* Center text */
+}
+
+.custom-header h1{
+  color: white; /* Text color */
+}
+
+/* Style the figure container */
+.custom-header-image {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 100%; /* Optional: Responsive width */
+  padding: 0px;
+  background-color: inherit;
+}
+
+/* Style the image itself */
+.custom-header-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Style the caption */
+.custom-header-image figcaption {
+  margin-top: 5px;
+  font-style: italic;
+  font-size:0.9rem;
+}
+
 hr {
   background: var(--vt-sunset);
 }

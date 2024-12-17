@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>Basic Page</title>
-    <!-- <script type="module" src="../assets/js/global.js"></script> -->
-    <!--<script src="../assets/js/client.js"></script>-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no">
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  
+    <title>Introduction to MSE 2034</title>
     <script type="module" src="../assets/js/global.min.js"></script>
-    <script
-      defer
-      src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"
-    ></script>
-    <link rel="stylesheet" href="../assets/css/globalv5.css" />
-    <!--<link rel="stylesheet" href="../assets/css/client.min.css">-->
-    <link rel="stylesheet" href="../assets/css/customv5.css" />
-    <!--<link rel="stylesheet" href="/d2l/le/contentstyler/6606/files/View">-->
+    <script defer="" src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+    <!--<script src="../assets/js/load-mathjax.js" defer></script>-->
+  
+    <script src="../assets/js/videoExpand.js"></script>
+    <link rel="stylesheet" href="../assets/css/global.minv5.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/customv5.css">
   </head>
 
-  <body>
-    <div class="courseware-container-fluid courseware-themes">
+  <body class="courseware-themes">
+    <header class="custom-header">
       <h1>Component Showcase</h1>
-      <div class="courseware-layouts-content-wrapper">
-
+    </header>
+    <!-- use the following for image header; don't use <header> element -->
+    <!--
+    <figure class="custom-header-image">
+      <img src="../assets/img/20210505_081531_20241109185652045.jpg" alt="sheep lying down in green pastures">
+      <figcaption>Southdown Babydoll Sheep in Christiansburg, VA</figcaption>
+    </figure>
+    -->
+    <main class="courseware-layouts-content-wrapper">
         <!-- Panel Example -->
         <section>
           <h2>Panels</h2>
@@ -95,10 +98,9 @@
             </p>
           </div>
         </section>
-      </div>
-      <footer>
-        <p>Example layout using CSS components from globalv5.css</p>
-      </footer>
-    </div>
+    </main>
+    <footer>
+      <p>Example layout using CSS components from globalv5.css</p>
+    </footer>
   </body>
 </html>
