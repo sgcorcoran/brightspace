@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Pb-Sn Phase Diagram</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  #phaseDiagram {
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+  }
+  
+  .tooltip {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+  pointer-events: none; /* Prevent interference with mouse events */
+}
+  </style>>
+</head>
+<body>
+  <h1>Interactive Phase Diagram: Pb-Sn System</h1>
+  <div id="phaseDiagram"></div>
+  <div id="tooltip" class="tooltip"></div>
+  <script src="../assets/js/interactive-phase-diagram.js"></script>
+</body>
+</html>
