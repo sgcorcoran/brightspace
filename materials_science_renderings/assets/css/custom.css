@@ -3,14 +3,14 @@ body > header {
 }
 
 /* Custom header styling */
-.custom-header {
+body header.custom-header {
   background-color: var(--vt-maroon); /* Maroon */
   color: white; /* Text color */
   padding: 20px; /* Spacing */
   text-align: center; /* Center text */
 }
 
-.custom-header h1{
+body header.custom-header h1{
   color: white; /* Text color */
 }
 
@@ -41,7 +41,7 @@ hr {
   background: var(--vt-sunset);
 }
 
-section{clear:both;}
+section{clear:both;width:100%;box-sizing:border-box;}
 
 mjx-container[jax='CHTML'] {
   line-height: 0;
