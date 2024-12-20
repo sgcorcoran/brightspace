@@ -1,17 +1,22 @@
-body > header {
+body>header {
   color: var(--vt-white);
 }
 
 /* Custom header styling */
 body header.custom-header {
-  background-color: var(--vt-maroon); /* Maroon */
-  color: white; /* Text color */
-  padding: 20px; /* Spacing */
-  text-align: center; /* Center text */
+  background-color: var(--vt-maroon);
+  /* Maroon */
+  color: white;
+  /* Text color */
+  padding: 20px;
+  /* Spacing */
+  text-align: center;
+  /* Center text */
 }
 
-body header.custom-header h1{
-  color: white; /* Text color */
+body header.custom-header h1 {
+  color: white;
+  /* Text color */
 }
 
 /* Style the figure container */
@@ -34,14 +39,18 @@ body header.custom-header h1{
 .custom-header-image figcaption {
   margin-top: 5px;
   font-style: italic;
-  font-size:0.9rem;
+  font-size: 0.9rem;
 }
 
 hr {
   background: var(--vt-sunset);
 }
 
-section{clear:both;width:100%;box-sizing:border-box;}
+section {
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+}
 
 mjx-container[jax='CHTML'] {
   line-height: 0;
@@ -50,10 +59,10 @@ mjx-container[jax='CHTML'] {
 
 
 mjx-math {
-  font-size:100% !important;
+  font-size: 100% !important;
 }
 
-.courseware-layouts-content-wrapper{
+.courseware-layouts-content-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -61,143 +70,182 @@ mjx-math {
 }
 
 .courseware-panels .aside-panel {
-  flex: 0 0 33%; /* 33% width on large screens */
+  flex: 0 0 33%;
+  /* 33% width on large screens */
   background-color: var(--courseware-panel-background, #f9fbff);
   padding: 1rem;
 }
 
 .courseware-card.aside-card {
-  float:right;
-  width:33%;
-  margin:1rem;
-  position:relative;
-  border:none;
+  float: right;
+  width: 33%;
+  margin: 1rem;
+  position: relative;
+  border: none;
 }
 
 /* Responsive behavior for smaller screens */
 @media (max-width: 600px) {
   .courseware-card.aside-card {
-    float: right; /* Removes the float, so it becomes a block element */
-    width: 50%; /* Full width on smaller screens */
-    margin: 0; /* Optional: remove margin for a seamless full-width look */
+    float: right;
+    /* Removes the float, so it becomes a block element */
+    width: 50%;
+    /* Full width on smaller screens */
+    margin: 0;
+    /* Optional: remove margin for a seamless full-width look */
   }
 }
 
 @media (max-width: 480px) {
   .courseware-card.aside-card {
-    float: none; /* Removes the float, so it becomes a block element */
-    width: 100%; /* Full width on smaller screens */
-    margin: 0; /* Optional: remove margin for a seamless full-width look */
+    float: none;
+    /* Removes the float, so it becomes a block element */
+    width: 100%;
+    /* Full width on smaller screens */
+    margin: 0;
+    /* Optional: remove margin for a seamless full-width look */
   }
 }
 
 .courseware-card.aside-card::before,
 .courseware-card.aside-card::after {
-  content: ''; /* Create the pseudo-elements */
-  position: absolute; /* Position them absolutely relative to the aside */
-  width: 20%; /* Set the size of the angle */
-  height: 20%; /* Set the size of the angle */
-  border: 5px solid var(--vt-sunset); /* Define the border color and thickness */
+  content: '';
+  /* Create the pseudo-elements */
+  position: absolute;
+  /* Position them absolutely relative to the aside */
+  width: 20%;
+  /* Set the size of the angle */
+  height: 20%;
+  /* Set the size of the angle */
+  border: 5px solid var(--vt-sunset);
+  /* Define the border color and thickness */
 }
 
 .courseware-card.aside-card::before {
-  top: 0rem; /* Position at the top left corner */
-  left: -0.2rem; /* Align with the left edge */
-  border-right: none; /* Create a 90-degree angle by hiding the right border */
-  border-bottom: none; /* Hide the bottom border to create the angle */
+  top: 0rem;
+  /* Position at the top left corner */
+  left: -0.2rem;
+  /* Align with the left edge */
+  border-right: none;
+  /* Create a 90-degree angle by hiding the right border */
+  border-bottom: none;
+  /* Hide the bottom border to create the angle */
 }
 
 .courseware-card.aside-card::after {
-  bottom: -0.5rem; /* Position at the bottom right corner */
-  right: -0.2rem; /* Align with the right edge */
-  border-left: none; /* Create a 90-degree angle by hiding the left border */
-  border-top: none; /* Hide the top border to create the angle */
+  bottom: -0.5rem;
+  /* Position at the bottom right corner */
+  right: -0.2rem;
+  /* Align with the right edge */
+  border-left: none;
+  /* Create a 90-degree angle by hiding the left border */
+  border-top: none;
+  /* Hide the top border to create the angle */
 }
 
 .courseware-card.aside-card .courseware-card-header {
-  background:none;
-  border:none;
-  }
+  background: none;
+  border: none;
+}
 
-.courseware-card.aside-card .courseware-card-header > h4 {
-  position: relative; /* To position the ::after element */
+.courseware-card.aside-card .courseware-card-header>h4 {
+  position: relative;
+  /* To position the ::after element */
   padding: none;
   text-align: center;
 }
 
 /*  puts line under header */
-.courseware-card.aside-card .courseware-card-header > h4::after {
-  content: ''; /* Creates the pseudo-element */
-  position: absolute; /* Absolute positioning relative to h4 */
-  bottom: -0.5rem; /* Align it with the bottom of h4 */
-  left: 50%; /* Start from the center */
-  transform: translateX(-50%); /* Center it horizontally */
-  width: 50%; /* Set the width to 50% */
-  border-bottom: 2px solid var(--vt-sunset); /* Create the line */
+.courseware-card.aside-card .courseware-card-header>h4::after {
+  content: '';
+  /* Creates the pseudo-element */
+  position: absolute;
+  /* Absolute positioning relative to h4 */
+  bottom: -0.5rem;
+  /* Align it with the bottom of h4 */
+  left: 50%;
+  /* Start from the center */
+  transform: translateX(-50%);
+  /* Center it horizontally */
+  width: 50%;
+  /* Set the width to 50% */
+  border-bottom: 2px solid var(--vt-sunset);
+  /* Create the line */
 }
 
 .courseware-card.aside-card .courseware-card-body {
   min-height: 1px;
   padding: 1rem;
 }
+
 .courseware-card.aside-card .courseware-card-body a {
   font-weight: 500;
   text-decoration-style: solid;
-  font-size:1rem;
-  text-align:left;
-  padding-left:5%;
+  font-size: 1rem;
+  text-align: left;
+  padding-left: 5%;
 }
 
 .courseware-helper-text-center {
   text-align: center;
-  width:100%;
+  width: 100%;
 }
 
 .courseware-callout {
-  flex: 0 0 33%; /* Takes up 33% of the width */
+  flex: 0 0 33%;
+  /* Takes up 33% of the width */
 }
 
 
 figure {
-  display:block;
+  display: block;
   text-align: center;
   margin: 0;
 }
 
-.courseware-layouts-content-wrapper figure{
-text-align: center;
-/*border:2px solid black;*/
+.courseware-layouts-content-wrapper figure {
+  text-align: center;
+  /*border:2px solid black;*/
 }
 
-.courseware-layouts-content-wrapper figcaption{
+.courseware-layouts-content-wrapper figcaption {
   text-align: center;
-  }
+}
 
-.courseware-layouts-content-wrapper figure figcaption{
-  padding:0;
-  margin:0;
+.courseware-layouts-content-wrapper figure figcaption {
+  padding: 0;
+  margin: 0;
   line-height: 2rem;
   color: var(--vt-hokieStone);
+}
+
+.courseware-layouts-content-wrapper img {
+  height: auto;
+  /* or a specific percentage if you want a smaller image */
+  object-fit: contain;
+  /* Optional: fills the entire area without stretching */
+  transition: transform 0.3s ease;
+}
+
+.courseware-layouts-content-wrapper img:hover {
+  transform: scale(1.7);
+}
+
+@media (max-width: 600px) {
+  .courseware-layouts-content-wrapper img {
+    height: auto;
+    width: 100%;
   }
 
-  .courseware-layouts-content-wrapper img {
-    height: 200px; /* or a specific percentage if you want a smaller image */
-    object-fit: contain; /* Optional: fills the entire area without stretching */
-    transition: transform 0.3s ease;
-  }
   .courseware-layouts-content-wrapper img:hover {
-    transform: scale(1.7);
+    transform: none;
   }
-  @media (max-width: 600px) {
-    .courseware-layouts-content-wrapper img {
-      height: auto; 
-      width:100%;
-    }
-    .courseware-layouts-content-wrapper img:hover {
-      transform: none;
-    }
-  }
-  
+}
+
+.no-hover:hover {
+  transform: none !important;
+}
+
 
 figcaption {
   /*use <aside style="float: left"> for left floating image*/
@@ -205,46 +253,49 @@ figcaption {
   color: var(--vt-hokieStone);
 }
 
-.courseware-layouts-content-wrapper:has(figure.left){
+.courseware-layouts-content-wrapper:has(figure.left) {
   justify-content: flex-start;
-  float:left;
-  width:40%;
+  float: left;
+  width: 40%;
   margin: 1rem;
   background-color: white;
   padding: 1rem;
-  padding-bottom:0;
+  padding-bottom: 0;
   border-radius: 8px;
-  transition: box-shadow 0.3s ease; /* Smooth transition */
+  transition: box-shadow 0.3s ease;
+  /* Smooth transition */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.courseware-layouts-content-wrapper figure.left figcaption{
- text-align:left;
+.courseware-layouts-content-wrapper figure.left figcaption {
+  text-align: left;
 }
 
-.courseware-layouts-content-wrapper:has(figure.right){
+.courseware-layouts-content-wrapper:has(figure.right) {
   justify-content: flex-end;
-  width:40%;
-  float:right;
+  width: 40%;
+  float: right;
   margin: 1rem;
   background-color: white;
   padding: 1rem;
-  padding-bottom:0;
+  padding-bottom: 0;
   border-radius: 8px;
-  transition: box-shadow 0.3s ease; /* Smooth transition */
+  transition: box-shadow 0.3s ease;
+  /* Smooth transition */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.courseware-layouts-content-wrapper figure.right figcaption{
-  text-align:left;
- }
+.courseware-layouts-content-wrapper figure.right figcaption {
+  text-align: left;
+}
 
 @media only screen and (max-width:600px) {
+
   .courseware-layouts-content-wrapper:has(figure.left),
   .courseware-layouts-content-wrapper:has(figure.right) {
     float: inherit;
     width: inherit;
-    border:none;
+    border: none;
   }
 }
 
@@ -252,12 +303,14 @@ figcaption {
   background-color: white;
   padding: 1.5rem;
   border-radius: 8px;
-  transition: box-shadow 0.3s ease; /* Smooth transition */
+  transition: box-shadow 0.3s ease;
+  /* Smooth transition */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .shadow-box:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Larger shadow on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  /* Larger shadow on hover */
 }
 
 
@@ -267,48 +320,71 @@ figcaption {
 aside {
   background-color: inherit;
   border-width: 0px;
-  position: relative; /* Position the pseudo-elements relative to the aside */
-  padding: 5px; /* Add some padding for spacing */
+  position: relative;
+  /* Position the pseudo-elements relative to the aside */
+  padding: 5px;
+  /* Add some padding for spacing */
   flex: 0 0 50%;
 }
 
 aside::before,
 aside::after {
-  content: ''; /* Create the pseudo-elements */
-  position: absolute; /* Position them absolutely relative to the aside */
-  width: 20%; /* Set the size of the angle */
-  height: 20%; /* Set the size of the angle */
-  border: 5px solid var(--vt-sunset); /* Define the border color and thickness */
+  content: '';
+  /* Create the pseudo-elements */
+  position: absolute;
+  /* Position them absolutely relative to the aside */
+  width: 20%;
+  /* Set the size of the angle */
+  height: 20%;
+  /* Set the size of the angle */
+  border: 5px solid var(--vt-sunset);
+  /* Define the border color and thickness */
 }
 
 aside::before {
-  top: 0rem; /* Position at the top left corner */
-  left: -0.2rem; /* Align with the left edge */
-  border-right: none; /* Create a 90-degree angle by hiding the right border */
-  border-bottom: none; /* Hide the bottom border to create the angle */
+  top: 0rem;
+  /* Position at the top left corner */
+  left: -0.2rem;
+  /* Align with the left edge */
+  border-right: none;
+  /* Create a 90-degree angle by hiding the right border */
+  border-bottom: none;
+  /* Hide the bottom border to create the angle */
 }
 
 aside::after {
-  bottom: 0rem; /* Position at the bottom right corner */
-  right: -0.2rem; /* Align with the right edge */
-  border-left: none; /* Create a 90-degree angle by hiding the left border */
-  border-top: none; /* Hide the top border to create the angle */
+  bottom: 0rem;
+  /* Position at the bottom right corner */
+  right: -0.2rem;
+  /* Align with the right edge */
+  border-left: none;
+  /* Create a 90-degree angle by hiding the left border */
+  border-top: none;
+  /* Hide the top border to create the angle */
 }
 
-aside > h4 {
-  position: relative; /* To position the ::after element */
+aside>h4 {
+  position: relative;
+  /* To position the ::after element */
   padding-bottom: 5px;
   text-align: center;
 }
 
-aside > h4::after {
-  content: ''; /* Creates the pseudo-element */
-  position: absolute; /* Absolute positioning relative to h4 */
-  bottom: 0%; /* Align it with the bottom of h4 */
-  left: 50%; /* Start from the center */
-  transform: translateX(-50%); /* Center it horizontally */
-  width: 33%; /* Set the width to 50% */
-  border-bottom: 2px solid var(--vt-sunset); /* Create the line */
+aside>h4::after {
+  content: '';
+  /* Creates the pseudo-element */
+  position: absolute;
+  /* Absolute positioning relative to h4 */
+  bottom: 0%;
+  /* Align it with the bottom of h4 */
+  left: 50%;
+  /* Start from the center */
+  transform: translateX(-50%);
+  /* Center it horizontally */
+  width: 33%;
+  /* Set the width to 50% */
+  border-bottom: 2px solid var(--vt-sunset);
+  /* Create the line */
 }
 
 aside:has(figure) {
@@ -317,7 +393,8 @@ aside:has(figure) {
   border-radius: 5%;
   margin-bottom: 1rem;
   float: right;
-  width: min-content; /* wrap the img element(s) with <div style="width: max-content"> for this to work */
+  width: min-content;
+  /* wrap the img element(s) with <div style="width: max-content"> for this to work */
   margin-inline-start: 15px;
   padding-top: 15px;
   font-size: 1rem;
@@ -327,18 +404,27 @@ aside:has(figure)::before,
 aside:has(figure)::after {
   border-color: var(--vt-maroon);
 }
+
 aside:has(figure)::before {
-  top: 0%; /* Position at the top left corner */
-  left: -2%; /* Align with the left edge */
-  border-right: none; /* Create a 90-degree angle by hiding the right border */
-  border-bottom: none; /* Hide the bottom border to create the angle */
+  top: 0%;
+  /* Position at the top left corner */
+  left: -2%;
+  /* Align with the left edge */
+  border-right: none;
+  /* Create a 90-degree angle by hiding the right border */
+  border-bottom: none;
+  /* Hide the bottom border to create the angle */
 }
 
 aside:has(figure)::after {
-  bottom: 0%; /* Position at the bottom right corner */
-  right: -2%; /* Align with the right edge */
-  border-left: none; /* Create a 90-degree angle by hiding the left border */
-  border-top: none; /* Hide the top border to create the angle */
+  bottom: 0%;
+  /* Position at the bottom right corner */
+  right: -2%;
+  /* Align with the right edge */
+  border-left: none;
+  /* Create a 90-degree angle by hiding the left border */
+  border-top: none;
+  /* Hide the top border to create the angle */
 }
 
 .notice {
@@ -347,41 +433,56 @@ aside:has(figure)::after {
   color: var(--vt-white);
   overflow: auto;
   border-radius: 0;
-  clear: both; 
+  clear: both;
 }
 
-.notice > cite {
+.notice>cite {
   color: var(--vt-white);
 }
 
 table thead tr th {
   background-color: var(--accent-table);
   font-weight: 700;
-  text-align:center;
-  font-size:1.05rem;
-  vertical-align:middle;
-  padding:0.1rem;
+  text-align: center;
+  font-size: 1.05rem;
+  vertical-align: middle;
+  padding: 0.1rem;
 }
+
 @media screen and (max-width: 768px) {
   table thead tr th {
     font-size: 0.9rem;
     padding: 0.325rem 0.75rem;
-  }}
+  }
+}
 
-  table caption{font-size:0.9rem;font-weight:300;padding:0.1rem;text-align:left;}
+table caption {
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 0.1rem;
+  text-align: left;
+}
 
-table tbody tr td {font-size:0.95em;}
+table tbody tr td {
+  font-size: 0.95em;
+}
 
-table tbody td {padding:0.25rem;vertical-align:middle; text-align:center;}
+table tbody td {
+  padding: 0.25rem;
+  vertical-align: middle;
+  text-align: center;
+}
 
 tr:nth-child(2n) {
   background-color: var(--accent-table);
 }
+
 @media screen and (max-width: 768px) {
   table tbody tr td {
     font-size: 0.8rem;
   }
 }
+
 @media screen and (max-width: 768px) {
   table tbody td {
     padding: 0.1rem;
@@ -395,26 +496,28 @@ tr:nth-child(2n) {
 }
 
 .courseware-video-wrapper {
-  width:33%;
+  width: 33%;
   position: relative;
   height: auto;
   /*transition: width 0.5s ease, height 0.5s ease;*/
   transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
+
 @media only screen and (max-width: 600px) {
   .courseware-video-wrapper {
-    width:75%;
+    width: 75%;
   }
 }
 
 /* Expand the video wrapper to full width when it has the 'expanded' class */
 .courseware-video-wrapper.expanded {
-  height: auto; 
+  height: auto;
   width: 100%;
-  z-index: 10; /* Ensure it sits above other elements when expanded */
+  z-index: 10;
+  /* Ensure it sits above other elements when expanded */
 }
 
 
@@ -423,6 +526,7 @@ tr:nth-child(2n) {
 .courseware-video-wrapper .courseware-video-embed-responsive {
   padding: 0;
 }
+
 .courseware-video-wrapper .courseware-video-embed-responsive:before {
   padding-top: 0%;
 }
@@ -431,6 +535,7 @@ tr:nth-child(2n) {
   margin-left: 1rem;
   color: var(--vt-hokieStone);
 }
+
 .courseware-video-wrapper .courseware-video-text p {
   font-size: 0.842rem;
   line-height: 1rem;
@@ -463,10 +568,7 @@ video {
 }
 
 .card-container {
-  perspective: 1000em;
-  width: 48%;
-  margin: 3rem 1%;
-  float: left;
+
 }
 
 .card-container-3 {
@@ -476,6 +578,7 @@ video {
   float: left;
 }
 
+/* Card Flip Styling */
 .card-flip {
   position: relative;
   width: 100%;
@@ -486,6 +589,7 @@ video {
   cursor: pointer;
 }
 
+/* Front and Back Card Content */
 .card-front,
 .card-back {
   position: absolute;
@@ -499,6 +603,7 @@ video {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
+/* Front and Back Styles */
 .card-front {
   background: var(--vt-white);
 }
@@ -509,6 +614,7 @@ video {
   transform: rotateY(180deg);
 }
 
+/* Flip Animation */
 .card-flip.flipped {
   transform: rotateY(180deg);
 }
