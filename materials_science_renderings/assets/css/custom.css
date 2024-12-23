@@ -231,6 +231,11 @@ figure {
   transform: scale(1.7);
 }
 
+.no-hover:hover {
+  transition:none !important;
+  transform: none !important;
+}
+
 @media (max-width: 600px) {
   .courseware-layouts-content-wrapper img {
     height: auto;
@@ -242,9 +247,7 @@ figure {
   }
 }
 
-.no-hover:hover {
-  transform: none !important;
-}
+
 
 
 figcaption {
@@ -617,4 +620,21 @@ video {
 /* Flip Animation */
 .card-flip.flipped {
   transform: rotateY(180deg);
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Aspect ratio (16:9) */
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
