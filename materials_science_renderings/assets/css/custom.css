@@ -19,6 +19,16 @@ body header.custom-header h1 {
   /* Text color */
 }
 
+a{text-decoration:none; color:#4007A2;}
+
+a:hover,
+a:active,
+a:focus {
+  color:  #4007A2;
+  text-decoration:underline;
+}
+
+
 /* Style the figure container */
 .custom-header-image {
   text-align: center;
@@ -185,6 +195,8 @@ mjx-math {
   text-align: left;
   padding-left: 5%;
 }
+
+
 
 .courseware-helper-text-center {
   text-align: center;
@@ -637,4 +649,134 @@ video {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* Timeline Styles */
+.timeline-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.timeline-item {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 250px;
+  text-align: center;
+  white-space: normal;
+}
+
+.timeline-item h4 {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+      width: 200px;
+      font-size: 0.9em;
+  }
+}
+
+h5 {
+  color: var(--d2l-cplus-color-black, #000000);
+  font-weight: bold;
+  padding: 0;
+}
+h5 {
+  font-size: 0.9rem;
+  line-height: 1rem;
+  margin-bottom: 0.221rem;
+  margin-top: 0.421rem;
+}
+@media screen and (min-width: 768px) {
+  h5 {
+    font-size: 1.163rem;
+    line-height: 1.54rem;
+  }
+}
+
+.material-explorer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Initial gap between buttons */
+  justify-content: center;
+  padding: 10px;
+}
+
+.material-btn {
+  flex: 1 1 150px; /* Responsive size: grow, shrink, and have a minimum width */
+  max-width: 150px;
+  background: linear-gradient(to bottom, #4e9ef5, #1a75d1); /* Gradient for 3D effect */
+    color: white; /* Contrast text color */
+    border: 1px solid #1a75d1; /* Border matches the darker part of the gradient */
+    border-radius: 5px; /* Smooth corners */
+
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+
+  padding: 10px 15px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.material-btn:hover {
+  background: linear-gradient(to bottom, #1a75d1, #1455a5); /* Darker gradient on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.material-btn:active {
+  background: linear-gradient(to bottom, #1455a5, #1a75d1); /* Reverse gradient for pressed effect */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Smaller shadow for pressed state */
+  transform: translateY(2px); /* Simulate button press */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .material-explorer {
+      gap: 15px; /* Reduce the gap on smaller screens */
+  }
+
+  .material-btn {
+      font-size: 14px; /* Shrink text size */
+      flex: 1 1 120px; /* Reduce minimum width */
+      max-width: 150px;
+      padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .material-explorer {
+      gap: 10px; /* Further reduce the gap */
+  }
+
+  .material-btn {
+      font-size: 12px; /* Further shrink text size */
+      flex: 1 1 120px; /* Smaller buttons for very small screens */
+      max-width: 150px;
+      padding: 6px 10px;
+  }
+}
+
+#material-details {
+  margin-top: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-bottom: 40px;
+}
+
+.hidden {
+  display: none;
 }
