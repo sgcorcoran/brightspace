@@ -7,13 +7,22 @@ import { fileURLToPath } from "url";
 const app = express();
 /* in Brightspace the following url will need to be something like virginiatech.brightspace.com */
 const allowedOrigins = [
-    "http://127.0.0.1:5500", //local development
-    "http://virginiatech.brightspace.com" //brightspace deployment
+    "http://127.0.0.1:5500",  // Local testing
+    "https://virginiatech.brightspace.com"  // Brightspace domain
 ];
 
+// Enable CORS for all routes
 app.use(cors({
     origin: allowedOrigins,
-    methods:"GET, POST",
+    methods: ["GET", "POST"],  // Allowed HTTP methods
+    credentials: true,         // Allow credentials if needed
+}));
+
+// Handle preflight requests
+app.options("*", cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
+    credentials: true,
 }));
 
 // __dirname replacement for ESM
