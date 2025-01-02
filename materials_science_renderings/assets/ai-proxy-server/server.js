@@ -2,13 +2,13 @@ import express from "express";
 import fetch from "node-fetch";
 import path from "path";
 import cors from "cors";
-app.use(cors({
-    origin: "http://127.0.0.1:5500"
-}));
-
 import { fileURLToPath } from "url";
 
 const app = express();
+
+app.use(cors({
+    origin: "http://127.0.0.1:5500"
+}));
 
 // __dirname replacement for ESM
 const __filename = fileURLToPath(import.meta.url);
