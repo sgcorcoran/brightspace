@@ -1,10 +1,17 @@
-const express = require("express");
-const fetch = require("node-fetch");
+import express from "express";
+import fetch from "node-fetch";
+import path from "path";
+import { fileURLToPath } from "url";
+
 const app = express();
+
+// __dirname replacement for ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(express.json());
 
-const OPENAI_API_KEY = "OPENAI_API_KEY"; // Replace with your API key
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY; // Use environment variables for security
 
 app.post("/api/chat", async (req, res) => {
     const { essay } = req.body;
