@@ -583,7 +583,10 @@ video {
 }
 
 .card-container {
-
+  perspective: 1000em;
+  width: 31%;
+  margin: 3rem 1%;
+  float: left;
 }
 
 .card-container-3 {
