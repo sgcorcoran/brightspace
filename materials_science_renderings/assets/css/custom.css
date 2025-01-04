@@ -62,6 +62,8 @@ section {
   box-sizing: border-box;
 }
 
+
+
 mjx-container[jax='CHTML'] {
   line-height: 0;
   font-size: 1.1em !important;
@@ -116,6 +118,24 @@ mjx-math {
     /* Optional: remove margin for a seamless full-width look */
   }
 }
+
+/* Ensure the card moves to the bottom on small screens */
+
+
+
+@media (max-width: 600px) {
+  .responsive-section {
+    display:flex;
+    flex-direction:column;
+  }
+  .responsive-section .aside-card {
+    order: 2; /* Forces the aside-card to the bottom */
+    margin-top: 1rem; /* Adds spacing from the above content */
+    width:100%;
+  }
+}
+
+
 
 .courseware-card.aside-card::before,
 .courseware-card.aside-card::after {
