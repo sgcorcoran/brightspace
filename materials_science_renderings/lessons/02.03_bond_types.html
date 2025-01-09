@@ -151,7 +151,7 @@
 
 
                 <!-- Comparing Bond Energies -->
-                <h2>Comparing Bond Energies</h2>
+                <h2>Comparing Cohesive Energies</h2>
                 <table>
                     <thead>
                         <tr>
@@ -222,42 +222,107 @@
 
 
                 <p>
-                    Quantitatively, primary bonds (100-3800 kJ/mol) are much stronger than secondary bonds (0.1 - 40 kJ/mol) as shown in the table above.  
+                    Quantitatively, primary bonds (100-3800 kJ/mol) are much stronger than secondary bonds (0.1 - 40
+                    kJ/mol) as shown in the table above.
 
-                <!-- Electron Configuration and Bonding -->
+                    <h2>Bond Energy between Two Atoms</h2>
+                    <p>Bond energy, \(E_0\), and cohesive energy, \(E_{coh}\), are closely related properties. By definition, the cohesive energy is the energy it 
+                        takes to separate one mole of atoms of a solid into individual, non-interacting elements (kJ/mol). The bond energy is the energy 
+                        it takes to break a bond between a pair of atoms. Typical units are kJ/mol or eV/bond.  Note here that the kJ / mol unit refers to a 
+                        mole of bonds whereas in the cohesive energy the mole refers to a mole of atoms.  The difference is that the cohesive energy takes into 
+                        account the number of bonds (neighbors, n) each atom has.  To relate the two, we have: \[E_0 = \frac{E_{coh}}{n\ N_A}\] where n is the number of 
+                        bonds per atom and \(N_A\) is Avogadro's numer. If we consider aluminum with a cohesive energy of 330 kJ / mol and 12 near neighbors, we get a bond energy of: 
+                        \[E_0=\frac{330 \text{ kJ/mol}}{6.022 \times 10^{23} \text{ atom/mol}\ 12 \text{ bond/atom}}= 4.6\times 10^{-23} \text{ kJ/bond} \text{ (or 0.3 eV/bond)}\] where \(1\text{ kJ} = 6.24\times 10^{21} \text{ eV}\).
+                        The electron volt, eV, being a convenient unit for individual bond energies.  </p>
+                        <br>
+                        <div class="courseware-layouts-content-wrapper">
+                            <div class="courseware-video-wrapper" id="video1">
+                                <div class="courseware-video-text">
+                                    <p>Mini-lesson: Energy-Separation Plots</p>
+                                </div>
+                                <div class="courseware-video-embed-responsive"><video title="Video Lesson"
+                                        onclick="expandVideo('video1')">
+                                        <source src="../assets/media/02.01_bonding_part_a.mp4" type="video/mp4">
+                                        <track src="../assets/media/02.01_bonding.vtt" kind="subtitles" srclang="en" label="English"
+                                            type="text/vtt">
+                                    </video></div>
+                            </div>
+                            <div class="courseware-video-wrapper" id="video2">
+                                <div class="courseware-video-text">
+                                    <p>Using Excel to Plot</p>
+                                </div>
+                                <div class="courseware-video-embed-responsive"><video title="Video Lesson"
+                                        onclick="expandVideo('video2')">
+                                        <source src="../assets/media/02.01_bonding_part_b.mp4" type="video/mp4">
+                                        <track src="../assets/media/02.01_Video Project 2.vtt" kind="subtitles" srclang="en"
+                                            label="English" type="text/vtt">
+                                    </video></div>
+                            </div>
+
+                            
+                            
+                            </div>
+                        <div
+            style="position: relative; width: 100%; max-width:800px; aspect-ratio:1.5; overflow: hidden; margin:0 auto; margin-top:25px;">
+            <iframe src="../assets/demos/bond_energy_plot_v1.0.html" title="interactive periodic table"
+                style="width: 100%; height: 100%; border: 0;" scrolling="no" frameborder="0"
+                allowfullscreen="allowfullscreen">
+            </iframe>
+        </div>
+
+        <div style="text-align: center; padding: 5px;">
+            <p>Use the slider on the demo above to see how the energy changes as you bring the two atoms together.
+            </p>
+        </div>
+
+                    <!-- Electron Configuration and Bonding -->
                 <h2>Electron Configuration and Bonding</h2>
                 <p>
-                    Electron configuration plays an important role in determining bond types by simply considering the outer electrons (valence electrons). 
-                    Atoms will tend to gain, lose, or share electrons to achieve 8 valence electrons resembling that of the nearest noble gas (column 18 on periodic table). 
-                    Let's take a look at some examples. 
-                    </p><p>The electron configuration notation, such as 1s² 2s² 2p⁶, represents the distribution of electrons in an atom's orbitals, organized by increasing energy levels. 
-                    The notation breaks down into three parts: the principal quantum number (e.g., 1, 2, 3), which indicates the electron shell or energy level; the subshell type (e.g., s, p, d, f), 
-                    which specifies the shape of the orbital; and the superscript, which denotes the number of electrons in that subshell. 
+                    Electron configuration plays an important role in determining bond types by simply considering the
+                    outer electrons (valence electrons).
+                    Atoms will tend to gain, lose, or share electrons to achieve 8 valence electrons resembling that of
+                    the nearest noble gas (column 18 on periodic table).
+                    Let's take a look at some examples.
+                </p>
+                <p>The electron configuration notation, such as 1s² 2s² 2p⁶, represents the distribution of electrons in
+                    an atom's orbitals, organized by increasing energy levels.
+                    The notation breaks down into three parts: the principal quantum number (e.g., 1, 2, 3), which
+                    indicates the electron shell or energy level; the subshell type (e.g., s, p, d, f),
+                    which specifies the shape of the orbital; and the superscript, which denotes the number of electrons
+                    in that subshell.
                 </p>
                 <ul>
-                <li><strong>Ionic Bond</strong>Consider the case of an ionic bond formed when atoms transfer electrons. For example, sodium (Na)
-                    with one valence electron easily loses it to chlorine (Cl), which needs one electron to complete its
-                    outer shell. This transfer gives both atoms a noble gas configuration.
-                
-                    <ul><strong>NaCl:</strong>
-                        <br>Na has \([Ne] 3s^1\) which is one electron from Ne = \(1s^2\ 2s^2\ 2p^6\)
-                        <br>Cl has \([Ne] 3s^2\ 3p^5\) which is one electron from Ar = \(1s^2\ 2s^2\ 2p^6\ 3s^2\ 3p^6\)
-                        <br>so let's move the one electron from Na to the Cl: 
-                        <br>Na<sup>+1</sup> ion = \(1s^2\ 2s^2\ 2p^6\)
-                        <br>Cl<sup>-1</sup> ion = \(1s^2\ 2s^2\ 2p^6\ 3s^2\ 3p^6\)
-                    </ul>
+                    <li><strong>Ionic Bond</strong>Consider the case of an ionic bond formed when atoms transfer
+                        electrons. For example, sodium (Na)
+                        with one valence electron easily loses it to chlorine (Cl), which needs one electron to complete
+                        its
+                        outer shell. This transfer gives both atoms a noble gas configuration.
+
+                        <ul><strong>NaCl:</strong>
+                            <br>Na has \([Ne] 3s^1\) which is one electron from Ne = \(1s^2\ 2s^2\ 2p^6\)
+                            <br>Cl has \([Ne] 3s^2\ 3p^5\) which is one electron from Ar = \(1s^2\ 2s^2\ 2p^6\ 3s^2\
+                            3p^6\)
+                            <br>so let's move the one electron from Na to the Cl:
+                            <br>Na<sup>+1</sup> ion = \(1s^2\ 2s^2\ 2p^6\)
+                            <br>Cl<sup>-1</sup> ion = \(1s^2\ 2s^2\ 2p^6\ 3s^2\ 3p^6\)
+                        </ul>
                     </li>
                 </ul>
 
                 <ul>
 
                     <li><strong>Covalent Bonds:</strong> Formed when atoms share electrons. For example, in water
-                        (H<sub>2</sub>O), oxygen \([He] 2s^2 2p^4\) shares electrons with two hydrogen atoms \(1s^1\), allowing all three atoms to
+                        (H<sub>2</sub>O), oxygen \([He] 2s^2 2p^4\) shares electrons with two hydrogen atoms \(1s^1\),
+                        allowing all three atoms to
                         mimic noble gas configurations, Ne and He respectively.</li>
-                    <li><strong>Metallic Bonds:</strong> In metals, atoms form a "sea of electrons" due to the delocalization of their valence electrons. Unlike in covalent or ionic bonding, metal atoms 
-                        do not completely give up or share electrons to achieve an "octet." Instead, their outermost s and, in many cases, d orbitals contribute to a "sea" of free-moving electrons. 
-                        These delocalized electrons are not bound to any specific atom and are free to move throughout the lattice. This mobility of electrons gives metals their high 
-                        electrical and thermal conductivity, as well as their malleability and ductility. The positively charged atomic nuclei remain fixed in the lattice, held together by the electrostatic 
+                    <li><strong>Metallic Bonds:</strong> In metals, atoms form a "sea of electrons" due to the
+                        delocalization of their valence electrons. Unlike in covalent or ionic bonding, metal atoms
+                        do not completely give up or share electrons to achieve an "octet." Instead, their outermost s
+                        and, in many cases, d orbitals contribute to a "sea" of free-moving electrons.
+                        These delocalized electrons are not bound to any specific atom and are free to move throughout
+                        the lattice. This mobility of electrons gives metals their high
+                        electrical and thermal conductivity, as well as their malleability and ductility. The positively
+                        charged atomic nuclei remain fixed in the lattice, held together by the electrostatic
                         attraction to the shared "electron sea." </li>
                 </ul>
 
@@ -275,23 +340,29 @@
                     <em>d</em>-orbitals, resulting in higher cohesive energies (e.g., 400 - 860 kJ/mol for W).
                 </p>
                 <p>
-                    The higher cohesive energies in BCC metals explains their generally higher melting points compared to
+                    The higher cohesive energies in BCC metals explains their generally higher melting points compared
+                    to
                     FCC
                     metals, despite lower packing efficiency.
                 </p>
                 <!-- Discussion of Tin Allotropes -->
                 <h3>White Tin vs. Gray Tin</h3>
                 <p>
-                    Tin exists in two allotropes (different structural forms), each with distinct bonding and properties:
+                    Tin exists in two allotropes (different structural forms), each with distinct bonding and
+                    properties:
                 </p>
                 <ul>
-                    <li><strong>White Tin (\(\beta\)-Tin):</strong> Is the metallic structure stable at room temperature. Exhibits
-                        metallic bonding with delocalized electrons, leading to a ductile, conductive metal with a cohesive energy 
+                    <li><strong>White Tin (\(\beta\)-Tin):</strong> Is the metallic structure stable at room
+                        temperature. Exhibits
+                        metallic bonding with delocalized electrons, leading to a ductile, conductive metal with a
+                        cohesive energy
                         of approximately 300 kJ/mol.</li>
-                    <li><strong>Gray Tin (\(\alpha\) - Tin):</strong> Is the covalent structure stable below 13.2&deg;C. Forms a
+                    <li><strong>Gray Tin (\(\alpha\) - Tin):</strong> Is the covalent structure stable below 13.2&deg;C.
+                        Forms a
                         diamond
-                        cubic structure with directional covalent bonds, leading to brittle non conductive solid with but with the same
-                         cohesive energy of approximately 300 kJ/mol.
+                        cubic structure with directional covalent bonds, leading to brittle non conductive solid with
+                        but with the same
+                        cohesive energy of approximately 300 kJ/mol.
                     </li>
                 </ul>
                 <p>
@@ -336,11 +407,52 @@
                         </p>
                     </div>
                 </div>
-                <h2>What is Electronegativity?</h2>
+                <h2>Covalent / Ionic or Mixed?</h2>
+                <p>
+                    Most chemical bonds are not purely ionic or covalent; they are a combination of the two. This
+                    mixture is quantified using the
+                    <strong>percent ionic character</strong>, which indicates the degree to which a bond exhibits ionic
+                    versus covalent properties. For example:
+                </p>
+                <ul>
+                    <li>A bond with <strong>40% ionic character</strong> means the bond is <strong>40% ionic</strong>
+                        and <strong>60% covalent</strong>.</li>
+                    <li>A <strong>100% covalent bond</strong> represents perfect sharing of electrons between the atoms,
+                        with no charge separation.
+                        This occurs in <strong>non-polar covalent bonds</strong>, where the atoms involved have
+                        identical or very similar electronegativities.</li>
+                </ul>
+                <h3>Transition to Polar Covalent Bonds</h3>
+                <div class="courseware-layouts-content-wrapper">
+                    <figure style="max-width:250px;">
+                        <img src="../assets/img/water-and-methane-space-filling.jpg">
+                    </figure>
+                </div>
+                <figcaption>Polar (water) and Non-Polar (methane) Covalent Bonding</figcaption>
+                <p>
+                    As ionic character increases, the bond becomes <strong>polar covalent</strong>:
+                </p>
+                <ul>
+                    <li>A <strong>polar covalent bond</strong>arises when electrons are unequally shared due to a
+                        difference in electronegativity
+                        between the two bonded atoms.</li>
+                    <li>This results in a <strong>charge separation</strong> where one atom acquires a slight negative
+                        charge (δ⁻) because it attracts
+                        electrons more strongly, while the other atom becomes slightly positive (δ⁺). A good example of
+                        this is the water molecule discussed in the previous aside.</li>
+                </ul>
+                <h3>Quantifying Percent Ionic Character</h3>
+                <p>
+                    To estimate the <strong>percent ionic character</strong>, we use the <strong>difference in
+                        electronegativity</strong> (Δχ) between the two atoms.
+                    The greater the Δχ, the more ionic the bond character becomes. The Δχ provides a strong basis for
+                    determining bond polarity and ionic character.
+                </p>
+                <h3>What is Electronegativity ( χ )?</h3>
                 <p>
                     Electronegativity is a measure of an atom's ability to attract and hold onto electrons within a
                     chemical
-                    bond. It is a fundamental concept that helps explain the nature of chemical bonding and the behavior
+                    bond and is given in the periodic table in the previous lesson. It is a fundamental concept that helps explain the nature of chemical bonding and the behavior
                     of
                     molecules.
                 </p>
@@ -374,65 +486,36 @@
                     element
                     with a value of 3.98, and cesium is one of the least electronegative with a value of 0.79.
                 </p>
-                <h2>Electronegativity Differences and Bond Types</h2>
+                
 
-                <div class="courseware-layouts-content-wrapper">
-                    <figure style="max-width:250px;">
-                        <img src="../assets/img/water-and-methane-space-filling.jpg">
-                    </figure>
-                </div>
-                <figcaption>Polar and Non-Polar Covalent Bonding</figcaption>
-                <p>
-                    In general, electronegativity differences can be categorized as follows:
-                </p>
-                <ul>
-                    <li><strong>Low Electronegativity Difference (< 0.5):</strong> Indicates <strong>nonpolar covalent
-                                    bonds</strong>, where electrons are shared nearly equally between the atoms.
-                                <br><strong>Example:</strong> CH<sub>4</sub> (methane), with a difference of |2.55 -
-                                2.20| =
-                                0.35.
-                    </li>
-                    <li><strong>Moderate Electronegativity Difference (0.5–1.7):</strong> Indicates <strong>polar
-                            covalent
-                            bonds</strong>, where electrons are shared unequally, resulting in partial charges.
-                        <br><strong>Example:</strong> H<sub>2</sub>O (water), with a difference of |3.44 - 2.20| = 1.24.
-                    </li>
-                    <li><strong>High Electronegativity Difference (> 1.7):</strong> Indicates <strong>ionic
-                            bonds</strong>,
-                        where electrons are transferred from one atom to another, forming ions.
-                        <br><strong>Example:</strong> NaCl, with a difference of |3.16 - 0.93| = 2.23.
-                    </li>
-                </ul>
-                <p>
-                    These cutoff values are provided only as a general rule of thumb.
-                </p>
-                <h2>Percent Ionic Character Example</h2>
+                <h2>Calculation: Percent Ionic Character (%IC)</h2>
                 <p>
                     The percent ionic character of a bond (the remainder being covalent) can be estimated using the
-                    electronegativity difference (ΔEN) and
+                    electronegativity difference (Δχ) and
                     the following formula:
                 </p>
                 <p style="text-indent: 2em;">
-                    <strong>Percent Ionic Character</strong> =
-                    <strong>[1 - exp(-0.25 (ΔEN)<sup>2</sup>)] × 100</strong>
+                    <strong>%IC</strong> =
+                    <strong>[1 - exp(-0.25 (Δχ)<sup>2</sup>)] × 100</strong>
                 </p>
+                <p>The electronegativity values are from the periodic table in the previous lesson.</p>
                 <ul>
                     <li><strong>NaCl:</strong>
-                        <br>ΔEN = |3.16 - 0.93| = 2.23
+                        <br>Δχ = |3.16 - 0.93| = 2.23
                         <br>Percent Ionic Character = [1 - exp(-0.25 (2.23)<sup>2</sup>)] × 100
                         <br>= [1 - exp(-1.243)] × 100
                         <br>= [1 - 0.288] × 100
                         <br>= 71.2%
                     </li>
                     <li><strong>H-O Bond (Water):</strong>
-                        <br>ΔEN = |3.44 - 2.20| = 1.24
+                        <br>Δχ = |3.44 - 2.20| = 1.24
                         <br>Percent Ionic Character = [1 - exp(-0.25 (1.24)<sup>2</sup>)] × 100
                         <br>= [1 - exp(-0.3841)] × 100
                         <br>= [1 - 0.681] × 100
                         <br>= 31.9%
                     </li>
                     <li><strong>C-H Bond (Methane):</strong>
-                        <br>ΔEN = |2.55 - 2.20| = 0.35
+                        <br>Δχ = |2.55 - 2.20| = 0.35
                         <br>Percent Ionic Character = [1 - exp(-0.25 (0.35)<sup>2</sup>)] × 100
                         <br>= [1 - exp(-0.030625)] × 100
                         <br>= [1 - 0.9698] × 100
@@ -478,7 +561,7 @@
                 <div class="card-container-3">
                     <div class="card-flip" style="height:300px;" onclick="this.classList.toggle('flipped')">
                         <div class="card-front">Give an example of a primary bond and a secondary bond.</div>
-                        <div class="card-back">Primary: Ionic bond in NaCl. Secondary: Hydrogen bond in water.</div>
+                        <div class="card-back">Primary: Ionic bond in NaCl. Secondary: Hydrogen bond between water molecules.</div>
                     </div>
                 </div>
             </div>
@@ -487,19 +570,9 @@
 
 
         <section>
-            <h2>Energy versus Atom Separation</h2>
+            <h2>Plotting with Excel - Basic Walkthrough</h2>
             <div class="courseware-layouts-content-wrapper">
-                <div class="courseware-video-wrapper" id="video1">
-                    <div class="courseware-video-text">
-                        <p>Energy-Separation Plots</p>
-                    </div>
-                    <div class="courseware-video-embed-responsive"><video title="Video Lesson"
-                            onclick="expandVideo('video1')">
-                            <source src="../assets/media/02.01_bonding_part_a.mp4" type="video/mp4">
-                            <track src="../assets/media/02.01_bonding.vtt" kind="subtitles" srclang="en" label="English"
-                                type="text/vtt">
-                        </video></div>
-                </div>
+               
                 <div class="courseware-video-wrapper" id="video3">
                     <div class="courseware-video-text">
                         <p>Walk through: Plotting in Excel</p>
@@ -511,33 +584,12 @@
                                 type="text/vtt">
                         </video></div>
                 </div>
-                <div class="courseware-video-wrapper" id="video2">
-                    <div class="courseware-video-text">
-                        <p>Plotting Energy Curve in Excel</p>
-                    </div>
-                    <div class="courseware-video-embed-responsive"><video title="Video Lesson"
-                            onclick="expandVideo('video2')">
-                            <source src="../assets/media/02.01_bonding_part_b.mp4" type="video/mp4">
-                            <track src="../assets/media/02.01_Video Project 2.vtt" kind="subtitles" srclang="en"
-                                label="English" type="text/vtt">
-                        </video></div>
-                </div>
+                
 
             </div>
         </section>
 
-        <div
-            style="position: relative; width: 100%; max-width:800px; aspect-ratio:1.5; overflow: hidden; margin:0 auto; margin-top:25px;">
-            <iframe src="../assets/demos/bond_energy_plot_v1.0.html" title="interactive periodic table"
-                style="width: 100%; height: 100%; border: 0;" scrolling="no" frameborder="0"
-                allowfullscreen="allowfullscreen">
-            </iframe>
-        </div>
-
-        <div style="text-align: center; padding: 5px;">
-            <p>Use the slider on the demo above to see how the energy changes as you bring the two atoms together.
-            </p>
-        </div>
+        
 
     </main>
 
