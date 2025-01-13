@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+  <title>Structures of Materials</title>
+
+  <script type="module" src="../assets/js/global.min.js"></script>
+  <script defer="" src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+  <script src="../assets/js/videoExpand.js"></script>
+  <script src="../assets/js/load-mathjax.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css?v=1.3" />
+  <link rel="stylesheet" href="../assets/css/customv5.css" />
+</head>
+
+<body class="courseware-themes">
+  <header class="custom-header">
+    <h1>Cubic Crystal System</h1>
+  </header>
+  <main class="courseware-layouts-content-wrapper">
+
+    <p>&nbsp;</p>
+
+    <section>
+      <figure style="border-width:1px; border-color:black; border-style:solid; padding:5px;">
+        <figcaption>
+          <p>Cut-sphere models of the simple cubic, body-centered cubic, and face-centered cubic unit
+            cells.
+            The atom radii are the same in each model so you can see the relative size difference between these
+            three Bravais lattices.</p>
+        </figcaption>
+        <img src="../assets/img/cubic_space_fill_lattices.png" class="no-hover">
+
+      </figure>
+<p></p>
+      <div style="clear: both;"></div>
+      <div class="notice" style="padding:5px;">
+        <h4>Terminology: Unit Cell</h4>
+        <p>The unit cell is the smallest unit that when repeated side-by-side in 3 dimensions forms the overall
+          crystalline structure. The most basic unit cell is composed of a Bravais lattice with one atom located at each
+          lattice point. The cut-sphere model is the best representation of a unit cell although the space filling model
+          is more commonly used.</p>
+      </div>
+
+      <p>Notice that the cubic system has 3 Bravais lattices.&nbsp;By associating 1 atom (hard sphere) with each lattice
+        point, we can generate 3 distinct cubic structures as shown.&nbsp;Notice the directions in which the atoms touch
+        in each lattice (along edges, body diagonal, or faces).&nbsp;The total volume of atoms in each unit cell
+        increases
+        as we move from the simple cubic (1 atom), to the body-centered (2 atoms) and finally to the face-centered cell
+        (4
+        atoms).&nbsp;The size of the unit cells also increase as might be expected but not as much as we might
+        expect.&nbsp; The SC cell contains 1 atom while the FCC contains 4 atoms but the cell volume increases by less
+        than 4x.&nbsp; This implies that the packing efficiency must be greater for the FCC lattice compared to the SC
+        lattice.&nbsp; We can quantify this by calculating the volume of each unit cell taken up by atoms.&nbsp; The
+        atoms
+        in the simple cubic lattice take up only 50% of the volume, while the BCC lattice 68% atom and the FCC is 74%
+        atom
+        (this is the best we can do packing hard spheres). This is usually expressed in fractional form as the atomic
+        packing factor or APF. As an example, we would say that the face-centered cubic structure has an APF of
+        0.74.&nbsp;</p>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Simple cubic</th>
+            <th>Body-centered cubic</th>
+            <th>Face-centered cubic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>APF</td>
+            <td>0.5</td>
+            <td>0.68</td>
+            <td>0.74</td>
+          </tr>
+          <tr>
+            <td>atoms per cell</td>
+            <td>1</td>
+            <td>2</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>edge length, \(a\)</td>
+            <td>\( 2\ R \)</td>
+            <td>\( \frac{4\ R}{\sqrt{3}} \)</td>
+            <td>\( \frac{4\ R}{\sqrt{2}} \)</td>
+          </tr>
+          <tr>
+            <td>atoms touch along</td>
+            <td>edges</td>
+            <td>body diagonals</td>
+            <td>face diagonals</td>
+          </tr>
+          <tr>
+            <td>cell volume</td>
+            <td>\( (2\ R)^{\ 3} \)</td>
+            <td>\(\left(\frac{4\ R}{\sqrt{3}}\right)^{\ 3}\)</td>
+            <td>\((\frac{4\ R}{\sqrt{2}})^{\ 3}\)</td>
+          </tr>
+          <tr>
+            <td>\( \frac{\text{cell volume}} {\text{atoms per cell}} \)</td>
+            <td>\( 8\ R^{\ 3} \)</td>
+            <td>\(6.16\ R^{\ 3} \)</td>
+            <td>\( 5.66\ R^{\ 3} \)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Concept check: We have 3 samples labeled A, B, and C.&nbsp;All contain the same 1 million atoms but sample A
+        has
+        the simple cubic crystal structure; sample B is body-centered cubic; and sample C is face-centered
+        cubic.&nbsp;If
+        all three samples had the same shape, which sample would be the largest?&nbsp;Smallest? Which sample would weigh
+        the most?&nbsp;</p>
+      <div style="clear: both;"></div>
+      <div class="card-container-3">
+        <div class="card-flip" onclick="this.classList.toggle('flipped')">
+          <div class="card-front">Which sample A, B, or C would be the largest?</div>
+          <div class="card-back">Sample A: Simple Cubic</div>
+        </div>
+      </div>
+      <div class="card-container-3">
+        <div class="card-flip" onclick="this.classList.toggle('flipped')">
+          <div class="card-front">Which sample A, B, or C would be the smallest?</div>
+          <div class="card-back">Sample C: FCC</div>
+        </div>
+      </div>
+      <div class="card-container-3">
+        <div class="card-flip" onclick="this.classList.toggle('flipped')">
+          <div class="card-front">Which sample would weigh the most?</div>
+          <div class="card-back">They all weigh the same.</div>
+        </div>
+      </div>
+      
+      <h3>The face-centered cubic (FCC) structure.</h3>
+      <figure><img src="../assets/img/fcc_3_views.png" style="max-width: 90%;">
+        <figcaption>&nbsp;The face-centered cubic (FCC) lattice represented by the (a) <strong>space-filled
+            model</strong>
+          , (b) <strong>cut-sphere model</strong> , and (c) <strong>exploded-view model</strong> .&nbsp;The coloring is
+          used to make it easier to distinguish the face positions (red) from the cell corners (yellow).&nbsp;
+        </figcaption>
+      </figure>
+      <figure>
+        <div
+          style="position: relative; background-color: rgb(255, 255, 255); width: 100%; padding-bottom: 56.25%; overflow: hidden;">
+          <iframe src="../assets/demos/fcc_unit_cell_v2.0.html" title="fcc_unit_cell demonstration"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" scrolling="no"
+            frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+        </div>
+        <figcaption style="text-align: center; color: var(--vt-hokiestone); padding-top: 0.5 rem;">Live Demo: Face
+          centered cubic lattice showing one atom at each lattice site. Click and hold to rotate the image. Use the
+          slider
+          to change the size of the atoms.</figcaption>
+      </figure>
+      <p>The face centered cubic structure is shown in the live demo above. Try clicking and holding on the structure to
+        rotate image. Use the slider, to change the radius of the atoms.&nbsp; At maximum radius size, we have what is
+        called the "space-filled model" i.e., how the atoms pack in the real material.&nbsp; At smaller atom sizes, we
+        have the "exploded-view model" which is used to more easily see the geometry and location of the atoms. <b>Use
+          the
+          slider to determine the directions in which the atoms touch.</b></p>
+      <h5>Click on the image below that best represents the <span style="text-decoration: underline;">unit cell</span>
+        of
+        the face-centered cubic (FCC) structure?</h5>
+      <div class="card-container">
+        <div class="card-flip" onclick="this.classList.toggle('flipped')">
+          <div class="card-front">
+            <figure><img src="../assets/img/fcc_atoms.png" style="max-height: 175px; width: auto;">
+              <figcaption>Space-filling model</figcaption>
+            </figure>
+          </div>
+          <div class="card-back">This is most often used to represent the unit cell but it is important to remember that
+            the unit cell corners are located at the centers of each corner atom. A better representation is shown in
+            the
+            cut-sphere model.</div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="card-flip" onclick="this.classList.toggle('flipped')">
+          <div class="card-front">
+            <figure><img src="../assets/img/fcc_unit_cell.png" style="max-height: 175px; width: auto;">
+              <figcaption>Cut-sphere model</figcaption>
+            </figure>
+          </div>
+          <div class="card-back">Yes! Correct. The unit cell (or repeat unit) is from the center of each atom. This is
+            the
+            best representation of the unit cell for the FCC structure.</div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3>Body-centered cubic (BCC) structure&nbsp;&nbsp;</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/bcc_3_views.png"
+                style="max-width: 90%;">
+              <figcaption class="figure-caption">&nbsp;The body-centered cubic (BCC) lattice represented by the (a)
+                <strong>space-filled model</strong> , (b) <strong>cut-sphere model</strong> , and (c)
+                <strong>exploded-view model</strong> .&nbsp;In which directions do the atoms in this structure
+                touch?&nbsp; Compare this to the FCC structure.&nbsp;&nbsp;
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <figure>
+          <div
+            style="position: relative; background-color: rgb(255, 255, 255); width: 100%; padding-bottom: 56.25%; overflow: hidden;">
+            <iframe src="../assets/demos/cut_spheres_bcc.html" title="bcc builder demonstration"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" scrolling="no"
+              frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+          </div>
+          <figcaption>Body-centered cubic (BCC) unit cell using the cut-sphere model.&nbsp; Click on the check boxes to
+            add additional unit cells and the slider to bring the unit cells together.&nbsp; Notice how it would take 8
+            unit cells to form a complete atom i.e., the corners contain only 1/8 of an atom.</figcaption>
+        </figure>
+        <div class="notice" style="text-align: center;">
+          <h4>Concluding Comment Here</h4>
+          <cite>(Secondary text here...)</cite>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+  </footer>
+</body>
+
+</html>

@@ -289,7 +289,7 @@ figcaption {
   color: var(--vt-hokieStone);
 }
 
-.courseware-layouts-content-wrapper:has(figure.left) {
+.courseware-layouts-content-wrapper:has(>figure.left) {
   justify-content: flex-start;
   float: left;
   width: 40%;
@@ -307,7 +307,7 @@ figcaption {
   text-align: left;
 }
 
-.courseware-layouts-content-wrapper:has(figure.right) {
+.courseware-layouts-content-wrapper:has(>figure.right) {
   justify-content: flex-end;
   width: 40%;
   float: right;
@@ -327,8 +327,8 @@ figcaption {
 
 @media only screen and (max-width:600px) {
 
-  .courseware-layouts-content-wrapper:has(figure.left),
-  .courseware-layouts-content-wrapper:has(figure.right) {
+  .courseware-layouts-content-wrapper:has(>figure.left),
+  .courseware-layouts-content-wrapper:has(>figure.right) {
     float: inherit;
     width: inherit;
     border: none;
