@@ -2,6 +2,7 @@ body>header {
   color: var(--vt-white);
 }
 
+
 /* Custom header styling */
 body header.custom-header {
   background-color: var(--vt-maroon);
@@ -604,7 +605,7 @@ video {
 
 .card-container {
   perspective: 1000em;
-  width: 31%;
+  width: 100%;
   margin: 3rem 1%;
   float: left;
 }
