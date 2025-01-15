@@ -610,6 +610,13 @@ video {
   float: left;
 }
 
+.card-container-2 {
+  perspective: 1000em;
+  width: 48%;
+  margin: 3rem 1%;
+  float: left;
+}
+
 .card-container-3 {
   perspective: 1000em;
   width: 31%;
