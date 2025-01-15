@@ -29,6 +29,40 @@ a:focus {
   text-decoration:underline;
 }
 
+/* style the container to hold the iframe element */
+.demo-container {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  width: 90%;
+  max-width: 800px; /* Limits the width for better responsiveness */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding-bottom: 56.25%; /* Maintains a 16:9 aspect ratio */
+  overflow: hidden;
+}
+/* iframe style */
+.demo-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Fills the container width */
+  height: 100%; /* Fills the container height */
+  border: 0; /* Removes the border */
+}
+
+/* Template for including interactive demos in html lessons */
+/*
+<figure>
+        <div class="demo-container">
+          <iframe src="../assets/demos/cut_spheres_bcc.html" title="bcc builder demonstration"
+            class="demo-iframe" scrolling="no"
+            frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+        </div>
+        <figcaption><p>Body-centered cubic (BCC) unit cell using the cut-sphere model.&nbsp; Click on the check boxes to
+          add additional unit cells and the slider to bring the unit cells together.&nbsp; Notice how it would take 8
+          unit cells to form a complete atom i.e., the corners contain only 1/8 of an atom.</figcaption>
+        </p>
+        </figure>
+*/
 
 /* Style the figure container */
 .custom-header-image {
