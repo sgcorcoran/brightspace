@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+  <title>Structures of Materials</title>
+
+  <script type="module" src="../assets/js/global.min.js"></script>
+  <script defer="" src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+  <script src="../assets/js/videoExpand.js"></script>
+  <script src="../assets/js/load-mathjax.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
+  <link rel="stylesheet" href="../assets/css/customv5.css" />
+</head>
+
+<body class="courseware-themes">
+  <header class="custom-header">
+    <h1>Fractional Coordinates</h1>
+  </header>
+  <main class="courseware-layouts-content-wrapper">
+
+    <p>&nbsp;</p>
+
+
+    <section>
+      <h2 style="display: inline;">Video Lesson</h2>
+      <p>
+        <a href="../assets/handouts/03.03_fractional_coord.pptx" download>
+          Video slides
+        </a>
+      </p>
+
+
+      <div class="courseware-layouts-content-wrapper">
+
+        <div class="courseware-video-wrapper" id="video1">
+          <div class="courseware-video-text">
+            <p>Fractional Coordinates</p>
+          </div>
+          <div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video1')">
+              <source src="../assets/media/03.03_fractional_coord.mp4" type="video/mp4">
+              <track src="../assets/media/03.03_fractional_coord.vtt" kind="subtitles" srclang="en" label="English"
+                type="text/vtt">
+            </video></div>
+        </div>
+      </div>
+      <p>&nbsp;</p>
+
+      <h2>Fractional vs Point Coordinates</h2>
+      <figure style="padding:5px;">
+
+        <img src="../assets/img/triclinic_circled_atom.png" style="max-width:300px;">
+        <figcaption>
+          <p>Triclinic Bravais lattice. The circled atom is located at (a,b,c) along the \(a, b, \) and \(c\)
+            directions.
+          </p>
+        </figcaption>
+      </figure>
+      <p> The triclinic system is the most general lattice we can have. Notice that none of the angles
+        equal 90 degrees nor do they equal each other; all edge lengths, \(a, b, c\) are unequal as well.
+        If we wanted to specify the <strong>point coordinate</strong> for the circled atom in the figure we would have
+        to find the sum of the edge vectors
+        \(\stackrel{\rightharpoonup}{a}+\stackrel{\rightharpoonup}{b}+\stackrel{\rightharpoonup}{c}\).
+        We can't simply write
+        (a,b,c) because the edges don't form a cartesian system. This is where <strong>fractional coordinates</strong>
+        are
+        extremely handy. Most of the time we just want to know where a given atom is within the unit cell, that is, the
+        unit cell is our reference.
+        Fractional coordinates are coordinates given relative to the unit cell. To specify the circled atom,
+        we would just write (1,1,1). This means we move a full unit cell distance i.e. 1, along each of the
+        unit cell edge directions. This atom is in the opposite corner to the origin. </p>
+
+      <div class="card-container" style="margin-top:-1rem;">
+        <div class="card-container-3">
+          <div class="card-flip" onclick="this.classList.toggle('flipped')">
+            <div class="card-front">
+              Where would the atom (1/2,1/2,1/2) be located?
+            </div>
+            <div class="card-back">
+              This means we move half way along the a, b, and c directions of the unit cell so this would be a
+              body-centered atom.
+            </div>
+          </div>
+        </div>
+        <div class="card-container-3">
+          <div class="card-flip" onclick="this.classList.toggle('flipped')">
+            <div class="card-front">Where would the atom (1,1/2,1/2) be located?</div>
+            <div class="card-back">This would be an atom located at the center of a face. In the triclinic cell given
+              above, this would be the right most face. </div>
+          </div>
+        </div>
+        <div class="card-container-3">
+          <div class="card-flip" onclick="this.classList.toggle('flipped')">
+            <div class="card-front">Write the fractional coordinates for the atoms associated with the bcc unit cell.
+            </div>
+            <div class="card-back">The 8 corner atoms are located at (0,0,0), (1,0,0), (0,1,0), (0,0,1), (1,1,0),
+              (1,0,1), (0,1,1), (1,1,1). The body centered atom is at (1/2,1/2,1/2).</div>
+          </div>
+        </div>
+      </div>
+      <h2>Example: Using fractional coordinates for the tetrahedral site in fcc</h2>
+      <p>In the cubic system, where the edges form a cartesian system (all angles are 90 degrees), point coordinates and
+        fractional coordinates
+        are easy to switch between. The point coordinate (absolute position) for a body centered atom would be \(a
+        (1/2,1/2,1/2) \) and the fractional
+        coordinate (relative position) would be \((1/2,1/2,1/2)\).
+      </p>
+
+      <figure style="padding:5px;">
+
+        <img src="../assets/img/fcc_unit_with_tetrahedral_colored.png" class="no-hover" style="max-width:200px;">
+        <figcaption>
+          <p>Small atoms located in the tetrahedral site in the fcc structure.
+          </p>
+        </figcaption>
+      </figure>
+    </section>
+    <section>
+      <p>Consider the above fcc structure. If we take a look at any corner, we will find that the corner touches
+        the 3 nearest face-centered atoms. These 4 atoms as shaded in the above figure, form a regular
+        tetrahedron. A the center of the tetrahedron is a small space located at (1/4,1/4,1/4) relative to the corner
+        atom. In this particular case,
+        if we place our origin in the back-left-bottom corner, then the shaded corner atom is located at (1,1,1) and the
+        tetrahedral center (red atom) is located at (3/4,3/4,3/4). By using the coordinates of these two atoms, it is
+        easy
+        to calculate the size of the tetrahedral space. This is worked out for you in another lesson.</p>
+
+      <div class="card-container" style="margin-top:-1rem;">
+        <div class="card-container-2">
+          <div class="card-flip" onclick="this.classList.toggle('flipped')">
+            <div class="card-front">
+              Write the fractional coordinates for the three face atoms and the corner atom making up the tetrahedron in
+              the previous figure.
+            </div>
+            <div class="card-back">
+              Keeping the same origin as above, the face atoms are located at: (1, 1/2, 1/2), (1/2, 1/2, 1), and (1/2,
+              1, 1/2). The corner atom is located at (1,1,1).
+            </div>
+          </div>
+        </div>
+        <div class="card-container-2">
+          <div class="card-flip" onclick="this.classList.toggle('flipped')">
+            <div class="card-front">
+              If we were instead looking at the tetrahedron at the (0,0,0) corner, what would be the fractional
+              coordinate of the corresponding tetrahedral space (red atom).
+            </div>
+            <div class="card-back">
+              The tetrahedral space would be centered at (1/4, 1/4, 1/4).
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+  </footer>
+</body>
+
+</html>
