@@ -680,12 +680,40 @@ video {
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px ;
+  
 }
 
 /* Front and Back Styles */
 .card-front {
   background: var(--vt-white);
+
+}
+
+
+.card-front::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right:0;
+  width: 0;
+  height: 0;
+  z-index:1;
+  border-top: 30px solid var(--vt-white);
+  border-left: 30px solid var(--vt-white); /*Set to background color, not transparent!*/
+  box-shadow: -2px 4px 5px 0px rgba(0,0,0,0.2);
+}
+
+.card-front::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right:0;
+  width: 32px;
+  height: 32px;
+  z-index:2;
+  background-color:var(--vt-white);
+  box-shadow: 5px -5px 0px 4px var(--vt-white);
 }
 
 .card-back {
@@ -694,9 +722,11 @@ video {
   transform: rotateY(180deg);
 }
 
+
+
 /* Flip Animation */
 .card-flip.flipped {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 
 .iframe-container {
