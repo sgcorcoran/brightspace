@@ -22,6 +22,8 @@
     width: 100%; /* Ensure the body takes up the full viewport width */
     box-sizing: border-box; /* Include padding and borders in element's total width/height */
 }
+
+        
         .atom {
             position: absolute;
             width: 60px; /* Increased width by 25% */
@@ -158,7 +160,7 @@
             const atom2Label = document.getElementById('atom2-label');
             const initialR = Math.pow(2, 1/3); // Minimum energy distance
             const scaledR = r / initialR;
-            const newLeft = scaledR * 70; // 70px is the diameter of an atom
+            const newLeft = scaledR * 60; // 60px is the diameter of an atom in class .atom
             atom2.style.left = `${newLeft}px`;
             atom2Label.style.left = `${newLeft}px`; // Move the label with the atom
         };

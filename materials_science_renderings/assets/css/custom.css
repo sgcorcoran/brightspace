@@ -63,7 +63,10 @@ a:focus {
         </p>
         </figure>
 */
-
+.courseware-card.courseware-card-component-wrapper
+  .courseware-card-component-wrapper-banner {
+    color:white;
+}
 /* Style the figure container */
 .custom-header-image {
   text-align: center;
@@ -99,9 +102,9 @@ section {
 
 
 
-mjx-container[jax='CHTML'] {
+mjx-container[jax="CHTML"] {
   line-height: 0;
-  font-size: 1.1em !important;
+  font-size: 100% !important;
 }
 
 
@@ -566,7 +569,7 @@ tr:nth-child(2n) {
 }
 
 .courseware-video-wrapper {
-  width: 33%;
+  width: 31%;
   position: relative;
   height: auto;
   /*transition: width 0.5s ease, height 0.5s ease;*/
@@ -581,6 +584,8 @@ tr:nth-child(2n) {
     width: 75%;
   }
 }
+
+
 
 /* Expand the video wrapper to full width when it has the 'expanded' class */
 .courseware-video-wrapper.expanded {
@@ -629,6 +634,7 @@ video {
   --vt-sunset: #ed8b00;
   --vt-yellow: #f7ea48;
   --vt-teal: #508590;
+  --vt-dark-teal: #406973;
   --vt-turquoise: #2cd5c4;
   --vt-grey: #d7d2cb;
   --vt-smoke: #e5e1e6;
@@ -637,11 +643,14 @@ video {
   --vt-impactOrange: #ca4f00;
 }
 
+/* Outer Card Container */
 .card-container {
-  perspective: 1000em;
-  width: 100%;
+  display: flex; /* Use flexbox for proper alignment of multiple cards */
+  flex-wrap: wrap; /* Allow multiple cards to wrap if needed */
+  justify-content: space-around; /* Distribute cards evenly */
+  perspective: 1000px; /* 3D perspective applied to the parent */
   margin: 3rem 1%;
-  float: left;
+  width: 100%;
 }
 
 .card-container-2 {
@@ -651,82 +660,109 @@ video {
   float: left;
 }
 
+/* Individual Card Containers */
 .card-container-3 {
-  perspective: 1000em;
-  width: 31%;
-  margin: 3rem 1%;
-  float: left;
+  width: 31%; /* Three cards per row */
+  margin: 0.1rem; /* Adjust spacing between cards */
 }
 
 /* Card Flip Styling */
 .card-flip {
   position: relative;
   width: 100%;
-  height: 250px;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
+  height: 300px; /* Fixed height for all cards */
+  transform-style: preserve-3d; /* Enables 3D transformations */
+  transition: transform 0.6s; /* Smooth flipping animation */
   cursor: pointer;
 }
 
-/* Front and Back Card Content */
+.card-flip.flipped {
+  transform: rotateY(180deg); /* Flip animation */
+}
+
+/* Front and Back Card Styling */
 .card-front,
 .card-back {
   position: absolute;
+  text-align:left; 
+  padding:15px;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+  backface-visibility: hidden; /* Hide the side facing away */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px ;
-  
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-/* Front and Back Styles */
 .card-front {
   background: var(--vt-white);
-
-}
-
-
-.card-front::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right:0;
-  width: 0;
-  height: 0;
-  z-index:1;
-  border-top: 30px solid var(--vt-white);
-  border-left: 30px solid var(--vt-white); /*Set to background color, not transparent!*/
-  box-shadow: -2px 4px 5px 0px rgba(0,0,0,0.2);
-}
-
-.card-front::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right:0;
-  width: 32px;
-  height: 32px;
-  z-index:2;
-  background-color:var(--vt-white);
-  box-shadow: 5px -5px 0px 4px var(--vt-white);
+  
 }
 
 .card-back {
   background: var(--vt-teal);
   color: var(--vt-white);
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); /* Back starts hidden */
 }
 
+/* Remove Folder Corner Effects */
+.card-front::after,
+.card-front::before {
+  display: none;
+}
 
+/* Add Icon in Lower Right Corner */
+.card-front .flip-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--vt-teal); /* Icon background color */
+  color: var(--vt-white); /* Icon text color */
+  border-radius: 50%; /* Circular icon */
+  width: 40px;
+  height: 40px;
+  font-size: 1rem; /* Adjust icon size */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer; /* Indicate interactivity */
+  transition: transform 0.3s, background-color 0.3s;
+}
 
-/* Flip Animation */
-.card-flip.flipped {
-  transform: rotateY(-180deg);
+/* Hover Effect for the Icon */
+.card-front .flip-icon:hover {
+  background-color: var(--vt-dark-teal); /* Darker teal on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Tooltip on Hover */
+.card-front .flip-icon:hover::after {
+  content: "Click to flip";
+  position: absolute;
+  bottom: 50px; /* Position above the icon */
+  right: 50%; /* Center horizontally */
+  transform: translateX(50%);
+  background-color: var(--vt-dark-teal);
+  color: var(--vt-white);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  z-index: 1000;
+  opacity: 1; /* Ensure the tooltip is visible */
+  visibility: visible; /* Ensure the tooltip is shown */
+  transition: opacity 0.3s ease; /* Smooth fade-in */
+}
+/* Hidden Tooltip by Default */
+.card-front .flip-icon::after {
+  content: ""; /* No content by default */
+  opacity: 0; /* Start with invisible tooltip */
+  visibility: hidden; /* Hide the tooltip */
+  transition: opacity 0.3s ease; /* Smooth fade-out */
 }
 
 .iframe-container {
