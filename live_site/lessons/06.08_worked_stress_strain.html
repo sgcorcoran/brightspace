@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+
+<title>Stress-Strain Curve Analysis - Worked Example</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+<header>
+<h1>Worked Example: Stress-Strain Curve Analysis</h1>
+<p>Interpret the stress-strain behavior of a metallic alloy (Steel) and a polymer (Polyurethane), and calculate key mechanical properties.</p>
+</header>
+<main>
+<article>
+<h2>Objectives:</h2>
+<ol>
+<li>Understand and interpret the key features of a stress-strain curve.</li>
+<li>Calculate mechanical properties such as yield strength, ultimate tensile strength (UTS), and fracture strain.</li>
+</ol>
+</article>
+
+<aside>
+<h4>Key Concept: Stress-Strain Curve Interpretation</h4>
+<p>The stress-strain curve provides valuable information about a material’s mechanical properties. Key features include:</p>
+<ul>
+<li><b>Yield Strength</b>: The stress at which a material begins to deform plastically.</li>
+<li><b>Ultimate Tensile Strength (UTS)</b>: The maximum stress a material can withstand before necking.</li>
+<li><b>Fracture Strain</b>: The strain at which the material breaks.</li>
+</ul>
+<p>The shape of the curve varies significantly between ductile metals and viscoelastic polymers.</p>
+</aside>
+
+<h3>Expanded Problem Statement</h3>
+<p>Analyze the stress-strain data for:</p>
+<ul>
+<li>A low-carbon steel sample with the following key points:
+    <ul>
+        <li>Yield stress: \( 250 \, \text{MPa} \)</li>
+        <li>Ultimate tensile strength: \( 450 \, \text{MPa} \)</li>
+        <li>Fracture at \( \epsilon_f = 0.3 \)</li>
+    </ul>
+</li>
+<li>A polyurethane sample with:
+    <ul>
+        <li>Yield stress: \( 20 \, \text{MPa} \)</li>
+        <li>Ultimate tensile strength: \( 30 \, \text{MPa} \)</li>
+        <li>Fracture at \( \epsilon_f = 1.5 \)</li>
+    </ul>
+</li>
+</ul>
+
+<h3>Solution</h3>
+<h4>Step 1: Calculate the Modulus of Elasticity (Young’s Modulus)</h4>
+
+<h4>Metallic Material: Low-Carbon Steel</h4>
+<p>The modulus of elasticity can be approximated from the linear portion of the stress-strain curve:</p>
+\[
+E = \frac{\sigma_{\text{yield}}}{\epsilon_{\text{yield}}}
+\]
+
+<p>Assume yield strain \( \epsilon_{\text{yield}} = 0.0012 \):</p>
+\[
+E = \frac{250 \, \text{MPa}}{0.0012} = 208.3 \, \text{GPa}
+\]
+
+<h4>Polymeric Material: Polyurethane</h4>
+<p>Assume yield strain \( \epsilon_{\text{yield}} = 0.02 \):</p>
+\[
+E = \frac{20 \, \text{MPa}}{0.02} = 1.0 \, \text{GPa}
+\]
+
+<h4>Step 2: Determine the Toughness (Area Under the Curve)</h4>
+
+<h4>Steel</h4>
+<p>The toughness is the total area under the stress-strain curve, approximated by trapezoidal integration:</p>
+\[
+\text{Toughness} \approx \frac{1}{2}(\sigma_{\text{yield}} + \sigma_{\text{UTS}}) \times \epsilon_f = \frac{1}{2}(250 + 450) \times 0.3 = 105 \, \text{MPa}
+\]
+
+<h4>Polyurethane</h4>
+\[
+\text{Toughness} \approx \frac{1}{2}(20 + 30) \times 1.5 = 37.5 \, \text{MPa}
+\]
+
+<h4>Step 3: Analyze Necking and Fracture Behavior</h4>
+<p>For the steel sample, necking occurs after reaching the UTS, followed by ductile fracture. For the polyurethane, the material shows a significant amount of elongation before breaking, indicative of its viscoelastic nature.</p>
+
+<div class="notice">
+<h4>Discuss the differences in behavior between the steel and polyurethane samples.</h4>
+<cite>Consider how the mechanical properties and curve shapes reflect the underlying material characteristics.</cite>
+</div>
+</main>
+<footer>
+      <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+    </footer></body>
+</html>

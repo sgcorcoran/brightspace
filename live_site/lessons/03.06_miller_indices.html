@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+  <title>Structures of Materials</title>
+
+  <script type="module" src="../assets/js/global.min.js"></script>
+  <script defer="" src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+  <script src="../assets/js/videoExpand.js"></script>
+  <script src="../assets/js/load-mathjax.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
+  <link rel="stylesheet" href="../assets/css/customv5.css" />
+</head>
+
+<body class="courseware-themes">
+  <header class="custom-header">
+    <h1>Miller Indices</h1>
+  </header>
+  <main class="courseware-layouts-content-wrapper">
+
+    <section>
+      <h2>Introduction to Miller Indices</h2>
+      <p>
+        Miller indices are a notation system used to describe the orientation of directions and planes in a crystal lattice.
+        These indices are fundamental for understanding the geometry and properties of crystals.
+      </p>
+    </section>
+
+    <section>
+      <h2>Video Lesson</h2>
+      <p>
+        <a href="../assets/handouts/03.04_dir_planes.pptx" download>
+          Video slides
+        </a>
+      </p>
+      <div class="courseware-layouts-content-wrapper">
+        <div class="courseware-video-wrapper" id="video1">
+          <div class="courseware-video-text">
+            <p>Defining Directions and Planes</p>
+          </div>
+          <div class="courseware-video-embed-responsive">
+            <video title="Video Lesson" onclick="expandVideo('video1')" controls poster="../assets/thumbnails/videoframe_03.04.png">
+              <source src="../assets/media/03.04_structures.mp4" type="video/mp4">
+              <track src="../assets/media/03.04_structures.vtt" kind="subtitles" srclang="en" label="English" type="text/vtt">
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Crystallographic Directions</h2>
+      <p>
+        To define a direction in a crystal:
+      </p>
+      <ol>
+        <li>Find the fractional coordinates of two points along the direction of interest. The tail and tip are often the most convenient.</li>
+        <li>Subtract the coordinates of the tail point from the head point. This basically just shifts the vector to the origin.</li>
+        <li>Clear fractions by multiplying the coordinates by the least common multiple of denominators and if needed reduce to the smallest integers.</li>
+        <li>Enclose the numbers in square brackets, using an over bar for negative values and NO COMMAS.  Example: \([1, 0, \overline{1}]\). We would read 
+          this as, "the direction one zero one bar"
+        </li>
+      </ol>
+
+      <figure style="padding:5px;">
+        <img src="../assets/img/direction_plane_1.png" style="max-width:400px;">
+        <figcaption>
+          <p>A cubic unit cell with both a plane and direction indicated.</p>
+        </figcaption>
+      </figure>
+      <p>Let's find the direction in the figure above following the steps we just defined. 
+        <ol>
+          <li>tail = (1,0,0) and tip = (1,1,1)</li>
+          <li>(1,1,1) - (1,0,0) = (0,1,1)</li>
+          <li>No fractions to clear so we still have (0,1,1)</li>
+          <li> The direction is: [0 1 1]
+          </li>
+        </ol>
+
+
+      </p>
+    </section>
+
+    <section>
+      <h2>Crystallographic Planes</h2>
+      <p>
+        To define a plane in a crystal:
+      </p>
+      <ol>
+        <li>Identify the fractional intercepts of the plane with the crystal axes (a, b, c). If a plane does not intersect an axis, then either the plane is parallel to the axis or 
+          the plane just needs to be extended beyond the unit cell until it does intersect the axis (either positive or negative axis). If the plane is parallel to the axis, the intercept is taken as infinity.</li>
+        <li>Take the reciprocal of each intercept.  
+          </li>
+        <li>Clear fractions using the least common multiple of denominators but do not reduce the resulting integers.</li>
+        <li>Enclose the result in parentheses and NO COMMAS, e.g., \((1 0 \overline{2})\).</li>
+      </ol>
+
+      <p>Let's find the shaded plane in the previous figure.  
+        <ol>
+          <li>intercepts along \(a, b, c\) = \( 1, \infty, \infty\)</li>
+          <li>taking reciprocals we get \(1, 0, 0\)</li>
+          <li>No fractions to clear so we still have \(1, 0, 0\)</li>
+          <li> The plane is: \((1 0 0)\)
+          </li>
+        </ol>
+      </p>
+
+
+
+      <figure style="padding:5px;">
+        <img src="../assets/img/direction_plane_2.png" style="max-width:400px;">
+        <figcaption>
+          <p>Figure for concept check questions below.</p>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Interactive Questions</h2>
+      <div class="card-container" style="margin-top:-1rem;">
+        <div class="card-container-3">
+          <div class="card-flip" onclick="this.classList.toggle('flipped')">
+            <div class="card-front">
+              What are the Miller indices for the plane shaded in the figure above?
+            </div>
+            <div class="card-back">
+              (120)
+            </div>
+          </div>
+        </div>
+        <div class="card-container-3">
+          <div class="card-flip" onclick="this.classList.toggle('flipped')">
+            <div class="card-front">What are the miller indices for the direction in the figure above?</div>
+            <div class="card-back">\([2\ \overline{1}\ \overline{2}]\)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+  </footer>
+</body>
+
+</html>

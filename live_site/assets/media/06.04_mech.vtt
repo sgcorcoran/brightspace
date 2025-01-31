@@ -1,0 +1,706 @@
+WEBVTT
+
+1
+00:00:01.439 --> 00:00:04.800
+the elastic modulus
+
+2
+00:00:05.120 --> 00:00:10.800
+is dependent upon temperature and you
+
+3
+00:00:08.080 --> 00:00:13.599
+can see that here in this plot
+
+4
+00:00:10.800 --> 00:00:14.160
+we also can see that for metals we're
+
+5
+00:00:13.599 --> 00:00:17.160
+looking at
+
+6
+00:00:14.160 --> 00:00:18.720
+elastic modulus values of hundreds of
+
+7
+00:00:17.160 --> 00:00:20.960
+gigapascals
+
+8
+00:00:18.720 --> 00:00:21.840
+and then you know aluminum may be down
+
+9
+00:00:20.960 --> 00:00:24.800
+at
+
+10
+00:00:21.840 --> 00:00:28.320
+70 gigapascals or something like that
+
+11
+00:00:24.800 --> 00:00:28.320
+which is also typical for
+
+12
+00:00:28.840 --> 00:00:33.280
+classes
+
+13
+00:00:31.359 --> 00:00:36.239
+now we learned about isotropic and
+
+14
+00:00:33.280 --> 00:00:39.520
+anisotropic properties before
+
+15
+00:00:36.239 --> 00:00:42.640
+the elastic modulus is also
+
+16
+00:00:39.520 --> 00:00:45.760
+a anisotropic property
+
+17
+00:00:42.640 --> 00:00:50.480
+it's a property that does depend on
+
+18
+00:00:45.760 --> 00:00:52.480
+direction and so
+
+19
+00:00:50.480 --> 00:00:54.079
+for the cubic system we have a simple
+
+20
+00:00:52.480 --> 00:00:57.120
+equation here
+
+21
+00:00:54.079 --> 00:00:58.000
+that says that we can find the elastic
+
+22
+00:00:57.120 --> 00:01:01.520
+modulus
+
+23
+00:00:58.000 --> 00:01:03.359
+in a uvw direction right this is just a
+
+24
+00:01:01.520 --> 00:01:04.400
+shorthand for saying that we're going to
+
+25
+00:01:03.359 --> 00:01:07.200
+pull
+
+26
+00:01:04.400 --> 00:01:08.799
+on our sample right in some direction so
+
+27
+00:01:07.200 --> 00:01:09.439
+if we're pulling along a diagonal that
+
+28
+00:01:08.799 --> 00:01:12.400
+would be a 1
+
+29
+00:01:09.439 --> 00:01:13.439
+1 1 direction or if we pull on the face
+
+30
+00:01:12.400 --> 00:01:15.600
+it might be like a one
+
+31
+00:01:13.439 --> 00:01:17.360
+zero zero direction so we're going to
+
+32
+00:01:15.600 --> 00:01:19.840
+pull it along a uvw
+
+33
+00:01:17.360 --> 00:01:21.600
+direction and if we know what the
+
+34
+00:01:19.840 --> 00:01:24.799
+elastic modulus
+
+35
+00:01:21.600 --> 00:01:26.479
+value is in the one zero zero
+
+36
+00:01:24.799 --> 00:01:29.040
+and then the 1 1 1 and so these are
+
+37
+00:01:26.479 --> 00:01:30.320
+tabulated we could go ahead and predict
+
+38
+00:01:29.040 --> 00:01:36.640
+from this equation
+
+39
+00:01:30.320 --> 00:01:37.920
+the elastic modulus in any uvw direction
+
+40
+00:01:36.640 --> 00:01:40.000
+all right i'll talk about these alpha
+
+41
+00:01:37.920 --> 00:01:41.920
+beta gammas here in just a second
+
+42
+00:01:40.000 --> 00:01:44.560
+but the plot below is trying to show
+
+43
+00:01:41.920 --> 00:01:47.360
+this anisotropy effect
+
+44
+00:01:44.560 --> 00:01:48.240
+and so this plot here kind of represents
+
+45
+00:01:47.360 --> 00:01:50.479
+the
+
+46
+00:01:48.240 --> 00:01:51.280
+sample so imagine that this is aligned
+
+47
+00:01:50.479 --> 00:01:55.680
+with the
+
+48
+00:01:51.280 --> 00:01:59.520
+cubic unit cell and so if i was to
+
+49
+00:01:55.680 --> 00:02:02.719
+pull along a face right so that would be
+
+50
+00:01:59.520 --> 00:02:06.000
+pulling here on this front face and then
+
+51
+00:02:02.719 --> 00:02:08.239
+it would be out the back face the
+
+52
+00:02:06.000 --> 00:02:09.440
+length here from the center of this
+
+53
+00:02:08.239 --> 00:02:12.800
+image
+
+54
+00:02:09.440 --> 00:02:15.760
+to the surface represents
+
+55
+00:02:12.800 --> 00:02:17.760
+the magnitude of the elastic modulus so
+
+56
+00:02:15.760 --> 00:02:19.599
+this would be the smallest the lowest
+
+57
+00:02:17.760 --> 00:02:21.920
+value of the elastic modulus we have so
+
+58
+00:02:19.599 --> 00:02:24.160
+you can see it in color in terms of blue
+
+59
+00:02:21.920 --> 00:02:26.239
+and you can see it in terms of
+
+60
+00:02:24.160 --> 00:02:27.599
+the length from the center is not very
+
+61
+00:02:26.239 --> 00:02:32.879
+big in this case
+
+62
+00:02:27.599 --> 00:02:32.879
+say compared to pulling it along
+
+63
+00:02:33.040 --> 00:02:38.400
+a body diagonal right
+
+64
+00:02:36.400 --> 00:02:40.640
+in that case we're going from again the
+
+65
+00:02:38.400 --> 00:02:43.360
+center
+
+66
+00:02:40.640 --> 00:02:44.640
+all the way out to this surface so
+
+67
+00:02:43.360 --> 00:02:46.879
+that's the magnitude
+
+68
+00:02:44.640 --> 00:02:48.480
+you can see that's the the highest
+
+69
+00:02:46.879 --> 00:02:48.800
+magnitude we have in this figure that
+
+70
+00:02:48.480 --> 00:02:51.840
+would
+
+71
+00:02:48.800 --> 00:02:54.720
+represent the stiffest direction the
+
+72
+00:02:51.840 --> 00:02:56.319
+highest value of the elastic modulus
+
+73
+00:02:54.720 --> 00:02:58.080
+and so this kind of a plot is just
+
+74
+00:02:56.319 --> 00:03:01.280
+trying to show you
+
+75
+00:02:58.080 --> 00:03:04.560
+visually how much the
+
+76
+00:03:01.280 --> 00:03:08.159
+anisotropy is for given material
+
+77
+00:03:04.560 --> 00:03:10.400
+so if it was completely isotropic
+
+78
+00:03:08.159 --> 00:03:12.159
+then this would be a sphere so the
+
+79
+00:03:10.400 --> 00:03:15.200
+distance from the center to the sphere
+
+80
+00:03:12.159 --> 00:03:18.159
+surface would be everywhere the same
+
+81
+00:03:15.200 --> 00:03:20.480
+okay now let's talk about the alpha beta
+
+82
+00:03:18.159 --> 00:03:24.480
+gamma in case you need to get these
+
+83
+00:03:20.480 --> 00:03:28.799
+the alpha beta gamma are def are called
+
+84
+00:03:24.480 --> 00:03:28.799
+direction cosines
+
+85
+00:03:29.760 --> 00:03:33.920
+okay so they're defined as the cosine of
+
+86
+00:03:33.599 --> 00:03:37.440
+the
+
+87
+00:03:33.920 --> 00:03:41.840
+angle between the
+
+88
+00:03:37.440 --> 00:03:45.760
+uvw direction that you're pulling in
+
+89
+00:03:41.840 --> 00:03:49.440
+and one of our our axes our a b or c
+
+90
+00:03:45.760 --> 00:03:50.480
+axes so let's say that we're looking at
+
+91
+00:03:49.440 --> 00:03:54.159
+the
+
+92
+00:03:50.480 --> 00:03:57.439
+axis a which is one zero zero
+
+93
+00:03:54.159 --> 00:04:00.560
+this is the angle theta
+
+94
+00:03:57.439 --> 00:04:04.239
+and alpha is equal to
+
+95
+00:04:00.560 --> 00:04:07.439
+the cosine of theta and then
+
+96
+00:04:04.239 --> 00:04:11.200
+by dot product definition
+
+97
+00:04:07.439 --> 00:04:14.480
+right this is uvw
+
+98
+00:04:11.200 --> 00:04:16.720
+dotted with one zero zero so these are
+
+99
+00:04:14.480 --> 00:04:19.919
+the two vectors we have
+
+100
+00:04:16.720 --> 00:04:21.759
+and then that's over the magnitude of
+
+101
+00:04:19.919 --> 00:04:24.639
+uvw
+
+102
+00:04:21.759 --> 00:04:26.800
+and the magnitude of one zero zero which
+
+103
+00:04:24.639 --> 00:04:28.800
+of course is one
+
+104
+00:04:26.800 --> 00:04:30.639
+so if we're finding the alpha beta gamma
+
+105
+00:04:28.800 --> 00:04:32.320
+we just need to go ahead and perform
+
+106
+00:04:30.639 --> 00:04:37.120
+this dot product
+
+107
+00:04:32.320 --> 00:04:40.000
+and divide by the magnitude of the uvw
+
+108
+00:04:37.120 --> 00:04:42.000
+so hopefully you can guess that the beta
+
+109
+00:04:40.000 --> 00:04:46.080
+then would be the same equation except
+
+110
+00:04:42.000 --> 00:04:49.440
+that we would end up dotting with the
+
+111
+00:04:46.080 --> 00:04:54.800
+b direction right and the gamma
+
+112
+00:04:49.440 --> 00:04:54.800
+we would end up dotting with our c
+
+113
+00:04:54.840 --> 00:04:58.000
+direction
+
+114
+00:04:56.400 --> 00:05:00.960
+so hopefully you can so these would be
+
+115
+00:04:58.000 --> 00:05:03.759
+the magnitudes again
+
+116
+00:05:00.960 --> 00:05:03.759
+uvw
+
+117
+00:05:04.560 --> 00:05:11.840
+ugw all right
+
+118
+00:05:07.600 --> 00:05:14.479
+so you get the idea
+
+119
+00:05:11.840 --> 00:05:16.080
+and then the magnitude of these are
+
+120
+00:05:14.479 --> 00:05:17.520
+genji's one
+
+121
+00:05:16.080 --> 00:05:19.680
+all right so that's the beta and that's
+
+122
+00:05:17.520 --> 00:05:25.600
+the gamma
+
+123
+00:05:19.680 --> 00:05:28.400
+all right
+
+124
+00:05:25.600 --> 00:05:30.639
+so there's a nice plot of the change in
+
+125
+00:05:28.400 --> 00:05:31.919
+the young's modulus for a variety of
+
+126
+00:05:30.639 --> 00:05:34.240
+materials
+
+127
+00:05:31.919 --> 00:05:35.120
+as a function of the density of the
+
+128
+00:05:34.240 --> 00:05:36.880
+materials
+
+129
+00:05:35.120 --> 00:05:38.720
+plotting things against the density is a
+
+130
+00:05:36.880 --> 00:05:40.400
+real nice way of separating out a lot of
+
+131
+00:05:38.720 --> 00:05:43.120
+materials
+
+132
+00:05:40.400 --> 00:05:46.080
+in terms of their their families and
+
+133
+00:05:43.120 --> 00:05:48.560
+then these are also color coded
+
+134
+00:05:46.080 --> 00:05:51.199
+by uh the types of materials and you can
+
+135
+00:05:48.560 --> 00:05:52.880
+see that materials tend to cluster
+
+136
+00:05:51.199 --> 00:05:54.960
+so for example our you know our metals
+
+137
+00:05:52.880 --> 00:05:57.520
+and alloys are clustered
+
+138
+00:05:54.960 --> 00:06:00.000
+up here in this region are technical
+
+139
+00:05:57.520 --> 00:06:03.199
+ceramics
+
+140
+00:06:00.000 --> 00:06:05.600
+versus non-technical ceramics cluster a
+
+141
+00:06:03.199 --> 00:06:07.840
+little bit differently
+
+142
+00:06:05.600 --> 00:06:10.080
+so the non-technical might be glasses
+
+143
+00:06:07.840 --> 00:06:13.360
+technical might be
+
+144
+00:06:10.080 --> 00:06:16.639
+some kind of a titanium
+
+145
+00:06:13.360 --> 00:06:19.120
+oxide or zirconium based material for
+
+146
+00:06:16.639 --> 00:06:19.120
+example
+
+147
+00:06:19.199 --> 00:06:22.880
+polymers you can see that they are
+
+148
+00:06:21.440 --> 00:06:26.160
+clustering here
+
+149
+00:06:22.880 --> 00:06:27.759
+and then we've got elastomers those are
+
+150
+00:06:26.160 --> 00:06:29.680
+our rubbers
+
+151
+00:06:27.759 --> 00:06:30.960
+and as we move into the polymers chapter
+
+152
+00:06:29.680 --> 00:06:33.120
+which is going to be a
+
+153
+00:06:30.960 --> 00:06:34.720
+ways until we get there we'll see that
+
+154
+00:06:33.120 --> 00:06:38.479
+elastomers
+
+155
+00:06:34.720 --> 00:06:41.759
+are also polymers these are really
+
+156
+00:06:38.479 --> 00:06:42.479
+polymers but many times we'll separate
+
+157
+00:06:41.759 --> 00:06:44.160
+them out
+
+158
+00:06:42.479 --> 00:06:46.840
+just because they do behave so
+
+159
+00:06:44.160 --> 00:06:48.560
+differently from the general class of
+
+160
+00:06:46.840 --> 00:06:52.080
+polymers
+
+161
+00:06:48.560 --> 00:06:56.639
+all right and then we've got our foams
+
+162
+00:06:52.080 --> 00:06:59.520
+natural materials etc again so values
+
+163
+00:06:56.639 --> 00:06:59.520
+you're looking at
+
+164
+00:06:59.840 --> 00:07:06.720
+hundreds of right gigapascals up here
+
+165
+00:07:05.039 --> 00:07:08.160
+and then when you get to the polymers
+
+166
+00:07:06.720 --> 00:07:12.720
+you're looking at
+
+167
+00:07:08.160 --> 00:07:16.400
+something like gigapascal and elastomers
+
+168
+00:07:12.720 --> 00:07:19.759
+you're looking at what maybe 10
+
+169
+00:07:16.400 --> 00:07:19.759
+megapascals or so
+
+170
+00:07:22.720 --> 00:07:28.479
+all right so that is
+
+171
+00:07:25.840 --> 00:07:29.759
+it for this particular video and then
+
+172
+00:07:28.479 --> 00:07:31.919
+next time we're going to do is we're
+
+173
+00:07:29.759 --> 00:07:36.560
+going to go ahead and look at
+
+174
+00:07:31.919 --> 00:07:39.120
+some of the elastic constants
+
+175
+00:07:36.560 --> 00:07:43.919
+that we can define beyond just the
+
+176
+00:07:39.120 --> 00:07:43.919
+elastic modulus
+

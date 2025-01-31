@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.controls-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.controls-container label {
+  display: block;
+}
+
+.controls-container input[type="checkbox"] {
+  margin-bottom: 10px;
+}
+
+.controls-container button {
+  margin-top: 10px;
+}
+
+.diamond {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: ". top ." "left . right" ". front .";
+}
+
+.diamond label {
+  margin: 0;
+}
+
+.top {
+  grid-area: top;
+}
+
+.left {
+  grid-area: left;
+}
+
+.right {
+  grid-area: right;
+}
+
+.front {
+  grid-area: front;
+}
+
+body {
+  margin: 0;
+}
+
+canvas {
+  display: block;
+}
+
+#controls {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+

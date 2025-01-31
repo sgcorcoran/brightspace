@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+
+<title>Toughness and Fracture Energy - Worked Example</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+<header>
+<h1>Worked Example: Toughness and Fracture Energy Calculation</h1>
+<p>Determine the toughness and fracture energy for a metallic alloy and a polymer under impact loading.</p>
+</header>
+<main>
+<article>
+<h2>Objectives:</h2>
+<ol>
+<li>Calculate the toughness of a material using the area under the stress-strain curve.</li>
+<li>Determine the fracture energy using Charpy impact test data.</li>
+</ol>
+</article>
+
+<aside>
+<h4>Key Concept: Toughness and Fracture Energy</h4>
+<p>Toughness is a measure of a material's ability to absorb energy before fracturing. It is represented by the area under the stress-strain curve. Fracture energy (\( G \)) quantifies the energy required to propagate a crack and is often measured using impact tests, such as the Charpy test.</p>
+\[
+G = \frac{\text{Impact Energy}}{A}
+\]
+<p>Where \( G \) is the fracture energy and \( A \) is the cross-sectional area of the sample.</p>
+</aside>
+
+<h3>Expanded Problem Statement</h3>
+<p>Determine the toughness and fracture energy for:</p>
+<ul>
+<li>A steel sample with a yield stress of \( 400 \, \text{MPa} \), ultimate tensile strength of \( 600 \, \text{MPa} \), and fracture strain of \( 0.2 \). The impact energy from a Charpy test is \( 150 \, \text{J} \), and the cross-sectional area is \( 0.005 \, \text{m}^2 \).</li>
+<li>A polycarbonate sample with a yield stress of \( 70 \, \text{MPa} \), ultimate tensile strength of \( 80 \, \text{MPa} \), and fracture strain of \( 0.5 \). The impact energy is \( 20 \, \text{J} \), with a cross-sectional area of \( 0.001 \, \text{m}^2 \).</li>
+</ul>
+
+<h3>Solution</h3>
+<h4>Step 1: Calculate Toughness Using the Stress-Strain Curve</h4>
+
+<h4>Metallic Material: Steel</h4>
+<p>The toughness is the area under the stress-strain curve, approximated by the trapezoidal rule:</p>
+\[
+\text{Toughness} = \frac{1}{2}(\sigma_{\text{yield}} + \sigma_{\text{UTS}}) \times \epsilon_f = \frac{1}{2}(400 + 600) \times 0.2 = 100 \, \text{MPa}
+\]
+
+<h4>Polymeric Material: Polycarbonate</h4>
+\[
+\text{Toughness} = \frac{1}{2}(70 + 80) \times 0.5 = 37.5 \, \text{MPa}
+\]
+
+<h4>Step 2: Calculate Fracture Energy Using Charpy Impact Test Data</h4>
+
+<h4>Steel</h4>
+\[
+G = \frac{\text{Impact Energy}}{A} = \frac{150 \, \text{J}}{0.005 \, \text{m}^2} = 30 \, \text{kJ/m}^2
+\]
+
+<h4>Polycarbonate</h4>
+\[
+G = \frac{20 \, \text{J}}{0.001 \, \text{m}^2} = 20 \, \text{kJ/m}^2
+\]
+
+<h4>Step 3: Interpretation of Results</h4>
+<p>Steel exhibits higher toughness and fracture energy, indicating better resistance to crack propagation compared to polycarbonate.</p>
+
+<div class="notice">
+<h4>What factors influence the toughness of a material?</h4>
+<cite>Discuss how microstructure, temperature, and strain rate can affect the toughness and fracture energy of both metals and polymers.</cite>
+</div>
+</main>
+<footer>
+      <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+    </footer></body>
+</html>

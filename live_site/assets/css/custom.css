@@ -1,0 +1,913 @@
+body>header {
+  color: var(--vt-white);
+}
+
+
+/* Custom header styling */
+body header.custom-header {
+  background-color: var(--vt-maroon);
+  /* Maroon */
+  color: white;
+  /* Text color */
+  padding: 20px;
+  /* Spacing */
+  text-align: center;
+  /* Center text */
+}
+
+body header.custom-header h1 {
+  color: white;
+  /* Text color */
+}
+
+a{text-decoration:none; color:#4007A2;}
+
+a:hover,
+a:active,
+a:focus {
+  color:  #4007A2;
+  text-decoration:underline;
+}
+
+/* style the container to hold the iframe element */
+.demo-container {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  width: 90%;
+  max-width: 800px; /* Limits the width for better responsiveness */
+  margin: 0 auto; /* Centers the container horizontally */
+  padding-bottom: 56.25%; /* Maintains a 16:9 aspect ratio */
+  overflow: hidden;
+}
+/* iframe style */
+.demo-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Fills the container width */
+  height: 100%; /* Fills the container height */
+  border: 0; /* Removes the border */
+}
+
+/* Template for including interactive demos in html lessons */
+/*
+<figure>
+        <div class="demo-container">
+          <iframe src="../assets/demos/cut_spheres_bcc.html" title="bcc builder demonstration"
+            class="demo-iframe" scrolling="no"
+            frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+        </div>
+        <figcaption><p>Body-centered cubic (BCC) unit cell using the cut-sphere model.&nbsp; Click on the check boxes to
+          add additional unit cells and the slider to bring the unit cells together.&nbsp; Notice how it would take 8
+          unit cells to form a complete atom i.e., the corners contain only 1/8 of an atom.</figcaption>
+        </p>
+        </figure>
+*/
+.courseware-card.courseware-card-component-wrapper
+  .courseware-card-component-wrapper-banner {
+    color:white;
+}
+/* Style the figure container */
+.custom-header-image {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 100%; /* Optional: Responsive width */
+  padding: 0px;
+  background-color: inherit;
+}
+
+/* Style the image itself */
+.custom-header-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Style the caption */
+.custom-header-image figcaption {
+  margin-top: 5px;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+hr {
+  background: var(--vt-sunset);
+}
+
+section {
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+  font-size: 100% !important;
+}
+
+
+mjx-math {
+  font-size: 100% !important;
+}
+
+.courseware-layouts-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.courseware-panels .aside-panel {
+  flex: 0 0 33%;
+  /* 33% width on large screens */
+  background-color: var(--courseware-panel-background, #f9fbff);
+  padding: 1rem;
+}
+
+.courseware-card.aside-card {
+  float: right;
+  width: 33%;
+  margin: 1rem;
+  position: relative;
+  border: none;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 600px) {
+  .courseware-card.aside-card {
+    float: right;
+    /* Removes the float, so it becomes a block element */
+    width: 50%;
+    /* Full width on smaller screens */
+    margin: 0;
+    /* Optional: remove margin for a seamless full-width look */
+  }
+}
+
+@media (max-width: 480px) {
+  .courseware-card.aside-card {
+    float: none;
+    /* Removes the float, so it becomes a block element */
+    width: 100%;
+    /* Full width on smaller screens */
+    margin: 0;
+    /* Optional: remove margin for a seamless full-width look */
+  }
+}
+
+/* Ensure the card moves to the bottom on small screens */
+
+
+
+@media (max-width: 600px) {
+  .responsive-section {
+    display:flex;
+    flex-direction:column;
+  }
+  .responsive-section .aside-card {
+    order: 2; /* Forces the aside-card to the bottom */
+    margin-top: 1rem; /* Adds spacing from the above content */
+    width:100%;
+  }
+}
+
+
+
+.courseware-card.aside-card::before,
+.courseware-card.aside-card::after {
+  content: '';
+  /* Create the pseudo-elements */
+  position: absolute;
+  /* Position them absolutely relative to the aside */
+  width: 20%;
+  /* Set the size of the angle */
+  height: 20%;
+  /* Set the size of the angle */
+  border: 5px solid var(--vt-sunset);
+  /* Define the border color and thickness */
+}
+
+.courseware-card.aside-card::before {
+  top: 0rem;
+  /* Position at the top left corner */
+  left: -0.2rem;
+  /* Align with the left edge */
+  border-right: none;
+  /* Create a 90-degree angle by hiding the right border */
+  border-bottom: none;
+  /* Hide the bottom border to create the angle */
+}
+
+.courseware-card.aside-card::after {
+  bottom: -0.5rem;
+  /* Position at the bottom right corner */
+  right: -0.2rem;
+  /* Align with the right edge */
+  border-left: none;
+  /* Create a 90-degree angle by hiding the left border */
+  border-top: none;
+  /* Hide the top border to create the angle */
+}
+
+.courseware-card.aside-card .courseware-card-header {
+  background: none;
+  border: none;
+}
+
+.courseware-card.aside-card .courseware-card-header>h4 {
+  position: relative;
+  /* To position the ::after element */
+  padding: none;
+  text-align: center;
+}
+
+/*  puts line under header */
+.courseware-card.aside-card .courseware-card-header>h4::after {
+  content: '';
+  /* Creates the pseudo-element */
+  position: absolute;
+  /* Absolute positioning relative to h4 */
+  bottom: -0.5rem;
+  /* Align it with the bottom of h4 */
+  left: 50%;
+  /* Start from the center */
+  transform: translateX(-50%);
+  /* Center it horizontally */
+  width: 50%;
+  /* Set the width to 50% */
+  border-bottom: 2px solid var(--vt-sunset);
+  /* Create the line */
+}
+
+.courseware-card.aside-card .courseware-card-body {
+  min-height: 1px;
+  padding: 1rem;
+}
+
+.courseware-card.aside-card .courseware-card-body a {
+  font-weight: 500;
+  text-decoration-style: solid;
+  font-size: 1rem;
+  text-align: left;
+  padding-left: 5%;
+}
+
+
+
+.courseware-helper-text-center {
+  text-align: center;
+  width: 100%;
+}
+
+.courseware-callout {
+  flex: 0 0 33%;
+  /* Takes up 33% of the width */
+}
+
+
+figure {
+  display: block;
+  text-align: center;
+  margin: 0;
+}
+
+.courseware-layouts-content-wrapper figure {
+  text-align: center;
+  /*border:2px solid black;*/
+}
+
+.courseware-layouts-content-wrapper figcaption {
+  text-align: center;
+}
+
+.courseware-layouts-content-wrapper figure figcaption {
+  padding: 0;
+  margin: 0;
+  line-height: 2rem;
+  color: var(--vt-hokieStone);
+}
+
+.courseware-layouts-content-wrapper img {
+  height: auto;
+  /* or a specific percentage if you want a smaller image */
+  object-fit: contain;
+  /* Optional: fills the entire area without stretching */
+  transition: transform 0.3s ease;
+}
+
+.courseware-layouts-content-wrapper img:hover {
+  transform: scale(1.7);
+}
+
+.no-hover:hover {
+  transition:none !important;
+  transform: none !important;
+}
+
+@media (max-width: 600px) {
+  .courseware-layouts-content-wrapper img {
+    height: auto;
+    width: 100%;
+  }
+
+  .courseware-layouts-content-wrapper img:hover {
+    transform: none;
+  }
+}
+
+
+
+
+figcaption {
+  /*use <aside style="float: left"> for left floating image*/
+  background-color: inherit;
+  color: var(--vt-hokieStone);
+}
+
+.courseware-layouts-content-wrapper:has(>figure.left) {
+  justify-content: flex-start;
+  float: left;
+  width: 40%;
+  margin: 1rem;
+  background-color: white;
+  padding: 1rem;
+  padding-bottom: 0;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  /* Smooth transition */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.courseware-layouts-content-wrapper figure.left figcaption {
+  text-align: left;
+}
+
+.courseware-layouts-content-wrapper:has(>figure.right) {
+  justify-content: flex-end;
+  width: 40%;
+  float: right;
+  margin: 1rem;
+  background-color: white;
+  padding: 1rem;
+  padding-bottom: 0;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  /* Smooth transition */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.courseware-layouts-content-wrapper figure.right figcaption {
+  text-align: left;
+}
+
+@media only screen and (max-width:600px) {
+
+  .courseware-layouts-content-wrapper:has(>figure.left),
+  .courseware-layouts-content-wrapper:has(>figure.right) {
+    float: inherit;
+    width: inherit;
+    border: none;
+  }
+}
+
+.shadow-box {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  /* Smooth transition */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  /* Larger shadow on hover */
+}
+
+
+
+
+
+aside {
+  background-color: inherit;
+  border-width: 0px;
+  position: relative;
+  /* Position the pseudo-elements relative to the aside */
+  padding: 5px;
+  /* Add some padding for spacing */
+  flex: 0 0 50%;
+}
+
+aside::before,
+aside::after {
+  content: '';
+  /* Create the pseudo-elements */
+  position: absolute;
+  /* Position them absolutely relative to the aside */
+  width: 20%;
+  /* Set the size of the angle */
+  height: 20%;
+  /* Set the size of the angle */
+  border: 5px solid var(--vt-sunset);
+  /* Define the border color and thickness */
+}
+
+aside::before {
+  top: 0rem;
+  /* Position at the top left corner */
+  left: -0.2rem;
+  /* Align with the left edge */
+  border-right: none;
+  /* Create a 90-degree angle by hiding the right border */
+  border-bottom: none;
+  /* Hide the bottom border to create the angle */
+}
+
+aside::after {
+  bottom: 0rem;
+  /* Position at the bottom right corner */
+  right: -0.2rem;
+  /* Align with the right edge */
+  border-left: none;
+  /* Create a 90-degree angle by hiding the left border */
+  border-top: none;
+  /* Hide the top border to create the angle */
+}
+
+aside>h4 {
+  position: relative;
+  /* To position the ::after element */
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+aside>h4::after {
+  content: '';
+  /* Creates the pseudo-element */
+  position: absolute;
+  /* Absolute positioning relative to h4 */
+  bottom: 0%;
+  /* Align it with the bottom of h4 */
+  left: 50%;
+  /* Start from the center */
+  transform: translateX(-50%);
+  /* Center it horizontally */
+  width: 33%;
+  /* Set the width to 50% */
+  border-bottom: 2px solid var(--vt-sunset);
+  /* Create the line */
+}
+
+aside:has(figure) {
+  /*use <aside style="float: left"> for left floating image*/
+  border: 0px solid var(--vt-smoke);
+  border-radius: 5%;
+  margin-bottom: 1rem;
+  float: right;
+  width: min-content;
+  /* wrap the img element(s) with <div style="width: max-content"> for this to work */
+  margin-inline-start: 15px;
+  padding-top: 15px;
+  font-size: 1rem;
+}
+
+aside:has(figure)::before,
+aside:has(figure)::after {
+  border-color: var(--vt-maroon);
+}
+
+aside:has(figure)::before {
+  top: 0%;
+  /* Position at the top left corner */
+  left: -2%;
+  /* Align with the left edge */
+  border-right: none;
+  /* Create a 90-degree angle by hiding the right border */
+  border-bottom: none;
+  /* Hide the bottom border to create the angle */
+}
+
+aside:has(figure)::after {
+  bottom: 0%;
+  /* Position at the bottom right corner */
+  right: -2%;
+  /* Align with the right edge */
+  border-left: none;
+  /* Create a 90-degree angle by hiding the left border */
+  border-top: none;
+  /* Hide the top border to create the angle */
+}
+
+.notice {
+  background: var(--vt-teal);
+  border: 0;
+  color: var(--vt-white);
+  overflow: auto;
+  border-radius: 0;
+  clear: both;
+}
+
+.notice>cite {
+  color: var(--vt-white);
+}
+
+table thead tr th {
+  background-color: var(--accent-table);
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.05rem;
+  vertical-align: middle;
+  padding: 0.1rem;
+}
+
+@media screen and (max-width: 768px) {
+  table thead tr th {
+    font-size: 0.9rem;
+    padding: 0.325rem 0.75rem;
+  }
+}
+
+table caption {
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 0.1rem;
+  text-align: left;
+}
+
+table tbody tr td {
+  font-size: 0.95em;
+}
+
+table tbody td {
+  padding: 0.25rem;
+  vertical-align: middle;
+  text-align: center;
+}
+
+tr:nth-child(2n) {
+  background-color: var(--accent-table);
+}
+
+@media screen and (max-width: 768px) {
+  table tbody tr td {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  table tbody td {
+    padding: 0.1rem;
+  }
+}
+
+/*If more than one video, wrap with courseware-layouts-content-wrapper */
+
+.courseware-video-embed-responsive {
+  margin: 0rem;
+}
+
+.courseware-video-wrapper {
+  width: 31%;
+  position: relative;
+  height: auto;
+  /*transition: width 0.5s ease, height 0.5s ease;*/
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .courseware-video-wrapper {
+    width: 75%;
+  }
+}
+
+
+
+/* Expand the video wrapper to full width when it has the 'expanded' class */
+.courseware-video-wrapper.expanded {
+  height: auto;
+  width: 100%;
+  z-index: 10;
+  /* Ensure it sits above other elements when expanded */
+}
+
+
+
+
+.courseware-video-wrapper .courseware-video-embed-responsive {
+  padding: 0;
+}
+
+.courseware-video-wrapper .courseware-video-embed-responsive:before {
+  padding-top: 0%;
+}
+
+.courseware-video-wrapper .courseware-video-text {
+  margin-left: 1rem;
+  color: var(--vt-hokieStone);
+}
+
+.courseware-video-wrapper .courseware-video-text p {
+  font-size: 0.842rem;
+  line-height: 1rem;
+}
+
+video {
+  height: auto;
+  width: 100%;
+}
+
+:root {
+  --accent-bg: var(--vt-maroon) !important;
+  --accent-table: var(--vt-smoke);
+  --border: var(--vt-hokieStone);
+  --vt-maroon: #861f41;
+  --vt-burntOrange: #e5751f;
+  --vt-hokieStone: #75787b;
+  --vt-white: #ffffff;
+  --vt-purple: #642667;
+  --vt-pink: #ce0058;
+  --vt-sunset: #ed8b00;
+  --vt-yellow: #f7ea48;
+  --vt-teal: #508590;
+  --vt-dark-teal: #406973;
+  --vt-turquoise: #2cd5c4;
+  --vt-grey: #d7d2cb;
+  --vt-smoke: #e5e1e6;
+  --vt-blue: #003c71;
+  --vt-burntOrangeWeb: #c64600;
+  --vt-impactOrange: #ca4f00;
+}
+
+/* Outer Card Container */
+.card-container {
+  display: flex; /* Use flexbox for proper alignment of multiple cards */
+  flex-wrap: wrap; /* Allow multiple cards to wrap if needed */
+  justify-content: space-around; /* Distribute cards evenly */
+  perspective: 1000px; /* 3D perspective applied to the parent */
+  margin: 3rem 1%;
+  width: 100%;
+}
+
+.card-container-2 {
+  perspective: 1000em;
+  width: 48%;
+  margin: 3rem 1%;
+  float: left;
+}
+
+/* Individual Card Containers */
+.card-container-3 {
+  width: 31%; /* Three cards per row */
+  margin: 0.1rem; /* Adjust spacing between cards */
+}
+
+/* Card Flip Styling */
+.card-flip {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Fixed height for all cards */
+  transform-style: preserve-3d; /* Enables 3D transformations */
+  transition: transform 0.6s; /* Smooth flipping animation */
+  cursor: pointer;
+}
+
+.card-flip.flipped {
+  transform: rotateY(180deg); /* Flip animation */
+}
+
+/* Front and Back Card Styling */
+.card-front,
+.card-back {
+  position: absolute;
+  text-align:left; 
+  padding:15px;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the side facing away */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.card-front {
+  background: var(--vt-white);
+  
+}
+
+.card-back {
+  background: var(--vt-teal);
+  color: var(--vt-white);
+  transform: rotateY(180deg); /* Back starts hidden */
+}
+
+/* Remove Folder Corner Effects */
+.card-front::after,
+.card-front::before {
+  display: none;
+}
+
+/* Add Icon in Lower Right Corner */
+.card-front .flip-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--vt-teal); /* Icon background color */
+  color: var(--vt-white); /* Icon text color */
+  border-radius: 50%; /* Circular icon */
+  width: 40px;
+  height: 40px;
+  font-size: 1rem; /* Adjust icon size */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer; /* Indicate interactivity */
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Hover Effect for the Icon */
+.card-front .flip-icon:hover {
+  background-color: var(--vt-dark-teal); /* Darker teal on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Tooltip on Hover */
+.card-front .flip-icon:hover::after {
+  content: "Click to flip";
+  position: absolute;
+  bottom: 50px; /* Position above the icon */
+  right: 50%; /* Center horizontally */
+  transform: translateX(50%);
+  background-color: var(--vt-dark-teal);
+  color: var(--vt-white);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  z-index: 1000;
+  opacity: 1; /* Ensure the tooltip is visible */
+  visibility: visible; /* Ensure the tooltip is shown */
+  transition: opacity 0.3s ease; /* Smooth fade-in */
+}
+/* Hidden Tooltip by Default */
+.card-front .flip-icon::after {
+  content: ""; /* No content by default */
+  opacity: 0; /* Start with invisible tooltip */
+  visibility: hidden; /* Hide the tooltip */
+  transition: opacity 0.3s ease; /* Smooth fade-out */
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Aspect ratio (16:9) */
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Timeline Styles */
+.timeline-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.timeline-item {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 250px;
+  text-align: center;
+  white-space: normal;
+}
+
+.timeline-item h4 {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+      width: 200px;
+      font-size: 0.9em;
+  }
+}
+
+h5 {
+  color: var(--d2l-cplus-color-black, #000000);
+  font-weight: bold;
+  padding: 0;
+}
+h5 {
+  font-size: 0.9rem;
+  line-height: 1rem;
+  margin-bottom: 0.221rem;
+  margin-top: 0.421rem;
+}
+@media screen and (min-width: 768px) {
+  h5 {
+    font-size: 1.163rem;
+    line-height: 1.54rem;
+  }
+}
+
+.material-explorer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Initial gap between buttons */
+  justify-content: center;
+  padding: 10px;
+}
+
+.material-btn {
+  flex: 1 1 150px; /* Responsive size: grow, shrink, and have a minimum width */
+  max-width: 150px;
+  background: linear-gradient(to bottom, #4e9ef5, #1a75d1); /* Gradient for 3D effect */
+    color: white; /* Contrast text color */
+    border: 1px solid #1a75d1; /* Border matches the darker part of the gradient */
+    border-radius: 5px; /* Smooth corners */
+
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+
+  padding: 10px 15px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.material-btn:hover {
+  background: linear-gradient(to bottom, #1a75d1, #1455a5); /* Darker gradient on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.material-btn:active {
+  background: linear-gradient(to bottom, #1455a5, #1a75d1); /* Reverse gradient for pressed effect */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Smaller shadow for pressed state */
+  transform: translateY(2px); /* Simulate button press */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .material-explorer {
+      gap: 15px; /* Reduce the gap on smaller screens */
+  }
+
+  .material-btn {
+      font-size: 14px; /* Shrink text size */
+      flex: 1 1 120px; /* Reduce minimum width */
+      max-width: 150px;
+      padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .material-explorer {
+      gap: 10px; /* Further reduce the gap */
+  }
+
+  .material-btn {
+      font-size: 12px; /* Further shrink text size */
+      flex: 1 1 120px; /* Smaller buttons for very small screens */
+      max-width: 150px;
+      padding: 6px 10px;
+  }
+}
+
+#material-details {
+  margin-top: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-bottom: 40px;
+}
+
+.hidden {
+  display: none;
+}

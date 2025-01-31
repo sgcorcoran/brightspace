@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+
+<title>Poisson’s Ratio and Transverse Strain - Worked Example</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+<header>
+<h1>Worked Example: Poisson’s Ratio and Transverse Strain</h1>
+<p>Calculate the transverse strain and discuss the significance of Poisson’s ratio for a metallic alloy and a polymer.</p>
+</header>
+<main>
+<article>
+<h2>Objectives:</h2>
+<ol>
+<li>Understand the relationship between axial and transverse strain using Poisson’s ratio.</li>
+<li>Calculate transverse strain for different materials under uniaxial stress.</li>
+</ol>
+</article>
+
+<aside>
+<h4>Key Concept: Poisson’s Ratio</h4>
+<p>Poisson’s ratio (\( \nu \)) is a measure of the ratio of transverse strain (\( \epsilon_t \)) to axial strain (\( \epsilon_a \)) in a material under uniaxial stress. It is defined as:</p>
+\[
+\nu = -\frac{\epsilon_t}{\epsilon_a}
+\]
+<p>Typical values for metals range from 0.25 to 0.35, while polymers often exhibit higher values due to their flexibility.</p>
+</aside>
+
+<h3>Expanded Problem Statement</h3>
+<p>Determine the transverse strain for:</p>
+<ul>
+<li>A steel rod subjected to a tensile stress of \( 200 \, \text{MPa} \), with \( E = 210 \, \text{GPa} \) and \( \nu = 0.3 \).</li>
+<li>A polyethylene rod under a tensile stress of \( 20 \, \text{MPa} \), with \( E = 1 \, \text{GPa} \) and \( \nu = 0.45 \).</li>
+</ul>
+
+<h3>Solution</h3>
+<h4>Metallic Alloy: Steel</h4>
+<p>Calculate the axial strain (\( \epsilon_a \)) using Hooke’s Law:</p>
+\[
+\epsilon_a = \frac{\sigma}{E} = \frac{200 \times 10^6}{210 \times 10^9} = 9.52 \times 10^{-4}
+\]
+<p>Determine the transverse strain (\( \epsilon_t \)):</p>
+\[
+\epsilon_t = -\nu \cdot \epsilon_a = -0.3 \times 9.52 \times 10^{-4} = -2.86 \times 10^{-4}
+\]
+
+<h4>Polymeric Material: Polyethylene</h4>
+<p>Calculate the axial strain:</p>
+\[
+\epsilon_a = \frac{20 \times 10^6}{1 \times 10^9} = 2 \times 10^{-2}
+\]
+<p>Determine the transverse strain:</p>
+\[
+\epsilon_t = -0.45 \times 2 \times 10^{-2} = -9 \times 10^{-3}
+\]
+
+<div class="notice">
+<h4>Compare the transverse strains for steel and polyethylene.</h4>
+<cite>Discuss why the polymer exhibits a higher transverse strain compared to the metal.</cite>
+</div>
+</main>
+<footer>
+      <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+    </footer></body>
+</html>

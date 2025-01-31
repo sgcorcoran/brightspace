@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+<title>Vacancy Concentration Calculation - Worked Example</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+<header>
+<h1>Worked Example: Vacancy Concentration</h1>
+<p>Calculate the equilibrium vacancy concentration for Copper and Polyethylene at elevated temperatures.</p>
+</header>
+<main>
+<article>
+<h2>Objectives:</h2>
+<ol>
+<li>Understand vacancy formation in metals and polymers.</li>
+<li>Apply the Arrhenius equation for vacancy concentration.</li>
+</ol>
+</article>
+<h3>Given Problem Statement</h3>
+<p>Determine the equilibrium vacancy concentration for:</p>
+<ul>
+<li>Copper at \( T = 900 \, ^\circ\text{C} \), with \( Q_v = 0.9 \, \text{eV} \).</li>
+<li>Polyethylene at \( T = 150 \, ^\circ\text{C} \), considering free volume effects.</li>
+</ul>
+
+<h3>Solution</h3>
+<h4>Metallic Alloy: Copper</h4>
+<p>The vacancy concentration is given by: \[ n_v = n \exp\left(-\frac{Q_v}{kT}\right) \]</p>
+<p>Where:</p>
+<ul>
+<li>\( Q_v = 0.9 \, \text{eV} \)</li>
+<li>\( T = 1173 \, \text{K} \)</li>
+<li>\( k = 8.617 \times 10^{-5} \, \text{eV/K} \)</li>
+</ul>
+<p>Substituting the values:</p>
+\[ n_v = n \exp\left(-\frac{0.9}{8.617 \times 10^{-5} \times 1173}\right) \approx 1.2 \times 10^{-4} \]
+
+<h4>Polymeric Material: Polyethylene</h4>
+<p>For polymers, vacancy-like defects relate to free volume. Estimate \( n_v \approx 10^{-3} \) based on typical free volume at \( T = 423 \, \text{K} \).</p>
+
+<div class="notice">
+<h4>How does temperature influence vacancy concentration in both materials?</h4>
+<cite>Consider the impact of increasing temperature on vacancy formation.</cite>
+</div>
+
+</main>
+<footer>
+      <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+    </footer></body>
+</html>

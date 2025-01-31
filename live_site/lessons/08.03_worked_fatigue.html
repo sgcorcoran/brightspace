@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+<title>Fatigue Analysis - Worked Example</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+<link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+<header>
+<h1>Worked Example: Fatigue Analysis</h1>
+<p>Estimate the fatigue life of a metallic alloy (AISI 1045 steel) and a polymer (Polycarbonate).</p>
+</header>
+<main>
+<article>
+<h2>Objectives:</h2>
+<ol>
+<li>Understand fatigue life estimation using S-N curves.</li>
+<li>Apply the fatigue strength formula for both metallic and polymeric materials.</li>
+</ol>
+</article>
+<h3>Given Problem Statement</h3>
+<p>Determine the number of cycles to failure for:</p>
+<ul>
+<li>AISI 1045 steel with an applied stress of \( \sigma = 300 \, \text{MPa} \).</li>
+<li>Polycarbonate with an applied stress of \( \sigma = 50 \, \text{MPa} \).</li>
+</ul>
+
+<h3>Solution</h3>
+<h4>Metallic Alloy: AISI 1045 Steel</h4>
+<p>The fatigue strength equation is: \[ N_f = \left(\frac{\sigma_f'}{\sigma}\right)^{1/b} \]</p>
+<p>Where:</p>
+<ul>
+<li>\( \sigma_f' = 950 \, \text{MPa} \) (fatigue strength coefficient)</li>
+<li>\( b = -0.12 \) (fatigue strength exponent)</li>
+<li>\( \sigma = 300 \, \text{MPa} \) (applied stress)</li>
+</ul>
+<p>Calculate the number of cycles to failure:</p>
+\[ N_f = \left(\frac{950}{300}\right)^{1/(-0.12)} \approx 10^5 \, \text{cycles} \]
+
+<h4>Polymeric Material: Polycarbonate</h4>
+<p>Using a simplified approach for polymers, assume \( b = -0.15 \) and \( \sigma_f' = 80 \, \text{MPa} \):</p>
+\[ N_f = \left(\frac{80}{50}\right)^{1/(-0.15)} \approx 2 \times 10^4 \, \text{cycles} \]
+
+<div class="notice">
+<h4>What would happen if the applied stress is reduced?</h4>
+<cite>Consider how lowering the stress level impacts fatigue life for both materials.</cite>
+</div>
+
+</main>
+<footer>
+      <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+    </footer></body>
+</html>
