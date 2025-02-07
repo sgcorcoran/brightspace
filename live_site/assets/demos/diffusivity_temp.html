@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Diffusivity vs Temperature (Plotly)</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h2>Log Diffusivity vs Temperature for Various Diffusing Species</h2>
+    
+    <div id="plotlyChart" style="max-width: 800px; margin: auto;"></div>
+
+    <h3>Select Diffusing Species:</h3>
+    <div id="checkboxContainer" style="display: flex; justify-content: space-around; align-items: flex-start; gap: 20px;">
+        <div id="interstitialDiffusion" style="display: flex; flex-direction: column; align-items: center;">
+            <button class="toggleCategory" data-category="interstitialDiffusion">Interstitial Diffusion</button>
+            <div class="checkboxList"></div> <!-- Container for checkboxes -->
+        </div>
+    
+        <div id="vacancySelfDiffusion" style="display: flex; flex-direction: column; align-items: center;">
+            <button class="toggleCategory" data-category="vacancySelfDiffusion">Vacancy Diffusion (self)</button>
+            <div class="checkboxList"></div> <!-- Container for checkboxes -->
+        </div>
+    
+        <div id="vacancySubstitutionDiffusion" style="display: flex; flex-direction: column; align-items: center;">
+            <button class="toggleCategory" data-category="vacancySubstitutionDiffusion">Vacancy Diffusion (substitution)</button>
+            <div class="checkboxList"></div> <!-- Container for checkboxes -->
+        </div>
+    </div>
+
+    <script>
+        // Constants
+        const R = 8.314;
+        const T = Array.from({ length: 20 }, (_, i) => 500 + i * 75);  // 500K to 2000K
+        const x_inverse_T = T.map(t => 1 / t);
+
+        // Diffusion Data (from table)
+        const diffusionData = [
+            
+            { species: "H", host: "Fe", structure: "BCC", Q: 10000, D0: 7.5e-8, color: "green" },
+            { species: "N", host: "Fe", structure: "BCC", Q: 73400, D0: 1.3e-7, color: "blue" },
+            { species: "C", host: "Fe", structure: "BCC", Q: 87400, D0: 1.1e-6, color: "red" },
+            { species: "C", host: "Fe", structure: "FCC", Q: 148000, D0: 2.3e-5, color: "orange" },
+
+            { species: "Zn", host: "Zn", structure: "HCP", Q: 96300, D0: 1.8e-5, color: "green" },
+            { species: "Zn", host: "Al", structure: "FCC", Q: 118000, D0: 1.8e-5, color: "navy" },
+            { species: "Al", host: "Al", structure: "FCC", Q: 126000, D0: 1.8e-5, color: "purple" },
+            { species: "Cu", host: "Al", structure: "FCC", Q: 139000, D0: 9e-5, color: "darkred" },
+
+            { species: "Zn", host: "Cu", structure: "FCC", Q: 193000, D0: 5.9e-5, color: "lime" },
+            { species: "Cu", host: "Cu", structure: "FCC", Q: 198000, D0: 1.3e-5, color: "blue" },
+            { species: "Ni", host: "Cu", structure: "FCC", Q: 228000, D0: 3.8e-5, color: "darkblue" },
+            
+            { species: "Fe", host: "α-Fe", structure: "BCC", Q: 251000, D0: 3e-4, color: "red" },
+            { species: "Fe", host: "γ-Fe", structure: "FCC", Q: 286000, D0: 7e-5, color: "orange" }
+
+            
+        ];
+
+        // Create dataset traces
+        let traces = [];
+        // Mapping of categories
+const categoryMapping = {
+    "H Fe BCC": "interstitialDiffusion",
+    "N Fe BCC": "interstitialDiffusion",
+    "C Fe BCC": "interstitialDiffusion",
+    "C Fe FCC": "interstitialDiffusion",
+    
+    "Cu Cu FCC": "vacancySelfDiffusion",
+    "Fe α-Fe BCC": "vacancySelfDiffusion",
+    "Fe γ-Fe FCC": "vacancySelfDiffusion",
+    "Al Al FCC": "vacancySelfDiffusion",
+    "Zn Zn HCP": "vacancySelfDiffusion",
+
+    "Zn Cu FCC": "vacancySubstitutionDiffusion",
+    "Ni Cu FCC": "vacancySubstitutionDiffusion",
+    "Cu Al FCC": "vacancySubstitutionDiffusion",
+    "Zn Al FCC": "vacancySubstitutionDiffusion"
+};
+
+// Define temperature ranges for all datasets
+const tempRanges = {
+    "Cu Cu FCC": [800, 1200],
+    "Fe α-Fe BCC": [800, 1000],
+    "Fe γ-Fe FCC": [900, 1200],
+    "Al Al FCC": [300, 750],
+    "Zn Zn HCP": [200, 650],
+    "H Fe BCC": [300, 800],
+    "N Fe BCC": [600, 1000],
+    "C Fe BCC": [600, 1000],
+    "C Fe FCC": [875, 1200],
+    "Zn Cu FCC": [800, 1100],
+    "Ni Cu FCC": [800, 1200],
+    "Cu Al FCC": [300, 750],
+    "Zn Al FCC": [300, 750]
+};
+
+// Define interstitial diffusion species for dotted lines
+const interstitialSpecies = [
+    "H Fe BCC",
+    "N Fe BCC",
+    "C Fe BCC",
+    "C Fe FCC"
+];
+
+
+// Define species that should be visible initially
+const initiallyVisible = [
+    "C Fe BCC",
+    "C Fe FCC",
+    "Al Al FCC",
+    "Cu Cu FCC",
+    "Zn Cu FCC",
+    "Fe α-Fe BCC",
+    "Fe γ-Fe FCC"
+];
+
+// Function to toggle all checkboxes within a category
+document.querySelectorAll(".toggleCategory").forEach(button => {
+    button.addEventListener("click", function() {
+        let categoryId = this.getAttribute("data-category");
+        let checkboxes = document.querySelectorAll(`#${categoryId} input[type="checkbox"]`);
+
+        // Determine if at least one checkbox is checked
+        let anyChecked = Array.from(checkboxes).some(cb => cb.checked);
+
+        // Toggle all checkboxes and adjust opacity instead of visibility
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = !anyChecked;
+            let index = checkbox.id.replace("toggle", "");
+            let opacityValue = checkbox.checked ? 1 : 0.05;
+            Plotly.restyle("plotlyChart", { opacity: opacityValue }, [index]);
+        });
+    });
+});
+
+
+
+
+// Modify the loop where datasets are created
+diffusionData.forEach((data, index) => {
+    let tempRange = tempRanges[`${data.species} ${data.host} ${data.structure}`] || [500, 2000];
+
+    // Filter temperatures within the min-max range
+    let T_filtered = T.filter(t => t >= tempRange[0] && t <= tempRange[1]);
+    let x_inverse_T_filtered = T_filtered.map(t => 1 / t);
+
+    // Calculate log diffusivity only for the selected temperature range
+    let log_D = T_filtered.map(t => Math.log10(data.D0 * Math.exp(-data.Q / (R * t))));
+
+    traces.push({
+    x: x_inverse_T_filtered,
+    y: log_D,
+    mode: "lines",
+    name: `${data.species} in ${data.host} (${data.structure})`,
+    line: {
+        color: data.color,
+        dash: interstitialSpecies.includes(`${data.species} ${data.host} ${data.structure}`) ? "dot" : "solid"
+    },
+    opacity: initiallyVisible.includes(`${data.species} ${data.host} ${data.structure}`) ? 1 : 0.05
+});
+
+
+    // Determine category for checkbox placement
+    let category = categoryMapping[`${data.species} ${data.host} ${data.structure}`] || "vacancySubstitutionDiffusion";
+
+    // Create checkbox
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.id = `toggle${index}`;
+    checkbox.checked = initiallyVisible.includes(`${data.species} ${data.host} ${data.structure}`);
+    checkbox.addEventListener("change", function() {
+    let opacityValue = this.checked ? 1 : 0.05;
+    Plotly.restyle("plotlyChart", { opacity: opacityValue }, [index]);
+});
+
+
+    let label = document.createElement("label");
+    label.htmlFor = `toggle${index}`;
+    label.appendChild(document.createTextNode(` ${data.species} in ${data.host} (${data.structure})`));
+
+    // Append checkbox to the correct category column
+    document.getElementById(category).querySelector(".checkboxList").appendChild(checkbox);
+    document.getElementById(category).querySelector(".checkboxList").appendChild(label);
+    document.getElementById(category).querySelector(".checkboxList").appendChild(document.createElement("br"));
+});
+
+
+
+
+
+        // Initial plot
+        const layout = {
+    title: "Log Diffusivity vs Temperature",
+    xaxis: {
+        title: "Temperature (K)",
+        tickmode: "array",
+        tickvals: x_inverse_T,
+        ticktext: T.map(t => t.toString()),  // Show actual T values
+        range: [1 / 500, 1 / 1200],  // **Fixes the x-axis range**
+        tickangle: -90,  // Set x-axis labels to vertical
+        
+    },
+    yaxis: {
+        title: "Log Diffusivity (log10(D))",
+        range: [-20, -7]  // **Fixes the y-axis range**
+    }
+};
+
+
+        Plotly.newPlot("plotlyChart", traces, layout);
+    </script>
+</body>
+</html>

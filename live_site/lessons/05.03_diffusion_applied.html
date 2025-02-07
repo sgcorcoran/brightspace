@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <title>Applications and Analysis of Diffusion</title>
+
+    <!-- Brightspace Scripts and Styles -->
+    <script type="module" src="../assets/js/global.min.js"></script>
+    <script defer src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+    <script src="../assets/js/videoExpand.js"></script>
+    <script src="../assets/js/load-mathjax.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
+    <link rel="stylesheet" href="../assets/css/customv5.css" />
+</head>
+
+<body class="courseware-themes">
+
+    <!-- Header -->
+    <header class="custom-header">
+        <h1>Applications and Analysis of Diffusion</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="courseware-layouts-content-wrapper">
+
+        <!-- Learning Objectives -->
+        <section>
+            <h2>Learning Objectives</h2>
+            <ul>
+                <li>Apply Fick’s laws to solve diffusion-related problems.</li>
+                <li>Analyze experimental diffusion data to determine the diffusion coefficient.</li>
+                <li>Assess the impact of diffusion on material selection.</li>
+                <li>Critique different methods of controlling diffusion in engineering applications.</li>
+                <li>Develop an experiment to measure diffusion in a material system.</li>
+            </ul>
+        </section>
+
+        <!-- Recap of Diffusion Principles -->
+        <section>
+            <h2>Recap of Diffusion Principles</h2>
+            <p>In our previous lesson, we learned about diffusion mechanisms and Fick’s First Law, which describes steady-state diffusion. 
+            Now, we will explore **Fick’s Second Law**, which explains non-steady-state diffusion where concentration changes over time.</p>
+
+            <figure>
+                <img src="../assets/img/diffusion_recap.png" alt="Diffusion recap illustration" class="no-hover">
+                <figcaption>Figure 1: Atomic motion in diffusion.</figcaption>
+            </figure>
+
+            <p class="concept-check"><strong>Concept Check:</strong> Why is Fick’s Second Law needed for real-world diffusion problems?</p>
+        </section>
+
+        <!-- Fick’s Second Law -->
+        <section>
+            <h2>Fick’s Second Law: Non-Steady-State Diffusion</h2>
+            <p>Fick’s Second Law describes how diffusion concentration **changes over time**. It is given by:</p>
+
+            <div class="math-equation">
+                <p>\[
+                \frac{\partial C}{\partial t} = D \frac{\partial^2 C}{\partial x^2}
+                \]</p>
+            </div>
+
+            <p>where:</p>
+            <ul>
+                <li>\(C\) = Concentration.</li>
+                <li>\(t\) = Time.</li>
+                <li>\(D\) = Diffusion coefficient.</li>
+                <li>\(\frac{\partial^2 C}{\partial x^2}\) = Change in concentration over distance.</li>
+            </ul>
+
+            <p>It is commonly applied in **heat treatment, doping semiconductors, and gas diffusion in solids**.</p>
+            <div class="courseware-layouts-content-wrapper">
+                <div class="courseware-video-wrapper" id="video1">
+                    <div class="courseware-video-text">
+                        <p>Semi-infinite diffusion</p>
+                    </div>
+                    <div class="courseware-video-embed-responsive"><video title="Video Lesson"
+                            onclick="expandVideo('video1')">
+                            <source src="../assets/media/Supplemental/semi_infinite_diffusion.mp4" type="video/mp4">
+                        </video></div>
+                </div></div>
+            <div class="interactive-demo">
+                <h3>Interactive Simulation: Non-Steady-State Diffusion</h3>
+                <p>Observe how concentration changes over time using Fick’s Second Law.</p>
+                <iframe src="../assets/demos/ficks_second_law_simulation.html" title="Fick's Second Law Simulation" class="demo-iframe"></iframe>
+            </div>
+
+            <p class="concept-check"><strong>Concept Check:</strong> How does the diffusion profile change as time increases?</p>
+        </section>
+
+        <!-- Solving Diffusion Problems -->
+        <section>
+            <h2>Solving Diffusion Problems</h2>
+            <p>Let’s work through an example applying Fick’s Second Law.</p>
+
+            <h3>Example: Carburization of Steel</h3>
+            <p>In carburization, carbon atoms diffuse into the surface of steel to increase hardness. The solution to Fick’s Second Law in this case is:</p>
+
+            <div class="math-equation">
+                <p>\[
+                C(x,t) = C_s + (C_0 - C_s) \text{erf} \left( \frac{x}{2\sqrt{Dt}} \right)
+                \]</p>
+            </div>
+
+            <ul>
+                <li>\(C(x,t)\) = Concentration at depth \(x\) and time \(t\).</li>
+                <li>\(C_s\) = Surface concentration.</li>
+                <li>\(C_0\) = Initial concentration.</li>
+                <li>\(\text{erf}\) = Error function.</li>
+            </ul>
+
+            <p>Use the interactive calculator below to estimate the depth of carbon diffusion based on time and temperature.</p>
+
+            <div class="interactive-demo">
+                <h3>Carburization Calculator</h3>
+                <iframe src="../assets/demos/carburization_calculator.html" title="Carburization Calculator" class="demo-iframe"></iframe>
+            </div>
+
+            <p class="concept-check"><strong>Concept Check:</strong> What happens if temperature increases during carburization?</p>
+        </section>
+
+        <!-- Industrial Applications -->
+        <section>
+            <h2>Industrial Applications of Diffusion</h2>
+            <p>Diffusion plays a critical role in several industrial processes:</p>
+
+            <ul>
+                <li><strong>Semiconductors:</strong> Doping silicon to create electronic components.</li>
+                <li><strong>Metallurgy:</strong> Case hardening of gears for wear resistance.</li>
+                <li><strong>Corrosion Protection:</strong> Diffusion barriers in coatings.</li>
+            </ul>
+
+            <figure>
+                <img src="../assets/img/semiconductor_diffusion.png" alt="Semiconductor diffusion example" class="no-hover">
+                <figcaption>Figure 2: Diffusion in semiconductor processing.</figcaption>
+            </figure>
+        </section>
+
+        <!-- Experiment Design -->
+        <section>
+            <h2>Designing a Diffusion Experiment</h2>
+            <p>Now, let’s develop an experiment to measure diffusion rates in a material.</p>
+
+            <h3>Step 1: Selecting the Material</h3>
+            <p>Choose a material such as **polymers, metals, or ceramics**.</p>
+
+            <h3>Step 2: Measuring Diffusion</h3>
+            <p>Common techniques:</p>
+            <ul>
+                <li><strong>Optical Microscopy:</strong> Measuring diffusion fronts.</li>
+                <li><strong>Gas Permeation Tests:</strong> Studying diffusion in polymers.</li>
+            </ul>
+
+            <h3>Step 3: Analyzing the Data</h3>
+            <p>Use Fick’s laws to calculate diffusion coefficients.</p>
+
+            <div class="interactive-demo">
+                <h3>Diffusion Coefficient Calculator</h3>
+                <iframe src="../assets/demos/diffusion_coefficient_calc.html" title="Diffusion Coefficient Calculator" class="demo-iframe"></iframe>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section>
+            <h2>Summary & Key Takeaways</h2>
+            <ul>
+                <li>Fick’s Second Law describes non-steady-state diffusion.</li>
+                <li>Diffusion is critical in **heat treatment, semiconductors, and corrosion prevention**.</li>
+                <li>Experimental methods allow measurement of diffusion coefficients.</li>
+            </ul>
+        </section>
+
+        <!-- Concept Check -->
+        <section>
+            <h2>Concept Check</h2>
+            <p>Click the card to reveal the answer.</p>
+
+            <div class="card-container">
+                <div class="card-container-3">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front"><p>Which industry relies on diffusion for material hardening?</p></div>
+                        <div class="card-back"><p>Metallurgy (e.g., carburization of steel).</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2024 Virginia Tech</p>
+    </footer>
+
+</body>
+</html>

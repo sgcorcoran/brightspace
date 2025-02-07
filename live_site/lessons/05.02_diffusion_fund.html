@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <title>Fundamentals of Diffusion</title>
+
+    <!-- Brightspace Scripts and Styles -->
+    <script type="module" src="../assets/js/global.min.js"></script>
+    <script defer src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+    <script src="../assets/js/videoExpand.js"></script>
+    <script src="../assets/js/load-mathjax.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
+    <link rel="stylesheet" href="../assets/css/customv5.css" />
+</head>
+
+<body class="courseware-themes">
+
+    <!-- Header -->
+    <header class="custom-header">
+        <h1>Fundamentals of Diffusion</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="courseware-layouts-content-wrapper">
+
+        <!-- Learning Objectives -->
+        <section>
+            <h2>Learning Objectives</h2>
+            <ul>
+                <li>Define diffusion and explain its significance in materials science.</li>
+                <li>Identify key diffusion mechanisms, including interstitial and vacancy diffusion.</li>
+                <li>Describe Fick’s first law of diffusion and its applications.</li>
+                <li>Explain how temperature, concentration gradients, and atomic structure influence diffusion rates.</li>
+                <li>Compare diffusion in different materials, such as metals, ceramics, and polymers.</li>
+            </ul>
+        </section>
+
+        <!-- Introduction -->
+        <section>
+            <h2>Introduction to Diffusion</h2>
+            <p>Diffusion is the process by which atoms move due to a concentration gradient. It is critical in applications such as:</p>
+            <ul>
+                <li>Semiconductor manufacturing (doping silicon).</li>
+                <li>Heat treatment of metals (carburization).</li>
+                <li>Corrosion and oxidation control.</li>
+            </ul>
+
+            <div class="courseware-layouts-content-wrapper">
+                <div class="courseware-video-wrapper" id="video1">
+                    <div class="courseware-video-text">
+                        <p>Random Walk</p>
+                    </div>
+                    <div class="courseware-video-embed-responsive"><video title="Video Lesson"
+                            onclick="expandVideo('video1')">
+                            <source src="../assets/media/Supplemental/ranwalk 100 steps_x264.mp4" type="video/mp4">
+                        </video></div>
+                </div>
+                <div class="courseware-video-wrapper" id="video2">
+                    <div class="courseware-video-text">
+                        <p>Vacancy Diffusion</p>
+                    </div>
+                    <div class="courseware-video-embed-responsive"><video title="Video Lesson"
+                            onclick="expandVideo('video2')">
+                            <source src="../assets/media/Supplemental/diffusion_vacancy_couple.mp4" type="video/mp4">
+                        </video></div>
+                </div>
+
+                
+                
+                </div>
+        </section>
+
+        <!-- Diffusion Mechanisms -->
+        <section>
+                    <!-- Engaging Aside -->
+                    <div class="courseware-card aside-card">
+                        <div class="courseware-card-header" style="margin-bottom:0; padding-bottom:0;">
+                            <h4>The Role of Diffusion in Ancient Sword Making</h4>
+                        </div>
+                        <div class="courseware-card-body">
+                            <figure>
+                                <img src="../assets/img/pattern_weld_sword.png" alt="Early sword showing diffusion effects" class="no-hover">
+                                <figcaption><p>Carbon diffusion and pattern-welding in ancient swords.</p></figcaption>
+                            </figure>
+                    
+                            <p>During the early <strong>Iron Age (c. 1200 BCE – 500 CE)</strong>, blacksmiths developed advanced metalworking techniques to improve <strong>sword strength and durability</strong>. 
+                            One such technique, pattern welding, combined alternating layers of iron and steel through repeated forging, twisting, and welding. 
+                            This process not only increased flexibility and toughness but also created distinctive surface patterns that were enhanced by etching. 
+                            This process was unintentionally optimized by early blacksmiths, long before the scientific understanding of diffusion.
+                        </p>
+                    
+                            <p>Modern metallurgical studies confirm that <strong>repeated forging and carbon diffusion strengthened these weapons</strong>, 
+                            making pattern-welding an early example of applied materials science.</p>
+                        </div>
+                    </div>
+                    
+                    
+
+            <h2>Mechanisms of Diffusion</h2>
+            <h3>Vacancy Diffusion</h3>
+            <p>Atoms move by hopping into vacant lattice sites. Common in metals.</p>
+            <figure>
+                <img src="../assets/img/vacancy_diffusion.png" alt="Vacancy diffusion mechanism" class="no-hover" style="max-width:350px;">
+                <figcaption><p>Vacancy diffusion in a crystalline structure.</p></figcaption>
+            </figure>
+
+            <h3>Interstitial Diffusion</h3>
+            <p>Smaller atoms move through spaces between larger host atoms, common in alloys.</p>
+            <figure >
+                <img src="../assets/img/interstitial_diffusion.png" alt="Interstitial diffusion mechanism" class="no-hover" style="max-width:350px;">
+                <figcaption><p>Small atoms diffusing between larger host atoms.</p></figcaption>
+            </figure>
+
+  
+
+        <!-- Fick’s First Law -->
+        
+            <h2>Fick’s First Law: Steady-State Diffusion</h2>
+            <p>Describes diffusion when concentration gradient remains constant:</p>
+
+            <div class="math-equation">
+                <p>\[
+                J = -D \frac{dC}{dx}
+                \]</p>
+            </div>
+
+            <ul>
+                <li>\(J\) = Diffusion flux.</li>
+                <li>\(D\) = Diffusion coefficient.</li>
+                <li>\(\frac{dC}{dx}\) = Concentration gradient.</li>
+            </ul>
+
+            
+        
+
+        <!-- Factors Affecting Diffusion -->
+        <section>
+            <h2>Factors Affecting Diffusion</h2>
+            <h3>Temperature</h3>
+            <p>Diffusion follows the Arrhenius equation:</p>
+            <div class="math-equation">
+                <p>\[
+                D = D_0 e^{-\frac{Q}{RT}}
+                \]</p>
+            </div>
+
+            <table border="1" class="dataframe">
+                <thead>
+                  <tr style="text-align: right;">
+                    <th>Diffusing Species</th>
+                    <th>Host Metal</th>
+                    <th>Crystal Structure</th>
+                    <th>Activation Energy (kJ/mol)</th>
+                    <th>Pre-exponential Factor (m²/s)</th>
+                    <th>Diffusion Coefficient at 773K (m²/s)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td colspan="6"><strong>Self-diffusion</strong></td></tr>
+                  <tr>
+                    <td>Copper (Cu)</td>
+                    <td>Copper (Cu)</td>
+                    <td>FCC</td>
+                    <td>198.0</td>
+                    <td>1.3e-5</td>
+                    <td>5.4e-19</td>
+                  </tr> <!--ref: NIST-->
+                  <tr>
+                    <td>Iron (Fe)</td>
+                    <td>Iron (α-Fe)</td>
+                    <td>BCC</td>
+                    <td>251.0</td>
+                    <td>3.0e-4</td>
+                    <td>3.3e-21</td>
+                  </tr> <!--ref: NIST-->
+                  <tr>
+                    <td>Iron (Fe)</td>
+                    <td>Iron (γ-Fe)</td>
+                    <td>FCC</td>
+                    <td>286.0</td>
+                    <td>7.0e-5</td>
+                    <td>3.3e-24</td>
+                  </tr> <!--ref: NIST-->
+                  <tr>
+                    <td>Aluminum (Al)</td>
+                    <td>Aluminum (Al)</td>
+                    <td>FCC</td>
+                    <td>126</td>
+                    <td>1.8e-5</td>
+                    <td>5.5e-14</td>
+                  </tr> 
+                  <tr>
+                    <td>Zinc (Zn)</td>
+                    <td>Zinc (Zn)</td>
+                    <td>HCP</td>
+                    <td>96.3</td>
+                    <td>1.8e-5</td>
+                    <td>5.6e-12</td>
+                  </tr> <!--ref: Granta-->
+              
+                  <tr><td colspan="6"><strong>Interstitial Diffusion</strong></td></tr>
+                  <tr>
+                    <td>Hydrogen (H)</td>
+                    <td>Iron (Fe)</td>
+                    <td>BCC</td>
+                    <td>10.0</td>
+                    <td>7.5e-8</td>
+                    <td>1.6e-8</td>
+                  </tr> <!--ref: paper in citation folder-->
+                  <tr>
+                    <td>Nitrogen (N)</td>
+                    <td>Iron (Fe)</td>
+                    <td>BCC</td>
+                    <td>73.4</td>
+                    <td>1.3e-7</td>
+                    <td>1.4e-12</td>
+                  </tr> <!--ref: online-->
+                  <tr>
+                    <td>Carbon (C)</td>
+                    <td>Iron (Fe)</td>
+                    <td>BCC</td>
+                    <td>87.4</td>
+                    <td>1.1e-6</td>
+                    <td>1.4e-12</td>
+                  </tr> <!--ref: Callister-->
+                  <tr>
+                    <td>Carbon (C)</td>
+                    <td>Iron (Fe)</td>
+                    <td>FCC</td>
+                    <td>148.0</td>
+                    <td>2.3e-5</td>
+                    <td>2.3e-15</td>
+                  </tr> <!--ref: Callister-->
+              
+                  <tr><td colspan="6"><strong>Vacancy Diffusion</strong></td></tr>
+                  <tr>
+                    <td>Zinc (Zn)</td>
+                    <td>Copper (Cu)</td>
+                    <td>FCC</td>
+                    <td>193.0</td>
+                    <td>5.9e-5</td>
+                    <td>5.4e-18</td>
+                  </tr> <!--ref: NIST-->
+                  <tr>
+                    <td>Nickel (Ni)</td>
+                    <td>Copper (Cu)</td>
+                    <td>FCC</td>
+                    <td>228.0</td>
+                    <td>3.8e-5</td>
+                    <td>1.5e-20</td>
+                  </tr> <!--ref: NIST-->
+                  <tr>
+                    <td>Copper (Cu)</td>
+                    <td>Aluminum (Al)</td>
+                    <td>FCC</td>
+                    <td>139.0</td>
+                    <td>9.0e-5</td>
+                    <td>3.6e-14</td>
+                  </tr> <!--ref: NIST-->
+                  <tr>
+                    <td>Zinc (Zn)</td>
+                    <td>Aluminum (Al)</td>
+                    <td>FCC</td>
+                    <td>118.0</td>
+                    <td>1.8e-5</td>
+                    <td>1.9e-13</td>
+                  </tr> <!--ref: NIST-->
+                </tbody>
+              </table>
+              
+            
+            <!-- Interactive Element -->
+
+            <div
+            style="position: relative; width: 100%; max-width:800px; aspect-ratio:1; overflow: hidden; margin:0 auto; margin-top:25px;">
+            <iframe src="../assets/demos/diffusivity_temp.html" title="Diffusion Coefficient"
+                style="width: 100%; height: 100%; border: 0;" scrolling="no" frameborder="0"
+                allowfullscreen="allowfullscreen">
+            </iframe>
+        </div>
+
+            <h3>Concentration Gradient</h3>
+            <p>A larger gradient results in faster diffusion.</p>
+
+            <h3>Crystal Structure & Defects</h3>
+            <p>Open structures (BCC) allow faster diffusion than close-packed structures (FCC).</p>
+            <figure>
+                <img src="../assets/img/crystal_diffusion.png" alt="Diffusion in different crystal structures" class="no-hover">
+                <figcaption>Diffusion paths in BCC and FCC metals.</figcaption>
+            </figure>
+        </section>
+
+        <!-- Concept Check -->
+        <section>
+            <h2>Concept Check</h2>
+            <p>Click the card to reveal the answer.</p>
+
+            <div class="card-container">
+                <div class="card-container-3">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front"><p>Which diffusion mechanism is faster, vacancy or interstitial?</p></div>
+                        <div class="card-back"><p>Interstitial diffusion is faster because smaller atoms move freely.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section>
+            <h2>Summary & Key Takeaways</h2>
+            <ul>
+                <li>Diffusion is critical in materials engineering.</li>
+                <li>Two main mechanisms: vacancy and interstitial.</li>
+                <li>Fick’s first law describes steady-state diffusion.</li>
+                <li>Temperature, concentration gradient, and atomic structure affect diffusion.</li>
+            </ul>
+        </section>
+
+        <!-- Next Steps -->
+        <section>
+            <h2>What’s Next?</h2>
+            <p>Next lesson: **Fick’s Second Law**, non-steady-state diffusion, and real-world applications.</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2024 Virginia Tech</p>
+    </footer>
+
+</body>
+</html>
