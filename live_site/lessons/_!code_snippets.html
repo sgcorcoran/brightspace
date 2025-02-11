@@ -34,6 +34,42 @@
     <link rel="stylesheet" href="../assets/css/customv5.css" />
 </head>
 
+<!-- iframe dynamic height adjustment -->
+        <!-- parent page -->
+        <section>
+            <div id="iframe-container" style="position: relative; width: 100%; max-width:800px; margin: 0 auto; margin-top: 25px;">
+                <iframe id="dynamic-iframe" src="../assets/demos/diffusivity_temp.html" title="Diffusion Coefficient"
+                    style="width: 100%; border: 0;" scrolling="no" frameborder="0" allowfullscreen="allowfullscreen">
+                </iframe>
+            </div>
+        </section>
+            <!-- place script in head -->
+        <script>
+            function resizeIframe(event) {
+                if (event.origin !== window.location.origin) return; // Ensure security
+                
+                const iframe = document.getElementById('dynamic-iframe');
+                if (event.data && event.data.height) {
+                    iframe.style.height = event.data.height + 'px';
+                }
+            }
+
+            window.addEventListener('message', resizeIframe, false);
+        </script>
+
+        <!-- embedded page -->
+        <script>
+            function sendHeight() {
+                const height = document.documentElement.scrollHeight;
+                window.parent.postMessage({ height }, "*");
+            }
+
+            window.addEventListener("load", sendHeight);
+            window.addEventListener("resize", sendHeight);
+        </script>
+
+
+
 <!--Section, Heading, text and unordered list-->
 <section>
     <h2>Interfacial Defects</h2>
@@ -54,20 +90,6 @@
     </ul>
 </section>
 
-<!--Embedding html demonstration-->
-<div style="
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    aspect-ratio: 1.5;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 25px;
-  ">
-    <iframe src="../assets/demos/bond_energy_plot_v1.0.html" title="interactive periodic table"
-        style="width: 100%; height: 100%; border: 0" scrolling="no" frameborder="0" allowfullscreen="allowfullscreen">
-    </iframe>
-</div>
 
 <!--Video side by side small and expand on play-->
 <div class="courseware-layouts-content-wrapper">
@@ -90,6 +112,55 @@
                 <track src="../assets/media/02.01_Video Project 2.vtt" kind="subtitles" srclang="en" label="English"
                     type="text/vtt">
             </video></div>
+    </div>
+</div>
+
+<!--Multiple Videos with closed captioning, headers and handout link at bottom-->
+<div class="courseware-layouts-content-wrapper">
+    <div class="courseware-video-wrapper" id="video1">
+        <div class="courseware-video-text">
+            <p>Intro & Point Defects</p>
+        </div>
+        <div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video1')">
+                <source src="../assets/media/04.01_defects.mp4" type="video/mp4">
+                <track src="../assets/media/04.01_defects.vtt" kind="subtitles" srclang="en" label="English"
+                    type="text/vtt">
+            </video></div>
+        <div class="courseware-video-text" style="text-align:center;">
+            <a href="../assets/handouts/04.01_defects.pptx" download>
+                (PowerPoint slides)
+            </a>
+        </div>
+    </div>
+    <div class="courseware-video-wrapper" id="video2">
+        <div class="courseware-video-text">
+            <p>Linear Defects: Dislocations</p>
+        </div>
+        <div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video2')">
+                <source src="../assets/media/04.02_defects.mp4" type="video/mp4">
+                <track src="../assets/media/04.02_defects.vtt" kind="subtitles" srclang="en" label="English"
+                    type="text/vtt">
+            </video></div>
+        <div class="courseware-video-text" style="text-align:center;">
+            <a href="../assets/handouts/04.02_defects.pptx" download>
+                (PowerPoint slides)
+            </a>
+        </div>
+    </div>
+    <div class="courseware-video-wrapper" id="video3">
+        <div class="courseware-video-text">
+            <p>Interfacial Defects</p>
+        </div>
+        <div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video3')">
+                <source src="../assets/media/04.03_defects.mp4" type="video/mp4">
+                <track src="../assets/media/04.03_defects.vtt" kind="subtitles" srclang="en" label="English"
+                    type="text/vtt">
+            </video></div>
+        <div class="courseware-video-text" style="text-align:center;">
+            <a href="../assets/handouts/04.03_defects.pptx" download>
+                (PowerPoint slides)
+            </a>
+        </div>
     </div>
 </div>
 
@@ -174,54 +245,7 @@
     </div>
 </div>
 
-<!--Multiple Videos with closed captioning, headers and handout link at bottom-->
-<div class="courseware-layouts-content-wrapper">
-    <div class="courseware-video-wrapper" id="video1">
-        <div class="courseware-video-text">
-            <p>Intro & Point Defects</p>
-        </div>
-        <div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video1')">
-                <source src="../assets/media/04.01_defects.mp4" type="video/mp4">
-                <track src="../assets/media/04.01_defects.vtt" kind="subtitles" srclang="en" label="English"
-                    type="text/vtt">
-            </video></div>
-        <div class="courseware-video-text" style="text-align:center;">
-            <a href="../assets/handouts/04.01_defects.pptx" download>
-                (PowerPoint slides)
-            </a>
-        </div>
-    </div>
-    <div class="courseware-video-wrapper" id="video2">
-        <div class="courseware-video-text">
-            <p>Linear Defects: Dislocations</p>
-        </div>
-        <div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video2')">
-                <source src="../assets/media/04.02_defects.mp4" type="video/mp4">
-                <track src="../assets/media/04.02_defects.vtt" kind="subtitles" srclang="en" label="English"
-                    type="text/vtt">
-            </video></div>
-        <div class="courseware-video-text" style="text-align:center;">
-            <a href="../assets/handouts/04.02_defects.pptx" download>
-                (PowerPoint slides)
-            </a>
-        </div>
-    </div>
-    <div class="courseware-video-wrapper" id="video3">
-        <div class="courseware-video-text">
-            <p>Interfacial Defects</p>
-        </div>
-        <div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video3')">
-                <source src="../assets/media/04.03_defects.mp4" type="video/mp4">
-                <track src="../assets/media/04.03_defects.vtt" kind="subtitles" srclang="en" label="English"
-                    type="text/vtt">
-            </video></div>
-        <div class="courseware-video-text" style="text-align:center;">
-            <a href="../assets/handouts/04.03_defects.pptx" download>
-                (PowerPoint slides)
-            </a>
-        </div>
-    </div>
-</div>
+
 
 <!--Multiple Images with captions, 3 across, expand on hover-->
 <div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:center;">

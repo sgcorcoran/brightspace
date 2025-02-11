@@ -15,6 +15,18 @@
     <link rel="stylesheet" href="../assets/css/global.minv5.css" />
     <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
     <link rel="stylesheet" href="../assets/css/customv5.css" />
+    <script>
+        function resizeIframe(event) {
+            if (event.origin !== window.location.origin) return; // Ensure security
+            
+            const iframe = document.getElementById('dynamic-iframe');
+            if (event.data && event.data.height) {
+                iframe.style.height = event.data.height + 'px';
+            }
+        }
+    
+        window.addEventListener('message', resizeIframe, false);
+    </script>
 </head>
 
 <body class="courseware-themes">
@@ -34,21 +46,88 @@
                 <li>Define diffusion and explain its significance in materials science.</li>
                 <li>Identify key diffusion mechanisms, including interstitial and vacancy diffusion.</li>
                 <li>Describe Fick’s first law of diffusion and its applications.</li>
-                <li>Explain how temperature, concentration gradients, and atomic structure influence diffusion rates.</li>
-                <li>Compare diffusion in different materials, such as metals, ceramics, and polymers.</li>
+                <li>Explain how temperature and concentration gradients influence diffusion rates.</li>
+    
             </ul>
+        </section>
+
+        <section>
+            <!--Multiple Videos with closed captioning, headers and handout link at bottom-->
+           <p><div class="courseware-video-text" style="text-align:center;">
+                <a href="../assets/handouts/05.01-02_diffusion.pptx" download>
+                    (PowerPoint slides)
+                </a>
+            </div></p> 
+            <div class="courseware-layouts-content-wrapper">
+                
+                <div class="courseware-video-wrapper" id="video1">
+                    <div class="courseware-video-text">
+                        <p>Mechanisms</p>
+                    </div>
+                    <div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video1')">
+                            <source src="../assets/media/05.01_diffusion.mp4" type="video/mp4">
+                            <track src="../assets/media/05.01_diffusion.vtt" kind="subtitles" srclang="en" label="English"
+                                type="text/vtt">
+                        </video>
+                    </div>
+                    
+                </div>
+                <div class="courseware-video-wrapper" id="video2">
+                    <div class="courseware-video-text">
+                        <p>Applications</p>
+                    </div>
+                    <div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video2')">
+                            <source src="../assets/media/05.02_diffusion.mp4" type="video/mp4">
+                            <track src="../assets/media/05.02_diffusion.vtt" kind="subtitles" srclang="en" label="English"
+                                type="text/vtt">
+                        </video></div>
+                  
+                </div>
+                <div class="courseware-video-wrapper" id="video3">
+                    <div class="courseware-video-text">
+                        <p>Calculation: Fick's 1st law</p>
+                    </div>
+                    <div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video3')">
+                            <source src="../assets/media/05.03_diffusion.mp4" type="video/mp4">
+                            <track src="../assets/media/05.03_diffusion.vtt" kind="subtitles" srclang="en" label="English"
+                                type="text/vtt">
+                        </video></div>
+                    
+                </div>
+                <div class="courseware-video-wrapper" id="video4">
+                    <div class="courseware-video-text">
+                        <p>Temperature dependence</p>
+                    </div>
+                    <div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video4')">
+                            <source src="../assets/media/05.04.diffusion.mp4" type="video/mp4">
+                            <track src="../assets/media/05.04.diffusion.vtt" kind="subtitles" srclang="en" label="English"
+                                type="text/vtt">
+                        </video></div>
+                    
+                </div>
+            </div>
         </section>
 
         <!-- Introduction -->
         <section>
             <h2>Introduction to Diffusion</h2>
-            <p>Diffusion is the process by which atoms move due to a concentration gradient. It is critical in applications such as:</p>
+            <p>Diffusion is the process by which atoms move in solids.  This process can happen by two mechanisms either vacancy diffusion or interstitial diffusion. 
+                In this chapter, the net diffusion of atoms will be driven by a concentration gradient, i.e. a difference in concentration of a diffusing species. 
+                The net movement of diffusing species will be from the high concentration regions toward the low concentration regions. This process is 
+                critical in many applications. In particular, we will discuss:</p>
             <ul>
-                <li>Semiconductor manufacturing (doping silicon).</li>
-                <li>Heat treatment of metals (carburization).</li>
-                <li>Corrosion and oxidation control.</li>
+                <li>Doping of semiconductor materials.</li>
+                <li>The movement of gas through a thin wall containeer.</li>
+                <li>The deleterious effect of segregation of species to grain boundaries.</li>
+                <li>Hardening of metal surfaces by carburization.</li>
             </ul>
-
+<p>Diffusion is a very inefficient process involving the random walk of a diffusing species. The random 
+    walk of a particle is shown in the first video below. Notice as you watch the video that the particle repeats
+    its position quite often and makes very slow progress beyond its starting point.  The second video now 
+    shows the random walk of several particles in this case vacancies. As the vacancies move around you can 
+    see that the two materials start to mix at the interface. With enough time, the two materials would
+    be completly mixed and uniform.  
+</p>
             <div class="courseware-layouts-content-wrapper">
                 <div class="courseware-video-wrapper" id="video1">
                     <div class="courseware-video-text">
@@ -102,14 +181,22 @@
 
             <h2>Mechanisms of Diffusion</h2>
             <h3>Vacancy Diffusion</h3>
-            <p>Atoms move by hopping into vacant lattice sites. Common in metals.</p>
+            <p>Atoms move by hopping into vacant lattice sites. We often speak of this as the diffusion of 
+                vacancies but it is really the movement of atoms into the vacancy that results in the movement 
+                of mass. This mechanism was shown in the second video above.  The is common in substitutional 
+                metal alloys such as Cu-Zn, Cu-Ni, Ag-Au and any alloy system where the atoms are relatively close 
+                in size.  </p>
             <figure>
                 <img src="../assets/img/vacancy_diffusion.png" alt="Vacancy diffusion mechanism" class="no-hover" style="max-width:350px;">
                 <figcaption><p>Vacancy diffusion in a crystalline structure.</p></figcaption>
             </figure>
 
             <h3>Interstitial Diffusion</h3>
-            <p>Smaller atoms move through spaces between larger host atoms, common in alloys.</p>
+            <p>Interstital diffusion occurs in interstial alloys such as steel (carbon in iron). Here the diffusing 
+                species is much much smaller that the host atoms and so occupy interstitial sites. Interstitial diffusion 
+                tends to be faster than vacancy diffusion for two reasons:  (1) the atoms are smaller and move faster and (2)
+                the atoms can hop into any neighboring interstitial site. In contrast, atoms in the vacancy mechanism 
+                can only move if a vacancy exists near it. </p>
             <figure >
                 <img src="../assets/img/interstitial_diffusion.png" alt="Interstitial diffusion mechanism" class="no-hover" style="max-width:350px;">
                 <figcaption><p>Small atoms diffusing between larger host atoms.</p></figcaption>
@@ -120,7 +207,9 @@
         <!-- Fick’s First Law -->
         
             <h2>Fick’s First Law: Steady-State Diffusion</h2>
-            <p>Describes diffusion when concentration gradient remains constant:</p>
+            <p>Fick's 1st law describes the observation that the net movement of a diffusing species occurs down a concentration 
+                gradient or in mathematical terms this rate would be proportional to \(-\frac{dC}{dx}\) for diffusion in 
+            one direction.</p>
 
             <div class="math-equation">
                 <p>\[
@@ -129,24 +218,74 @@
             </div>
 
             <ul>
-                <li>\(J\) = Diffusion flux.</li>
-                <li>\(D\) = Diffusion coefficient.</li>
-                <li>\(\frac{dC}{dx}\) = Concentration gradient.</li>
+                <li>\(J\) = Diffusion flux, \(\frac{kg}{m^2 sec}\).</li>
+                <li>\(D\) = Diffusion coefficient (Diffusivity), \(\frac{m^2}{sec}\).</li>
+                <li>\(\frac{dC}{dx}\) = Concentration gradient, \(\frac{kg}{m^4}\)</li>
             </ul>
 
-            
+          <section>
+<div class="courseware-layouts-content-wrapper">
+    <figure style="max-width:350px;" >
+        <img src="../assets/img/ficks_1st_law_no_equ.png" class="no-hover">
+    </figure>
+</div>
+</section>
+<section><p>For the case of diffusion in the steady state (or through a thin membrane), the concentration gradient is linear
+    and we can write: 
+</p>
+<div class="math-equation">
+   <p>\[
+   \frac{dC}{dx} = \frac{\Delta C}{\Delta x} = \frac{C_2-C_1}{x_2-x_1}
+   \]</p>
+   <p>\[
+    J = -D \frac{C_2-C_1}{x_2-x_1}
+    \]</p>
+</div></section>
+
+<h2>Calculation: Steady-State Diffusion</h2>
+<p>Calculate the steady state diffusion rate of helium through pyrex at 500 &deg;C in units of liters / hour, given:
+    <ul>
+        <li>The diffusivity of helium in pyrex = \(2\times10^{-8} \frac{cm^2}{sec}\) at 500 &deg;C</li>
+        <li>The pyrex wall thickness is 0.5 mm with an area of 10 \(cm^2\)</li>
         
+        <li>The concentration of helium on the high concentration and low concentration surfaces of the pyrex are \(10^{-2} \frac{kg}{m^3}\) and \(0 \frac{kg}{m^3}\) repectively.</li>
+
+        <li>The density of helium at STP is 0.1785 g/l.</li>
+    </ul></p>
+   <p> Our plan is to use Fick's 1st law to solve for the grams of helium that diffusives through the
+    pyrex per area of pyrex per second (being careful with units). We will use the known area to get grams per second and then to convert grams to liters using the given density. 
+</p>
+<h3>Use Fick's law and solve</h3>
+<p><ul> 
+    <li>From Fick's 1st law we have (after converting units):
+    \[
+    J = -D \frac{C_2-C_1}{x_2-x_1}=-\left(2\times10^{-8} cm^2\,sec^{-1}\right) \frac{0\frac{kg}{m^3}-10^{-2} \frac{kg}{m^3}}{0.5 \,mm}=4\times 10^{-8} \frac{g}{m^2 sec}
+    \]
+    
+    <li>This answer is a quantity, g, <em>per area</em> per time.  We want a quantity, liters, per time (no area).
+        We will (a) multiply by the area and (b) convert g to liters. 
+\[4\times 10^{-8} \frac{g}{m^2 sec}\times \frac{\text{Area}}{\text{density at STP}}=4\times 10^{-8} \frac{g}{m^2 sec}\times \frac{10 \,cm^2}{0.1785 \,g/liters}\]
+</li>
+<li>
+    Multiplying and converting \(cm^2\) to \(m^2\) we get: 
+\[=2.2\times 10^{-10} \,\frac{liters}{sec}\]</li>
+</ul></p>
+
 
         <!-- Factors Affecting Diffusion -->
         <section>
             <h2>Factors Affecting Diffusion</h2>
             <h3>Temperature</h3>
-            <p>Diffusion follows the Arrhenius equation:</p>
-            <div class="math-equation">
+            <p>From Fick's 1st law, we now know that \(J = -D \frac{C_2-C_1}{x_2-x_1}\). From this equation, it's not obvious that there is a strong temperature dependence of the flux, \(J\). 
+                The temperature dependence comes from the Diffusivity term, \(D\), which is given as:</p>
+
                 <p>\[
-                D = D_0 e^{-\frac{Q}{RT}}
+                D = D_0 \,e^{-\frac{Q}{RT}}
                 \]</p>
-            </div>
+<p>where the pre-exponential, \(D_0\), and the activation energy, \(Q\), are fitting parameters and are independent of temperature. \(R\) is the gas constant and \(T\) is the absolute
+    temperature in Kelvin. For reference, values for these parameters are given in the table below for many common systems. A calculated diffusivity is also included 
+    in the last column for 500 &deg;C using the above equation.  
+</p>
 
             <table border="1" class="dataframe">
                 <thead>
@@ -156,7 +295,7 @@
                     <th>Crystal Structure</th>
                     <th>Activation Energy (kJ/mol)</th>
                     <th>Pre-exponential Factor (m²/s)</th>
-                    <th>Diffusion Coefficient at 773K (m²/s)</th>
+                    <th>Diffusion Coefficient at 500&deg;C (m²/s)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -271,27 +410,47 @@
                   </tr> <!--ref: NIST-->
                 </tbody>
               </table>
-              
+              </section>
+              <section><p>An interactive plot of this data is shown below. Use the checkboxes to add or remove systems. Try comparing
+                interstitial vs vacancy diffusion systems.  Notice the interstitial diffusion rates are much higher than the vacancy rates. Also, compare
+                the diffusion of fcc and bcc iron. Notice that the fcc rates are slower than the bcc because the fcc lattice has 
+                less room for diffusion (denser). See if you notice any trends in the self diffusion systems (consider the  
+                melting temperature and/or crystal structure).  
+              </p></section>
             
             <!-- Interactive Element -->
+            <section>
+                <div id="iframe-container" style="position: relative; width: 100%; max-width:800px; margin: 0 auto; margin-top: 25px;">
+                    <iframe id="dynamic-iframe" src="../assets/demos/diffusivity_temp.html" title="Diffusion Coefficient"
+                        style="width: 100%; border: 0;" scrolling="no" frameborder="0" allowfullscreen="allowfullscreen">
+                    </iframe>
+                </div>
+            </section>
 
+<!-- <section>
             <div
-            style="position: relative; width: 100%; max-width:800px; aspect-ratio:1; overflow: hidden; margin:0 auto; margin-top:25px;">
+            style="position: relative; width: 100%; max-width:800px; aspect-ratio:0.7; overflow: hidden; margin:0 auto; margin-top:25px;">
             <iframe src="../assets/demos/diffusivity_temp.html" title="Diffusion Coefficient"
                 style="width: 100%; height: 100%; border: 0;" scrolling="no" frameborder="0"
                 allowfullscreen="allowfullscreen">
             </iframe>
         </div>
-
+    </section> -->
+<section>
             <h3>Concentration Gradient</h3>
-            <p>A larger gradient results in faster diffusion.</p>
-
+            <p>While temperature affects the rate of diffusion exponentially, concentration affects the rate only linearly as given directly from Fick's 1st law. 
+                It is usually easier in practice to change the wall thickness (denominator) to change the concentration gradient. 
+            </p>
+<h3>Area</h3>
+<p>The flux as calculated is independent of area as it is defined on a per area basis.  However, when we are interested in maximizing a process 
+    that requires the movement of a gas through a membrane then increasing the total area will increase the total quantity of substance that moves through.  Instead 
+    of flat plates, we could move to an array of thin walled tubes and significantly increase the total throughput. 
+</p>
             <h3>Crystal Structure & Defects</h3>
-            <p>Open structures (BCC) allow faster diffusion than close-packed structures (FCC).</p>
-            <figure>
-                <img src="../assets/img/crystal_diffusion.png" alt="Diffusion in different crystal structures" class="no-hover">
-                <figcaption>Diffusion paths in BCC and FCC metals.</figcaption>
-            </figure>
+            <p>More open structures such as in the bcc system allow for faster diffusion as compared to densely packed structures such as fcc. 
+                Defects that are "more open" than the lattice also allows for faster diffusion rates.  Examples would be grain boundaries, surfaces and dislocation cores. Polymer 
+                materials also have much more open structures as compared to metals something we will discuss further in a future chapter. 
+                </p>
         </section>
 
         <!-- Concept Check -->
@@ -299,31 +458,52 @@
             <h2>Concept Check</h2>
             <p>Click the card to reveal the answer.</p>
 
-            <div class="card-container">
-                <div class="card-container-3">
-                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
-                        <div class="card-front"><p>Which diffusion mechanism is faster, vacancy or interstitial?</p></div>
-                        <div class="card-back"><p>Interstitial diffusion is faster because smaller atoms move freely.</p></div>
-                    </div>
-                </div>
+        <!--flip cards-->
+<div class="card-container" style="margin-top:-1rem;">
+    <!-- Card 1 -->
+    <div class="card-container-3">
+        <div class="card-flip" onclick="this.classList.toggle('flipped')">
+            <div class="card-front">
+                <span class="flip-icon">↺</span>
+                <p>Which diffusion mechanism is faster, vacancy or interstitial? Why?</p>
             </div>
-        </section>
+            <div class="card-back" style="padding:15px;">
+                <p>Interstitial diffusion is faster because (a) smaller atoms move faster and (b) all neighboring sites are available for an interstitial while a vacancy has to be present for an atom to move in the vacancy mechanism. </p>
+            </div>
+        </div>
+    </div>
 
-        <!-- Summary -->
-        <section>
-            <h2>Summary & Key Takeaways</h2>
-            <ul>
-                <li>Diffusion is critical in materials engineering.</li>
-                <li>Two main mechanisms: vacancy and interstitial.</li>
-                <li>Fick’s first law describes steady-state diffusion.</li>
-                <li>Temperature, concentration gradient, and atomic structure affect diffusion.</li>
-            </ul>
-        </section>
+    <!-- Card 2 -->
+    <div class="card-container-3">
+        <div class="card-flip" onclick="this.classList.toggle('flipped')">
+            <div class="card-front">
+                <span class="flip-icon">↺</span>
+                <p>Which factor affects diffusion rates more: temperature or concentration gradients?</p>
+            </div>
+            <div class="card-back">
+                <p>Temperature since it is exponential while the concentration gradient effect is only linear. </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card-container-3">
+        <div class="card-flip" onclick="this.classList.toggle('flipped')">
+            <div class="card-front">
+                <span class="flip-icon">↺</span>
+                <p>Do you expect an fcc or bcc material to have faster diffusion rates if all other factors are the same.</p>
+            </div>
+            <div class="card-back">
+                <p>BCC because bcc materials are less dense and therefore have more room for diffusion. </p>
+            </div>
+        </div>
+    </div>
+</div>
 
         <!-- Next Steps -->
         <section>
             <h2>What’s Next?</h2>
-            <p>Next lesson: **Fick’s Second Law**, non-steady-state diffusion, and real-world applications.</p>
+            <p>Next lesson: <em>Fick’s Second Law</em>, non-steady-state diffusion, and applications.</p>
         </section>
 
     </main>

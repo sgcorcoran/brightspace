@@ -211,5 +211,15 @@ diffusionData.forEach((data, index) => {
 
         Plotly.newPlot("plotlyChart", traces, layout);
     </script>
+    <script>
+        function sendHeight() {
+            const height = document.documentElement.scrollHeight;
+            window.parent.postMessage({ height }, "*");
+        }
+    
+        window.addEventListener("load", sendHeight);
+        window.addEventListener("resize", sendHeight);
+    </script>
+    
 </body>
 </html>

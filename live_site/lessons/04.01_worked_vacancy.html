@@ -12,41 +12,60 @@
 <body>
 <header>
 <h1>Worked Example: Vacancy Concentration</h1>
-<p>Calculate the equilibrium vacancy concentration for Copper and Polyethylene at elevated temperatures.</p>
+<p>Calculate the equilibrium vacancy concentration for Copper at 25 &deg;C and 800&nbsp;&deg;C.</p>
 </header>
 <main>
 <article>
 <h2>Objectives:</h2>
 <ol>
-<li>Understand vacancy formation in metals and polymers.</li>
-<li>Apply the Arrhenius equation for vacancy concentration.</li>
+<li>Compare the vacancy concentration at elevated and at room temperature.</li>
+<li>Apply the Arrhenius equation to calculate the equilibrium vacancy concentration.</li>
 </ol>
 </article>
 <h3>Given Problem Statement</h3>
 <p>Determine the equilibrium vacancy concentration for:</p>
 <ul>
-<li>Copper at \( T = 900 \, ^\circ\text{C} \), with \( Q_v = 0.9 \, \text{eV} \).</li>
-<li>Polyethylene at \( T = 150 \, ^\circ\text{C} \), considering free volume effects.</li>
+<li>Copper at \( T = 800 \, ^\circ\text{C} \text{ and } 25 \,^\circ\text{C}\), with \( Q_v = 0.9 \, \text{eV} \).</li>
+<li>How many orders of magnitude change in the concentration did you find.</li>
 </ul>
 
 <h3>Solution</h3>
-<h4>Metallic Alloy: Copper</h4>
-<p>The vacancy concentration is given by: \[ n_v = n \exp\left(-\frac{Q_v}{kT}\right) \]</p>
+<h4>Copper at 25 &deg;C</h4>
+<p>The vacancy concentration is given by: \[ N_v = N \exp\left(-\frac{Q_v}{kT}\right) \]</p>
 <p>Where:</p>
 <ul>
-<li>\( Q_v = 0.9 \, \text{eV} \)</li>
-<li>\( T = 1173 \, \text{K} \)</li>
+<li>The activation energy for vacancy formation, \( Q_v = 0.9 \, \text{eV} \)</li>
+<li>The number of possible vacancy sites (lattice sites), \( N = \frac{n}{a^3} \, \text{atoms}/m^3 \)</li>
+<li>\(n\) is the number of atoms per unit cell</li>
+<li>\(a\) is the unit cell edge length =  \(\frac{4R}{\sqrt{2}}\) for fcc</li>
+<li>\(R\) is the radius of a copper atom = \(0.140 \text{ nm}\) or \(0.140 \times 10^{-9} \text{ m}\)</li>
+<li>\( T = 298 \, \text{K} \)</li>
 <li>\( k = 8.617 \times 10^{-5} \, \text{eV/K} \)</li>
 </ul>
 <p>Substituting the values:</p>
-\[ n_v = n \exp\left(-\frac{0.9}{8.617 \times 10^{-5} \times 1173}\right) \approx 1.2 \times 10^{-4} \]
+\[ N = \frac{n}{a^3} = \frac{4}{\left(\frac{4R}{\sqrt{2}}\right)^3} = 6.442\times10^{28} \text{ sites}/m^3\]
+\[ N_v = 6.442\times10^{28} \exp\left(-\frac{0.9}{8.617 \times 10^{-5} \times 298}\right) = 3.87 \times 10^{13} \text{ vacancies}/m^3\]
+\[\frac{N_v}{N} = 6 \times 10^{-16}\]
 
-<h4>Polymeric Material: Polyethylene</h4>
-<p>For polymers, vacancy-like defects relate to free volume. Estimate \( n_v \approx 10^{-3} \) based on typical free volume at \( T = 423 \, \text{K} \).</p>
+<h4>Copper at 800 &deg;C</h4>
+<ul><li>\(T = 1073 \text{ K}\)</li></ul>
 
+<p>Substituting the values:</p>
+\[ N_v = 6.442\times10^{28} \exp\left(-\frac{0.9}{8.617 \times 10^{-5} \times 1073}\right) = 3.82 \times 10^{24} \text{ vacancies}/m^3\]
+\[\frac{N_v}{N} = 6 \times 10^{-5}\]
+
+
+
+<h4>Constants</h4>
+<ul><li>\(k=1.381 \times 10^{-23} \, \text{J/K}\)</li>
+  
+  <li>\(k=8.617 \times 10^{-5} \, \text{eV/K}\)</li>
+  <li>\(R=8.314  \, \frac{\text{J}}{\text{mol K}}\)</li>
+  <li>\(N_A=6.022 \times 10^{23}  \, \frac{\text{number}}{\text{mol}}\)</li>
+  <li>\(q=1.6022 \times 10^{-19}  \, \frac{\text{J}}{\text{eV}}\)</li>
+</ul> 
 <div class="notice">
-<h4>How does temperature influence vacancy concentration in both materials?</h4>
-<cite>Consider the impact of increasing temperature on vacancy formation.</cite>
+<h4>How many orderes of magnitude more vacancies are there in copper at 800 &deg;C versus room temperature?</h4>
 </div>
 
 </main>
