@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+  <title>Temperature Dependence of the Diffusivity</title>
+
+  <script type="module" src="../assets/js/global.min.js"></script>
+  <script defer src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+  <script src="../assets/js/videoExpand.js"></script>
+  <script src="../assets/js/load-mathjax.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
+  <link rel="stylesheet" href="../assets/css/customv5.css" />
+</head>
+
+<body class="courseware-themes">
+  <header class="custom-header">
+    <h1>Temperature Dependence of the Diffusivity</h1>
+  </header>
+  
+  <main class="courseware-layouts-content-wrapper">
+    <section>
+      <h2>Objectives:</h2>
+      <ol class="courseware-list-large-number">
+        <li>Use the Arrhenius equation to calculate the diffusivity at a given temperature.</li>
+        
+      </ol>
+    </section>
+
+    <section style="border-bottom:1px solid lightgray; margin-bottom:10px;">
+      <h3>Given Problem Statement</h3>
+      <p>Calculate the diffusivity of Ni in Cu at 500 &deg;C</p>
+      <ul>
+        <li>Nickel in Copper: \( T = 500\, &deg;C\), with \( D_0 = 3.8 \times 10^{-5}\,\frac{m^2}{sec} \) and \( Q = 228\, \text{kJ/mol} \).</li>
+       <li>\(R=8.314 \,J\, mol^{-1}\, K^{-1}\)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Solution</h2>
+      <h3>Metallic Alloy: Nickel</h3>
+      <p>The Arrhenius equation is:</p>
+      <p>\[ D = D_0 \exp\left(-\frac{Q}{RT}\right) \]</p>
+      <p>Substituting given values:</p>
+      <p>\[ D = \left(3.8 \times 10^{-5}\,\frac{m^2}{sec}\right) \exp\left(-\frac{228 \times 10^3\, \frac{J}{mol}}{8.314\, \frac{J}{mol\,K}\times (500+273)\,K}\right) \approx 1.5 \times 10^{-20}\, m^2/sec\]</p>
+    </section>
+    
+    <!-- <div class="notice" style="text-align: center">
+      <h4 style="color:aliceblue">
+        What impact does a lower activation energy have on diffusivity?
+      </h4>
+      <cite>(Perhaps a good exam question.)</cite>
+    -->
+   </main>
+
+  <footer>
+    <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+  </footer>
+</body>
+
+</html>
