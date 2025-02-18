@@ -1,342 +1,184 @@
 WEBVTT
 
-1
-00:00:01.599 --> 00:00:06.879
-all right before watching this video
+00:00:00.945 --> 00:00:03.217
+Alright, just a reminder that at the
 
-2
-00:00:04.480 --> 00:00:07.520
-uh on mechanical behavior this is part
+00:00:03.217 --> 00:00:05.814
+beginning of Chapter 6 you will find the
 
-3
-00:00:06.879 --> 00:00:10.160
-one
-
-4
-00:00:07.520 --> 00:00:11.920
-of chapter six you wanna go ahead and
-
-5
-00:00:10.160 --> 00:00:14.639
-watch the youtube video
-
-6
-00:00:11.920 --> 00:00:16.480
-that shows a pencil testing of a
-
-7
-00:00:14.639 --> 00:00:18.400
-stainless steel
-
-8
-00:00:16.480 --> 00:00:19.840
-sampling explains the use of an
-
-9
-00:00:18.400 --> 00:00:23.920
-extensometer
-
-10
-00:00:19.840 --> 00:00:25.920
-and how the stress strain curve is taken
-
-11
-00:00:23.920 --> 00:00:28.560
-that's in canvas for for your
-
-12
-00:00:25.920 --> 00:00:28.560
-convenience
-
-13
-00:00:29.279 --> 00:00:32.719
-all right just a reminder that in the
-
-14
-00:00:30.880 --> 00:00:33.120
-beginning of chapter six you will find
-
-15
-00:00:32.719 --> 00:00:35.760
-the
-
-16
-00:00:33.120 --> 00:00:37.280
+00:00:05.814 --> 00:00:08.086
 learning objectives and we will take a
 
-17
-00:00:35.760 --> 00:00:39.040
+00:00:08.086 --> 00:00:10.033
 look at all these learning objectives
 
-18
-00:00:37.280 --> 00:00:42.480
-throughout this chapter
+00:00:10.033 --> 00:00:11.656
+throughout this chapter. The exception
 
-19
-00:00:39.040 --> 00:00:44.399
-the exception uh being true stress and
+00:00:11.656 --> 00:00:14.252
+being true stress and true strain that is
 
-20
-00:00:42.480 --> 00:00:45.680
-true stream
+00:00:14.252 --> 00:00:17.174
+a little bit later in the chapter. So you
 
-21
-00:00:44.399 --> 00:00:47.200
-that is a little bit later in the
+00:00:17.174 --> 00:00:19.445
+don't have to worry about this learning.
 
-22
-00:00:45.680 --> 00:00:48.879
-chapter so you don't have to worry about
+00:00:19.525 --> 00:00:21.719
+Objective. We are going to be sticking
 
-23
-00:00:47.200 --> 00:00:50.079
-this learning objective
+00:00:21.719 --> 00:00:23.286
+with engineering stress and engineering
 
-24
-00:00:48.879 --> 00:00:52.160
-we are going to be sticking with
+00:00:23.286 --> 00:00:25.792
+strain, which I'm going to go ahead and
 
-25
-00:00:50.079 --> 00:00:53.600
-engineering stress and engineering
+00:00:25.792 --> 00:00:26.106
+define.
 
-26
-00:00:52.160 --> 00:00:56.160
-strain which i'm going to go ahead and
+00:00:28.956 --> 00:00:31.521
+All right. So we could talk about
 
-27
-00:00:53.600 --> 00:00:56.160
-define
+00:00:31.521 --> 00:00:34.453
+attention test or we could talk about a
 
-28
-00:00:57.280 --> 00:01:02.079
-all right so um we could talk about a
+00:00:34.453 --> 00:00:37.018
+compression test, just the reverse of the
 
-29
-00:01:00.640 --> 00:01:03.600
-tension test or we could talk about a
+00:00:37.018 --> 00:00:39.583
+applied force to an attention test. We're
 
-30
-00:01:02.079 --> 00:01:05.760
-compression test
+00:00:39.583 --> 00:00:41.782
+we're pulling on the sample, we're
 
-31
-00:01:03.600 --> 00:01:08.320
-and just the reverse of the applied
-
-32
-00:01:05.760 --> 00:01:09.680
-force so an attention test we're
-
-33
-00:01:08.320 --> 00:01:11.520
-we're pulling on the sample we're
-
-34
-00:01:09.680 --> 00:01:12.000
+00:00:41.782 --> 00:00:43.981
 stretching the sample and changing its
 
-35
-00:01:11.520 --> 00:01:14.640
-length
+00:00:43.981 --> 00:00:46.180
+length, increasing its length and we
 
-36
-00:01:12.000 --> 00:01:15.600
-increasing its length and we would get
+00:00:46.180 --> 00:00:48.724
+would get some change. The length delta
 
-37
-00:01:14.640 --> 00:01:18.640
-some
+00:00:48.724 --> 00:00:51.413
+L, if we take a look at the
 
-38
-00:01:15.600 --> 00:01:20.400
-change in length delta l if we take a
+00:00:51.413 --> 00:00:53.765
+length minus the original length and if
 
-39
-00:01:18.640 --> 00:01:21.439
-look at the length minus the original
+00:00:53.765 --> 00:00:56.454
+we were to go and take that that
 
-40
-00:01:20.400 --> 00:01:24.080
-length
+00:00:56.454 --> 00:00:59.142
+delta L and divide it by this original
 
-41
-00:01:21.439 --> 00:01:27.119
-and if we were to take that delta l and
+00:00:59.142 --> 00:01:01.495
+length, then we would have the definition
 
-42
-00:01:24.080 --> 00:01:29.200
-divide it by this original length
+00:01:01.495 --> 00:01:03.511
+here of strain. OK, so it's
 
-43
-00:01:27.119 --> 00:01:30.400
-then we would have the definition here
+00:01:03.511 --> 00:01:05.527
+dimensionless. It's a length over length
 
-44
-00:01:29.200 --> 00:01:32.560
-of strain
+00:01:05.527 --> 00:01:07.880
+for compression. It would be exactly the
 
-45
-00:01:30.400 --> 00:01:34.320
-okay so it's dimensionless it's a length
+00:01:07.880 --> 00:01:10.370
+same. Thing except delta L would end up
 
-46
-00:01:32.560 --> 00:01:36.159
-over a length
+00:01:10.370 --> 00:01:13.050
+as a negative number and we would have a
 
-47
-00:01:34.320 --> 00:01:38.000
-for compression that would be exactly
+00:01:13.050 --> 00:01:14.836
+negative strain value. The stress is
 
-48
-00:01:36.159 --> 00:01:39.439
-the same thing except delta l would end
+00:01:14.836 --> 00:01:16.920
+defined as negative when when it's in
 
-49
-00:01:38.000 --> 00:01:42.000
-up as a negative number and we would
+00:01:16.920 --> 00:01:18.408
+compression. That's just that's a
 
-50
-00:01:39.439 --> 00:01:44.320
-have a negative strain value
+00:01:18.408 --> 00:01:18.706
+convention.
 
-51
-00:01:42.000 --> 00:01:46.079
-the stress is defined as negative when
+00:01:21.466 --> 00:01:24.051
+And the stress is defined
 
-52
-00:01:44.320 --> 00:01:48.960
-when it's in compression that's just
+00:01:24.051 --> 00:01:26.636
+as that applied force divided
 
-53
-00:01:46.079 --> 00:01:48.960
-as a convention
+00:01:26.636 --> 00:01:29.221
+by the initial cross-sectional area
 
-54
-00:01:49.840 --> 00:01:53.600
-and the stress is defined as that
+00:01:29.221 --> 00:01:31.805
+and that would be in
 
-55
-00:01:52.079 --> 00:01:57.439
-applied force
+00:01:31.805 --> 00:01:33.356
+units of pascals.
 
-56
-00:01:53.600 --> 00:02:00.719
-divided by the initial cross-sectional
+00:01:37.286 --> 00:01:39.446
+Shear stress and shear strain are defined
 
-57
-00:01:57.439 --> 00:02:03.520
-area and that would be in units of
+00:01:39.446 --> 00:01:42.223
+as the distortion in the sample. So if we
 
-58
-00:02:00.719 --> 00:02:03.520
-pascals
+00:01:42.223 --> 00:01:44.691
+have a cubic block, say for example, and
 
-59
-00:02:05.759 --> 00:02:10.800
-shear stress and shear strain are
+00:01:44.691 --> 00:01:47.468
+we were to apply a shear stress to the
 
-60
-00:02:08.479 --> 00:02:13.760
-defined as the distortion
+00:01:47.468 --> 00:01:49.936
+surface, this is kind of like having a
 
-61
-00:02:10.800 --> 00:02:14.400
-in the sample so if we have a cubic
+00:01:49.936 --> 00:01:52.404
+deck of cards and pulling on the bottom
 
-62
-00:02:13.760 --> 00:02:16.480
-block
+00:01:52.404 --> 00:01:55.181
+of the deck and pushing on the top of
 
-63
-00:02:14.400 --> 00:02:18.480
-say for example and we were to apply a
+00:01:55.181 --> 00:01:57.883
+the deck you. Way to shear and
 
-64
-00:02:16.480 --> 00:02:20.400
-shear stress to the surface
+00:01:57.883 --> 00:02:00.870
+it distorts the shape of the original
 
-65
-00:02:18.480 --> 00:02:22.560
-this is kind of like having a deck of
+00:02:00.870 --> 00:02:03.857
+deck. And so we would define that
 
-66
-00:02:20.400 --> 00:02:24.239
-cards and pulling on the bottom of the
+00:02:03.857 --> 00:02:06.843
+distortion, that delta L for the change
 
-67
-00:02:22.560 --> 00:02:25.760
-deck and pushing on the top of the deck
+00:02:06.843 --> 00:02:09.830
+in length as defined in this figure
 
-68
-00:02:24.239 --> 00:02:28.879
-you create a sheer
+00:02:09.830 --> 00:02:12.817
+over the original length as our shear
 
-69
-00:02:25.760 --> 00:02:31.360
-and it distorts the shape
+00:02:12.817 --> 00:02:15.804
+strain. OK, that's also the tangent of
 
-70
-00:02:28.879 --> 00:02:32.160
-of the original deck and so we would
+00:02:15.804 --> 00:02:17.757
+the angle. Of distortion.
 
-71
-00:02:31.360 --> 00:02:35.120
-define
+00:02:19.517 --> 00:02:21.967
+The shear stress is also defined as the
 
-72
-00:02:32.160 --> 00:02:37.200
-that distortion that delta l for the
+00:02:21.967 --> 00:02:24.110
+force divided by that original area. It's
 
-73
-00:02:35.120 --> 00:02:38.879
-change in length
+00:02:24.110 --> 00:02:26.560
+just now that that area is now parallel.
 
-74
-00:02:37.200 --> 00:02:42.239
-as defined in this figure over the
+00:02:26.560 --> 00:02:29.009
+So in the deck of cards example, the
 
-75
-00:02:38.879 --> 00:02:45.280
-original length as our shear strain
+00:02:29.009 --> 00:02:31.765
+force is applied to the face of that top
 
-76
-00:02:42.239 --> 00:02:47.760
-that's also the tangent of the angle of
+00:02:31.765 --> 00:02:34.215
+card and bottom card. That would be your
 
-77
-00:02:45.280 --> 00:02:49.680
-distortion
-
-78
-00:02:47.760 --> 00:02:51.440
-the shear stress is also defined as the
-
-79
-00:02:49.680 --> 00:02:54.560
-force divided by that original
-
-80
-00:02:51.440 --> 00:02:55.440
-area it's just now that that area is now
-
-81
-00:02:54.560 --> 00:02:57.599
-parallel
-
-82
-00:02:55.440 --> 00:02:59.360
-so in the deck of cards example the
-
-83
-00:02:57.599 --> 00:03:01.840
-force is applied to the face
-
-84
-00:02:59.360 --> 00:03:05.840
-of that top card and bottom card that
-
-85
-00:03:01.840 --> 00:03:05.840
-would be your original area
-
+00:02:34.215 --> 00:02:34.827
+original area.

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <title>Mechanical Properties</title>
+
+    <!-- Brightspace Scripts and Styles -->
+    <script type="module" src="../assets/js/global.min.js"></script>
+    <script defer="" src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+    <script src="../assets/js/videoExpand.js"></script>
+    <script src="../assets/js/load-mathjax.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1.3" />
+    <link rel="stylesheet" href="../assets/css/customv5.css" />
+</head>
+
+<body class="courseware-themes">
+    <header class="custom-header">
+        <h1>Introduction to Mechanical Behavior</h1>
+    </header>
+    <main class="courseware-layouts-content-wrapper">
+
+        <section>
+            <h2>Mechanical response of materials</h2>
+
+            <div style="display: flex; align-items: flex-start; gap: 20px;">
+
+                <!-- Left Side: Text and List -->
+                <div style="flex: 1; text-align: justify;">
+                    <p>
+                        Mechanical behavior refers to how materials respond to external forces.
+                        Understanding these properties helps engineers design safe and reliable structures.
+                        The key factors influencing mechanical behavior include:
+                    </p>
+                    <ul>
+                        <li>Material composition and structure</li>
+                        <li>Temperature and environmental conditions</li>
+                        <li>Applied force and loading rate</li>
+                    </ul>
+                    <p>The video to the right shows the tensile testing of an elastic-plastic material. Notice at
+                        the end of the video how the sample "necks" just prior to failure.
+                    </p>
+                </div>
+
+                <!-- Right Side: Video -->
+                <div style="flex: 0 0 300px;">
+                    <video title="Video Lesson" controls playsinline style="max-width: 100%;">
+                        <source src="../assets/media/Supplemental/A36 tension test 3x speed.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>
+                        <p>Tensile test on an A36 steel rod at 3x speed.</p>
+                    </figcaption>
+                </div>
+
+            </div>
+        </section>
+        <article class="shadow-box">
+            <h2>Video Lessons</h2>
+            <!--Multiple Videos with closed captioning, headers and handout link at bottom-->
+            <div class="courseware-video-text" style="text-align:center;">
+                <a href="../assets/handouts/06.01-03_mech_beh.pptx" download>
+                    (PowerPoint slides)
+                </a>
+            </div>
+            <div class="courseware-layouts-content-wrapper">
+
+                <div class="courseware-video-wrapper" id="video1">
+                    <div class="courseware-video-text">
+                        <p>Stress & Strain</p>
+                    </div>
+                    <div class="courseware-video-embed-responsive"><video title="Video Lesson"
+                            onclick="expandVideo('video1')">
+                            <source src="../assets/media/06.01_mech.mp4" type="video/mp4">
+                            <track src="../assets/media/06.01_mech.vtt" kind="subtitles" srclang="en" label="English"
+                                type="text/vtt">
+                        </video></div>
+                </div>
+                <div class="courseware-video-wrapper" id="video2">
+                    <div class="courseware-video-text">
+                        <p>Linear elastic</p>
+                    </div>
+                    <div class="courseware-video-embed-responsive"><video title="Video Lesson"
+                            onclick="expandVideo('video2')">
+                            <source src="../assets/media/06.02_mech.mp4" type="video/mp4">
+                            <track src="../assets/media/06.02_mech.vtt" kind="subtitles" srclang="en" label="English"
+                                type="text/vtt">
+                        </video></div>
+                </div>
+                <div class="courseware-video-wrapper" id="video3">
+                    <div class="courseware-video-text">
+                        <p>Force curves</p>
+                    </div>
+                    <div class="courseware-video-embed-responsive"><video title="Video Lesson"
+                            onclick="expandVideo('video3')">
+                            <source src="../assets/media/06.03_mech.mp4" type="video/mp4">
+                            <track src="../assets/media/06.03_mech.vtt" kind="subtitles" srclang="en" label="English"
+                                type="text/vtt">
+                        </video></div>
+
+                </div>
+
+                <div class="courseware-video-wrapper" id="video4">
+                    <div class="courseware-video-text">
+                        <p>Temperature dependence</p>
+                    </div>
+                    <div class="courseware-video-embed-responsive"><video title="Video Lesson"
+                            onclick="expandVideo('video4')">
+                            <source src="../assets/media/06.04_mech.mp4" type="video/mp4">
+                            <track src="../assets/media/06.04_mech.vtt" kind="subtitles" srclang="en" label="English"
+                                type="text/vtt">
+                        </video></div>
+
+                </div>
+                <div class="courseware-video-wrapper" id="video5">
+                    <div class="courseware-video-text">
+                        <p>Poisson's ratio</p>
+                    </div>
+                    <div class="courseware-video-embed-responsive"><video title="Video Lesson"
+                            onclick="expandVideo('video5')">
+                            <source src="../assets/media/06.05_mech.mp4" type="video/mp4">
+                            <track src="../assets/media/06.05_mech.vtt" kind="subtitles" srclang="en" label="English"
+                                type="text/vtt">
+                        </video></div>
+
+                </div>
+
+            </div>
+        </article>
+
+        <div class="courseware-layouts-content-wrapper">
+            <h2>Stress and Strain Defined</h2>
+
+
+
+            <ul>
+                <li><img src="../assets/img/stress_strain_tension_sample.png"
+                        style="float:right; max-width: 175px;margin-right:10px;">
+                    <img src="../assets/img/stress_strain_compression_sample.png"
+                        style="float:right; max-width: 175px;margin-right:10px;">
+                    <strong>Engineering Stress:</strong> Defined as the force applied to a material divided by
+                    its
+                    original cross-sectional area: <br>
+                    \[ \sigma = \frac{F}{A_0} \]
+                    where \( F \) is the applied force and \( A_0 \) is the original cross-sectional area. A tensile
+                    force is defined as
+                    positive while a compressive force is defined as negative.
+
+                </li>
+                <li><strong>Engineering Strain:</strong> The relative deformation of a material due to an applied
+                    stress:
+                    <br>
+                    \[ \varepsilon = \frac{\Delta l}{l_0} \]
+                    where \( \Delta l \) is the change in length, \(l-l_0\), and \( l_0 \) is the original length.
+
+                </li>
+                <li><img src="../assets/img/shear_strain_sample.png"
+                        style="float:right; max-width: 250px;margin-right:10px;"><strong>Shear Stress:</strong> Defined
+                    as the force applied tangentially to a material divided by its original cross-sectional area: <br>
+                    \[ \tau = \frac{F}{A_0} \]
+                    where \( F \) is the applied force and \( A_0 \) is the original area subjected to shear. <em>Think
+                        of a stack of cards, place your hands on the top and bottom and then slide your hands in
+                        opposite directions. You just applied a shear stress.</em></li>
+
+                <li><strong>Shear Strain:</strong> The angular distortion of a material when subjected to shear stress:
+                    <br>
+                    \[ \gamma = \frac{\Delta l}{l_0} \]
+                    where \( \Delta l \) is the lateral displacement and \( l_0 \) is the height of the material as
+                    shown in the figure.
+                </li>
+                <li><img src="../assets/img/poisson_sample.png"
+                        style="float:right; max-width: 250px;margin-right:10px;"><strong>Lateral Strains:</strong> The
+                    strain experienced in the <strong>perpendicular</strong>
+                    direction relative to the applied stress, for example: <br>
+                    \[ \varepsilon_x = \frac{\Delta w}{w_0} \]
+                    where \(\Delta w\) and \(w_0\) are the change in width and original width, respectively. For a
+                    cylindrical sample, we would have: <br>
+                    \[\varepsilon_r=\frac{\Delta r}{r_0}\]</li>
+            </ul>
+        </div>
+        <div class="courseware-layouts-content-wrapper">
+            <h2>Elastic Constants</h2>
+            <ul>
+                <li><strong>Young’s Modulus (modulus of elasticity):</strong> A measure of the material stiffness that relates stress to strain,
+                    given by the generalized form of Hooke's law: <br>
+                    \[ \sigma = E \,\varepsilon \]
+                    A larger value of Young’s modulus indicates a stiffer material.
+                    <em>Hooke's law you have seen in Physics for
+                            the stiffness of a spring, \(F=k\,x\).</em>
+                        <p>In this course, "Hooke's law" will always refer to the <strong>stress-strain form</strong>, i.e. the
+                            generalized form.
+                    </p>
+                </li>
+
+
+
+
+                <li><strong>Shear Modulus (Modulus of Rigidity):</strong> A measure of a material’s resistance to shear
+                    deformation, given by an analagous equation to Hooke's law: <br>
+                    \[ \tau = G\, \gamma \]
+                    where \( G \) is the shear modulus, \( \tau \) is shear stress, and \( \gamma \) is shear strain.
+                </li>
+
+                <li><strong>Poisson’s Ratio:</strong> The
+                    ratio of lateral strain (e.g. \(\varepsilon_x,\, \varepsilon_y, \text{ or } \varepsilon_r\)) to
+                    axial strain, \(\varepsilon_z\), when a material is stretched or compressed: <br>
+                    \[ \nu = -\frac{\varepsilon_{x}}{\varepsilon_{z}}= -\frac{\varepsilon_{y}}{\varepsilon_{z}}=
+                    -\frac{\varepsilon_{r}}{\varepsilon_{z}} \]
+                    where \( \nu \) is Poisson’s ratio. The form \(-\varepsilon_r/\varepsilon_z\) would be used for the
+                    case of a cylindrical sample. 
+                </li>
+
+
+
+                <li><strong>Shear Modulus, Young's Modulus, and Poisson's ratio:</strong> These elastic constants are
+                    not independent. Given any two, the third can be calculated according to the relation: <br>
+                    \[ G = \frac{E}{2(1+\nu)} \]
+                    where \( G \) is the shear modulus, \( E \) is Young’s modulus, and \( \nu \) is Poisson’s ratio.<p>
+                        <em>How good is this relationship? Try using the Granta EduPack software for database level 2 or
+                            level 3 and plot the shear modulus on the y-axis and the equation, \(\frac{E}{2(1+\nu)}\) on
+                            the x-axis. </em>
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+
+        <article class="shadow-box">
+            <h2>Stress-Strain Diagram</h2>
+
+            <div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:center;">
+                <figure style="width:350px;" ;>
+                    <img src="../assets/img/stress strain elastic.png" alt="Stress-Strain Curve"
+                        style="max-width:350px; padding:0; margin:0;" class="courseware-images">
+                    <figcaption>
+                        <p>Stress-strain curve showing linear-elastic behavior for strains up to 0.003.</p>
+                    </figcaption>
+                </figure>
+                <figure style="width:250px;" ;>
+                    <img src="../assets/img/non_linear_stress_stain.png" alt="Stress-Strain Curve"
+                        style="max-width: 250px; padding:0; margin:0;" class="courseware-images">
+                    <figcaption>
+                        <p>Stress-strain curve showing non-linear elastic behavior typical of cast iron.</p>
+                    </figcaption>
+                </figure>
+            </div>
+
+
+            <p>Materials exhibit various behaviors during a tensile test which are evident when the recorded data are presented as stress vs strain. 
+                In the stress-strain data shown above, two different elastic behaviors are observed. </p>
+            <ul>
+                <li><strong>Linear Elastic Behavior:</strong> The material follows Hooke's law at the beginning stage of the tensile test. This is shown in the first figure where the linear region
+                     is indicated and the slope of this region gives the Young's modulus. If the tensile test was to be stopped and reversed (unloaded) in this region, the linear curve would be followed back 
+                     to complete unloading with the sample returning to its original length. </li>
+                <li><strong>Non-linear Elastic Behavior:</strong> In some materials, non-linear elastic behavior is observed as shown in the second figure for cast iron. If the test was stopped and the sample unloaded in this region, the sample would return back to its original length and hence the behavior is elastic. 
+                    However, no linear region exists to apply Hooke's law.  Rather either a secant or tangen modulus is calculated. </ul>
+            <p>The region beyond the elastic region is both elastic and plastic. This will be discussed in the next lesson.</p>
+            
+            <h2>Calculating Modulus</h2>
+            <p><strong>Young’s Modulus (E):</strong> This is calculated as the slope of the linear portion of the
+                stress-strain curve:</p>
+            <p>\[ E = \frac{\Delta \sigma}{\Delta \varepsilon} \]</p>
+            <p>where \( \Delta \sigma \) is the change in stress and \( \Delta \varepsilon \) is the corresponding
+                change in strain within the elastic region. The Young's modulus (modulus of elasticity) is dependent on temperature as shown in the figure below.</p>
+           
+            <img src="../assets/img/modulus_temp_dependence.png"
+                style="float:left; max-width: 350px;margin-right:10px;">
+        </article>
+
+        <article class="shadow-box">
+            <h2>Materials Property Charts</h2>
+            <p>Below are some materials property charts for the elastic modulus, shear modulus and poisson's ration versus density.</p>
+            <img src="../assets/img/chart_modulus_density.png" style="float:left; max-width: 450px;margin-right:10px;">
+            <img src="../assets/img/chart_shear_density.png" style="float:left; max-width: 450px;margin-right:10px;">
+            <img src="../assets/img/chart_poisson_density.png" style="float:left; max-width: 450px;margin-right:10px;">
+        </article>
+
+        <aside>
+            <h4>Did You Know?</h4>
+            <p>Materials like rubber exhibit high strain but low strength, whereas metals like steel have high
+                strength
+                but moderate strain.</p>
+        </aside>
+
+        
+    </main>
+    <footer style="display:block; width:100%;">
+        <p>&copy; 2024 Virginia Tech - Materials Science and Engineering</p>
+    </footer>
+</body>
+
+</html>

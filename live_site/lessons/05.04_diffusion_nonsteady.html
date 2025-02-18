@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <title>Fick's Second Law of Diffusion</title>
+
+    <!-- Brightspace Scripts and Styles -->
+    <script type="module" src="../assets/js/global.min.js"></script>
+    <script defer src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+    <script src="../assets/js/videoExpand.js"></script>
+    <script src="../assets/js/load-mathjax.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
+    <link rel="stylesheet" href="../assets/css/customv5.css" />
+    <script>
+        function resizeIframe(event) {
+            if (event.origin !== window.location.origin) return; // Ensure security
+            
+            const iframe = document.getElementById('dynamic-iframe');
+            if (event.data && event.data.height) {
+                iframe.style.height = event.data.height + 'px';
+            }
+        }
+
+        window.addEventListener('message', resizeIframe, false);
+    </script>
+</head>
+
+<body class="courseware-themes">
+    <!-- Header -->
+    <header class="custom-header">
+        <h1>Fick's Second Law of Diffusion</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="courseware-layouts-content-wrapper">
+
+        <!-- Learning Objectives -->
+        <section>
+            <h2>Learning Objectives</h2>
+            <ul>
+                <li>Understand the significance of Fick's second law in time-dependent diffusion.</li>
+
+
+                <li>Calculate the concentration at a given depth and time using the error function solution.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Video Lesson</h2>
+           <p><div class="courseware-video-text" style="text-align:center;">
+                <a href="../assets/handouts/05.01-02_diffusion.pptx" download>
+                    (PowerPoint slides)
+                </a>
+            </div></p> 
+            <div class="courseware-layouts-content-wrapper">
+                
+                <div class="courseware-video-wrapper" id="video1">
+                    <div class="courseware-video-text">
+                        <p>Non-steady state diffusion</p>
+                    </div>
+                    <div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video1')">
+                            <source src="../assets/media/05.05_diffusion.mp4" type="video/mp4">
+                            <track src="../assets/media/05.05_diffusion.vtt" kind="subtitles" srclang="en" label="English"
+                                type="text/vtt">
+                        </video>
+                    </div>
+                    
+                </div>
+                </div>
+                </section>
+
+        <!-- Introduction -->
+<section>
+    <h2>Introduction</h2>
+    <p>Consider a slab of material such as Fe with the surface coated in another substance for example graphite. Once heated 
+        the carbon from the graphite will diffuse into the iron slab. As time continues, the carbon will diffuse further and further 
+        into the iron. <em>The animation below shows this process.</em> Notice that the concentration profile 
+        is no longer linear and it continues to change with time. This is a non-steady state process i.e. the concentration at any 
+        position changes as time progresses. 
+    </p>
+    <div class="courseware-layouts-content-wrapper" >
+        <div class="courseware-video-wrapper" id="video2" >
+            <div class="courseware-video-text">
+                <p>Carbon diffusion into iron</p>
+            </div>
+            <div class="courseware-video-embed-responsive"><video title="Video Lesson" onclick="expandVideo('video2')">
+                    <source src="../assets/media/Supplemental/semi_infinite_diffusion.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        </div>
+
+    <div class="courseware-layouts-content-wrapper" style="float:left;">
+            <figure style="max-width:150px;padding:10px;">
+                <img src="../assets/img/case_hardened_gear.png">
+                <figcaption><p>Case hardened gear by carburization.</p></figcaption>
+            </figure>
+        </div><p>
+        The animation above shows a non-steady state diffusion process.  If this was carbon diffusing into iron, the process 
+        would be called carburization and is used to increase the hardness and wear resistance of iron or steel. To predict the concentration of carbon at a specific depth and time, we need to 
+        apply Fick's 2nd law: 
+        
+        \[
+        \frac{\partial C}{\partial t} = D \frac{\partial^2 C}{\partial x^2}
+        \] 
+        </p>
+</section>
+<section>
+        <h3>Physical Interpretation</h3>
+        <p>
+        Fick's 2nd law says that at any fixed position in our material, the local concentration changes with time according to the 2nd 
+        derivative of the concentration. This quantifies how the concentration gradient (Fick's 1st law) changes in the neighborhood 
+        of our position of interest. If we had a linear concentration gradient as in the steady state case, the 2nd 
+        derivative would be zero and the concentration change with time would be zero. However, if we do not have a linear 
+        gradient than the concentration will change with time. The solution of Fick's 2nd law for the case of carburization (semi-infinite diffusion) is given below. 
+    </p>
+
+    <h2>Semi-infinite diffusion (e.g. carburization)</h2>
+    <p>To solve Fick’s Second Law, we must apply boundary conditions that describe how the concentration varies at the system’s boundaries. 
+        For the case of semi-infinite diffusion we have: 
+    </p>
+
+    <ul>
+        <li><strong>Constant surface concentration</strong>: The surface concentration remains fixed at (\(C_s\)).</li>
+        <li><strong>No change in concentration deep in the material</strong>: \(C_&infin;=C_0\)</li>
+        <li><strong>An initial concentration: </strong>\(C_0\)</li>
+    </ul>
+    <p>Solving Fick's 2nd law with the above boundary conditions gives: 
+            <div class="math-equation">
+                <p>\[
+                \frac{C_{(x,t)}-C_0}{C_s-C_0} = 1 - \text{erf} \left(\frac{x}{2\sqrt{Dt}} \right)
+                \]</p>
+            </div>
+
+    </p>
+            <p>where:</p>
+            <ul>
+                <li>\(C_{(x,t)}\) = Carbon concentration at depth \(x\) and time \(t\).</li>
+                <li>\(C_s\) = Surface carbon concentration.</li>
+                <li>\(C_0\) = Initial concentration</li>
+                <li>\(\text{erf}\) = Error function.</li>
+                <li>\(D\) = Diffusion coefficient.</li>
+                <li>\(x\) = Depth.</li>
+                <li>\(t\) = Time.</li>
+            </ul>
+        </section>
+
+        <!-- Example Calculation -->
+        <section>
+            <h2>Example Calculation</h2>
+            <p>A steel surface is exposed to a high-carbon environment at \( 1000^\circ C \). The carbon concentration at the surface is maintained at \(0.8\%\) by weight, while the initial concentration inside the material is \(0.2\%\). Determine the carbon concentration at a depth of \(0.5\, mm\) after \(2\) hours.</p>
+
+            <h3>Step 1: Identify Parameters</h3>
+            <ul>
+                <li>\( C_s = 0.8\% \)</li>
+                <li>\( C_0 = 0.2\% \)</li>
+                <li>\( x = 0.5 \text{ mm} = 5 \times 10^{-4} \text{ m} \)</li>
+                <li>\( D = 1.9 \times 10^{-11} \text{ m}^2/\text{s} \) (at 1000 &deg;C)</li>
+                <li>\( t = 2 \times 3600 \text{ s} \)</li>
+            </ul>
+
+            <h3>Step 2: Compute Dimensionless Variable</h3>
+            <div class="math-equation">
+                <p>\[
+                \frac{x}{2\sqrt{Dt}} = \frac{5 \times 10^{-4}}{2\sqrt{(1.9 \times 10^{-11} \times 7200)}}
+                \]</p>
+            </div>
+            <p>Solving, we find \(\frac{x}{2\sqrt{Dt}} \approx 0.6759\).</p>
+            <p>\[
+                \frac{C_{(x,t)}-0.2}{0.8-0.2} = 1 - \text{erf} \left(0.6759 \right)
+            \]</p>
+
+            <h3>Step 3: Use Error Function Approximation</h3>
+            <p>Using an error function table, we find \(\text{erf}(0.6759) \approx 0.661\), giving:</p>
+            <div class="math-equation">
+                <p>\[
+                    \frac{C_{(x,t)}-0.2}{0.8-0.2} = 1 - 0.661
+                \]</p>
+            </div>
+            <p>\( C_{(x,t)} \approx 0.40\% \).</p>
+            <p>The error function can be computed in Excel by typing: =ERF().</p>
+        </section>
+
+        <!-- Interactive Diffusion Plot -->
+        <section>
+            <div id="iframe-container" style="position: relative; width: 100%; max-width:800px; height:auto; margin: 0 auto; margin-top: 25px;">
+                <iframe id="dynamic-iframe" src="../assets/demos/semi-infinite_diffusion.html" title="Diffusion Coefficient"
+                    style="width: 100%; border: 0;" scrolling="no" frameborder="0" allowfullscreen="allowfullscreen">
+                </iframe>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>

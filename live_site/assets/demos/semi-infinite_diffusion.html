@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semi-Infinite Diffusion Plot</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js"></script>
+    <script>
+        function sendHeight() {
+            const height = document.documentElement.scrollHeight;
+            window.parent.postMessage({ height }, "*");
+        }
+
+        window.addEventListener("load", sendHeight);
+        window.addEventListener("resize", sendHeight);
+    </script>
+</head>
+<body>
+    <h2>Semi-Infinite Diffusion Profile</h2>
+    <label for="temperature">Temperature (°C):</label>
+    <input type="range" id="temperature" min="500" max="1200" step="50" value="1050" oninput="updatePlot()">
+    <span id="tempValue">1050</span>
+    <br>
+    <label for="time">Time (s):</label>
+    <input type="range" id="time" min="10" max="10000" step="10" value="2100" oninput="updatePlot()">
+    <span id="timeValue">2100</span>
+    <br>
+    <canvas id="diffusionChart"></canvas>
+    
+    <script>
+        const D0 = 3.8e-5; // Pre-exponential factor (m^2/s)
+        const Q = 228000; // Activation energy (J/mol)
+        const R = 8.314; // Gas constant (J/mol-K)
+        const Cs = 0.8; // Surface concentration (normalized)
+        const C0 = 0.2; // Initial concentration in bulk
+
+        let ctx = document.getElementById('diffusionChart').getContext('2d');
+        let chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Concentration vs Depth',
+                    data: [],
+                    borderColor: 'blue',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Depth (mm)' }
+                    },
+                    y: {
+                        title: { display: true, text: 'Concentration' }
+                    }
+                }
+            }
+        });
+
+        function updatePlot() {
+            let T = parseInt(document.getElementById('temperature').value);
+            let t = parseInt(document.getElementById('time').value);
+            document.getElementById('tempValue').innerText = T;
+            document.getElementById('timeValue').innerText = t;
+            
+            let TK = T + 273.15; // Convert to Kelvin
+            let D = D0 * Math.exp(-Q / (R * TK)); // Compute diffusion coefficient
+            let x = Array.from({ length: 100 }, (_, i) => i * 0.000001); // Depth in meters
+            let C = x.map(depth => Cs * (1 - math.erf(depth / (2 * Math.sqrt(D * t)))));
+
+            chart.data.labels = x.map(v => (v * 1000).toFixed(2)); // Convert to mm
+            chart.data.datasets[0].data = C;
+            chart.update();
+        }
+
+        updatePlot();
+    </script>
+</body>
+</html>
