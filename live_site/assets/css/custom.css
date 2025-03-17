@@ -29,6 +29,8 @@ a:focus {
   text-decoration:underline;
 }
 
+ul {margin-left:25px;}
+
 /* style the container to hold the iframe element */
 .demo-container {
   position: relative;
@@ -300,6 +302,7 @@ figure {
 .courseware-layouts-content-wrapper img:hover {
   transform: scale(1.7);
 }
+
 
 .no-hover:hover {
   transition:none !important;

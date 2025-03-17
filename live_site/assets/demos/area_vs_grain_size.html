@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Total Grain Boundary Area vs. Grain Size</title>
+  <!-- Load Plotly from CDN -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <h2>Total Grain Boundary Area vs. Grain Size (Cubic Grains)</h2>
+  <div id="plot" style="width:600px;height:350px; margin:0,auto;"></div>
+  <script>
+    // Fixed volume V (set to 1 for simplicity)
+    const V = 1;
+
+    // Generate an array of grain sizes (d) from 0.1 to 1.0
+    const dValues = [];
+    const A_total = [];
+    for (let d = 0.1; d <= 1.0; d += 0.01) {
+      dValues.push(d);
+      A_total.push(6 * V / d);  // A_total = 6V/d
+    }
+
+    // Define the trace for the plot
+    const trace = {
+      x: dValues,
+      y: A_total,
+      mode: 'lines',
+      name: 'A_total = 6/d'
+    };
+
+    // Data and layout settings for the plot
+    const data = [trace];
+    const layout = {
+      
+      xaxis: { title: 'Grain Size' },
+      yaxis: { title: 'Total Grain Boundary Area' },
+      margin: { t: 10, b: 40, l: 60, r: 40 }
+
+    };
+
+    // Render the plot in the "plot" div
+    Plotly.newPlot('plot', data, layout);
+  </script>
+</body>
+</html>
