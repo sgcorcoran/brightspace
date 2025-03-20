@@ -11,14 +11,20 @@ app.use(cors());
 // 🔹 Ensure Express parses JSON correctly
 app.use(express.json()); 
 app.use(bodyParser.json()); 
-
-app.use(bodyParser.urlencoded({ extended: true })); // Parses URL-encoded data
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // 🔹 Log incoming requests for debugging
 app.use((req, res, next) => {
-    console.log(`Received request: ${req.method} ${req.url}`);
-    console.log("Headers:", req.headers);
-    console.log("Body:", req.body);
+    console.log(`🔹 Received request: ${req.method} ${req.url}`);
+    console.log("🔹 Headers:", req.headers);
+    
+    let rawBody = '';
+    req.on('data', (chunk) => { rawBody += chunk; });
+    req.on('end', () => {
+        console.log("🔹 Raw Body Received:", rawBody);
+    });
+
+    console.log("🔹 Parsed Body:", req.body); 
     next();
 });
 
@@ -31,15 +37,14 @@ app.use((req, res, next) => {
 });
 
 // 🔹 Chatbot API Route
-app.post("/api/chatbot", async (req, res) => {
-    console.log("Received JSON:", req.body); // Debugging: Check received JSON
+app.post("/api/chatbot", (req, res) => {
+    console.log("🔹 Parsed JSON:", req.body);
 
     if (!req.body || !req.body.query) {
         return res.status(400).json({ error: "Invalid request format. Missing 'query' field." });
     }
 
     const userQuery = req.body.query.toLowerCase();
-
     if (userQuery === "hello") {
         return res.json({ response: "hello to you" });
     }
