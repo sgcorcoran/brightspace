@@ -1,57 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
-<title>Fatigue Analysis - Worked Example</title>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-<link rel="stylesheet" href="../assets/css/custom.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+  <title>Worked: Fatigue</title>
+
+  <script type="module" src="../assets/js/global.min.js"></script>
+  <script defer="" src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+  <script src="../assets/js/videoExpand.js"></script>
+  <script src="../assets/js/load-mathjax.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css?v=1.3" />
+  <link rel="stylesheet" href="../assets/css/customv5.css" />
 </head>
-<body>
-<header>
-<h1>Worked Example: Fatigue Analysis</h1>
-<p>Estimate the fatigue life of a metallic alloy (AISI 1045 steel) and a polymer (Polycarbonate).</p>
-</header>
-<main>
-<article>
-<h2>Objectives:</h2>
-<ol>
-<li>Understand fatigue life estimation using S-N curves.</li>
-<li>Apply the fatigue strength formula for both metallic and polymeric materials.</li>
-</ol>
-</article>
-<h3>Given Problem Statement</h3>
-<p>Determine the number of cycles to failure for:</p>
-<ul>
-<li>AISI 1045 steel with an applied stress of \( \sigma = 300 \, \text{MPa} \).</li>
-<li>Polycarbonate with an applied stress of \( \sigma = 50 \, \text{MPa} \).</li>
-</ul>
 
-<h3>Solution</h3>
-<h4>Metallic Alloy: AISI 1045 Steel</h4>
-<p>The fatigue strength equation is: \[ N_f = \left(\frac{\sigma_f'}{\sigma}\right)^{1/b} \]</p>
-<p>Where:</p>
-<ul>
-<li>\( \sigma_f' = 950 \, \text{MPa} \) (fatigue strength coefficient)</li>
-<li>\( b = -0.12 \) (fatigue strength exponent)</li>
-<li>\( \sigma = 300 \, \text{MPa} \) (applied stress)</li>
-</ul>
-<p>Calculate the number of cycles to failure:</p>
-\[ N_f = \left(\frac{950}{300}\right)^{1/(-0.12)} \approx 10^5 \, \text{cycles} \]
+<body class="courseware-themes">
+  <header class="custom-header">
+    <h1>Worked Example: Fatigue Life in Polystyrene</h1>
+    <p>Compare fatigue life for virgin and UV-damaged material polystyrene.</p>
+  </header>
+  <main class="courseware-layouts-content-wrapper">
+    <section>
+      <h2 class="courseware-helper-text-center">Objectives:</h2>
+      <ol class="courseware-list-large-number">
+        <li>Apply the integrated form of Paris’ Law to calculate cycles to failure.</li>
+        <li>Compare fatigue behavior of virgin vs. UV-degraded polystyrene under the same mechanical loading.</li>
+      </ol>
+    </section>
+    <section>
+      <h2>Problem Statement</h2>
+      <p>A 6-inch (0.152 m) long cantilevered polystyrene ruler is deflected by applying a 1 N tip force and then
+        released (minimum stress equals zero). A surface crack of length \( a_0 = 0.1 \, \text{mm} \) is present at the
+        root. Determine the number of cycles to failure \( N \) using Paris’ Law for:</p>
+      <ul>
+        <li>Virgin polystyrene (\( C = 1 \times 10^{-9} \), \( m = 3.5 \), \( K_{IC} = 1.0 \, \text{MPa}\sqrt{m} \))
+        </li>
+        <li>UV-degraded polystyrene (\( C = 5 \times 10^{-7} \), \( m = 5.5 \), \( K_{IC} = 0.4 \, \text{MPa}\sqrt{m}
+          \))</li>
+      </ul>
+      <h2>Setup</h2>
+      <h3>General Fatigue Life Equation</h3>
+      <p>The integrated form of Paris’ Law is:</p>
+      <p>
+        \[
+        N = \frac{2}{(2 - m) \cdot C \cdot (\Delta \sigma)^m \cdot \pi^{m/2}} \left( a_c^{1 - m/2} - a_0^{1 - m/2}
+        \right)
+        \]
+      </p>
+      </section>
+      <section>
+      <div class="responsive-section">
+        <div class="courseware-card aside-card">
+          <div class="courseware-card-header" style="margin-bottom:0; padding-bottom:0;">
+            <h4>Bending Stress</h4>
+          </div>
+          <div class="courseware-card-body">
+            <p>The bending stress at the root of a cantilevered beam (such as a ruler loaded at the end) can be
+              calculated using:</p>
+            <p>
+              \[
+              \sigma = \frac{M c}{I} = \frac{F L \cdot h/2}{\frac{b h^3}{12}} = \frac{6 F L}{b h^2}
+              \]
+            </p>
+            <p>
+              Where:<br>
+              – \( F \): applied tip force (N)<br>
+              – \( L \): length of the ruler (m)<br>
+              – \( h \): thickness (m)<br>
+              – \( b \): width (m)<br>
+              – \( I \): area moment of inertia<br>
+              – \( c = h/2 \): distance from the neutral axis to the outer fiber
+            </p>
+            <p>This stress is used as the nominal stress in Paris' Law if the crack is located at the root where the
+              maximum bending stress occurs.</p>
+          </div>
+        </div>
+      </div>
+      
+      <h3>Common Geometry and Stress</h3>
+      <ul>
+        <li>Length \( L = 0.152 \, \text{m} \), Force \( F = 1 \, \text{N} \)</li>
+        <li>Width \( b = 0.025 \, \text{m} \), Thickness \( h = 0.003 \, \text{m} \)</li>
+        <li>Moment of inertia: \( I = \frac{b h^3}{12} = 5.625 \times 10^{-12} \, \text{m}^4 \)</li>
+        <li>Bending stress: \( \sigma = \frac{M c}{I} = \frac{F L \cdot h/2}{I} = 40.5 \, \text{MPa} \)</li>
+        <li>\(\Delta \sigma = \sigma_{max}-\sigma_{min} = 40.5 - 0 = 40.5\, \text{MPa}\)</li>
+      </ul>
+      <h2>Calculations</h2>
+      <h3>Virgin Polystyrene</h3>
+      <ul>
+        <li>\( C = 1 \times 10^{-9} \), \( m = 3.5 \), \( K_{IC} = 1.0 \)</li>
+        <li>\( a_c = \left( \frac{1.0}{40.5 \cdot \sqrt{\pi}} \right)^2 = 1.54 \times 10^{-4} \, \text{m} \)</li>
+        <li>Exponent: \( 1 - \frac{m}{2} = -0.75 \)</li>
+        <li>Substitute into integrated Paris Law:</li>
+      </ul>
+      <p>
+        \[
+        N = \frac{2}{(2 - 3.5)(1 \times 10^{-9})(40.5)^{3.5} \pi^{1.75}} \left( (1.54 \times 10^{-4})^{-0.75} - (1
+        \times 10^{-4})^{-0.75} \right)
+        \]
+      </p>
+      <p>\( \Rightarrow N \approx 3.3 \times 10^5 \, \text{cycles} \)</p>
 
-<h4>Polymeric Material: Polycarbonate</h4>
-<p>Using a simplified approach for polymers, assume \( b = -0.15 \) and \( \sigma_f' = 80 \, \text{MPa} \):</p>
-\[ N_f = \left(\frac{80}{50}\right)^{1/(-0.15)} \approx 2 \times 10^4 \, \text{cycles} \]
+      <h3>UV-Damaged Polystyrene</h3>
+      <ul>
+        <li>\( C = 5 \times 10^{-7} \), \( m = 5.5 \), \( K_{IC} = 0.4 \)</li>
+        <li>\( a_c = \left( \frac{0.4}{40.5 \cdot \sqrt{\pi}} \right)^2 = 9.85 \times 10^{-6} \, \text{m} \)</li>
+        <li>Exponent: \( 1 - \frac{m}{2} = -1.75 \)</li>
+        <li>Substitute into integrated Paris Law:</li>
+      </ul>
+      <p>
+        \[
+        N = \frac{2}{(2 - 5.5)(5 \times 10^{-7})(40.5)^{5.5} \pi^{2.75}} \left( (9.85 \times 10^{-6})^{-1.75} - (1
+        \times 10^{-4})^{-1.75} \right)
+        \]
+      </p>
+      <p>\( \Rightarrow N \approx 81 \, \text{cycles} \)</p>
 
-<div class="notice">
-<h4>What would happen if the applied stress is reduced?</h4>
-<cite>Consider how lowering the stress level impacts fatigue life for both materials.</cite>
-</div>
+      <div class="notice" style="text-align: center; padding:1rem;">
+        <h4 style="color:white;">Conclusion:</h4>
+        <p>UV degradation causes a dramatic drop in fatigue life—from hundreds of thousands of cycles to fewer than 100.
+        </p>
+      </div>
 
-</main>
-<footer>
-      <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
-    </footer></body>
+     
+
+
+    </section>
+  </main>
+  <footer>
+    <p>© 2024 Virginia Tech. All rights reserved.</p>
+  </footer>
+</body>
+
 </html>

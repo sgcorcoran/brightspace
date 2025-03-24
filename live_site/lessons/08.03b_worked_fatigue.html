@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <title>Worked: Fatigue</title>
+
+    <script type="module" src="../assets/js/global.min.js"></script>
+    <script defer="" src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+    <script src="../assets/js/videoExpand.js"></script>
+    <script src="../assets/js/load-mathjax.js" defer></script>
+    <!--Need the following line for the plot-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1.3" />
+    <link rel="stylesheet" href="../assets/css/customv5.css" />
+</head>
+
+<body class="courseware-themes">
+    <header class="custom-header">
+        <h1>Worked Example: Fatigue Life in an Aluminum Ruler</h1>
+        <p>Determine the fatigue life and critical crack size of an aluminum ruler using Paris' Law.</p>
+    </header>
+    <main class="courseware-layouts-content-wrapper">
+        <section>
+            <div class="notice" style="text-align: center; padding:1rem;">
+                <h4>Conclusion:</h4>
+                <p>Need to think about this one.  Check if the critical crack length is larger than the ruler thickness. Also check whether the applied stress is below the endurance limit. 
+                    Does Paris law still apply at these low stress values.</p>
+            </div>
+        </section>
+        <section>
+            <h2 class="courseware-helper-text-center">Objectives:</h2>
+            <ol class="courseware-list-large-number">
+                <li>Recall basic fracture mechanics principles and Paris’ Law.</li>
+                <li>Calculate the critical crack size for fracture in aluminum.</li>
+                <li>Apply Paris' Law to estimate fatigue life based on initial crack size.</li>
+                <li>Interpret log-log fatigue life plot versus initial crack size.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Problem Statement</h2>
+            <p>A metal ruler made of 6061-T6 aluminum is cyclically loaded in bending with a stress range of
+                \( \Delta \sigma = 50\,\text{MPa} \) i.e. a max stress of \(50\,\text{MPa}\) and a min stress of
+                \(0\,\text{MPa} \). Determine:</p>
+            <ul>
+                <li>Critical crack size \( a_c \) using \( K_{IC} \)</li>
+                <li>Fatigue life \( N \) using Paris’ Law for an initial crack of 0.1 mm.</li>
+                <li>Plot of fatigue life, \( N \), versus initial crack size, \( a_0 \).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Material Properties (6061-T6 Aluminum)</h2>
+            <ul>
+                <li>Paris Law constants: \( C = 3 \times 10^{-12} \), \( m = 3.0 \)</li>
+                <li>Fracture toughness: \( K_{IC} = 26 \times 10^6 \, \text{Pa}\sqrt{\text{m}} \)</li>
+                <li>Applied stress range: \( \Delta\sigma = 50\,\text{MPa} \)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Calculations</h2>
+            <h3>Critical Crack Size</h3>
+            <p>
+                \[
+                a_c = \left( \frac{K_{IC}}{\Delta\sigma \sqrt{\pi}} \right)^2 =
+                \left( \frac{26 \times 10^6}{50 \times 10^6 \cdot \sqrt{\pi}} \right)^2 \approx 0.0861\,\text{m}
+                \]
+            </p>
+
+            <h3>Fatigue Life (Integrated Paris Law)</h3>
+            <p>
+                \[
+                N = \frac{2}{(2 - m) \cdot C \cdot (\Delta\sigma)^m \cdot \pi^{m/2}}
+                \left( a_c^{1 - m/2} - a_0^{1 - m/2} \right)
+                \]
+            </p>
+            <div class="courseware-panels" style="padding:1rem;">
+                <div class="courseware-panel">
+
+                    <div class="courseware-card-body">
+                        In the Paris equation above, \( \Delta\sigma \) must be given in MPa to ensure unit consistency
+                        with the Paris constant \( C \). Also, note that
+                        the value of \(m\) can not equal 2.
+                    </div>
+                </div>
+            </div>
+
+            <h4>Example Calculation</h4>
+            <p>
+                Given: <br>
+                \( C = 3 \times 10^{-12} \),<br>
+                \( m = 3.0 \),<br>
+                \( \Delta\sigma = 50\,\text{MPa} \),<br>
+                \( a_0 = 1.0 \times 10^{-4}\,\text{m} \),<br>
+                \( a_c = 0.0861\,\text{m} \)
+            </p>
+            <p>
+                Substituting into the equation:<br>
+                \[
+                N = \frac{2}{(2 - 3.0)(3 \times 10^{-12})(50)^3 \pi^{3/2}}
+                \left( 0.0861^{1 - 3/2} - (1.0 \times 10^{-4})^{1 - 3/2} \right)
+                \]<br>
+                \[
+                \approx 9.25 \times 10^7 \text{ cycles}
+                \]
+            </p>
+
+        </section>
+
+        <section>
+            <div style="max-width:80%;">
+            <h2>Plot: Fatigue Life vs. Initial Crack Size</h2>
+            <canvas id="fatiguePlot" width="700" height="400"></canvas>
+        </div>
+            <script>
+                const C = 3e-12;
+                const m = 3.0;
+                const sigma = 50; // MPa
+                //const ac = Math.pow((26e6 / (sigma * 1e6 * Math.sqrt(Math.PI))), 2); // in meters
+                const ac=0.002; // in meters thickness < calculated ac
+
+                function fatigueLife(a0) {
+                    const constant = (2 / (2 - m)) / (C * Math.pow(sigma, m) * Math.pow(Math.PI, m / 2));
+                    return constant * (Math.pow(ac, 1 - m / 2) - Math.pow(a0, 1 - m / 2));
+                }
+
+                const a0_vals = Array.from({ length: 200 }, (_, i) => 5e-6 + i * (0.001 - 5e-6) / 199);
+                const N_vals = a0_vals.map(a0 => fatigueLife(a0));
+
+                const ctx = document.getElementById('fatiguePlot').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: a0_vals.map(x => x * 1e6),
+                        datasets: [{
+                            label: 'Cycles to Failure (N)',
+                            data: N_vals,
+                            borderColor: 'teal',
+                            borderWidth: 2,
+                            fill: false,
+                            pointRadius: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                type: 'logarithmic',
+                                title: { display: true, text: 'Initial Crack Size a₀ (µm)' }
+                            },
+                            y: {
+                                type: 'logarithmic',
+                                title: { display: true, text: 'Fatigue Life N (cycles)' }
+                            }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            title: { display: true, text: 'Fatigue Life vs. Initial Crack Size' }
+                        }
+                    }
+                });
+            </script>
+        </section>
+
+        <section>
+            <div class="notice" style="text-align: center; padding:1rem;">
+                <h4>Conclusion:</h4>
+                <p>Need to think about this one.  Check if the critical crack length is larger than the ruler thickness. Also check whether the applied stress is below the endurance limit. 
+                    Does Paris law still apply at these low stress values.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Virginia Tech. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

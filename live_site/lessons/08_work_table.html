@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Paris Law Parameters Table</title>
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+      margin: 2rem;
+    }
+    h2 {
+      color: #861f41;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+      cursor: pointer;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    #filterInput {
+      margin-bottom: 1rem;
+      padding: 8px;
+      width: 100%;
+      max-width: 400px;
+      font-size: 1rem;
+    }
+    .scroll-container {
+      max-height: 400px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Paris Law Fatigue Crack Growth Parameters</h2>
+  <input type="text" id="filterInput" onkeyup="filterTable()" placeholder="Search by material or reference..." />
+
+  <div class="scroll-container">
+    <table id="parisTable">
+      <thead>
+        <tr>
+          <th>Material</th>
+          <th>C (m/cycle)</th>
+          <th>m</th>
+          <th>K<sub>IC</sub> (MPa√m)</th>
+          <th>Paris Law Ref</th>
+          <th>K<sub>IC</sub> Ref</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Polystyrene (amorphous, dry)</td><td>1e-10 to 1e-8</td><td>3–4</td><td>0.9–1.2</td><td>PE/Polymer Fatigue Review</td><td>Dowling (3rd Ed)</td></tr>
+        <tr><td><strong>Polystyrene (UV-damaged)</strong></td><td>1e-7 to 1e-6</td><td>4.5–6</td><td>0.3–0.6</td><td>White (NIST), 2001</td><td>Andrady et al., Polymer Photodegradation</td></tr>
+        <tr><td>Polycarbonate</td><td>1e-9 to 5e-8</td><td>3.5–4</td><td>2.0–2.5</td><td>Polymer Eng. & Sci., 1998</td><td>Polymer Eng. & Sci., 1998</td></tr>
+        <tr><td>PMMA (Acrylic)</td><td>5e-10 to 1e-8</td><td>3–4</td><td>1.0–1.5</td><td>Dowling</td><td>J. Appl. Polym. Sci.</td></tr>
+        <tr><td>Nylon 6/6</td><td>5e-9 to 2e-7</td><td>3.5–5</td><td>3.5–4.0</td><td>Polymer Testing, 2005</td><td>Polymer Testing, 2005</td></tr>
+        <tr><td>Aluminum 2024-T3</td><td>1.5e-11</td><td>3.0</td><td>25–35</td><td>Dowling, Table 9.2</td><td>Dowling, Table 9.2</td></tr>
+        <tr><td>Aluminum 7075-T6</td><td>3e-11</td><td>3.2</td><td>22–27</td><td>ASM Handbook Vol. 19</td><td>ASM Handbook Vol. 19</td></tr>
+        <tr><td>Mild Steel (AISI 1018)</td><td>3e-12</td><td>3.0</td><td>50–60</td><td>ASM Handbook Vol. 19</td><td>ASM Handbook Vol. 19</td></tr>
+        <tr><td>Stainless Steel (304)</td><td>1e-11</td><td>3.0–3.2</td><td>70–90</td><td>T. L. Anderson</td><td>Fracture Mechanics, T. L. Anderson</td></tr>
+        <tr><td>Titanium Alloy (Ti-6Al-4V)</td><td>5e-12</td><td>3.5</td><td>55–75</td><td>Kowalewski et al., 2007</td><td>Kowalewski et al., 2007</td></tr>
+        <tr><td>Glass Fiber Composite (epoxy)</td><td>1e-8</td><td>4–5</td><td>20–30</td><td>J. Composite Materials, 2005</td><td>J. Composite Materials, 2005</td></tr>
+        <tr><td>Carbon Fiber Composite (epoxy)</td><td>5e-9</td><td>4–5</td><td>35–50</td><td>Sendeckyj</td><td>Sendeckyj, Fatigue of Composite Materials</td></tr>
+        <tr><td>ABS (Acrylonitrile Butadiene Styrene)</td><td>1e-8</td><td>3.2–3.8</td><td>2.5–3.0</td><td>Int. J. Fatigue, 2014</td><td>Int. J. Fatigue, 2014</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function filterTable() {
+      const input = document.getElementById("filterInput");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("parisTable");
+      const tr = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < tr.length; i++) {
+        const row = tr[i];
+        let show = false;
+        const tds = row.getElementsByTagName("td");
+        for (let j = 0; j < tds.length; j++) {
+          const td = tds[j];
+          if (td && td.innerHTML.toLowerCase().indexOf(filter) > -1) {
+            show = true;
+            break;
+          }
+        }
+        row.style.display = show ? "" : "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
