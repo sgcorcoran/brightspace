@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <title>Phase Diagrams Part 2</title>
+
+    <script type="module" src="../assets/js/global.min.js"></script>
+    <script defer src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+    <script src="../assets/js/load-mathjax.js" defer></script>
+    <script src="../assets/js/videoExpand.js"></script>
+    <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
+    <link rel="stylesheet" href="../assets/css/customv5.css" />
+</head>
+
+<body class="courseware-themes">
+    <!-- Header -->
+    <header class="custom-header">
+        <h1>Phase Diagrams Part 2: Inverse Lever Rule</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="courseware-layouts-content-wrapper">
+        <section>
+
+            <h2>Interpreting Binary Phase Diagrams</h2>
+            <p>Understanding a binary phase diagram involves identifying the phases present, 
+                their compositions, and the relative amounts (weight fractions) at a given temperature and composition.</p>
+<!--Video side by side small and expand on play-->
+<div class="courseware-video-text" style="text-align:center;">
+    <a href="../assets/handouts/09.02_phase_diag.pptx" download>
+        Slides: Phase Diagrams part 2
+    </a>
+</div>
+
+<div class="courseware-layouts-content-wrapper">
+    <div class="courseware-video-wrapper" id="video1">
+        <div class="courseware-video-text">
+            <p>Part 2</p>
+        </div>
+        <div class="courseware-video-embed-responsive">
+            <video title="Video Lesson" onclick="expandVideo('video1')">
+                <source src="../assets/media/09.02_phase.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
+</section>
+<section>
+            <h2>Step-by-Step Example (Cu-Ni Alloy)</h2>
+            <p>Consider a Cu-Ni alloy with 35 wt% Ni at different temperatures:</p>
+            <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
+                <figure style="max-width: 45%;">
+                    <img src="../assets/img/Cu_Ni_with_box.png" alt="Vacancy" >
+                    <figcaption>
+                        <p>Cu-Ni Phase Diagram</p>
+                    </figcaption>
+                </figure>
+                <figure style="max-width: 45%;">
+                    <img src="../assets/img/cu_ni_zoom.png" alt="Vacancy" >
+                    <figcaption>
+                        <p>Cu-Ni Phase Diagram from 20 - 55 wt% Ni</p>
+                    </figcaption>
+                </figure>
+                </div>
+                <p>The region between the liquidus and solidus lines contains two phases: solid \(\alpha\) and liquid, \(L\). Above the liquidus line 
+                    is liquid only and below the solidus line is solid only. </p>
+                <h3>Phases Present at 1300, 1250, and 1190°C</h3>
+            <ul>
+                <li><strong>1300°C (point a):</strong> One phase - liquid solution (L).</li>
+                <li><strong>1250°C (point c):</strong> Two phases - solid solution (α) and liquid solution (L).</li>
+                <li><strong>1190°C (point e):</strong> One phase - solid solution (α).</li>
+            </ul>
+
+            <h3>Estimating Phase Compositions: Tie-line</h3>
+            <p>A tie-line (straight line) is drawn <em>only</em> in two phase regions. The second figure above shows the tie-line at
+                1260, 1250, and 1220°C. The tie-line extends from one side of the two phase region to the other. In this case, liquid is on the left 
+                side of the tie-line and \(\alpha\) is on the right. The two end points give the composition of each phase respectively.  
+            </p>
+            <p>Consider the tie-line at 1250°C, this tie line intersects the liquidus line on the left at 32 wt% Ni which is therefore
+                the composition of the liquid phase. The intersection on the right side (with solidus line) gives the \(\alpha\) composition which is 43wt% Ni. To summarize: 
+            </p>
+            <p><strong>The tie-line at 1250°C gives:</strong> </p>
+            <ul>
+                <li>\(C_{L}=\text{32 wt% Ni + 68 wt% Cu}\)</li>
+                <li>\(C_{\alpha}=\text{43 wt% Ni + 57 wt% Cu}\)</li>
+            </ul>
+
+<h3>Weight (mass) fractions of phases: Inverse Lever Rule</h3>
+            <p>Apply the inverse lever rule to the tie line. The tie line drawn in the previous problem on the phase 
+                diagram is reproduced below. Notice that the left and right sides of the tie line are now labeled as liquid, \(L\) and solid, \(\alpha\) and the 
+                compositions are identified as found previously, 32 and 43 wt% Ni respectively. Also indicated is the composition of the overall alloy, \(C_0=\text{35 wt% Ni}\). 
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
+                <figure style="max-width: 45%;">
+                    <img src="../assets/img/cu_ni_tie_line.png" alt="Vacancy" >
+                    <figcaption>
+                        <p>Tie line at 1250°C at an alloy composition of 35wt% Ni </p>
+                    </figcaption>
+                </figure>
+                </div>
+            <p>The relative lengths of the two sides of the tie line are also indicated on the figure above and calculated below. 
+                The inverse lever rule says that <strong>the fraction of a phase is given by the relative length opposite the side of the phase</strong> as shown in 
+                the figure below. 
+                For this figure, \(\alpha\) is indicated on the <em>right side</em>, therefore the fractional amount of \(\alpha\) is 
+                given by the <em>left side</em>, i.e. 0.27.  The fractional amount of liquid is likewise given by 0.73. 
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
+                <figure style="max-width: 65%;">
+                    <img src="../assets/img/cu_ni_tie_fractions.png" alt="Vacancy" style="width:75%">
+                    <figcaption>
+                        <p>Inverse lever rule: <strong>the fraction of a phase is given by the relative length opposite the side of the phase</strong>. </p>
+                    </figcaption>
+                </figure>
+                </div>
+                <ul>
+                <li>Weight fraction calculations:
+                    \[ W_L = \frac{43-35}{43-32} = 0.73 \]
+                    <br>
+                    \[ W_α = \frac{35-32}{43-32} = 0.27 \]
+                </li>
+            </ul>
+
+
+
+           
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+    </footer>
+</body>
+
+</html>
