@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <title>Phase Diagrams Part 2: Phase Diagram Interpretation</title>
+
+    <script type="module" src="../assets/js/global.min.js"></script>
+    <script defer src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+    <script src="../assets/js/load-mathjax.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
+    <link rel="stylesheet" href="../assets/css/customv5.css" />
+</head>
+
+<body class="courseware-themes">
+    <!-- Header -->
+    <header class="custom-header">
+        <h1>Phase Diagrams Part 2: Phase Diagram Interpretation</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="courseware-layouts-content-wrapper">
+        <section>
+
+            <h2>Interpreting Binary Isomorphous Phase Diagrams</h2>
+            <p>A binary isomorphous phase diagram describes alloy systems with complete solubility between two components in both liquid and solid phases. Here, we will explore how to interpret these diagrams, specifically using the Cu-Ni alloy system as an example.</p>
+
+            <h3>Understanding the Cu-Ni Phase Diagram</h3>
+            <p>Below is the Cu-Ni binary phase diagram:</p>
+            <figure>
+                <img src="../assets/img/cu_ni_phase_diagram.png" alt="Cu-Ni Phase Diagram">
+                <figcaption>Cu-Ni binary isomorphous phase diagram showing liquidus and solidus lines.</figcaption>
+            </figure>
+
+            <h3>Step-by-Step Analysis at Different Temperatures</h3>
+
+            <h4>1. Identifying Phases at Specific Temperatures</h4>
+            <p>Consider an alloy with 35 wt% Ni:</p>
+            <ul>
+                <li><strong>At 1300°C:</strong> Alloy is fully liquid (single-phase region).</li>
+                <li><strong>At 1250°C:</strong> Alloy enters a two-phase region (α + Liquid).</li>
+                <li><strong>At 1190°C:</strong> Alloy is completely solid (α phase).</li>
+            </ul>
+
+            <h4>2. Determining Phase Compositions (Using Tie Lines)</h4>
+            <p>To find the composition of phases at a given temperature, draw a horizontal line (tie line) across the two-phase region:</p>
+            <ul>
+                <li><strong>At 1250°C:</strong>
+                    <ul>
+                        <li>Liquid phase composition (intersection with liquidus line): ~32 wt% Ni</li>
+                        <li>Solid phase composition (intersection with solidus line): ~43 wt% Ni</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>3. Calculating Phase Amounts (Lever Rule)</h4>
+            <p>The lever rule is used to calculate the relative amounts of each phase:</p>
+            <p>For alloy at 1250°C with overall composition of 35 wt% Ni:</p>
+            <ul>
+                <li>Fraction Liquid (\(W_L\)):
+                    \[ W_L = \frac{C_{α}-C_o}{C_{α}-C_L} = \frac{43-35}{43-32} = \frac{8}{11} = 0.73 \text{ (73% liquid)} \]
+                </li>
+                <li>Fraction Solid (\(W_{α}\)):
+                    \[ W_{α} = \frac{C_o - C_L}{C_{α}-C_L} = \frac{35-32}{43-32} = \frac{3}{11} = 0.27 \text{ (27% solid)} \]
+                </li>
+            </ul>
+
+            <h3>Interactive Practice: Lever Rule</h3>
+            <p>Use the interactive simulation below to practice applying the lever rule to determine phase fractions at various temperatures and compositions:</p>
+            <div class="iframe-container">
+                <iframe src="../assets/demos/lever_rule_simulation.html" title="Lever Rule Interactive Simulation"></iframe>
+            </div>
+
+            <h3>Microstructural Implications</h3>
+            <p>The relative amounts and compositions of phases strongly influence the final microstructure of the alloy upon cooling:</p>
+            <ul>
+                <li><strong>Single-phase regions:</strong> Uniform microstructures with homogenous properties.</li>
+                <li><strong>Two-phase regions:</strong> Complex microstructures, properties dependent on cooling rates and phase distribution.</li>
+            </ul>
+
+            <h3>Knowledge Check</h3>
+            <div class="card-container">
+                <div class="card-container-3">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <span class="flip-icon">↺</span>
+                            At what temperature does the first solid form in a 35 wt% Ni Cu-Ni alloy during cooling?
+                        </div>
+                        <div class="card-back">
+                            Approximately 1260°C.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container-3">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <span class="flip-icon">↺</span>
+                            What are the compositions of the solid and liquid phases at 1250°C?
+                        </div>
+                        <div class="card-back">
+                            Solid phase: ~43 wt% Ni, Liquid phase: ~32 wt% Ni.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+    </footer>
+</body>
+
+</html>

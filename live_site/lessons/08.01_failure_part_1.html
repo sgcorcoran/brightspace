@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+    <title>Failure Mechanisms: Charpy and Fracture Mechanics</title>
+    <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
+    <script src="../assets/js/videoExpand.js"></script>
+    <script src="../assets/js/load-mathjax.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="courseware-themes">
+
+<header class="custom-header">
+    <h1>Failure Mechanisms Part 1</h1>
+</header>
+
+<main class="courseware-layouts-content-wrapper">
+
+    <!-- Learning Objectives -->
+    <section>
+        <h2>Learning Objectives</h2>
+        <ul>
+            <li>Explain the principles and applications of the Charpy impact test. (Understanding)</li>
+            <li>Analyze the relationship between alloy composition and fracture energy. (Analyzing)</li>
+            <li>Differentiate between stress intensity (K) and fracture toughness (K<sub>Ic</sub>). (Analyzing)</li>
+            <li>Apply fracture mechanics equations to predict critical crack size and stress for material failure. (Applying)</li>
+            <li>Evaluate the effects of stress concentrations due to geometric discontinuities. (Evaluating)</li>
+        </ul>
+    </section>
+
+    <!--Video side by side small and expand on play-->
+
+
+    <section>
+    <h2>Video Lesson</h2>
+    <div class="courseware-video-text">
+        <a href="../assets/handouts/08.01_failure.pptx" download>
+            Slides: Failure part 1
+        </a>
+    </div>
+
+    <div class="courseware-layouts-content-wrapper">
+        <div class="courseware-video-wrapper" id="video1">
+            <div class="courseware-video-text">
+                <p></p>
+            </div>
+            <div class="courseware-video-embed-responsive">
+                <video title="Video Lesson" onclick="expandVideo('video1')">
+                    <source src="../assets/media/08.01_failure.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+   </section><section>
+    <!-- Terminology Aside -->
+   <aside class="courseware-card aside-card">
+    <div class="courseware-card-header">
+        <h4>Terminology</h4>
+    </div>
+    <div class="courseware-card-body">
+        <p>
+            <strong>Strength</strong> is the resistance of the material to plastic deformation.
+        </p>
+        <p>
+            <strong>Toughness</strong> is the resistance of the material to fracture in the presence of a crack.
+        </p>
+    </div>
+</aside>
+    <!-- Charpy Impact Test -->
+    
+        <h2>Charpy Impact Test</h2>
+        <p>The Charpy impact test measures the amount of energy absorbed by a material during fracture and is used to evaluate ductile-to-brittle transition behavior and effects of alloy composition on toughness.</p>
+        <ul>
+            <li><strong>Ductile-to-Brittle Transition:</strong> Observe the temperature at which a material transitions from ductile (high energy absorption) to brittle (low energy absorption).</li>
+            <li><strong>Alloy Composition Effects:</strong> Different compositions change fracture energy significantly, affecting materials' toughness.</li>
+        </ul>
+    
+
+    <!-- Limitations of Charpy Test -->
+    
+        <h2>Limitations of the Charpy Test</h2>
+        <p>The Charpy test does not accurately predict failure under real operational conditions, as it does not account for actual stress states or existing flaws. Thus, fracture mechanics is required for predicting failure accurately.</p>
+    
+
+      <!-- Brittle Fracture and Griffith Criterion -->
+    
+        <h2>Brittle Fracture and the Griffith Criterion</h2>
+        <p>Brittle fracture occurs with little or no plastic deformation and is characterized by rapid crack propagation. Griffith proposed a criterion to predict fracture based on an energy balance approach:</p>
+        <p>According to Griffith's criterion, fracture occurs when the elastic strain energy released by extending a crack is equal to or greater than the surface energy required to create new surfaces. The critical condition can be expressed as:</p>
+        <p>
+            \[ \sigma_c = \sqrt{\frac{2E\gamma_s}{\pi a}} \]
+        </p>
+        <ul>
+            <li>\( \sigma_c \): Critical stress for crack propagation (MPa)</li>
+            <li>\( E \): Young’s modulus of the material (MPa)</li>
+            <li>\( \gamma_s \): Specific surface energy (J/m²)</li>
+            <li>\( a \): Half-length of an internal crack or full length of a surface crack (m)</li>
+        </ul>
+        <p>This relationship assumes energy equilibrium between elastic energy release and the formation of new crack surfaces, neglecting plastic deformation, which is suitable primarily for brittle materials.</p>
+        <p><strong>Sample Calculation:</strong></p>
+        <ul>
+            <li>Given: \( E = 200 \text{ GPa} \), \( \gamma_s = 1 \text{ J/m}^2 \), crack length \( a = 0.005 \text{ m} \)</li>
+            </ul>
+              <p>  \[ \sigma_c = \sqrt{\frac{2 \times 200 \times 10^9 \times 1}{\pi \times 0.005}} \approx 159.6 \text{ MPa} \]
+            </p>
+        
+    </section>
+
+     <!-- Stress Concentration -->
+     <section>
+        <h2>Stress Concentration: Geometric Discontinuities</h2>
+        <p>Stress concentration occurs around discontinuities, influencing fracture behavior significantly.</p>
+        <ul>
+            <li><strong>Sharp Crack:</strong> Very high stress concentration, easily propagates.</li>
+            <li><strong>Elliptical Hole:</strong> Moderate stress concentration.</li>
+            <li><strong>Round Hole:</strong> Lowest stress concentration.</li>
+        </ul>
+        <p>Quantitatively, stress concentration factor \(K_t\) is defined as:</p>
+        <p>
+            \[ K_t = \frac{\sigma_{max}}{\sigma_{nominal}} \]
+        </p>
+        <p>where \(\sigma_{max}\) is the maximum stress near the discontinuity, and \(\sigma_{nominal}\) is the nominal stress away from it.</p>
+        <p>The stress concentration factor for an elliptical flaw depends on the radius of curvature \(\rho\) at the crack tip and the flaw length \(a\):</p>
+        <p>
+            \[ K_t = 1 + 2\sqrt{\frac{a}{\rho}} \]
+        </p>
+        <p>As the ellipse becomes circular (\(a = \rho\)), this equation simplifies to:</p>
+        <p>
+            \[ K_t = 3 \]
+        </p>
+        <p>In reality, stress does not become infinite at sharp cracks due to local yielding or plastic deformation that blunts the crack tip, thus limiting the maximum stress achievable.</p>
+        <div style="max-width:80%; margin:auto;">
+            <canvas id="stressConcentrationChart" width="400" height="200"></canvas>
+            <script>
+                const ctx = document.getElementById('stressConcentrationChart').getContext('2d');
+                const radii = Array.from({length: 60}, (_, i) => (i + 1) / 20);
+                const KtValues = radii.map(r => 1 + 2 * Math.sqrt(1 / r));
+                const circleIndex = radii.indexOf(1);
+    
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: radii,
+                        datasets: [{
+                            label: 'Stress Concentration Factor (K_t)',
+                            data: KtValues,
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 2,
+                            pointRadius: radii.map((_, idx) => idx === circleIndex ? 6 : 0),
+                            pointBackgroundColor: radii.map((_, idx) => idx === circleIndex ? 'red' : 'rgba(0,0,0,0)')
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {beginAtZero: true, title: {display: true, text: 'K_t'}},
+                            x: {title: {display: true, text: 'Radius of Curvature (ρ/a)'}}
+                        }
+                    }
+                });
+            </script>
+            <p>The red dot indicates the condition where the elliptical hole becomes circular (\(\rho/a = 1\)).</p>
+        </div>
+    </section>
+
+    <!-- Introduction to Fracture Mechanics -->
+    <section>
+        <h2>Fracture Mechanics: Stress Intensity and Fracture Toughness</h2>
+        <p>Fracture mechanics allows for predicting failures by considering stress concentrations and crack propagation. It focuses on stress intensity factor (K) and fracture toughness (K<sub>Ic</sub>).</p>
+        <ul>
+            <li><strong>Stress Intensity Factor (K):</strong> Describes the stress state near the crack tip.
+                <br>General Form: \[ K = Y \sigma \sqrt{\pi a} \]
+                <ul>
+                    <li>\( K \): Stress intensity factor (MPa√m)</li>
+                    <li>\( Y \): Dimensionless geometry factor</li>
+                    <li>\( \sigma \): Applied stress (MPa)</li>
+                    <li>\( a \): Crack length (m)</li>
+                </ul>
+            </li>
+            <li><strong>Fracture Toughness (K<sub>Ic</sub>):</strong> The critical value of \(K\) at which a material will fail suddenly due to crack propagation.</li>
+        </ul>
+    </section>
+
+ <!-- Calculating Critical Crack Size and Stress -->
+ <section>
+    <h2>Calculating Critical Crack Size and Stress</h2>
+    <p>To determine the critical crack size given stress or the critical stress given crack size, use:</p>
+    <p>
+        For critical crack size \( a_{crit} \):
+        \[ K_{Ic} = Y \sigma \sqrt{\pi a_{crit}} \]
+    </p>
+    <p>
+        For critical stress \( \sigma_{crit} \):
+        \[ K_{Ic} = Y \sigma_{crit} \sqrt{\pi a} \]
+    </p>
+    <p>Example Calculation:</p>
+    <ul>
+        <li>Given: \( K_{Ic} = 50\, MPa\sqrt{m} \), \( \sigma = 200\, MPa \), \( Y = 1.1 \)</li>
+        <li>Solve for critical crack size \( a_{crit} \):<br>
+            \[ a_{crit} = \frac{1}{\pi}\left(\frac{K_{Ic}}{Y\sigma}\right)^2 \]
+            \[ a_{crit} = \frac{1}{\pi}\left(\frac{50}{1.1 \times 200}\right)^2 \approx 0.0329\, m \]
+        </li>
+        <li>If given \( a = 0.01\, m \), solve for critical stress \( \sigma_{crit} \):<br>
+            \[ \sigma_{crit} = \frac{K_{Ic}}{Y\sqrt{\pi a}} \]
+            \[ \sigma_{crit} = \frac{50}{1.1\sqrt{\pi \times 0.01}} \approx 807.5\, MPa \]
+        </li>
+    </ul>
+</section>
+
+   
+
+</main>
+
+<footer>
+    <p>Copyright © 2024 Virginia Tech</p>
+</footer>
+
+</body>
+</html>

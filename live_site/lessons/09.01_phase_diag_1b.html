@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <title>Phase Diagrams Part 2: Interpretation and Applications</title>
+
+    <script type="module" src="../assets/js/global.min.js"></script>
+    <script defer src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+    <script src="../assets/js/load-mathjax.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
+    <link rel="stylesheet" href="../assets/css/customv5.css" />
+</head>
+
+<body class="courseware-themes">
+    <!-- Header -->
+    <header class="custom-header">
+        <h1>Phase Diagrams Part 2: Interpretation and Applications</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="courseware-layouts-content-wrapper">
+        <section>
+
+            <h2>Interpreting Binary Phase Diagrams</h2>
+            <p>Understanding a binary phase diagram involves identifying the phases present, their compositions, and the relative amounts (mass fractions) at various temperatures and compositions.</p>
+
+            <h3>Step-by-Step Example (Cu-Ni Alloy)</h3>
+            <p>Consider a Cu-Ni alloy with 35 wt% Ni at different temperatures:</p>
+            <ul>
+                <li><strong>1300°C:</strong> One phase - liquid solution (L).</li>
+                <li><strong>1250°C:</strong> Two phases - solid solution (α) and liquid solution (L).</li>
+                <li><strong>1190°C:</strong> One phase - solid solution (α).</li>
+            </ul>
+
+            <h3>Calculating Phase Compositions and Fractions</h3>
+            <p>Use the lever rule and tie lines to determine the phase compositions and fractions. Example:</p>
+            <ul>
+                <li>At 1250°C, the liquid phase composition is ~32% Ni, and the solid phase is ~43% Ni.</li>
+                <li>Weight fraction calculations:
+                    <br>\[ W_L = \frac{43-35}{43-32} = 0.73 \] (73% liquid)
+                    <br>\[ W_α = \frac{35-32}{43-32} = 0.27 \] (27% solid)
+                </li>
+            </ul>
+
+            <h3>Interactive Calculation Workshop</h3>
+            <p>Practice using this interactive Excel sheet or simulation:</p>
+            <div class="iframe-container">
+                <iframe src="../assets/demos/phase_diagram_calculation.html" title="Phase Diagram Interactive Calculation"></iframe>
+            </div>
+
+            <h2>Microstructural Analysis During Cooling</h2>
+            <p>As alloys cool, microstructures evolve based on the phase diagrams:</p>
+            <ul>
+                <li>At <strong>1260°C</strong>, first solid forms (α phase).</li>
+                <li>At <strong>1220°C</strong>, the alloy fully solidifies.</li>
+            </ul>
+
+            <h3>Illustrating Microstructures</h3>
+            <figure>
+                <img src="../assets/img/microstructure_example.png" alt="Microstructure Example">
+                <figcaption>Microstructure evolution of alloy cooling from liquid to solid phase.</figcaption>
+            </figure>
+
+            <h2>Evaluating Alloy Cooling Histories</h2>
+            <p>Analyze scenarios to predict microstructural outcomes:</p>
+            <ul>
+                <li><strong>Slow cooling:</strong> Larger grain size, clearly defined phases.</li>
+                <li><strong>Rapid cooling:</strong> Smaller grain size, potential metastable phases.</li>
+            </ul>
+
+            <h3>Interactive Scenario-based Activity</h3>
+            <div class="card-container">
+                <div class="card-container-2">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <span class="flip-icon">↺</span>
+                            Predict microstructure for slow cooling of a Cu-Ni alloy.
+                        </div>
+                        <div class="card-back">
+                            Large, well-defined grains and phases, clearly visible grain boundaries.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container-2">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <span class="flip-icon">↺</span>
+                            Predict microstructure for rapid cooling of a Cu-Ni alloy.
+                        </div>
+                        <div class="card-back">
+                            Fine grain structure, less defined phase boundaries, potential for non-equilibrium phases.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Lesson Reflection</h2>
+            <p>Reflect on today's lesson:</p>
+            <textarea class="courseware-textarea" placeholder="What was the most challenging aspect of today's lesson and how did you address it?"></textarea>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+    <title>Summary of Failure Mechanisms Equations</title>
+    <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
+    <script src="../assets/js/load-mathjax.js" defer></script>
+</head>
+<body class="courseware-themes">
+
+<header class="custom-header">
+    <h1>Summary of Equations: Failure Mechanisms</h1>
+</header>
+
+<main class="courseware-layouts-content-wrapper">
+
+    <!-- Summary of Fracture Mechanics Equations -->
+    <section>
+        <h2>Fracture Mechanics</h2>
+        <ul>
+            <li><strong>Stress Intensity Factor (K):</strong>
+                \[ K = Y \sigma \sqrt{\pi a} \]
+                <ul>
+                    <li>\( K \): Stress intensity factor (MPa√m)</li>
+                    <li>\( Y \): Dimensionless geometry factor</li>
+                    <li>\( \sigma \): Applied stress (MPa)</li>
+                    <li>\( a \): Crack length (m)</li>
+                </ul>
+            </li>
+            <li><strong>Critical Crack Size (\(a_{crit}\)):</strong>
+                \[ a_{crit} = \frac{1}{\pi}\left(\frac{K_{Ic}}{Y\sigma}\right)^2 \]
+                <ul>
+                    <li>\( K_{Ic} \): Fracture toughness (MPa√m)</li>
+                </ul>
+            </li>
+            <li><strong>Critical Stress (\(\sigma_{crit}\)):</strong>
+                \[ \sigma_{crit} = \frac{K_{Ic}}{Y\sqrt{\pi a}} \]
+            </li>
+            <li><strong>Griffith Criterion (Brittle Fracture):</strong>
+                \[ \sigma_c = \sqrt{\frac{2E\gamma_s}{\pi a}} \]
+                <ul>
+                    <li>\( \sigma_c \): Critical stress for fracture (MPa)</li>
+                    <li>\( E \): Young’s modulus (MPa)</li>
+                    <li>\( \gamma_s \): Specific surface energy (J/m²)</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Fatigue Equations (Paris Equation) -->
+    <section>
+        <h2>Fatigue (Crack Growth)</h2>
+        <ul>
+            <li><strong>Fully Integrated Form of the Paris Equation (\(m \ne 2\)):</strong>
+                \[ N_f = \frac{2}{C(m-2)(\Delta \sigma)^m \pi^{m/2}Y^m}\left[a_i^{1-\frac{m}{2}} - a_f^{1-\frac{m}{2}}\right] \]
+                <ul>
+                    <li>\( N_f \): Number of cycles to failure</li>
+                    <li>\( C, m \): Material-specific Paris constants</li>
+                    <li>\( \Delta \sigma \): Stress range (MPa)</li>
+                    <li>\( Y \): Geometry factor (dimensionless)</li>
+                    <li>\( a_i \): Initial crack length (m)</li>
+                    <li>\( a_f \): Final (critical) crack length (m)</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Creep Equations -->
+    <section>
+        <h2>Creep</h2>
+        <ul>
+            <li><strong>Larson-Miller Parameter (Predicting creep lifetime):</strong>
+                \[ LMP = T(\log t_r + C) \]
+                <ul>
+                    <li>\(LMP\): Larson-Miller parameter</li>
+                    <li>\(t_r\): Time to rupture (hours)</li>
+                    <li>\(C\): Material constant (typically ~20)</li>
+                </ul>
+            </li>
+        </ul>
+        <p><strong>Example Calculation using Polynomial Fit:</strong></p>
+        <p>If a polynomial fit to data gives \(LMP = 15000 + 250\log \sigma - 10(\log \sigma)^2\), for \(\sigma = 100\) MPa:</p>
+        <ul>
+            <li>
+                \[LMP = 15000 + 250\log(100) - 10[\log(100)]^2\]
+                \[LMP = 15000 + 500 - 40 = 15460\]
+            </li>
+        </ul>
+    </section>
+
+</main>
+
+<footer>
+    <p>Copyright © 2024 Virginia Tech</p>
+</footer>
+
+</body>
+</html>

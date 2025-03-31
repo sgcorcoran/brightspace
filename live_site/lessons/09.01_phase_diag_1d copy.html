@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <title>Phase Diagrams Part 2: Tie Line and Lever Rule</title>
+
+    <script type="module" src="../assets/js/global.min.js"></script>
+    <script defer src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+    <script src="../assets/js/load-mathjax.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
+    <link rel="stylesheet" href="../assets/css/customv5.css" />
+</head>
+
+<body class="courseware-themes">
+    <!-- Header -->
+    <header class="custom-header">
+        <h1>Phase Diagrams Part 2: Tie Line and Lever Rule</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="courseware-layouts-content-wrapper">
+        <section>
+
+            <h2>The Tie Line and Lever Rule Explained</h2>
+
+            <h3>Analogy: The Seesaw</h3>
+            <p>Understanding the tie line and lever rule can be simplified using the analogy of a seesaw. Imagine two individuals sitting on opposite ends of a seesaw:</p>
+            <ul>
+                <li>The fulcrum (balance point) represents the overall composition \( C_o \) of your alloy.</li>
+                <li>The two individuals represent the compositions of the two phases present at a specific temperature, \( C_\alpha \) and \( C_L \).</li>
+                <li>The distances from the fulcrum to each person represent the differences in compositions.</li>
+                <li>The weights (masses) placed at each end represent the weight fractions (\( W_\alpha \) and \( W_L \)) of the two phases.</li>
+            </ul>
+            <figure>
+                <img src="../assets/img/seesaw_analogy.png" alt="Seesaw Analogy">
+                <figcaption>Seesaw analogy illustrating the lever rule, with the fulcrum at overall alloy composition.</figcaption>
+            </figure>
+
+            <h3>Mass Balance Derivation of the Lever Rule</h3>
+            <p>Consider an alloy with overall composition \( C_o \) that separates into two phases, α and liquid (L), with compositions \( C_\alpha \) and \( C_L \), respectively. Let \( W_\alpha \) and \( W_L \) be their mass fractions. The mass balance for component concentration is:</p>
+            \[
+            W_\alpha C_\alpha + W_L C_L = C_o
+            \]
+
+            <p>Since the total mass must equal unity:</p>
+            \[
+            W_\alpha + W_L = 1
+            \]
+
+            <p>Solving these equations simultaneously for \( W_\alpha \) and \( W_L \) gives:</p>
+            \[
+            W_\alpha = \frac{C_o - C_L}{C_\alpha - C_L} \quad \text{and} \quad W_L = \frac{C_\alpha - C_o}{C_\alpha - C_L}
+            \]
+
+            <h3>Visualizing the Lever Rule on a Phase Diagram</h3>
+            <p>In a phase diagram, these equations are graphically represented by drawing a tie line at the temperature of interest:</p>
+            <figure>
+                <img src="../assets/img/tie_line_diagram.png" alt="Tie Line Diagram">
+                <figcaption>Tie line drawn across a two-phase region, illustrating the lever rule and composition differences.</figcaption>
+            </figure>
+
+            <h3>Interactive Practice</h3>
+            <p>Use the interactive module below to explore the tie line and lever rule:</p>
+            <div class="iframe-container">
+                <iframe src="../assets/demos/tie_line_lever_rule.html" title="Tie Line and Lever Rule Interactive Simulation"></iframe>
+            </div>
+
+            <h3>Knowledge Check</h3>
+            <div class="card-container">
+                <div class="card-container-3">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <span class="flip-icon">↺</span>
+                            What does the fulcrum represent in the lever rule seesaw analogy?
+                        </div>
+                        <div class="card-back">
+                            The overall alloy composition.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container-3">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <span class="flip-icon">↺</span>
+                            Does the mass on the seesaw correspond to weight fraction or composition?
+                        </div>
+                        <div class="card-back">
+                            The mass corresponds directly to the weight fraction of each phase.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+    </footer>
+</body>
+
+</html>

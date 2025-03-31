@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pb-Sn Binary Phase Diagram</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #phaseDiagram {
+      width: 100%;
+      height: 100vh;
+    }
+
+    #tooltip {
+      position: absolute;
+      display: none;
+      background-color: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      padding: 8px;
+      border-radius: 4px;
+      pointer-events: none;
+      font-size: 0.9rem;
+      z-index: 10;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="phaseDiagram"></div>
+  <div id="tooltip"></div>
+  <script>
+    const phaseData = [
+      {
+        x: [1e-6, 0.00257914, 0.00778537, 0.01840429, 0.0405261, 0.070034, 0.101948, 0.136747, 0.175075, 0.217812, 0.266168, 0.321746, 0.386333, 0.444741, 0.501364, 0.554186, 0.60187, 0.644073, 0.681153, 0.713753, 0.741187].map(x => {
+  const M_Sn = 118.71;
+  const M_Pb = 207.2;
+  const fac=0.619/0.621318;
+  const nSn = x;
+  const nPb = 1 - nSn;
+  const wSn = nSn * M_Sn;
+  const wPb = nPb * M_Pb;
+  return fac*wSn / (wSn + wPb);
+}),
+        y: [600.6, 600.3, 599.5, 597.0, 594.6, 589.9, 584.6, 578.6, 571.8, 564.2, 555.7, 545.9, 534.9, 524.9, 514.9, 504.9, 494.9, 484.9, 474.9, 464.9, 455.4].map(t => t - 273),
+        name: "Liquidus (α)",
+        mode: "lines",
+        line: { color: "red", width: 2 }
+      },
+      {
+        x: [0.00000078, 0.002, 0.006, 0.014, 0.03, 0.05, 0.07, 0.09, 0.11, 0.13, 0.15, 0.17, 0.19, 0.2059, 0.2201, 0.2330, 0.2451, 0.2564, 0.2675, 0.2785, 0.2892].map(x => {
+  const M_Sn = 118.71;
+  const M_Pb = 207.2;
+  const fac=0.183/0.1890379;
+  const nSn = x;
+  const nPb = 1 - nSn;
+  const wSn = nSn * M_Sn;
+  const wPb = nPb * M_Pb;
+  return fac*wSn / (wSn + wPb);
+}),
+        y: [600.6, 600.3, 599.5, 597.0, 594.6, 589.9, 584.6, 578.6, 571.8, 564.2, 555.7, 545.9, 534.9, 524.9, 514.9, 504.9, 494.9, 484.9, 474.9, 464.9, 455.4].map(t => t - 273),
+        name: "Solidus (α)",
+        mode: "lines",
+        line: { color: "green", width: 2 }
+      },
+      {
+        x: [0.0288381, 0.0293976, 0.0305409, 0.032927, 0.0381173, 0.045449, 0.0538107, 0.0633107, 0.0740684, 0.0862162, 0.0999003, 0.1152829, 0.1325437, 0.1518808, 0.1735126, 0.1935126, 0.2135126, 0.2335126, 0.2535126, 0.2735126, 0.2892919].map(x => {
+  const M_Sn = 118.71;
+  const M_Pb = 207.2;
+  const fac=0.183/0.1891065;
+  const nSn = x;
+  const nPb = 1 - nSn;
+  const wSn = nSn * M_Sn;
+  const wPb = nPb * M_Pb;
+  return fac*wSn / (wSn + wPb);
+}),
+        y: [300, 301, 303, 307, 315, 325, 335, 345, 355, 365, 375, 385, 395, 405, 415, 423.3531, 431.0059, 438.0737, 444.6467, 450.7974, 455.3915].map(t => t - 273),
+        name: "Solvus (α)",
+        mode: "lines",
+        line: { color: "orange", width: 2 }
+      },
+      {
+        x: [0.998658, 0.9986217, 0.9985467, 0.9983876, 0.9980311, 0.9975079, 0.9968905, 0.9961706, 0.9953408, 0.9943944, 0.9933256, 0.9921302, 0.9908053, 0.9893502, 0.9877665, 0.9863482, 0.9849762, 0.9836517, 0.9823746, 0.9811444, 0.9802061].map(x => {
+  const M_Sn = 118.71;
+  const M_Pb = 207.2;
+  const fac=0.978/0.9659535;
+  const nSn = x;
+  const nPb = 1 - nSn;
+  const wSn = nSn * M_Sn;
+  const wPb = nPb * M_Pb;
+  return fac*wSn / (wSn + wPb);
+}),
+        y: [300, 301, 303, 307, 315, 325, 335, 345, 355, 365, 375, 385, 395, 405, 415, 423.3531, 431.0059, 438.0737, 444.6467, 450.7974, 455.3915].map(t => t - 273),
+        name: "Solvus (β)",
+        mode: "lines",
+        line: { color: "purple", width: 2 }
+      },
+      {
+        x: [0.999999, 0.997999, 0.993999, 0.985999, 0.969999, 0.949999, 0.929999, 0.909999, 0.889999, 0.869999, 0.849999, 0.829999, 0.809999, 0.789999, 0.769999, 0.749999, 0.74118696].map(x => {
+  const M_Sn = 118.71;
+  const M_Pb = 207.2;
+  const fac=1;
+  const nSn = x;
+  const nPb = 1 - nSn;
+  const wSn = nSn * M_Sn;
+  const wPb = nPb * M_Pb;
+  return fac*wSn / (wSn + wPb);
+}),
+        y: [505.08, 504.58, 503.58, 501.60, 497.73, 493.06, 488.56, 484.25, 480.12, 476.19, 472.45, 468.90, 465.55, 462.38, 459.39, 456.58, 455.39].map(t => t - 273),
+        name: "Liquidus (β)",
+        mode: "lines",
+        line: { color: "blue", width: 2 }
+      },
+      {
+        x: [0.99999983, 0.9996653, 0.99900764, 0.99773747, 0.99537307, 0.99273319, 0.9904225, 0.98841668, 0.98669058, 0.98521869, 0.98397568, 0.98293681, 0.98207836, 0.98137791, 0.98081462, 0.98036935, 0.98020608].map(x => {
+  const M_Sn = 118.71;
+  const M_Pb = 207.2;
+  const fac=0.65;
+  const nPb = fac*(1 - x);
+  const nSn = 1-nPb;
+  const wSn = nSn * M_Sn;
+  const wPb = nPb * M_Pb;
+  return wSn / (wSn + wPb);
+}),
+        y: [505.08, 504.58, 503.58, 501.60, 497.73, 493.06, 488.56, 484.25, 480.12, 476.19, 472.45, 468.90, 465.55, 462.38, 459.39, 456.58, 455.39].map(t => t - 273),
+        name: "Solidus (β)",
+        mode: "lines",
+        line: { color: "red", width: 2 }
+      },
+      {
+        x: [0.183, 0.619, 0.978],
+        y: [455.39, 455.39, 455.39].map(t => t - 273),
+        name: "Eutectic Line",
+        mode: "lines",
+        line: { color: "black", dash: "dot" }
+      },
+      {
+        x: [0, 0.002, 0.006, 0.014, 0.03, 0.05, 0.07, 0.09, 0.11, 0.13, 0.15, 0.17, 0.19, 0.2059, 0.2201, 0.2330, 0.2451, 0.2564, 0.2675, 0.2785, 0.2892, 0.2892919, 0.2735126, 0.2535126, 0.2335126, 0.2135126, 0.1935126, 0.1735126, 0.1518808, 0.1325437, 0.1152829, 0.0999003, 0.0862162, 0.0740684, 0.0633107, 0.0538107, 0.045449, 0.0381173, 0.032927, 0.0305409, 0.0293976, 0.0288381,0].map(x => {
+  const M_Sn = 118.71;
+  const M_Pb = 207.2;
+  const fac=0.183/0.1891065;
+  const nSn = x;
+  const nPb = 1 - nSn;
+  const wSn = nSn * M_Sn;
+  const wPb = nPb * M_Pb;
+  return fac*wSn / (wSn + wPb);
+}),
+        y: [600.6, 600.3, 599.5, 597.0, 594.6, 589.9, 584.6, 578.6, 571.8, 564.2, 555.7, 545.9, 534.9, 524.9, 514.9, 504.9, 494.9, 484.9, 474.9, 464.9, 455.4, 455.3915, 450.7974, 444.6467, 438.0737, 431.0059, 423.3531, 415, 405, 395, 385, 375, 365, 355, 345, 335, 325, 315, 307, 303, 301, 300,300].map(t => t - 273),
+        name: "α Region",
+        fill: "toself",
+        fillcolor: "rgba(255, 0, 0, 0.15)",
+        line: { width: 0 },
+        type: "scatter"
+      }
+    ];
+
+    const layout = {
+      title: "Pb-Sn Binary Phase Diagram",
+      xaxis: {
+        title: "Composition (wt% Sn)",
+        range: [0, 1],
+        showline: true,
+        linewidth: 2,
+        linecolor: 'black',
+        mirror: true,
+      },
+      yaxis: {
+        title: "Temperature (°C)",
+        range: [25, 350],
+        showline: true,
+        linewidth: 2,
+        linecolor: 'black',
+        mirror: true,
+      }
+    };
+
+
+// Shaded Region: α + Liquid
+
+// phaseData.push({
+//   x: [
+//     0.000001, 0.00257914, 0.00778537, 0.01840429, 0.0405261, 0.070034,
+//     0.101948, 0.136747, 0.175075, 0.217812, 0.266168, 0.321746, 0.386333,
+//     0.444741, 0.501364, 0.554186, 0.60187, 0.644073, 0.681153, 0.713753,
+//     0.741187, 0.741187
+//   ],
+//   y: [
+//     600.6, 600.3, 599.5, 597.0, 594.6, 589.9, 584.6, 578.6, 571.8, 564.2,
+//     555.7, 545.9, 534.9, 524.9, 514.9, 504.9, 494.9, 484.9, 474.9, 464.9,
+//     455.4, 183 // eutectic bottom of region
+//   ].map(t => t - 273),
+//   name: "α + Liquid",
+//   type: "scatter",
+//   fill: "toself",
+//   fillcolor: "rgba(255, 165, 0, 0.2)", // orange
+//   line: { width: 0 }
+// });
+
+// Shaded Region: α (solid)
+phaseData.push({
+  x: [
+    0.0288, 0.0294, 0.0305, 0.0329, 0.0381, 0.0454, 0.0538, 0.0633,
+    0.0741, 0.0862, 0.0999, 0.1152, 0.1325, 0.1519, 0.1735, 0.1935,
+    0.2135, 0.2335, 0.2535, 0.2735, 0.2892
+  ].map(x => {
+  const M_Sn = 118.71;
+  const M_Pb = 207.2;
+  const fac=0.183/0.1891065;
+  const nSn = x;
+  const nPb = 1 - nSn;
+  const wSn = nSn * M_Sn;
+  const wPb = nPb * M_Pb;
+  return fac*wSn / (wSn + wPb);
+}),
+  y: [
+    300, 301, 303, 307, 315, 325, 335, 345, 355, 365, 375, 385,
+    395, 405, 415, 423, 431, 438, 445, 451, 455.4
+  ].map(t => t - 273),
+  name: "α (solid)",
+  type: "scatter",
+  fill: "toself",
+  fillcolor: "rgba(128, 128, 128, 0.2)", // gray
+  line: { width: 0 }
+});
+
+// Find the α Liquidus and α Solidus data from the phaseData array
+const liquidusAlpha = phaseData.find(trace => trace.name === "Liquidus (α)");
+const solidusAlpha = phaseData.find(trace => trace.name === "Solidus (α)");
+
+// Reverse the solidus so it loops back cleanly
+const x_solidus_rev = solidusAlpha.x.slice().reverse();
+const y_solidus_rev = solidusAlpha.y.slice().reverse();
+
+// Combine the paths: liquidus forward, solidus reversed
+const x_fill = liquidusAlpha.x.concat(x_solidus_rev);
+const y_fill = liquidusAlpha.y.concat(y_solidus_rev);
+
+// Add the filled α + Liquid region as a new Plotly trace
+phaseData.push({
+  x: x_fill,
+  y: y_fill,
+  type: "scatter",
+  fill: "toself",
+  fillcolor: "rgba(255, 165, 0, 0.2)", // light orange
+  line: { width: 0 },
+  name: "α + Liquid"
+});
+
+
+    Plotly.newPlot("phaseDiagram", phaseData, layout);
+  </script>
+</body>
+
+</html>

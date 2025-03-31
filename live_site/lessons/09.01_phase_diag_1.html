@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 shrink-to-fit=no" />
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+    <title>Phase Diagrams</title>
+
+    <script type="module" src="../assets/js/global.min.js"></script>
+    <script defer src="https://templates.lcs.brightspace.com/lib/assets/js/scripts.min.js"></script>
+    <script src="../assets/js/load-mathjax.js" defer></script>
+    <script src="../assets/js/videoExpand.js"></script>
+    <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css?v=1.1" />
+    <link rel="stylesheet" href="../assets/css/customv5.css" />
+</head>
+
+<body class="courseware-themes">
+    <!-- Header -->
+    <header class="custom-header">
+        <h1>Phase Diagrams: Fundamentals and Terminology</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="courseware-layouts-content-wrapper">
+        <section>
+            <h2 class="courseware-helper-text-center">
+                Learning Objectives
+            </h2>
+
+            <h3>By the end of this chapter, students should be able to:</h3>
+
+            <ol class="courseware-list-large-number">
+                <li>
+                    Identify key terminology used in binary isomorphous and eutectic phase diagrams.
+                </li>
+                <li>
+                    Explain the difference between homogeneous materials and
+                    heterogeneous materials.
+                </li>
+                <li>
+                    Describe the significance of solubility limits on a phase diagram and the implications for the
+                    microstructure of alloys exceeding the solubility limit.
+                </li>
+                <li>
+                    Interpret binary phase diagrams to determine the phases present and their compositions at a given
+                    temperature and overall alloy composition.
+                </li>
+
+            </ol>
+        </section>
+        <!--Video side by side small and expand on play-->
+        <div class="courseware-video-text" style="text-align:center;">
+            <a href="../assets/handouts/Lecture 13 Chapter 9 Phase Diagrams.pptx" download>
+                Slides: Phase Diagrams part 1
+            </a>
+        </div>
+        <div class="courseware-layouts-content-wrapper">
+            <div class="courseware-video-wrapper" id="video1">
+                <div class="courseware-video-text">
+                    <p>Title</p>
+                </div>
+                <div class="courseware-video-embed-responsive">
+                    <video title="Video Lesson" onclick="expandVideo('video1')">
+                        <source src="../assets/media/09.01_phase.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <section>
+            <h2>Homogeneous vs. Heterogeneous Materials</h2>
+
+            <p>In our prior lessons, we confined our discussion to homogeneous alloys i.e. alloys that consisted of a
+                single solid solution (phase) which has same composition and same structure througout. A single phase
+                Fe-C alloy
+                is shown below in the first image. The amount of carbon in this alloy is less than the solubility limit
+                (0.022 wt%).
+                However, if the solubility limit is exceeded a second phase will develop in the material as shown in the
+                second image. We now have
+                a heterogeneous solid where each phase has a different composition and/or structure.
+            </p>
+
+            <!--Multiple Images with captions, 2 across, expand on hover-->
+            <div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:center;">
+                <figure style="width: 40%;">
+                    <img src="../assets/img/grain_boundaries.jpg" alt="Vacancy" style="max-width:200px;">
+                    <figcaption>
+                        <p>Single phase Fe-C alloy with a carbon wt% < 0.022 (ferrite).</p>
+                    </figcaption>
+                </figure>
+
+                <figure style="width: 40%;">
+                    <img src="../assets/img/Fe-C_2_phase.png" alt="Interstitial Impurity" style="max-width:250px;">
+                    <figcaption>
+                        <p>Two phase Fe-C alloy with a carbon wt% > 0.022. Dark regions (cementite) have a greater
+                            amount of carbon as compared to the light regions (ferrite).</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <p>Another example of a two phase alloy is shown below. Notice that the morphology of the phases looks quite
+                different than the two phase Fe-C alloy shown above. </p>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:center;">
+                <figure style="width: 90%;">
+                    <img src="../assets/img/Cu_Al.png" alt="Vacancy" style="max-width:80%;">
+                    <figcaption>
+                        <p>Two phase Cu-Al alloy showing the alpha and beta phases. Notice one phase is rich (higher
+                            wt%) in Cu and one phase is deficient in Cu relative to the overall alloy composition
+                            which lies between these two values. </p>
+                    </figcaption>
+                </figure>
+            </div>
+            <h2>Introduction to Phase Diagrams </h2>
+            <p>
+                Phase diagrams are visual representations of the phases present and their compositions under various
+                temperature and overall alloy composition. Understanding these diagrams helps predict the structure (and
+                hence properties) of alloys,
+                critical for engineering applications.</p>
+
+            <h2>Key Terminology</h2>
+            <p><em>The use of greek letters on a phase diagram always represents solid phases.</em></p>
+            <ul>
+                <li><strong>Component:</strong> A pure element (e.g. Fe or C) or compound (e.g. water or sugar) that
+                    compose the
+                    two ends of the phase diagram.</li>
+                <li><strong>Phase:</strong> A homogeneous portion of a material with uniform physical and chemical
+                    characteristics (e.g., liquid solutions, solid solutions).</li>
+                <li><strong>Solubility Limit:</strong> Defines the maximum concentration of solute atoms that can
+                    dissolve in a solvent and form a single-phase solution.</li>
+                <li><strong>Solidus Line:</strong> Boundary below which the alloy is completely solid.</li>
+                <li><strong>Liquidus Line:</strong> Boundary above which the alloy is completely liquid.</li>
+                <li><strong>Solvus Line:</strong> Boundary between single-phase solid and two-phase solid regions.</li>
+                <li><strong>Eutectic Point:</strong> The lowest temperature at which a mixture of specified components
+                    melts completely.</li>
+                <li><strong>Isomorphous System:</strong> Binary alloy system with complete solubility in both liquid and
+                    solid phases.</li>
+                <li><strong>Homogeneous Materials</strong> consist of a single-phase solid solution. For example, small
+                    amounts of carbon (< 0.022 wt%) dissolved in iron form a homogeneous solution named ferrite.</li>
+                <li><strong>Heterogeneous Materials</strong> consist of mixtures of two or more phases. When the
+                    solubility
+                    limit is exceeded, an additional phase forms. For example, adding more than 0.022 wt% carbon in iron
+                    introduces an additional phase named cementite. </li>
+                <li><strong>Ferrite:</strong> Phase in Fe-C alloys (steel) where the carbon composition is < 0.022 wt%.
+                        Ferrite has a BCC crystal structure with carbon located in interstitial sites.</li>
+                <li><strong>Cementite:</strong> Very hard phase in Fe-C alloys when the carbon composition exceeds 0.022
+                    wt% but below 6.7 wt%. Cementite is also referred to as iron-carbide and has the chemical formula,
+                    \(Fe_3C\), with a carbon concentration
+                    of 6.7 wt%.</li>
+            </ul>
+            <h2>Phase Diagram Examples</h2>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:center;">
+                <figure style="width: 40%;">
+                    <img src="../assets/img/Cu_Ni.jpg" alt="Vacancy" style="max-width:300px;">
+                    <figcaption>
+                        <p>Cu-Ni Phase Diagram</p>
+                    </figcaption>
+                </figure>
+
+                <figure style="width: 40%;">
+                    <img src="../assets/img/Pb_Sn.png" alt="Interstitial Impurity" style="max-width:300px;">
+                    <figcaption>
+                        <p>Pb-Sn Phase Diagram</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:center;">
+                <figure style="width: 40%;">
+                    <img src="../assets/img/Cu_Ag.png" alt="Vacancy" style="max-width:300px;">
+                    <figcaption>
+                        <p>Cu-Ag Phase Diagram</p>
+                    </figcaption>
+                </figure>
+
+                <figure style="width: 40%;">
+                    <img src="../assets/img/Cu_Zn.png" alt="Interstitial Impurity" style="max-width:300px;">
+                    <figcaption>
+                        <p>Cu-Zn Phase Diagram</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:center;">
+                <figure style="width: 40%;">
+                    <img src="../assets/img/Mg_Pb.png" alt="Interstitial Impurity" style="max-width:300px;">
+                    <figcaption>
+                        <p>Mg-Pb Phase Diagram</p>
+                    </figcaption>
+                </figure>
+
+                <figure style="width: 40%;">
+                    <img src="../assets/img/Fe_C.png" alt="Interstitial Impurity" style="max-width:300px;">
+                    <figcaption>
+                        <p>Fe-C Phase Diagram</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <h2>Concept Check</h2>
+            <figure style="width: 95%; padding-left:2.5%;">
+                <img class="no-hover" src="../assets/img/Cu_Ag_with_labels.png" alt="Phase Diagram Example">
+                <figcaption>Cu-Ag Binary Eutectic Phase Diagram</figcaption>
+            </figure>
+
+            <div class="card-container">
+                <div class="card-container-3">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front" style="text-align: center;">
+                            <span class="flip-icon">↺</span>
+                            Line (a) is the 
+                        </div>
+                        <div class="card-back">
+                            Liquidus
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container-3">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <span class="flip-icon">↺</span>
+                            Line (b) is the 
+                        </div>
+                        <div class="card-back">
+                            Solidus
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container-3">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <span class="flip-icon">↺</span>
+                            Line (c) is the 
+                        </div>
+                        <div class="card-back">
+                            Solvus
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card-container-3">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front" style="text-align: center;">
+                            <span class="flip-icon">↺</span>
+                            Line (d) is the 
+                        </div>
+                        <div class="card-back">
+                            Eutectic line
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container-3">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <span class="flip-icon">↺</span>
+                            The phase(s) present at 600 C for a 30 wt% Ag alloy is/are 
+                        </div>
+                        <div class="card-back">
+                            alpha + beta
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container-3">
+                    <div class="card-flip" onclick="this.classList.toggle('flipped')">
+                        <div class="card-front">
+                            <span class="flip-icon">↺</span>
+                            The phase(s) present at 1000 C for a 12.5 wt% Ag alloy is/are
+                        </div>
+                        <div class="card-back">
+                            alpha + Liquid
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2024 Sean Corcoran, Virginia Tech</p>
+    </footer>
+</body>
+
+</html>

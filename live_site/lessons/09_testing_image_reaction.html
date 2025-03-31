@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Matching: Invariant Reactions</title>
+  <link rel="stylesheet" href="../assets/css/global.minv5.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+  <style>
+    .matching-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 2rem;
+    }
+    .column {
+      width: 45%;
+      min-width: 250px;
+    }
+    .match-item {
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      background-color: #f0f0f0;
+      border-radius: 8px;
+      cursor: grab;
+      border: 2px solid transparent;
+      text-align: center;
+    }
+    .match-item img {
+      max-width: 100px;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+    .match-item.dragging {
+      opacity: 0.5;
+    }
+    .drop-zone {
+      border: 2px dashed var(--vt-hokieStone);
+      padding: 1rem;
+      min-height: 4rem;
+      border-radius: 8px;
+      margin: 0.5rem 0;
+      background-color: #ffffff;
+    }
+    .drop-zone.filled {
+      border-style: solid;
+      background-color: #e5e1e6;
+    }
+    .feedback {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body class="courseware-themes">
+  <main class="courseware-layouts-content-wrapper">
+    <section class="courseware-card courseware-card-component-wrapper">
+      <div class="courseware-card-component-wrapper-banner courseware-card-component-wrapper-icon">
+        <h4>Interactive: Invariant Reaction Matching with Schematics</h4>
+      </div>
+      <div class="courseware-card-component-wrapper-content">
+        <p class="courseware-text-instruction">Match the phase diagram schematic with the correct transformation description.</p>
+
+        <div class="matching-container">
+          <div class="column">
+            <h5>Reactions</h5>
+            <div class="match-item" draggable="true" id="eutectic">
+              <img src="../assets/img/eutectic_schematic.png" alt="Eutectic Schematic">
+              Eutectic
+            </div>
+            <div class="match-item" draggable="true" id="eutectoid">
+              <img src="../assets/img/eutectoid_schematic.png" alt="Eutectoid Schematic">
+              Eutectoid
+            </div>
+            <div class="match-item" draggable="true" id="peritectic">
+              <img src="../assets/img/peritectic_schematic.png" alt="Peritectic Schematic">
+              Peritectic
+            </div>
+            <div class="match-item" draggable="true" id="peritectoid">
+              <img src="../assets/img/peritectoid_schematic.png" alt="Peritectoid Schematic">
+              Peritectoid
+            </div>
+          </div>
+          <div class="column">
+            <h5>Descriptions</h5>
+            <div class="drop-zone" data-answer="eutectic">Liquid → Solid 1 + Solid 2</div>
+            <div class="drop-zone" data-answer="eutectoid">Solid → Solid 1 + Solid 2</div>
+            <div class="drop-zone" data-answer="peritectic">Liquid + Solid → New Solid</div>
+            <div class="drop-zone" data-answer="peritectoid">Solid 1 + Solid 2 → New Solid</div>
+          </div>
+        </div>
+
+        <button class="courseware-btn-primary" onclick="checkAnswers()">Check Answers</button>
+        <div id="feedback" class="feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const items = document.querySelectorAll('.match-item');
+    const zones = document.querySelectorAll('.drop-zone');
+    let draggedItem = null;
+
+    items.forEach(item => {
+      item.addEventListener('dragstart', () => {
+        draggedItem = item;
+        item.classList.add('dragging');
+      });
+      item.addEventListener('dragend', () => {
+        draggedItem = null;
+        item.classList.remove('dragging');
+      });
+    });
+
+    zones.forEach(zone => {
+      zone.addEventListener('dragover', e => e.preventDefault());
+      zone.addEventListener('drop', () => {
+        if (zone.children.length === 0 && draggedItem) {
+          zone.appendChild(draggedItem);
+          zone.classList.add('filled');
+        }
+      });
+    });
+
+    function checkAnswers() {
+      let correct = 0;
+      zones.forEach(zone => {
+        const match = zone.querySelector('.match-item');
+        if (match && match.id === zone.dataset.answer) {
+          zone.style.borderColor = 'green';
+          correct++;
+        } else {
+          zone.style.borderColor = 'red';
+        }
+      });
+      const feedback = document.getElementById('feedback');
+      if (correct === zones.length) {
+        feedback.innerHTML = '<p style="color: green">Great job! All matches are correct.</p>';
+      } else {
+        feedback.innerHTML = `<p style="color: red">${correct} of ${zones.length} correct. Try again!</p>`;
+      }
+    }
+  </script>
+</body>
+</html>
